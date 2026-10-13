@@ -6,7 +6,7 @@ construir fixtures) — la lista de campos nunca se duplica.
 
 SCHEMA_VERSION = 1
 
-CATEGORIAS = {"almuerzo", "cena", "merienda", "postre"}
+CATEGORIAS = {"almuerzo", "cena", "merienda", "postre", "jugos"}
 DIFICULTADES = {"baja", "media", "alta"}
 
 REQUIRED_FIELDS = {"titulo", "categorias"}

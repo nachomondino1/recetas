@@ -4,7 +4,7 @@
   var DATA = window.RECETAS_DATA || { meta: { count: 0, warnings: [] }, recetas: [] };
   var RECETAS = DATA.recetas || [];
 
-  var CATEGORIA_ORDEN = ["almuerzo", "cena", "merienda", "postre"];
+  var CATEGORIA_ORDEN = ["almuerzo", "cena", "merienda", "postre", "jugos"];
   var DIFICULTAD_ORDEN = ["baja", "media", "alta"];
   var PLACEHOLDER_EMOJI = "🍲";
 
