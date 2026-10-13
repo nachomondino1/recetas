@@ -6,7 +6,7 @@ construir fixtures) — la lista de campos nunca se duplica.
 
 SCHEMA_VERSION = 1
 
-CATEGORIAS = {"almuerzo", "cena", "merienda", "postre", "bebidas", "acompañante"}
+CATEGORIAS = {"principal", "acompañante", "postre", "merienda", "bebidas"}
 DIFICULTADES = {"baja", "media", "alta"}
 
 # Sub-tipo opcional, solo tiene sentido cuando "bebidas" está en categorias

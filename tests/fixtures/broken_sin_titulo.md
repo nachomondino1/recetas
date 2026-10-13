@@ -1,5 +1,5 @@
 ---
-categorias: ["almuerzo"]
+categorias: ["principal"]
 dificultad: "baja"
 ---
 ## Paso a paso

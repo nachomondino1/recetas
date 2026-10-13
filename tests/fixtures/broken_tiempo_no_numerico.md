@@ -1,6 +1,6 @@
 ---
 titulo: "Receta con tiempo en texto"
-categorias: ["almuerzo"]
+categorias: ["principal"]
 tiempo_minutos: "un rato largo"
 ---
 ## Paso a paso

@@ -4,7 +4,7 @@
   var DATA = window.RECETAS_DATA || { meta: { count: 0, warnings: [] }, recetas: [] };
   var RECETAS = DATA.recetas || [];
 
-  var CATEGORIA_ORDEN = ["almuerzo", "cena", "merienda", "postre", "bebidas", "acompañante"];
+  var CATEGORIA_ORDEN = ["principal", "acompañante", "postre", "merienda", "bebidas"];
   var DIFICULTAD_ORDEN = ["baja", "media", "alta"];
   var TIPO_BEBIDA_ORDEN = ["jugos", "tragos"];
   var TODAS = "__todas__";
@@ -119,8 +119,8 @@
 
   // Navbar de categorías: navegación primaria, selección única (a diferencia
   // de los chips de abajo, que son filtros secundarios combinables). "Todas"
-  // es la pestaña por default. Una receta con varias categorias (ej. almuerzo
-  // + cena) aparece en cada pestaña que le corresponda.
+  // es la pestaña por default. Una receta con varias categorias aparece en
+  // cada pestaña que le corresponda.
   function renderNavCategorias(valores) {
     els.categoriasNav.innerHTML = "";
 

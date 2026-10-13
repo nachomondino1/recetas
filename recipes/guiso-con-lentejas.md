@@ -1,6 +1,6 @@
 ---
 titulo: "Guiso con lentejas"
-categorias: ["almuerzo"]
+categorias: ["principal"]
 dificultad: "baja"
 tiempo_minutos: 120
 tiempo_minutos_max: 180
@@ -8,6 +8,8 @@ porciones: 8
 foto: "guiso-con-lentejas/guiso-listo.jpg"
 fuente: "Recetas.docx — Comidas Saladas"
 ---
+> 🕐 Se come solo al mediodía, nunca de cena.
+
 ## Ingredientes
 _(para 8 porciones)_
 

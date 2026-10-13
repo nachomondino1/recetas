@@ -1,6 +1,6 @@
 ---
 titulo: "Receta con dificultad rara"
-categorias: ["almuerzo"]
+categorias: ["principal"]
 dificultad: "imposible"
 ---
 ## Paso a paso

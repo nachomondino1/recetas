@@ -1,6 +1,6 @@
 ---
 titulo: "Pastel de papa"
-categorias: ["almuerzo", "cena"]
+categorias: ["principal"]
 dificultad: "media"
 tiempo_minutos: 90
 foto: "pastel-de-papa/cover.jpg"

@@ -26,7 +26,7 @@ import unicodedata
 from pathlib import Path
 
 TAB_CATEGORIAS: dict[str, list[str]] = {
-    "Comidas Saladas": ["almuerzo", "cena"],
+    "Comidas Saladas": ["principal"],
     "Postres y Tartas": ["postre"],
     "Meriendas": ["merienda"],
     "Jugos naturales": ["bebidas"],

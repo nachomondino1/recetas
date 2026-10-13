@@ -1,4 +1,4 @@
 ---
 titulo: "Receta sin cuerpo"
-categorias: ["almuerzo"]
+categorias: ["principal"]
 ---

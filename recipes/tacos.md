@@ -1,6 +1,6 @@
 ---
 titulo: "Tacos"
-categorias: ["almuerzo", "cena"]
+categorias: ["principal"]
 dificultad: "media"
 tiempo_minutos: 60
 porciones: 4
