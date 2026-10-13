@@ -1,6 +1,6 @@
 ---
 titulo: "Asado"
-categorias: ["almuerzo", "cena"]
+categorias: ["almuerzo"]
 dificultad: "baja"
 tiempo_minutos: 180
 porciones: 3

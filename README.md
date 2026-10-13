@@ -17,8 +17,8 @@ Ver `DECISIONS.md` (entrada "Google Doc como fuente, no Markdown a mano") para e
 
 ## Formato de `recipes/<slug>.md`
 
-1. Frontmatter obligatorio: `titulo` y `categorias` (lista, valores válidos en `src/schema.py`: `almuerzo`, `cena`, `merienda`, `postre`, `jugos`).
-2. Frontmatter opcional: `dificultad` (`baja`/`media`/`alta`), `tiempo_minutos`, `tiempo_minutos_max` (para rangos), `porciones`, `foto`, `fecha_actualizacion`, `fuente`.
+1. Frontmatter obligatorio: `titulo` y `categorias` (lista, valores válidos en `src/schema.py`: `almuerzo`, `cena`, `merienda`, `postre`, `bebidas`, `acompañante`). Una receta puede tener varias (ej. `["almuerzo", "cena"]`) y aparece en cada pestaña del sitio que le corresponda.
+2. Frontmatter opcional: `dificultad` (`baja`/`media`/`alta`), `tiempo_minutos`, `tiempo_minutos_max` (para rangos), `porciones`, `foto`, `fecha_actualizacion`, `fuente`, `tipo_bebida` (solo si `categorias` incluye `bebidas`; valores en `src/schema.py`: `jugos`, `tragos`).
 3. Si hay foto, ponerla en `images/<slug>/<archivo>` (normalmente `images/<slug>/cover.jpg`) y referenciarla en el frontmatter como `foto: <slug>/<archivo>`. Es un campo que se completa a mano — ver abajo de dónde sacarla.
 4. El cuerpo es Markdown normal: `## Materiales`, `## Ingredientes` (con `### <subgrupo>` si hace falta agrupar), `## Paso a paso`. Tips y advertencias como citas: `> ℹ️ ...` / `> ⚠️ ...`.
 

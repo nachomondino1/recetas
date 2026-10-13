@@ -4,8 +4,10 @@
   var DATA = window.RECETAS_DATA || { meta: { count: 0, warnings: [] }, recetas: [] };
   var RECETAS = DATA.recetas || [];
 
-  var CATEGORIA_ORDEN = ["almuerzo", "cena", "merienda", "postre", "jugos"];
+  var CATEGORIA_ORDEN = ["almuerzo", "cena", "merienda", "postre", "bebidas", "acompañante"];
   var DIFICULTAD_ORDEN = ["baja", "media", "alta"];
+  var TIPO_BEBIDA_ORDEN = ["jugos", "tragos"];
+  var TODAS = "__todas__";
   var PLACEHOLDER_EMOJI = "🍲";
 
   // Emoji fijo por tipo de sección (coincidencia por texto normalizado, en orden:
@@ -32,17 +34,24 @@
   }
 
   var state = {
-    categorias: new Set(),
+    categoria: null, // null = "Todas"; si no, un único valor (navbar = selección simple)
     dificultades: new Set(),
+    tiposBebida: new Set(),
     orden: "tiempo-asc",
   };
+
+  // Categorías con al menos una receta, en CATEGORIA_ORDEN. Se calcula una
+  // vez en init() y la reusan renderNavCategorias/onCambioCategoria.
+  var categoriasDisponibles = [];
 
   var els = {
     grid: document.getElementById("grid"),
     resultadoCount: document.getElementById("resultado-count"),
     estadoVacio: document.getElementById("estado-vacio"),
-    chipsCategoria: document.getElementById("chips-categoria"),
+    categoriasNav: document.getElementById("categorias-nav"),
     chipsDificultad: document.getElementById("chips-dificultad"),
+    grupoTipoBebida: document.getElementById("grupo-tipo-bebida"),
+    chipsTipoBebida: document.getElementById("chips-tipo-bebida"),
     ordenSelect: document.getElementById("orden-select"),
     limpiarFiltros: document.getElementById("limpiar-filtros"),
     filtrosToggle: document.getElementById("filtros-toggle"),
@@ -108,6 +117,48 @@
     });
   }
 
+  // Navbar de categorías: navegación primaria, selección única (a diferencia
+  // de los chips de abajo, que son filtros secundarios combinables). "Todas"
+  // es la pestaña por default. Una receta con varias categorias (ej. almuerzo
+  // + cena) aparece en cada pestaña que le corresponda.
+  function renderNavCategorias(valores) {
+    els.categoriasNav.innerHTML = "";
+
+    function crearPestana(valor, texto) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "chip" + (state.categoria === valor ? " activo" : "");
+      btn.textContent = texto;
+      btn.setAttribute("role", "tab");
+      btn.setAttribute("aria-selected", state.categoria === valor ? "true" : "false");
+      btn.addEventListener("click", function () {
+        state.categoria = valor === TODAS ? null : valor;
+        onCambioCategoria();
+      });
+      els.categoriasNav.appendChild(btn);
+    }
+
+    crearPestana(TODAS, "Todas");
+    valores.forEach(function (valor) { crearPestana(valor, capitalize(valor)); });
+  }
+
+  function onCambioCategoria() {
+    if (state.categoria !== "bebidas") state.tiposBebida.clear();
+    renderNavCategorias(categoriasDisponibles);
+    renderGrupoTipoBebida();
+    renderTodo();
+  }
+
+  function renderGrupoTipoBebida() {
+    var disponibles = state.categoria === "bebidas"
+      ? ordenarValores(valoresUnicos(function (r) {
+          return r.categorias.indexOf("bebidas") !== -1 ? r.tipo_bebida : null;
+        }), TIPO_BEBIDA_ORDEN)
+      : [];
+    els.grupoTipoBebida.hidden = disponibles.length === 0;
+    renderChips(els.chipsTipoBebida, disponibles, state.tiposBebida);
+  }
+
   function fotoHTML(foto, claseContenedor) {
     if (foto) {
       var img = document.createElement("img");
@@ -124,12 +175,12 @@
 
   function recetasFiltradas() {
     return RECETAS.filter(function (r) {
-      if (state.categorias.size > 0) {
-        var tieneCategoria = r.categorias.some(function (c) { return state.categorias.has(c); });
-        if (!tieneCategoria) return false;
-      }
+      if (state.categoria && r.categorias.indexOf(state.categoria) === -1) return false;
       if (state.dificultades.size > 0) {
         if (!r.dificultad || !state.dificultades.has(r.dificultad)) return false;
+      }
+      if (state.tiposBebida.size > 0) {
+        if (!r.tipo_bebida || !state.tiposBebida.has(r.tipo_bebida)) return false;
       }
       return true;
     });
@@ -195,6 +246,12 @@
       chip.textContent = capitalize(c);
       chips.appendChild(chip);
     });
+    if (receta.tipo_bebida) {
+      var chipTipo = document.createElement("span");
+      chipTipo.className = "chip-categoria";
+      chipTipo.textContent = capitalize(receta.tipo_bebida);
+      chips.appendChild(chipTipo);
+    }
     body.appendChild(chips);
 
     card.appendChild(body);
@@ -208,13 +265,16 @@
     return card;
   }
 
+  function haySeleccionActiva() {
+    return !!state.categoria || state.dificultades.size > 0 || state.tiposBebida.size > 0;
+  }
+
   function renderGrid() {
     var lista = ordenarRecetas(recetasFiltradas());
     els.grid.innerHTML = "";
     lista.forEach(function (r) { els.grid.appendChild(crearCard(r)); });
 
-    var totalActivos = state.categorias.size + state.dificultades.size;
-    if (totalActivos > 0) {
+    if (haySeleccionActiva()) {
       els.resultadoCount.textContent = lista.length + " de " + RECETAS.length + " receta(s)";
     } else {
       els.resultadoCount.textContent = RECETAS.length + " receta(s)";
@@ -224,8 +284,11 @@
     els.estadoVacio.hidden = lista.length !== 0;
   }
 
+  // El badge y "Limpiar filtros" solo cuentan los filtros SECUNDARIOS
+  // (dificultad, tipo de bebida): la categoría ahora es navegación primaria
+  // (navbar), no un filtro que se "limpia".
   function renderFiltrosEstado() {
-    var totalActivos = state.categorias.size + state.dificultades.size;
+    var totalActivos = state.dificultades.size + state.tiposBebida.size;
     els.filtrosBadge.hidden = totalActivos === 0;
     els.filtrosBadge.textContent = String(totalActivos);
     els.limpiarFiltros.hidden = totalActivos === 0;
@@ -379,6 +442,12 @@
       chip.textContent = capitalize(c);
       meta.appendChild(chip);
     });
+    if (receta.tipo_bebida) {
+      var chipTipo = document.createElement("span");
+      chipTipo.className = "chip-categoria";
+      chipTipo.textContent = capitalize(receta.tipo_bebida);
+      meta.appendChild(chipTipo);
+    }
 
     header.appendChild(meta);
     els.detalleContenido.appendChild(header);
@@ -419,11 +488,12 @@
   }
 
   function init() {
-    var categoriasDisponibles = ordenarValores(valoresUnicos(function (r) { return r.categorias; }), CATEGORIA_ORDEN);
+    categoriasDisponibles = ordenarValores(valoresUnicos(function (r) { return r.categorias; }), CATEGORIA_ORDEN);
     var dificultadesDisponibles = ordenarValores(valoresUnicos(function (r) { return r.dificultad; }), DIFICULTAD_ORDEN);
 
-    renderChips(els.chipsCategoria, categoriasDisponibles, state.categorias);
+    renderNavCategorias(categoriasDisponibles);
     renderChips(els.chipsDificultad, dificultadesDisponibles, state.dificultades);
+    renderGrupoTipoBebida();
 
     els.ordenSelect.addEventListener("change", function () {
       state.orden = els.ordenSelect.value;
@@ -432,10 +502,10 @@
 
     els.limpiarFiltros.addEventListener("click", function (e) {
       e.preventDefault();
-      state.categorias.clear();
       state.dificultades.clear();
-      renderChips(els.chipsCategoria, categoriasDisponibles, state.categorias);
+      state.tiposBebida.clear();
       renderChips(els.chipsDificultad, dificultadesDisponibles, state.dificultades);
+      renderGrupoTipoBebida();
       renderTodo();
     });
 

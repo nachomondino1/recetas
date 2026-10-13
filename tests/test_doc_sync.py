@@ -87,6 +87,27 @@ def test_pestana_desconocida_no_corta_el_resto():
     assert any("no mapeada" in i["motivo"] for i in incompletas)
 
 
+def test_jugos_naturales_mapea_a_bebidas_con_tipo():
+    parrafos = [
+        _parrafo("Jugo verde\n", style="HEADING_2"),
+        _parrafo("Ingredientes:\n"),
+        _parrafo("Pepino — 1\n", list_id="L1"),
+        _parrafo("Paso a paso\n"),
+        _parrafo("Licuar\n", list_id="L1"),
+    ]
+    listas = {"L1": {"listProperties": {"nestingLevels": [{"glyphType": None}]}}}
+    completas, incompletas = parse_doc(_doc([_tab("Jugos naturales", parrafos, listas)]))
+
+    assert incompletas == []
+    receta = completas[0]
+    assert receta["categorias"] == ["bebidas"]
+    assert receta["tipo_bebida"] == "jugos"
+
+    md = render_markdown(receta)
+    assert 'categorias: ["bebidas"]' in md
+    assert 'tipo_bebida: "jugos"' in md
+
+
 def test_heading_1_no_abre_receta_propia():
     parrafos = [
         _parrafo("Budines\n", style="HEADING_1"),

@@ -29,7 +29,12 @@ TAB_CATEGORIAS: dict[str, list[str]] = {
     "Comidas Saladas": ["almuerzo", "cena"],
     "Postres y Tartas": ["postre"],
     "Meriendas": ["merienda"],
-    "Jugos naturales": ["jugos"],
+    "Jugos naturales": ["bebidas"],
+}
+# Default de tipo_bebida por pestaña, igual de determinístico que TAB_CATEGORIAS
+# (ver schema.TIPOS_BEBIDA). Pestañas no listadas acá no setean tipo_bebida.
+TAB_TIPO_BEBIDA: dict[str, str] = {
+    "Jugos naturales": "jugos",
 }
 TABS_IGNORADAS = {"Template receta"}
 
@@ -216,6 +221,7 @@ def parse_doc(doc_json: dict) -> tuple[list[dict], list[dict]]:
         for bloque in _agrupar_recetas(parrafos):
             receta = _parsear_receta(bloque["titulo"], bloque["parrafos"])
             receta["categorias"] = categorias
+            receta["tipo_bebida"] = TAB_TIPO_BEBIDA.get(titulo_tab)
             receta["tab"] = titulo_tab
             if receta["completa"]:
                 completas.append(receta)
@@ -235,6 +241,8 @@ def render_markdown(receta: dict) -> str:
         f'titulo: "{receta["titulo"]}"',
         "categorias: [" + ", ".join(f'"{c}"' for c in receta["categorias"]) + "]",
     ]
+    if receta.get("tipo_bebida"):
+        front.append(f'tipo_bebida: "{receta["tipo_bebida"]}"')
     if receta["fuente"]:
         front.append(f'fuente: "{receta["fuente"]}"')
     if receta["fecha_actualizacion"]:

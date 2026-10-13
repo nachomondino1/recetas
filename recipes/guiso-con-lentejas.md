@@ -1,6 +1,6 @@
 ---
 titulo: "Guiso con lentejas"
-categorias: ["almuerzo", "cena"]
+categorias: ["almuerzo"]
 dificultad: "baja"
 tiempo_minutos: 120
 tiempo_minutos_max: 180

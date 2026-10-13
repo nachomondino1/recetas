@@ -66,6 +66,7 @@ def normalizar(raws: list[dict]) -> list[dict]:
         foto = front.get("foto")
         fecha = front.get("fecha_actualizacion")
         fuente = front.get("fuente")
+        tipo_bebida = front.get("tipo_bebida")
         records.append({
             "id": raw["id"],
             "_parse_error": raw["_parse_error"],
@@ -79,6 +80,7 @@ def normalizar(raws: list[dict]) -> list[dict]:
             "foto": str(foto).strip() if foto else None,
             "fecha_actualizacion": str(fecha).strip() if fecha else None,
             "fuente": str(fuente).strip() if fuente else None,
+            "tipo_bebida": str(tipo_bebida).strip().lower() if tipo_bebida else None,
             "_unknown_fields": sorted(set(front.keys()) - schema.KNOWN_FIELDS) if front else [],
         })
     return records
@@ -125,6 +127,13 @@ def validar(records: list[dict], images_dir: Path) -> tuple[list[str], list[dict
         elif r["dificultad"] is None:
             warnings.append({"recipe": rid, "field": "dificultad", "message": "sin dato"})
 
+        # tipo_bebida solo tiene sentido si la receta está en "bebidas": no se
+        # advierte su ausencia en el resto de las categorías.
+        if r["tipo_bebida"] is not None and r["tipo_bebida"] not in schema.TIPOS_BEBIDA:
+            errors.append(f"{rid}: tipo_bebida desconocido '{r['tipo_bebida']}' (válidos: {sorted(schema.TIPOS_BEBIDA)})")
+        elif r["tipo_bebida"] is None and "bebidas" in r["categorias"]:
+            warnings.append({"recipe": rid, "field": "tipo_bebida", "message": "sin dato"})
+
         for field in ("tiempo_minutos", "tiempo_minutos_max", "porciones"):
             if not _es_entero_valido(r[field]):
                 errors.append(f"{rid}: '{field}' no es un entero válido (valor: {r[field]!r})")
@@ -167,6 +176,7 @@ def construir_json(records: list[dict], warnings: list[dict]) -> dict:
             "foto": f"images/{r['foto']}" if r["foto"] else None,
             "fecha_actualizacion": r["fecha_actualizacion"],
             "fuente": r["fuente"],
+            "tipo_bebida": r["tipo_bebida"],
             "body_html": render_body_html(r["body"]),
         })
     return {

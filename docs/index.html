@@ -20,18 +20,20 @@
 
 <main class="container">
   <section id="vista-grid">
+    <nav class="categorias-nav" id="categorias-nav" role="tablist" aria-label="Categorías"></nav>
+
     <div class="filtros-card">
       <button class="filtros-toggle" id="filtros-toggle" type="button" aria-expanded="false" aria-controls="filtros-panel">
         Filtros <span class="filtros-badge" id="filtros-badge" hidden>0</span>
       </button>
       <div class="filtros-panel" id="filtros-panel">
         <div class="filtro-grupo">
-          <span class="filtro-label">Categoría</span>
-          <div class="chips" id="chips-categoria"></div>
-        </div>
-        <div class="filtro-grupo">
           <span class="filtro-label">Dificultad</span>
           <div class="chips" id="chips-dificultad"></div>
+        </div>
+        <div class="filtro-grupo" id="grupo-tipo-bebida" hidden>
+          <span class="filtro-label">Tipo de bebida</span>
+          <div class="chips" id="chips-tipo-bebida"></div>
         </div>
         <div class="filtro-grupo filtro-orden">
           <label class="filtro-label" for="orden-select">Ordenar por</label>

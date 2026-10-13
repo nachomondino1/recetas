@@ -1,6 +1,7 @@
 ---
 titulo: "El Detox Digestivo"
-categorias: ["jugos"]
+categorias: ["bebidas"]
+tipo_bebida: "jugos"
 foto: "jugo-detox-digestivo/cover.jpg"
 fuente: "Gemini"
 fecha_actualizacion: "2026-08-30"

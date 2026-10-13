@@ -1,6 +1,7 @@
 ---
 titulo: "El Inmunológico / Antiox"
-categorias: ["jugos"]
+categorias: ["bebidas"]
+tipo_bebida: "jugos"
 foto: "jugo-inmunologico/cover.jpg"
 fuente: "Gemini"
 fecha_actualizacion: "2026-08-30"

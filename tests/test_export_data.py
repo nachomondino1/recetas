@@ -44,6 +44,23 @@ def test_dificultad_invalida_es_error(tmp_path):
     assert any("dificultad desconocida" in e for e in errors)
 
 
+def test_tipo_bebida_invalido_es_error(tmp_path):
+    _, errors, _ = _load_one(tmp_path, "broken_tipo_bebida_invalido.md")
+    assert any("tipo_bebida desconocido" in e for e in errors)
+
+
+def test_bebida_sin_tipo_bebida_es_warning(tmp_path):
+    _, errors, warnings = _load_one(tmp_path, "warnings_bebida_sin_tipo.md")
+    assert errors == []
+    assert any(w["field"] == "tipo_bebida" for w in warnings)
+
+
+def test_postre_sin_tipo_bebida_no_es_warning(tmp_path):
+    _, errors, warnings = _load_one(tmp_path, "ok_minimal.md")
+    assert errors == []
+    assert not any(w["field"] == "tipo_bebida" for w in warnings)
+
+
 def test_tiempo_no_numerico_es_error(tmp_path):
     _, errors, _ = _load_one(tmp_path, "broken_tiempo_no_numerico.md")
     assert any("tiempo_minutos" in e for e in errors)
@@ -82,7 +99,7 @@ def test_build_json_contrato_y_allowlist(tmp_path):
     allowed = {
         "id", "titulo", "categorias", "dificultad", "tiempo_minutos",
         "tiempo_minutos_max", "porciones", "foto", "fecha_actualizacion",
-        "fuente", "body_html",
+        "fuente", "tipo_bebida", "body_html",
     }
     assert set(receta.keys()) == allowed
     assert receta["foto"] == "images/cover.jpg"

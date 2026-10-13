@@ -103,6 +103,19 @@ body {
 
 main.container { padding-top: 24px; padding-bottom: 48px; }
 
+/* Navegación primaria por categoría: pills con scroll horizontal (>4
+   secciones), nunca wrap a 2 líneas. Ver DESIGN_PLAYBOOK_unificado §6. */
+.categorias-nav {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 2px;
+  margin-bottom: 20px;
+}
+.categorias-nav::-webkit-scrollbar { display: none; }
+.categorias-nav .chip { flex: 0 0 auto; white-space: nowrap; }
+
 /* Filtros */
 .filtros-card {
   background: var(--surface);
@@ -140,6 +153,7 @@ main.container { padding-top: 24px; padding-bottom: 48px; }
   align-items: flex-end;
 }
 .filtro-grupo { display: flex; flex-direction: column; gap: 8px; }
+.filtro-grupo[hidden] { display: none; }
 .filtro-label {
   text-transform: uppercase;
   font-size: 11px;

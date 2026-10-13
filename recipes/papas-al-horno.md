@@ -1,6 +1,6 @@
 ---
 titulo: "Papas al horno"
-categorias: ["almuerzo", "cena"]
+categorias: ["acompañante"]
 dificultad: "baja"
 tiempo_minutos: 75
 foto: "papas-al-horno/cover.jpg"
