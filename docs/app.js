@@ -76,6 +76,9 @@
       btn.addEventListener("click", function () {
         if (activeSet.has(valor)) activeSet.delete(valor);
         else activeSet.add(valor);
+        var activo = activeSet.has(valor);
+        btn.classList.toggle("activo", activo);
+        btn.setAttribute("aria-pressed", activo ? "true" : "false");
         renderTodo();
       });
       container.appendChild(btn);
