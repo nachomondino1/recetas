@@ -8,6 +8,29 @@
   var DIFICULTAD_ORDEN = ["baja", "media", "alta"];
   var PLACEHOLDER_EMOJI = "🍲";
 
+  // Emoji fijo por tipo de sección (coincidencia por texto normalizado, en orden:
+  // la primera regla que matchea gana). Secciones que no matchean ninguna regla
+  // quedan sin emoji, para no forzar uno arbitrario en encabezados puntuales.
+  var EMOJI_SECCIONES = [
+    [/donde no comprarlo/, "🚫"],
+    [/donde comprarlo/, "🛒"],
+    [/^ingrediente/, "🥕"],
+    [/^paso a paso/, "👩‍🍳"],
+    [/^material/, "🧰"],
+  ];
+
+  function normalizarTexto(s) {
+    return (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  }
+
+  function emojiDeSeccion(texto) {
+    var norm = normalizarTexto(texto);
+    for (var i = 0; i < EMOJI_SECCIONES.length; i++) {
+      if (EMOJI_SECCIONES[i][0].test(norm)) return EMOJI_SECCIONES[i][1];
+    }
+    return null;
+  }
+
   var state = {
     categorias: new Set(),
     dificultades: new Set(),
@@ -231,6 +254,9 @@
 
     nodos.forEach(function (nodo) {
       if (nodo.nodeType === 1 && nodo.tagName === "H2") {
+        var emoji = emojiDeSeccion(nodo.textContent);
+        if (emoji) nodo.textContent = emoji + " " + nodo.textContent;
+
         var detalle = document.createElement("details");
         detalle.className = "detalle-seccion";
         detalle.open = true;
