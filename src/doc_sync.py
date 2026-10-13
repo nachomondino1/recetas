@@ -32,7 +32,7 @@ TAB_CATEGORIAS: dict[str, list[str]] = {
     "Jugos naturales": ["bebidas"],
 }
 # Default de tipo_bebida por pestaña, igual de determinístico que TAB_CATEGORIAS
-# (ver schema.TIPOS_BEBIDA). Pestañas no listadas acá no setean tipo_bebida.
+# (ver schema.SUBFILTROS). Pestañas no listadas acá no setean tipo_bebida.
 TAB_TIPO_BEBIDA: dict[str, str] = {
     "Jugos naturales": "jugos",
 }

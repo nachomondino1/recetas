@@ -1,6 +1,7 @@
 ---
 titulo: "Pastel de papa"
 categorias: ["principal"]
+momento: "mediodía"
 dificultad: "media"
 tiempo_minutos: 90
 foto: "pastel-de-papa/cover.jpg"

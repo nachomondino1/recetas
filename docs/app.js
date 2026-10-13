@@ -6,8 +6,16 @@
 
   var CATEGORIA_ORDEN = ["principal", "acompañante", "postre", "merienda", "bebidas"];
   var DIFICULTAD_ORDEN = ["baja", "media", "alta"];
-  var TIPO_BEBIDA_ORDEN = ["jugos", "tragos"];
   var TODAS = "__todas__";
+
+  // Filtro secundario opcional por categoría (progressive disclosure: solo
+  // aparece dentro de la pestaña a la que corresponde). Mismo campo que
+  // schema.SUBFILTROS en el export — no mezcla ejes nuevos en CATEGORIA_ORDEN.
+  var SUBFILTROS = {
+    principal: { campo: "momento", label: "Momento", orden: ["mediodía", "cena"] },
+    merienda: { campo: "tipo_merienda", label: "Tipo", orden: ["dulce", "salado"] },
+    bebidas: { campo: "tipo_bebida", label: "Tipo de bebida", orden: ["jugos", "tragos"] },
+  };
   var PLACEHOLDER_EMOJI = "🍲";
 
   // Emoji fijo por tipo de sección (coincidencia por texto normalizado, en orden:
@@ -36,7 +44,7 @@
   var state = {
     categoria: null, // null = "Todas"; si no, un único valor (navbar = selección simple)
     dificultades: new Set(),
-    tiposBebida: new Set(),
+    subfiltro: new Set(), // valores del campo de SUBFILTROS[state.categoria]
     orden: "tiempo-asc",
   };
 
@@ -50,8 +58,9 @@
     estadoVacio: document.getElementById("estado-vacio"),
     categoriasNav: document.getElementById("categorias-nav"),
     chipsDificultad: document.getElementById("chips-dificultad"),
-    grupoTipoBebida: document.getElementById("grupo-tipo-bebida"),
-    chipsTipoBebida: document.getElementById("chips-tipo-bebida"),
+    grupoSubfiltro: document.getElementById("grupo-subfiltro"),
+    subfiltroLabel: document.getElementById("subfiltro-label"),
+    chipsSubfiltro: document.getElementById("chips-subfiltro"),
     ordenSelect: document.getElementById("orden-select"),
     limpiarFiltros: document.getElementById("limpiar-filtros"),
     filtrosToggle: document.getElementById("filtros-toggle"),
@@ -143,20 +152,37 @@
   }
 
   function onCambioCategoria() {
-    if (state.categoria !== "bebidas") state.tiposBebida.clear();
+    state.subfiltro.clear();
     renderNavCategorias(categoriasDisponibles);
-    renderGrupoTipoBebida();
+    renderGrupoSubfiltro();
     renderTodo();
   }
 
-  function renderGrupoTipoBebida() {
-    var disponibles = state.categoria === "bebidas"
+  function renderGrupoSubfiltro() {
+    var sf = SUBFILTROS[state.categoria];
+    var disponibles = sf
       ? ordenarValores(valoresUnicos(function (r) {
-          return r.categorias.indexOf("bebidas") !== -1 ? r.tipo_bebida : null;
-        }), TIPO_BEBIDA_ORDEN)
+          return r.categorias.indexOf(state.categoria) !== -1 ? r[sf.campo] : null;
+        }), sf.orden)
       : [];
-    els.grupoTipoBebida.hidden = disponibles.length === 0;
-    renderChips(els.chipsTipoBebida, disponibles, state.tiposBebida);
+    els.grupoSubfiltro.hidden = disponibles.length === 0;
+    els.subfiltroLabel.textContent = sf ? sf.label : "";
+    renderChips(els.chipsSubfiltro, disponibles, state.subfiltro);
+  }
+
+  // Valores de los sub-filtros presentes en una receta (una por categoría a
+  // la que pertenezca), para mostrarlos como chips en la card/detalle sin
+  // depender de la pestaña activa.
+  function valoresSubfiltro(receta) {
+    var valores = [];
+    Object.keys(SUBFILTROS).forEach(function (categoria) {
+      var sf = SUBFILTROS[categoria];
+      var valor = receta[sf.campo];
+      if (valor && receta.categorias.indexOf(categoria) !== -1 && valores.indexOf(valor) === -1) {
+        valores.push(valor);
+      }
+    });
+    return valores;
   }
 
   function fotoHTML(foto, claseContenedor) {
@@ -179,8 +205,10 @@
       if (state.dificultades.size > 0) {
         if (!r.dificultad || !state.dificultades.has(r.dificultad)) return false;
       }
-      if (state.tiposBebida.size > 0) {
-        if (!r.tipo_bebida || !state.tiposBebida.has(r.tipo_bebida)) return false;
+      if (state.subfiltro.size > 0) {
+        var sf = SUBFILTROS[state.categoria];
+        var valor = sf ? r[sf.campo] : null;
+        if (!valor || !state.subfiltro.has(valor)) return false;
       }
       return true;
     });
@@ -246,12 +274,12 @@
       chip.textContent = capitalize(c);
       chips.appendChild(chip);
     });
-    if (receta.tipo_bebida) {
+    valoresSubfiltro(receta).forEach(function (valor) {
       var chipTipo = document.createElement("span");
       chipTipo.className = "chip-categoria";
-      chipTipo.textContent = capitalize(receta.tipo_bebida);
+      chipTipo.textContent = capitalize(valor);
       chips.appendChild(chipTipo);
-    }
+    });
     body.appendChild(chips);
 
     card.appendChild(body);
@@ -266,7 +294,7 @@
   }
 
   function haySeleccionActiva() {
-    return !!state.categoria || state.dificultades.size > 0 || state.tiposBebida.size > 0;
+    return !!state.categoria || state.dificultades.size > 0 || state.subfiltro.size > 0;
   }
 
   function renderGrid() {
@@ -285,10 +313,10 @@
   }
 
   // El badge y "Limpiar filtros" solo cuentan los filtros SECUNDARIOS
-  // (dificultad, tipo de bebida): la categoría ahora es navegación primaria
-  // (navbar), no un filtro que se "limpia".
+  // (dificultad, sub-filtro de categoría): la categoría ahora es navegación
+  // primaria (navbar), no un filtro que se "limpia".
   function renderFiltrosEstado() {
-    var totalActivos = state.dificultades.size + state.tiposBebida.size;
+    var totalActivos = state.dificultades.size + state.subfiltro.size;
     els.filtrosBadge.hidden = totalActivos === 0;
     els.filtrosBadge.textContent = String(totalActivos);
     els.limpiarFiltros.hidden = totalActivos === 0;
@@ -442,12 +470,12 @@
       chip.textContent = capitalize(c);
       meta.appendChild(chip);
     });
-    if (receta.tipo_bebida) {
+    valoresSubfiltro(receta).forEach(function (valor) {
       var chipTipo = document.createElement("span");
       chipTipo.className = "chip-categoria";
-      chipTipo.textContent = capitalize(receta.tipo_bebida);
+      chipTipo.textContent = capitalize(valor);
       meta.appendChild(chipTipo);
-    }
+    });
 
     header.appendChild(meta);
     els.detalleContenido.appendChild(header);
@@ -493,7 +521,7 @@
 
     renderNavCategorias(categoriasDisponibles);
     renderChips(els.chipsDificultad, dificultadesDisponibles, state.dificultades);
-    renderGrupoTipoBebida();
+    renderGrupoSubfiltro();
 
     els.ordenSelect.addEventListener("change", function () {
       state.orden = els.ordenSelect.value;
@@ -503,9 +531,9 @@
     els.limpiarFiltros.addEventListener("click", function (e) {
       e.preventDefault();
       state.dificultades.clear();
-      state.tiposBebida.clear();
+      state.subfiltro.clear();
       renderChips(els.chipsDificultad, dificultadesDisponibles, state.dificultades);
-      renderGrupoTipoBebida();
+      renderGrupoSubfiltro();
       renderTodo();
     });
 

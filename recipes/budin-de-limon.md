@@ -1,6 +1,7 @@
 ---
 titulo: "Budín de limón"
 categorias: ["merienda"]
+tipo_merienda: "dulce"
 foto: "budin-de-limon/cover.jpg"
 fuente: "https://www.youtube.com/watch?v=nuvxNKN65QI"
 fecha_actualizacion: "2026-04-20"

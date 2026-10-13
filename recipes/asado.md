@@ -1,6 +1,7 @@
 ---
 titulo: "Asado"
 categorias: ["principal"]
+momento: "mediodía"
 dificultad: "baja"
 tiempo_minutos: 180
 porciones: 3
@@ -8,8 +9,6 @@ fecha_actualizacion: "2026-07-05"
 foto: "asado/cover.jpg"
 fuente: "Recetas.docx — Comidas Saladas"
 ---
-> 🕐 Se come solo al mediodía, nunca de cena.
-
 ## Materiales
 - Parrilla y pala.
 - Cuchillo y tenedor de asador.

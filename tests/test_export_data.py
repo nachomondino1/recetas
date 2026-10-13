@@ -61,6 +61,25 @@ def test_postre_sin_tipo_bebida_no_es_warning(tmp_path):
     assert not any(w["field"] == "tipo_bebida" for w in warnings)
 
 
+def test_tipo_merienda_invalido_es_error(tmp_path):
+    _, errors, _ = _load_one(tmp_path, "broken_tipo_merienda_invalido.md")
+    assert any("tipo_merienda desconocido" in e for e in errors)
+
+
+def test_merienda_sin_tipo_merienda_es_warning(tmp_path):
+    _, errors, warnings = _load_one(tmp_path, "warnings_merienda_sin_tipo.md")
+    assert errors == []
+    assert any(w["field"] == "tipo_merienda" for w in warnings)
+
+
+def test_principal_sin_momento_no_es_warning(tmp_path):
+    # "momento" es una excepción puntual (ej. Asado), no algo que toda
+    # receta "principal" deba tener — su ausencia es el caso normal.
+    _, errors, warnings = _load_one(tmp_path, "ok_minimal.md")
+    assert errors == []
+    assert not any(w["field"] == "momento" for w in warnings)
+
+
 def test_tiempo_no_numerico_es_error(tmp_path):
     _, errors, _ = _load_one(tmp_path, "broken_tiempo_no_numerico.md")
     assert any("tiempo_minutos" in e for e in errors)
@@ -99,7 +118,7 @@ def test_build_json_contrato_y_allowlist(tmp_path):
     allowed = {
         "id", "titulo", "categorias", "dificultad", "tiempo_minutos",
         "tiempo_minutos_max", "porciones", "foto", "fecha_actualizacion",
-        "fuente", "tipo_bebida", "body_html",
+        "fuente", "tipo_bebida", "tipo_merienda", "momento", "body_html",
     }
     assert set(receta.keys()) == allowed
     assert receta["foto"] == "images/cover.jpg"

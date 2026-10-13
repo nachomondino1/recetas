@@ -1,6 +1,7 @@
 ---
 titulo: "Tacos"
 categorias: ["principal"]
+momento: "mediodía"
 dificultad: "media"
 tiempo_minutos: 60
 porciones: 4

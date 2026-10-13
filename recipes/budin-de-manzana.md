@@ -1,6 +1,7 @@
 ---
 titulo: "Budín de manzana"
 categorias: ["merienda"]
+tipo_merienda: "dulce"
 foto: "budin-de-manzana/cover.jpg"
 fecha_actualizacion: "2026-05-09"
 ---

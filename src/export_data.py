@@ -66,8 +66,7 @@ def normalizar(raws: list[dict]) -> list[dict]:
         foto = front.get("foto")
         fecha = front.get("fecha_actualizacion")
         fuente = front.get("fuente")
-        tipo_bebida = front.get("tipo_bebida")
-        records.append({
+        record = {
             "id": raw["id"],
             "_parse_error": raw["_parse_error"],
             "body": raw["body"],
@@ -80,9 +79,12 @@ def normalizar(raws: list[dict]) -> list[dict]:
             "foto": str(foto).strip() if foto else None,
             "fecha_actualizacion": str(fecha).strip() if fecha else None,
             "fuente": str(fuente).strip() if fuente else None,
-            "tipo_bebida": str(tipo_bebida).strip().lower() if tipo_bebida else None,
             "_unknown_fields": sorted(set(front.keys()) - schema.KNOWN_FIELDS) if front else [],
-        })
+        }
+        for campo in schema.SUBFILTRO_CAMPOS:
+            valor = front.get(campo)
+            record[campo] = str(valor).strip().lower() if valor else None
+        records.append(record)
     return records
 
 
@@ -127,12 +129,15 @@ def validar(records: list[dict], images_dir: Path) -> tuple[list[str], list[dict
         elif r["dificultad"] is None:
             warnings.append({"recipe": rid, "field": "dificultad", "message": "sin dato"})
 
-        # tipo_bebida solo tiene sentido si la receta está en "bebidas": no se
-        # advierte su ausencia en el resto de las categorías.
-        if r["tipo_bebida"] is not None and r["tipo_bebida"] not in schema.TIPOS_BEBIDA:
-            errors.append(f"{rid}: tipo_bebida desconocido '{r['tipo_bebida']}' (válidos: {sorted(schema.TIPOS_BEBIDA)})")
-        elif r["tipo_bebida"] is None and "bebidas" in r["categorias"]:
-            warnings.append({"recipe": rid, "field": "tipo_bebida", "message": "sin dato"})
+        # Sub-filtro condicionado a una categoría (ver schema.SUBFILTROS): el
+        # WARNING por "sin dato" solo se dispara si la receta ya está en esa
+        # categoría, y solo para los sub-filtros que avisan_si_falta.
+        for categoria, sf in schema.SUBFILTROS.items():
+            valor = r[sf.campo]
+            if valor is not None and valor not in sf.valores:
+                errors.append(f"{rid}: {sf.campo} desconocido '{valor}' (válidos: {sorted(sf.valores)})")
+            elif valor is None and sf.avisar_si_falta and categoria in r["categorias"]:
+                warnings.append({"recipe": rid, "field": sf.campo, "message": "sin dato"})
 
         for field in ("tiempo_minutos", "tiempo_minutos_max", "porciones"):
             if not _es_entero_valido(r[field]):
@@ -165,7 +170,7 @@ def construir_json(records: list[dict], warnings: list[dict]) -> dict:
     """Asume que validar() no encontró ERRORs — solo se llama en ese caso."""
     recetas = []
     for r in sorted(records, key=lambda r: r["id"]):
-        recetas.append({
+        receta = {
             "id": r["id"],
             "titulo": r["titulo"],
             "categorias": sorted(r["categorias"]),
@@ -176,9 +181,11 @@ def construir_json(records: list[dict], warnings: list[dict]) -> dict:
             "foto": f"images/{r['foto']}" if r["foto"] else None,
             "fecha_actualizacion": r["fecha_actualizacion"],
             "fuente": r["fuente"],
-            "tipo_bebida": r["tipo_bebida"],
             "body_html": render_body_html(r["body"]),
-        })
+        }
+        for campo in schema.SUBFILTRO_CAMPOS:
+            receta[campo] = r[campo]
+        recetas.append(receta)
     return {
         "meta": {
             "schema_version": schema.SCHEMA_VERSION,
