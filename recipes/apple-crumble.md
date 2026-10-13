@@ -2,6 +2,7 @@
 titulo: "Apple crumble"
 categorias: ["postre"]
 tiempo_minutos: 60
+foto: "apple-crumble/cover.jpg"
 fuente: "https://www.youtube.com/watch?v=KwIRgwd52Ic&t=147s"
 fecha_actualizacion: "2026-09-13"
 ---

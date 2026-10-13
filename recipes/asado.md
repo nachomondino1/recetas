@@ -5,6 +5,7 @@ dificultad: "baja"
 tiempo_minutos: 180
 porciones: 3
 fecha_actualizacion: "2026-07-05"
+foto: "asado/cover.jpg"
 fuente: "Recetas.docx — Comidas Saladas"
 ---
 ## Materiales

@@ -1,6 +1,7 @@
 ---
 titulo: "Budín de chocolate"
 categorias: ["merienda"]
+foto: "budin-de-chocolate/cover.jpg"
 fuente: "https://cookpad.com/uy/recetas/11255242"
 fecha_actualizacion: "2026-04-20"
 ---

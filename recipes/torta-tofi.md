@@ -1,6 +1,7 @@
 ---
 titulo: "Torta Tofi"
 categorias: ["postre"]
+foto: "torta-tofi/cover.jpg"
 fuente: "https://www.youtube.com/watch?v=RP58m9CNQ3Q"
 fecha_actualizacion: "2026-04-20"
 ---

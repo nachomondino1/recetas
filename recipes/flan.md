@@ -1,6 +1,7 @@
 ---
 titulo: "Flan"
 categorias: ["postre"]
+foto: "flan/cover.jpg"
 fuente: "https://www.paulinacocina.net/flan-casero-clasico/13997"
 fecha_actualizacion: "2026-07-05"
 ---

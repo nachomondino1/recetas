@@ -1,6 +1,7 @@
 ---
 titulo: "Torta de nuez"
 categorias: ["postre"]
+foto: "torta-de-nuez/cover.jpg"
 fuente: "https://luciapaula.com/es/torta-de-nuez-con-dulce-de-leche-y-crema-chantilly/"
 fecha_actualizacion: "2026-05-01"
 ---

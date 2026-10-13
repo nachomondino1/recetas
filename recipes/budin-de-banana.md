@@ -1,6 +1,7 @@
 ---
 titulo: "Budín de banana"
 categorias: ["merienda"]
+foto: "budin-de-banana/cover.jpg"
 fuente: "https://www.youtube.com/watch?v=7sKXzEynyKE"
 fecha_actualizacion: "2026-04-20"
 ---
