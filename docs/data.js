@@ -1,7 +1,7 @@
-{
+window.RECETAS_DATA = {
   "meta": {
     "schema_version": 1,
-    "generated_at": "2026-10-13T20:55:10+00:00",
+    "generated_at": "2026-10-13T21:12:33+00:00",
     "count": 5,
     "warnings": [
       {
@@ -108,4 +108,4 @@
       "body_html": "<h2>Ingredientes</h2>\n<p><em>(para 4 porciones)</em></p>\n<h3>Tortillas integrales con sésamo</h3>\n<ul>\n<li>Harina integral — 250 g</li>\n<li>Harina 0000 — 250 g</li>\n<li>Sésamo blanco — 2 cdas</li>\n<li>Sal — 10 g</li>\n<li>Manteca — 30 g</li>\n<li>Agua — 240 cc</li>\n</ul>\n<h3>Relleno</h3>\n<ul>\n<li>Carne — 500 gramos</li>\n<li>Cebolla — 2 unidades</li>\n<li>Morrón rojo — 1 unidad</li>\n<li>Morrón verde — 1 unidad</li>\n<li>Tomate — 2 unidades</li>\n<li>Calabaza — 1 bandeja</li>\n<li>Perejil fresco</li>\n<li>Vino blanco — ½ taza</li>\n<li>Mozzarella — c/n</li>\n</ul>\n<h2>Paso a paso</h2>\n<h3>Si hacés la masa casera</h3>\n<ol>\n<li>Mezclar las harinas con la sal. Agregar la manteca derretida con el agua. Amasar unos minutos hasta que esté lisa.</li>\n<li>Separar en bollitos grandes y dejar descansar.</li>\n<li>Estirar cada bollo hasta 25 cm de diámetro.</li>\n<li>Cocinar en la sartén, vuelta y vuelta.</li>\n</ol>\n<h3>Relleno (empezar acá si no hacés masa casera)</h3>\n<ol>\n<li>Cortar la calabaza y hervirla en una olla.</li>\n<li>Cortar la cebolla y el morrón en tiras largas.</li>\n<li>En una olla, dorar la cebolla en juliana con el morrón; mientras tanto, cortar la carne en tiras largas y condimentarla con sal y pimienta.</li>\n<li>En la misma olla, dorar las pechugas de pollo 🍗 cortadas en tiras largas, bien de cada lado, y retirar del fuego. Opcional: desglasar con vino blanco, cerveza o mostaza.</li>\n<li>Agregar los tomates y la calabaza cortados en tiras. Cocinar unos minutos más.</li>\n<li>Agregar mozzarella rallada 🧀 a último momento y perejil picado. Servir dentro de las tortillas integrales con sésamo.</li>\n</ol>\n<p>¡Que las disfrutes! 🌮✨</p>"
     }
   ]
-}
+};

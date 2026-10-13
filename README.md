@@ -16,7 +16,7 @@ Sitio estático de recetas familiares: cards con foto, tiempo y dificultad, filt
 
 ```
 make setup   # crea el venv e instala dependencias (una sola vez)
-make update  # regenera site/recetas.json y site/data.js desde recipes/
+make update  # regenera docs/recetas.json y docs/data.js desde recipes/
 make test    # corre los tests de validación
 make open    # abre el sitio en el navegador
 make clean   # borra el venv y lo generado
@@ -24,6 +24,6 @@ make clean   # borra el venv y lo generado
 
 ## Si el export corta con un ERROR
 
-Significa que algún archivo en `recipes/` tiene un dato roto (falta `titulo`, `categorias` vacía, un valor fuera del enum, etc.). El mensaje dice el archivo y el campo. No se escribe nada nuevo — lo publicado en `site/` queda como estaba hasta corregir la fuente.
+Significa que algún archivo en `recipes/` tiene un dato roto (falta `titulo`, `categorias` vacía, un valor fuera del enum, etc.). El mensaje dice el archivo y el campo. No se escribe nada nuevo — lo publicado en `docs/` queda como estaba hasta corregir la fuente.
 
 Ver `DECISIONS.md` para el porqué de las decisiones de arquitectura, y `src/schema.py` para el contrato completo de campos.

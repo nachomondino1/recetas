@@ -2,7 +2,7 @@
 
 help:
 	@echo "setup  - crea el venv e instala dependencias"
-	@echo "update - regenera site/recetas.json y site/data.js a partir de recipes/"
+	@echo "update - regenera docs/recetas.json y docs/data.js a partir de recipes/"
 	@echo "test   - corre los tests (el mismo comando que el CI, si lo hay)"
 	@echo "open   - abre el sitio en el navegador"
 	@echo "clean  - borra el venv y lo generado"
@@ -18,7 +18,7 @@ test:
 	.venv/bin/python -m pytest tests/ -v
 
 open:
-	open site/index.html
+	open docs/index.html
 
 clean:
-	rm -rf .venv site/recetas.json site/data.js site/images
+	rm -rf .venv docs/recetas.json docs/data.js docs/images

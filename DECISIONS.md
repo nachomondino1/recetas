@@ -8,7 +8,7 @@
 
 **El `.docx` original no se commitea al repo.** Es un binario que deja de ser la fuente de verdad una vez migradas las 5 recetas; vive en `Downloads`. Los `.md` en `recipes/` son la única fuente de verdad desde ahora.
 
-**Carga de datos en el front: `site/data.js` embebido, no `fetch`.** El usuario abre `index.html` como `file://` para revisar antes de commitear, y `fetch` de un JSON local rompe por CORS en ese esquema. `site/recetas.json` se genera igual, como contrato formal para tests/diffs, pero el sitio no lo usa en runtime.
+**Carga de datos en el front: `docs/data.js` embebido, no `fetch`.** El usuario abre `index.html` como `file://` para revisar antes de commitear, y `fetch` de un JSON local rompe por CORS en ese esquema. `docs/recetas.json` se genera igual, como contrato formal para tests/diffs, pero el sitio no lo usa en runtime.
 
 **Enums iniciales** (`src/schema.py`): `categorias = {almuerzo, cena, merienda, postre}`, `dificultad = {baja, media, alta}`. Se incluyeron merienda/postre aunque hoy no haya ninguna receta así, porque el usuario espera agregarlas pronto — es un `set`, extenderlo es una línea.
 
@@ -20,4 +20,10 @@
 - *Pastel de papa*, *Tacos* y *Papas al horno* no traían `Tiempo`/`Dificultad` en el doc original. Los valores que quedaron en sus `.md` (90/media, 60/media, 75/baja) son estimaciones del usuario, no del doc.
 - Las 5 recetas migradas se etiquetaron `categorias: [almuerzo, cena]` por default (el doc no tenía un campo de categoría); ajustar si alguna no aplica.
 
-**Alcance v1:** sin CI ni deploy a GitHub Pages todavía. El flujo es local: `make update` regenera `site/recetas.json`/`data.js`, y `make open` lo muestra en el navegador antes de commitear. El deploy queda para un paso posterior.
+**Alcance v1:** sin CI todavía. El flujo es local: `make update` regenera `docs/recetas.json`/`data.js`, y `make open` lo muestra en el navegador antes de commitear.
+
+## 2026-10-13 — Deploy a GitHub Pages: carpeta `docs/`, modo simple sin CI
+
+**Problema:** GitHub Pages estaba configurado con fuente `main` / `/` (root), así que servía `README.md` en vez del sitio — el sitio real vivía en `site/`, una carpeta que Pages (modo legacy) no puede apuntar a directamente (solo soporta `/` o `/docs`).
+
+**Decisión:** renombrar `site/` → `docs/` (sin tocar su contenido ni estructura) y apuntar GitHub Pages a `/docs` en la rama `main`. Sigue la decisión #3 del playbook de datos unificado (modo simple: artefacto versionado en `docs/`, sin Actions ni build en CI) — coherente con que este proyecto no tiene CI (ver arriba). `make update` + commit + push es el único paso de "deploy".
