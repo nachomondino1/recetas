@@ -3,6 +3,7 @@ titulo: "Papas al horno"
 categorias: ["almuerzo", "cena"]
 dificultad: "baja"
 tiempo_minutos: 75
+foto: "papas-al-horno/cover.jpg"
 fuente: "Recetas.docx — Comidas Saladas"
 ---
 ## Ingredientes

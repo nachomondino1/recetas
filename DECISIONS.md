@@ -52,6 +52,22 @@
 
 **`docs/.nojekyll` obligatorio.** Sin ese archivo, GitHub Pages corre Jekyll sobre `docs/`: como `index.html` no tiene front matter YAML, Jekyll no lo reconoce como página y arma la home a partir del `README.md` de la raíz del repo (y no copia `style.css`/`app.js` tal cual, por eso daban 404). `.nojekyll` desactiva ese pipeline y sirve `docs/` como estático plano.
 
+## 2026-10-13 — Extraer las fotos que ya están embebidas en el Doc
+
+**Problema:** `fetch_covers.py` solo cubre recetas con un link externo (`fuente`) a YouTube o a una página con `og:image`. La mayoría de las recetas no tiene ese link — tiene fotos propias, sacadas por el usuario con el celular e insertadas directo en el texto del Doc. Esas fotos no se podían usar en el sitio sin que el usuario las subiera a mano una por una.
+
+**Decisión:** nuevo script `src/extract_doc_images.py` que baja esas fotos directamente del JSON de la Docs API (mismo `doc_json` que ya usa `doc_sync.py`, el mismo `read_doc`). Dos formas de anclaje encontradas en el doc real, resueltas ambas vía `contentUri` (URL firmada de Google, vence en minutos — por eso parseo y descarga van en la misma corrida):
+- `inlineObjectElement` (fotos "en línea" dentro de un párrafo) → `documentTab["inlineObjects"]`.
+- `positionedObjectIds` (fotos "flotantes", frecuentes cuando se pegan desde el celular) → `documentTab["positionedObjects"]`.
+
+Ambos diccionarios viven adentro de cada `documentTab`, no en la raíz del JSON (la hipótesis inicial asumía la raíz). La pestaña "Comidas Saladas" no tenía ningún `inlineObjects` pero sí 22 `positionedObjects` — si el script solo hubiera mirado el primer tipo, se habrían perdido todas esas fotos en silencio.
+
+El script agrupa las fotos por receta reusando el mismo criterio que `_agrupar_recetas` (todo lo que cuelga de un `HEADING_2` hasta el próximo) y las baja **todas, numeradas**, a `images/<slug>/doc-NN.jpg` — nunca pisa un `cover.jpg` ya curado, y nunca elige automáticamente cuál es "la" foto de portada: esa curación visual la hace un humano/Claude después (ver Arquetipo C del `DATA_FLOW_PLAYBOOK_unificado.md`, mismo principio que la imagen derivada de un link externo).
+
+**Primera corrida (2026-10-13):** 73 fotos bajadas, 12 recetas con al menos una. 4 títulos del Doc no matchearon ningún slug de `recipes/*.md` tal cual (p. ej. `"🍋Limón"` en vez de `budin-de-limon`, porque esos sabores son `HEADING_2` hijos de un `HEADING_1` agrupador como "Budines" que no abre receta nueva) — se reconciliaron a mano moviendo las fotos a la carpeta correcta; una (`"Dulces"`, 1 foto) quedó sin reconciliar porque corresponde a una de las variantes de cookies que el Doc todavía tiene incompletas (sin Ingredientes/Paso a paso) y por lo tanto no tiene receta publicada en `recipes/`.
+
+**Pendiente:** elegir a mano, de las fotos bajadas en `images/<slug>/doc-NN.jpg`, cuál va en el frontmatter `foto` de cada receta que todavía no tiene portada.
+
 ## 2026-10-13 — Fotos de portada: desde la fuente enlazada, no inventadas
 
 **Problema:** de las 26 recetas, solo *Guiso con lentejas* tenía `foto` propia. El resto no tiene fotos curadas del plato terminado (ver migraciones anteriores arriba), pero sí tienen `fuente` (YouTube, blogs de recetas) con una imagen identificable del plato.
@@ -71,3 +87,15 @@
 **Decisión:** el emoji se agrega en `docs/app.js` (`EMOJI_SECCIONES`), no en los `.md` de `recipes/`. Es una tabla de reglas `[regex sobre texto normalizado, emoji]` que se evalúa cuando se arma cada `<details>` de sección (`agruparSecciones`), antepuesto al `<h2>` antes de que el índice ("En esta receta") lo lea — así el emoji aparece también ahí. Mapeo actual: Ingredientes 🥕, Paso a paso 👩‍🍳, Materiales 🧰, "¿Dónde comprarlo?" 🛒, "¿Dónde NO comprarlo?" 🚫 (la regla de "NO" va primero para no perderla contra la de "comprarlo"). Encabezados que no matchean ninguna regla (ej. *Partes del lemon pie*) quedan sin emoji — no se fuerza uno arbitrario en un título puntual de una sola receta.
 
 **Por qué en el render y no en los `.md`:** hacerlo a mano en cada archivo es frágil (25+ recetas, variantes como "Ingredientes (versión a probar, más rica)") y el Doc en vivo sigue siendo la fuente — si se migra contenido nuevo desde ahí, el emoji se aplicaría solo si alguien se acuerda de agregarlo a mano. Centralizarlo en una tabla del render lo hace automático y consistente para toda receta presente y futura, sin tocar la fuente de contenido. No pisa los emojis que el usuario ya puso a mano en pasos individuales (`### 🔥 P1) ...` en *Asado*): esos son `<h3>`, la regla nueva solo mira `<h2>`.
+
+## 2026-10-13 — Las últimas 11 fotos: fotos del Doc ya extraídas + búsqueda web genérica
+
+**Problema:** después de `fetch_covers.py` (fuente enlazada) y `extract_doc_images.py` (fotos embebidas en el Doc), quedaban 11 recetas sin `foto`: 2 con fotos del Doc ya bajadas pero sin curar (`budin-de-manzana`, `turron-de-quaker`, ver corrida de `extract_doc_images.py` arriba) y 9 sin ninguna imagen propia disponible por ningún método anterior (`chocolinas`, `galletitas-saladas`, los 4 `jugo-*`, `papas-al-horno`, `pastel-de-papa`, `tacos`). El usuario pidió explícitamente "buscá imágenes donde sea" para estas últimas.
+
+**Decisión — las 2 con foto del Doc:** se revisaron a mano los `doc-NN.jpg` ya bajados y se eligió la mejor como `cover.jpg` (mismo criterio manual que *Asado*, sin script nuevo): *Budín de manzana* → `doc-01.jpg` (el budín horneado entero, dorado, recién salido del horno — las otras 6 fotos eran la fuente vacía o las manzanas crudas sin hornear). *Turrón de quaker* → `doc-01.jpg` (única foto disponible: el postre a medio armar, capas de galletitas y mezcla de cacao en la fuente de vidrio — no hay foto del postre terminado/cortado en el Doc, pero es identificable).
+
+**Decisión — las 9 sin ninguna fuente propia:** cuando ni el Doc ni un link propio tienen una imagen, se usa una foto genérica de internet que representa el plato (no la receta específica del usuario, una foto de stock/blog de ese tipo de comida) — es la opción menos mala frente a dejarlas con el emoji placeholder, mientras quede claro que no es "la" foto de la receta real. Método: búsqueda de imágenes en Bing (Google Images pide CAPTCHA a tráfico automatizado — no se intenta resolver, ver regla de seguridad), clic en el resultado visualmente correcto para abrir el panel de detalle, extracción de la URL real de la imagen con `decodeURIComponent(location.href).match(/mediaurl=([^&]+)/)[1]` (evita servir el thumbnail recortado/letterboxed de `th.bing.com`), descarga directa de esa URL. Revisión visual de cada imagen antes de aceptarla (mismo principio que `torta-de-nuez` en la decisión anterior) — en ningún caso se aceptó el primer resultado sin mirarlo.
+
+**Búsquedas usadas (texto exacto, elegido a partir de los ingredientes/pasos de cada receta, no del título solo):** `torta chocolinas dulce de leche`, `galletitas de harina de lino y avena saladas caseras`, `jugo de naranja y zanahoria casero vaso`, `jugo detox apio pepino manzana verde menta vaso`, `jugo de zanahoria manzana verde y jengibre vaso`, `jugo de naranja ananá y limón antioxidante vaso`, `papas al horno doradas fuente`, `pastel de papa con carne casero fuente`, `tacos caseros tortilla integral con carne`.
+
+**No se integra a ningún script.** Es manual y puntual por naturaleza (cada imagen se elige con criterio visual humano, no hay regla determinística "buscar X para la receta Y"); si se agregan recetas nuevas sin fuente propia en el futuro, se repite el proceso a mano.

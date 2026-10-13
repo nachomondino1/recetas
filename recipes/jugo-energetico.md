@@ -1,6 +1,7 @@
 ---
 titulo: "El Energético"
 categorias: ["jugos"]
+foto: "jugo-energetico/cover.jpg"
 fuente: "Gemini"
 fecha_actualizacion: "2026-08-30"
 ---

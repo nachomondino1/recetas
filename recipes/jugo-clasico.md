@@ -1,6 +1,7 @@
 ---
 titulo: "El Clásico"
 categorias: ["jugos"]
+foto: "jugo-clasico/cover.jpg"
 fuente: "Gemini"
 fecha_actualizacion: "2026-08-30"
 ---

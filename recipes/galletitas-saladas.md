@@ -1,6 +1,7 @@
 ---
 titulo: "Galletitas saladas"
 categorias: ["merienda"]
+foto: "galletitas-saladas/cover.jpg"
 fuente: "https://www.instagram.com/p/CNNUl1_g9yC"
 fecha_actualizacion: "2026-10-05"
 ---

@@ -1,7 +1,7 @@
 window.RECETAS_DATA = {
   "meta": {
     "schema_version": 1,
-    "generated_at": "2026-10-13T21:52:53+00:00",
+    "generated_at": "2026-10-13T22:09:58+00:00",
     "count": 26,
     "warnings": [
       {
@@ -50,11 +50,6 @@ window.RECETAS_DATA = {
         "message": "sin dato"
       },
       {
-        "recipe": "budin-de-manzana",
-        "field": "foto",
-        "message": "sin foto de portada"
-      },
-      {
         "recipe": "budin-de-naranja",
         "field": "dificultad",
         "message": "sin dato"
@@ -73,11 +68,6 @@ window.RECETAS_DATA = {
         "recipe": "chocolinas",
         "field": "tiempo_minutos",
         "message": "sin dato"
-      },
-      {
-        "recipe": "chocolinas",
-        "field": "foto",
-        "message": "sin foto de portada"
       },
       {
         "recipe": "flan",
@@ -100,11 +90,6 @@ window.RECETAS_DATA = {
         "message": "sin dato"
       },
       {
-        "recipe": "galletitas-saladas",
-        "field": "foto",
-        "message": "sin foto de portada"
-      },
-      {
         "recipe": "jugo-clasico",
         "field": "dificultad",
         "message": "sin dato"
@@ -113,11 +98,6 @@ window.RECETAS_DATA = {
         "recipe": "jugo-clasico",
         "field": "tiempo_minutos",
         "message": "sin dato"
-      },
-      {
-        "recipe": "jugo-clasico",
-        "field": "foto",
-        "message": "sin foto de portada"
       },
       {
         "recipe": "jugo-detox-digestivo",
@@ -130,11 +110,6 @@ window.RECETAS_DATA = {
         "message": "sin dato"
       },
       {
-        "recipe": "jugo-detox-digestivo",
-        "field": "foto",
-        "message": "sin foto de portada"
-      },
-      {
         "recipe": "jugo-energetico",
         "field": "dificultad",
         "message": "sin dato"
@@ -145,11 +120,6 @@ window.RECETAS_DATA = {
         "message": "sin dato"
       },
       {
-        "recipe": "jugo-energetico",
-        "field": "foto",
-        "message": "sin foto de portada"
-      },
-      {
         "recipe": "jugo-inmunologico",
         "field": "dificultad",
         "message": "sin dato"
@@ -158,11 +128,6 @@ window.RECETAS_DATA = {
         "recipe": "jugo-inmunologico",
         "field": "tiempo_minutos",
         "message": "sin dato"
-      },
-      {
-        "recipe": "jugo-inmunologico",
-        "field": "foto",
-        "message": "sin foto de portada"
       },
       {
         "recipe": "lemon-pie",
@@ -205,21 +170,6 @@ window.RECETAS_DATA = {
         "message": "sin dato"
       },
       {
-        "recipe": "papas-al-horno",
-        "field": "foto",
-        "message": "sin foto de portada"
-      },
-      {
-        "recipe": "pastel-de-papa",
-        "field": "foto",
-        "message": "sin foto de portada"
-      },
-      {
-        "recipe": "tacos",
-        "field": "foto",
-        "message": "sin foto de portada"
-      },
-      {
         "recipe": "tarta-de-frutillas",
         "field": "dificultad",
         "message": "sin dato"
@@ -258,11 +208,6 @@ window.RECETAS_DATA = {
         "recipe": "turron-de-quaker",
         "field": "tiempo_minutos",
         "message": "sin dato"
-      },
-      {
-        "recipe": "turron-de-quaker",
-        "field": "foto",
-        "message": "sin foto de portada"
       }
     ]
   },
@@ -353,7 +298,7 @@ window.RECETAS_DATA = {
       "tiempo_minutos": null,
       "tiempo_minutos_max": null,
       "porciones": null,
-      "foto": null,
+      "foto": "images/budin-de-manzana/cover.jpg",
       "fecha_actualizacion": "2026-05-09",
       "fuente": null,
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Huevos — 3</li>\n<li>Azúcar — 3/4 taza (la receta original usa 1 taza)</li>\n<li>Aceite neutro — 3/4 taza (la receta original usa 1 taza)</li>\n<li>Ralladura de limón</li>\n<li>Harina — 3 × 3/4 de taza</li>\n<li>Azúcar para espolvorear el molde</li>\n<li>Manzanas — 3</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Precalentar el horno.</li>\n<li>Mezclar el huevo con el azúcar y batir hasta que espume, agregando el azúcar de a poco mientras se bate.</li>\n<li>Cuando el huevo con azúcar esté espumoso, agregar el aceite sin dejar de batir hasta incorporar. Incorporar también la ralladura de limón y batir un par de minutos más.</li>\n<li>Agregar con espátula la harina hasta unir bien, sin grumos.</li>\n<li>Enmantecar el molde y, en lugar de enharinar, espolvorear con azúcar de la misma forma.</li>\n</ol>\n<blockquote>\n<p>ℹ️ Probar espolvoreando con azúcar impalpable en vez de común.</p>\n</blockquote>\n<ol start=\"6\">\n<li>Pelar la manzana, cortarla en cuartos y cada cuarto en láminas finas.</li>\n<li>Colocar debajo del molde varias láminas de manzana, cubriéndolo por completo.</li>\n<li>Colocar en el molde la mitad de la mezcla del budín, encima otra capa de láminas de manzana, y completar con el resto de la mezcla (se pueden poner más láminas por arriba).</li>\n<li>Llevar a horno a 180 °C unos 40 minutos o hasta que se vea dorado por arriba.</li>\n<li>Al desmoldar, dar vuelta para que las manzanas del fondo queden arriba.</li>\n</ol>"
@@ -383,7 +328,7 @@ window.RECETAS_DATA = {
       "tiempo_minutos": null,
       "tiempo_minutos_max": null,
       "porciones": null,
-      "foto": null,
+      "foto": "images/chocolinas/cover.jpg",
       "fecha_actualizacion": "2026-05-02",
       "fuente": null,
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Crema de leche — 200 g</li>\n<li>Dulce de leche — 400 g</li>\n<li>Cacao amargo — 3 cucharadas</li>\n<li>Chocolate amargo — 1 barra</li>\n<li>Galletitas chocolina</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Mezclar el dulce de leche con la crema.</li>\n<li>Agregar el cacao.</li>\n<li>Agarrar una fuente de vidrio.</li>\n<li>Colocar la primera capa de galletitas chocolinas.</li>\n<li>Colocar la mezcla de crema y dulce de leche.</li>\n<li>Otra capa de chocolinas, en dirección opuesta a la anterior (a 90 grados).</li>\n<li>Continuar así hasta terminar la mezcla.</li>\n<li>Rallar chocolate arriba para decorar.</li>\n<li>Poner en el freezer.</li>\n</ol>"
@@ -413,7 +358,7 @@ window.RECETAS_DATA = {
       "tiempo_minutos": null,
       "tiempo_minutos_max": null,
       "porciones": null,
-      "foto": null,
+      "foto": "images/galletitas-saladas/cover.jpg",
       "fecha_actualizacion": "2026-10-05",
       "fuente": "https://www.instagram.com/p/CNNUl1_g9yC",
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Harina de lino — 1 taza</li>\n<li>Harina de avena — 1 taza</li>\n<li>Sal, al ras — 1 cdita</li>\n<li>Orégano — 2 cucharadas</li>\n<li>Pimienta, 1 pizca</li>\n<li>Aceite de oliva — 2 cdas</li>\n<li>Agua, aproximadamente — 1/2 taza</li>\n<li>Semillas de sésamo, lino o chía</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Mezclar las 2 tazas de harina.</li>\n<li>Agregar la sal, el orégano y la pimienta.</li>\n<li>Mezclar bien y, en el centro, incorporar el aceite de oliva y el agua de a poco hasta obtener la masa.</li>\n<li>Dejar descansar la masa 15 a 20 minutos.</li>\n<li>Estirarla, agregar semillas de sésamo, lino o chía y seguir estirando para que se adhieran bien.</li>\n<li>Cortar en tiritas, colocar en placa aceitada y cocinar unos 10 minutos de cada lado.</li>\n</ol>"
@@ -444,7 +389,7 @@ window.RECETAS_DATA = {
       "tiempo_minutos": null,
       "tiempo_minutos_max": null,
       "porciones": null,
-      "foto": null,
+      "foto": "images/jugo-clasico/cover.jpg",
       "fecha_actualizacion": "2026-08-30",
       "fuente": "Gemini",
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Naranjas (peladas y sin semillas grandes) — 3</li>\n<li>Zanahorias medianas — 2 o 3</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Pelar las zanahorias.</li>\n<li>Pelar las naranjas, cortarlas a la mitad y sacarles las semillas.</li>\n<li>Encender la juguera a velocidad alta.</li>\n<li>Introducir las zanahorias y naranjas enteras.</li>\n<li>Recolectar todo el líquido resultante y disfrutar.</li>\n</ol>"
@@ -459,7 +404,7 @@ window.RECETAS_DATA = {
       "tiempo_minutos": null,
       "tiempo_minutos_max": null,
       "porciones": null,
-      "foto": null,
+      "foto": "images/jugo-detox-digestivo/cover.jpg",
       "fecha_actualizacion": "2026-08-30",
       "fuente": "Gemini",
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Tallos de apio — 2</li>\n<li>Pepino entero — 1</li>\n<li>Manzana verde — 1</li>\n<li>Hojitas de menta fresca, unas pocas</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Lavar bien los tallos de apio, el pepino, la manzana verde y las hojas de menta.</li>\n<li>Cortar la manzana en trozos y quitarle las semillas; trozar el pepino y el apio para facilitar el paso por la máquina.</li>\n<li>Encender la juguera.</li>\n<li>Introducir los ingredientes alternando los vegetales de alta hidratación (como el pepino y el apio) con la manzana y las hojas de menta.</li>\n<li>Obtener el jugo y mezclar levemente antes de consumir.</li>\n</ol>"
@@ -474,7 +419,7 @@ window.RECETAS_DATA = {
       "tiempo_minutos": null,
       "tiempo_minutos_max": null,
       "porciones": null,
-      "foto": null,
+      "foto": "images/jugo-energetico/cover.jpg",
       "fecha_actualizacion": "2026-08-30",
       "fuente": "Gemini",
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Zanahorias — 2</li>\n<li>Manzana verde (con cáscara, sin semillas) — 1</li>\n<li>Jengibre fresco, un trocito pequeño</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Lavar y pelar las zanahorias, y lavar la manzana verde.</li>\n<li>Cortar todos los ingredientes en trozos que entren cómodamente por el tubo de la juguera.</li>\n<li>Encender la juguera.</li>\n<li>Introducir los ingredientes alternándolos (por ejemplo, un trozo de zanahoria, luego manzana y un pedacito de jengibre) para que el filtro trabaje de manera uniforme.</li>\n<li>Recoger el jugo puro en un recipiente y servir inmediatamente, o preparar para conservar.</li>\n</ol>"
@@ -489,7 +434,7 @@ window.RECETAS_DATA = {
       "tiempo_minutos": null,
       "tiempo_minutos_max": null,
       "porciones": null,
-      "foto": null,
+      "foto": "images/jugo-inmunologico/cover.jpg",
       "fecha_actualizacion": "2026-08-30",
       "fuente": "Gemini",
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Naranjas peladas — 2</li>\n<li>Ananá (piña), 1 rodaja gruesa</li>\n<li>Limón pelado — 1/2</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Pelar las naranjas y el medio limón, retirando las semillas grandes.</li>\n<li>Cortar el ananá en rodajas o trozos adecuados para el tubo de la máquina.</li>\n<li>Encender la juguera.</li>\n<li>Introducir los gajos de naranja, los trozos de ananá y el limón de forma alternada.</li>\n<li>Extraer el jugo por completo y servir.</li>\n</ol>"
@@ -565,7 +510,7 @@ window.RECETAS_DATA = {
       "tiempo_minutos": 75,
       "tiempo_minutos_max": null,
       "porciones": null,
-      "foto": null,
+      "foto": "images/papas-al-horno/cover.jpg",
       "fecha_actualizacion": null,
       "fuente": "Recetas.docx — Comidas Saladas",
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Papas</li>\n<li>Aceite normal (nunca de oliva)</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Cortar las papas en forma de líneas, como las de McDonald's —ni muy finas (quedan demasiado crocantes y sin relleno) ni muy gordas.</li>\n<li>Poner aceite en la bandeja y mover la bandeja de lado a lado para que cubra toda la superficie.</li>\n<li>Calentar la bandeja con el aceite en el horno, buscando que el aceite esté bien caliente antes de que toque las papas (así las dora).</li>\n</ol>\n<blockquote>\n<p>ℹ️ Podés poner una papa mini en la bandeja para ver qué tan caliente está el aceite.</p>\n</blockquote>\n<ol start=\"4\">\n<li>Una vez que el aceite está bien caliente, poner las papas ya cortadas y mezclar para que toda la superficie quede con aceite.</li>\n<li>Ordenar las papas ocupando toda la superficie de la bandeja, sin encimarlas.</li>\n<li>Volver a poner la bandeja en el horno. A los 10 minutos, despegar las papas de la bandeja porque se pegan.</li>\n</ol>\n<blockquote>\n<p>ℹ️ Si se pegan mucho, es porque falta aceite.</p>\n</blockquote>\n<ol start=\"7\">\n<li>A la hora, sacar la bandeja del horno y salar las papas.</li>\n</ol>\n<p>¡Y listo!</p>"
@@ -581,7 +526,7 @@ window.RECETAS_DATA = {
       "tiempo_minutos": 90,
       "tiempo_minutos_max": null,
       "porciones": null,
-      "foto": null,
+      "foto": "images/pastel-de-papa/cover.jpg",
       "fecha_actualizacion": null,
       "fuente": "Recetas.docx — Comidas Saladas",
       "body_html": "<h2>Ingredientes</h2>\n<h3>Relleno</h3>\n<ul>\n<li>Calabacín — 1</li>\n<li>Papas — a gusto</li>\n<li>Cebolla — 2 o 3</li>\n<li>Carne picada — 1,2 kg</li>\n<li>Morrón — 1</li>\n</ul>\n<h3>Masa</h3>\n<ul>\n<li>Agua</li>\n<li>Aceite</li>\n<li>Harina</li>\n<li>Sal</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li><strong>Cebolla, morrón y carne</strong>: reahogar la cebolla y el morrón, y agregar la carne picada.</li>\n<li><strong>Masa</strong>: preparar una masa casera y ponerla en el horno.</li>\n<li><strong>Puré de verduras</strong>: cortar la calabaza y la papa, hervirlas, pisarlas y agregarles leche y queso.</li>\n<li><strong>Armar las capas</strong>: calabaza, queso, carne, calabaza y queso.</li>\n</ol>"
@@ -597,7 +542,7 @@ window.RECETAS_DATA = {
       "tiempo_minutos": 60,
       "tiempo_minutos_max": null,
       "porciones": 4,
-      "foto": null,
+      "foto": "images/tacos/cover.jpg",
       "fecha_actualizacion": null,
       "fuente": "Recetas.docx — Comidas Saladas",
       "body_html": "<h2>Ingredientes</h2>\n<p><em>(para 4 porciones)</em></p>\n<h3>Tortillas integrales con sésamo</h3>\n<ul>\n<li>Harina integral — 250 g</li>\n<li>Harina 0000 — 250 g</li>\n<li>Sésamo blanco — 2 cdas</li>\n<li>Sal — 10 g</li>\n<li>Manteca — 30 g</li>\n<li>Agua — 240 cc</li>\n</ul>\n<h3>Relleno</h3>\n<ul>\n<li>Carne — 500 gramos</li>\n<li>Cebolla — 2 unidades</li>\n<li>Morrón rojo — 1 unidad</li>\n<li>Morrón verde — 1 unidad</li>\n<li>Tomate — 2 unidades</li>\n<li>Calabaza — 1 bandeja</li>\n<li>Perejil fresco</li>\n<li>Vino blanco — ½ taza</li>\n<li>Mozzarella — c/n</li>\n</ul>\n<h2>Paso a paso</h2>\n<h3>Si hacés la masa casera</h3>\n<ol>\n<li>Mezclar las harinas con la sal. Agregar la manteca derretida con el agua. Amasar unos minutos hasta que esté lisa.</li>\n<li>Separar en bollitos grandes y dejar descansar.</li>\n<li>Estirar cada bollo hasta 25 cm de diámetro.</li>\n<li>Cocinar en la sartén, vuelta y vuelta.</li>\n</ol>\n<h3>Relleno (empezar acá si no hacés masa casera)</h3>\n<ol>\n<li>Cortar la calabaza y hervirla en una olla.</li>\n<li>Cortar la cebolla y el morrón en tiras largas.</li>\n<li>En una olla, dorar la cebolla en juliana con el morrón; mientras tanto, cortar la carne en tiras largas y condimentarla con sal y pimienta.</li>\n<li>En la misma olla, dorar las pechugas de pollo 🍗 cortadas en tiras largas, bien de cada lado, y retirar del fuego. Opcional: desglasar con vino blanco, cerveza o mostaza.</li>\n<li>Agregar los tomates y la calabaza cortados en tiras. Cocinar unos minutos más.</li>\n<li>Agregar mozzarella rallada 🧀 a último momento y perejil picado. Servir dentro de las tortillas integrales con sésamo.</li>\n</ol>\n<p>¡Que las disfrutes! 🌮✨</p>"
@@ -657,7 +602,7 @@ window.RECETAS_DATA = {
       "tiempo_minutos": null,
       "tiempo_minutos_max": null,
       "porciones": null,
-      "foto": null,
+      "foto": "images/turron-de-quaker/cover.jpg",
       "fecha_actualizacion": "2026-04-20",
       "fuente": "Marina Renna",
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Manteca — 200 g</li>\n<li>Azúcar — 1 taza</li>\n<li>Cacao amargo — 180 g</li>\n<li>Avena Quaker — 300 g</li>\n<li>Leche — 10 cdas</li>\n<li>Galletitas saladas Criollitas o Serranitas</li>\n<li>Dulce de leche — 2 cucharadas</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Derretir la manteca en una olla.</li>\n<li>Agregar el azúcar y el cacao.</li>\n<li>Agregar el quaker y las cucharadas de leche.</li>\n<li>Cuando apagues el fuego, agregar las 2 cucharadas de dulce de leche.</li>\n<li>Armar el turrón: una capa de galletitas y otra de la mezcla.</li>\n<li>Llevar a la heladera.</li>\n</ol>"

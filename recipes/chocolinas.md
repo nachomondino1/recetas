@@ -1,6 +1,7 @@
 ---
 titulo: "Chocolinas"
 categorias: ["postre"]
+foto: "chocolinas/cover.jpg"
 fecha_actualizacion: "2026-05-02"
 ---
 ## Ingredientes

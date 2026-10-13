@@ -4,6 +4,7 @@ categorias: ["almuerzo", "cena"]
 dificultad: "media"
 tiempo_minutos: 60
 porciones: 4
+foto: "tacos/cover.jpg"
 fuente: "Recetas.docx — Comidas Saladas"
 ---
 ## Ingredientes

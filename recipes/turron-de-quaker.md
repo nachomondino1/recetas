@@ -1,6 +1,7 @@
 ---
 titulo: "Turrón de quaker"
 categorias: ["postre"]
+foto: "turron-de-quaker/cover.jpg"
 fuente: "Marina Renna"
 fecha_actualizacion: "2026-04-20"
 ---
