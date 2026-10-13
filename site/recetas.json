@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "schema_version": 1,
+    "generated_at": "2026-10-13T20:55:10+00:00",
+    "count": 5,
+    "warnings": [
+      {
+        "recipe": "asado",
+        "field": "foto",
+        "message": "sin foto de portada"
+      },
+      {
+        "recipe": "papas-al-horno",
+        "field": "foto",
+        "message": "sin foto de portada"
+      },
+      {
+        "recipe": "pastel-de-papa",
+        "field": "foto",
+        "message": "sin foto de portada"
+      },
+      {
+        "recipe": "tacos",
+        "field": "foto",
+        "message": "sin foto de portada"
+      }
+    ]
+  },
+  "recetas": [
+    {
+      "id": "asado",
+      "titulo": "Asado",
+      "categorias": [
+        "almuerzo",
+        "cena"
+      ],
+      "dificultad": "baja",
+      "tiempo_minutos": 180,
+      "tiempo_minutos_max": null,
+      "porciones": 3,
+      "foto": null,
+      "fecha_actualizacion": "2026-07-05",
+      "fuente": "Recetas.docx — Comidas Saladas",
+      "body_html": "<h2>Materiales</h2>\n<ul>\n<li>Parrilla y pala.</li>\n<li>Cuchillo y tenedor de asador.</li>\n<li>2 bandejas: una para condimentar la carne y otra para servir la carne ya lista.</li>\n</ul>\n<h2>Ingredientes</h2>\n<ul>\n<li>Carne. El cálculo normal es 0,5 kg por persona. En lo personal, suelo hacer entre 5 y 6 kg por asado para 3 personas, tal que sobra en la semana hasta el viernes.</li>\n<li>Sal y pimienta.</li>\n<li>Carbón y leña.</li>\n<li>Ramas, papel, cartón, etc.</li>\n</ul>\n<h2>Paso a paso</h2>\n<h3>🧊 P0) Descongelar la carne</h3>\n<p>El día anterior, descongelar la carne. Sacarla unas 12 horas antes del freezer y ponerla en una bandeja.</p>\n<h3>🔥 P1) Arranco el fuego</h3>\n<p>Abajo cosas bien combustibles (ej. papel, diario, cartón, ramitas), arriba menos (ej. carbón, leña grande).</p>\n<ul>\n<li>Poner dos troncos grandes de cada lado para armar la base donde luego poner encima las ramas y demás, como un techito.</li>\n<li>Abajo de todo, armar un anillo de papel o cartón. En el centro, un papel o leña chica a la que se le va a poner el líquido combustible (rodear bien el centro con papel, sin mucha distancia al anillo).</li>\n<li>Hacer una segunda capa de ramitas formando un cuadrado hueco, para tener espacio en el centro y poder prender con el fósforo.</li>\n<li>Poner líquido combustible en el centro.</li>\n<li>Encender el líquido con un fósforo.</li>\n<li>Agregar ramitas pequeñas \"tapando\" el fuego para que prendan.</li>\n<li>Agregar pedazos de leña grandes.</li>\n<li>Arriba de las leñas, agregar pedazos grandes de carbón de manera estratégica. Buscamos que se prenda un poco el carbón para mantener el fuego.</li>\n<li>Con leña, armar un muro alrededor del carbón y dejar carbón preparado para los próximos refills.</li>\n</ul>\n<blockquote>\n<p>ℹ️ Aprendizajes: abajo de todo nunca poner carbón —todo papel, ramitas o similar—, porque si no el carbón que queda abajo no prende. Siempre usar ramas chiquitas para prender el fuego, si no se apaga: no alcanza con solo carbón o leña grande y papel. Poner el líquido combustible sobre un material muy combustible (una piña, una rama, papel), nunca sobre carbón directamente.</p>\n<p>⚠️ Ojo con quemar cartón cuando hay viento: puede dejar todo el cartón quemado sobre la carne. Mejor quemar papel.</p>\n</blockquote>\n<p><strong>¿Cuál es la relación kg de carbón y kg de carne?</strong></p>\n<ul>\n<li>100% carbón: la relación estándar es 1 kg de carbón por cada 1 kg de carne. Para cortes de cocción larga (vacío, costillar entero, tapa de asado a fuego lento), calcular entre 1,5 y 2 kg de carbón por kg de carne.</li>\n<li>80% carbón + 20% leña (la leña solo para dar sabor/ahumar) — la que generalmente hago: por cada 1 kg de carne, unos 0,8 kg de carbón y pedazos chicos o astillas de leña seca (preferentemente quebracho, espinillo o frutal; nunca pino).</li>\n<li>Leña como fuente principal de calor (mixto): reemplaza parte del carbón, pero rinde menos en peso (genera más llama y se consume más rápido). Proporción: 2 kg de leña por cada 1 kg de carbón reemplazado.</li>\n<li>100% leña: entre 2 y 3 kg de leña por cada 1 kg de carne, ya que buena parte del volumen se quema en forma de fuego y humo antes de convertirse en brasa útil.</li>\n</ul>\n<h3>🧂 P2) Condimentar la carne</h3>\n<p>Salar la carne con pimienta y sal (el chorizo y la morcilla no necesitan sal). Pimienta con el frasquito de tapa negra, vuelta y vuelta, como la sal.</p>\n<ul>\n<li>Carne gruesa = mucha sal.</li>\n<li>Carne fina = menos sal.</li>\n</ul>\n<h3>🍳 P3) Poner la carne en la parrilla</h3>\n<p>Posibles estrategias:</p>\n<ol>\n<li>La carne gruesa donde está más caliente —brasas gruesas, más cerca del fuego— y la más fina con brasas chicas y alejada del fuego.</li>\n<li>Lo grueso en el centro y lo fino a los costados. <strong>Elección actual: esta.</strong></li>\n</ol>\n<ul>\n<li>Siempre la grasa hacia abajo, para que se queme y caiga directo a la brasa sin pasar por la carne.</li>\n<li>El pollo: inicialmente con la piel y la grasa hacia abajo.</li>\n<li>Si la carne es una costilla, por ejemplo, el hueso va abajo primero.</li>\n</ul>\n<blockquote>\n<p>⚠️ Cada 15 minutos, despegar la piel y grasa del pollo de la parrilla porque se pega por el calor. Si se pega, después se separa la piel o se rompe por partes.</p>\n</blockquote>\n<p>Llevar la carne al costado de la parrilla y esperar a que el fuego esté listo. Lavar cuchillo y tenedor grande con detergente, junto con las cosas de plástico de la carne.</p>\n<p>En casa, la altura desde la parrilla hasta el suelo es de 4 dedos.</p>\n<h3>P4) Poner las brasas iniciales</h3>\n<p>El fuego está listo más o menos a la media hora (30 min) o más. Una vez que está bien rojo y prendido:</p>\n<ul>\n<li>Desarmar el fuego para obtener brasas.</li>\n<li>Distribuir las brasas debajo de la carne (el centro queda medio sin brasas porque está recontra caliente).</li>\n<li>Agregar carbón o leña al fuego.</li>\n</ul>\n<blockquote>\n<p>⚠️ Mucho cuidado: no dejar mucho tiempo el fuego desarmado porque se apaga. Garantizar que queden brasas suficientes para que el fuego continúe —tienen que estar bien naranjas.</p>\n</blockquote>\n<h3>↕️ P5) Ajustar la altura de la parrilla</h3>\n<p>Una vez puestas las brasas iniciales, bajar la parrilla para que queden 4 dedos entre esta y el suelo.</p>\n<h3>P6) Refills periódicos de brasas y carbón</h3>\n<p>La carne tiene que chillar (la grasa cae sobre la brasa y eso chilla). El próximo refill de brasas se pone más donde está la carne gruesa. Se puede dejar un poco de carbón al costado para después.</p>\n<blockquote>\n<p>⚠️ Si chilla mucho, chequear la parte de abajo de la carne: puede que el fuego esté muy cerca o fuerte y la esté quemando, formando una capa negra.</p>\n</blockquote>\n<h3>P7) Dar vuelta la carne</h3>\n<p>La morcilla se pone faltando 20/15 minutos para sacar la carne. Chequear regularmente que no se queme de abajo.</p>\n<p>Una buena señal de que hay que darla vuelta es cuando ya está bien cocida de un lado y estuvo un buen tiempo así. Generalmente está más tiempo del lado inicial que del final —depende el corte, pero puede ser una hora y 15 del lado inicial y 30/45 min del final.</p>\n<p>Si se quema abajo, levantar la parrilla o sacarle brasa, pero seguir cocinándolo de ese lado.</p>\n<h3>P8) Sacar del fuego la carne que ya está lista</h3>\n<p>Dejarla en una parte de la parrilla sin brasa, o encima de un pedazo de carne que aún le falte. Lo ideal es que no quede tan lejos de la brasa, porque se enfría.</p>\n<p><strong>¿Cómo saber si la carne está lista?</strong></p>\n<ul>\n<li>Vaca/cerdo: hacer un solo corte estratégico para separar un pedazo grande en dos y ver cómo está.</li>\n<li>Pollo: al no poder cortarlo para ver si está rojo (como con la vaca), conviene cocinar de más porque no puede quedar rojo.</li>\n</ul>\n<blockquote>\n<p>⚠️ Evitar hacer más de un corte a la carne, porque pierde el líquido y se seca.</p>\n</blockquote>\n<h3>✂️ P9) Cortar y servir</h3>\n<p>Cortar la carne y servir en bandeja. Disfrutar del asado.</p>\n<h3>🪥 P10) Limpiar</h3>\n<p>Limpiar la parrilla con cartón o papel de diario. Guardar los fósforos y demás.</p>"
+    },
+    {
+      "id": "guiso-con-lentejas",
+      "titulo": "Guiso con lentejas",
+      "categorias": [
+        "almuerzo",
+        "cena"
+      ],
+      "dificultad": "baja",
+      "tiempo_minutos": 120,
+      "tiempo_minutos_max": 180,
+      "porciones": 8,
+      "foto": "images/guiso-con-lentejas/guiso-listo.jpg",
+      "fecha_actualizacion": null,
+      "fuente": "Recetas.docx — Comidas Saladas",
+      "body_html": "<h2>Ingredientes</h2>\n<p><em>(para 8 porciones)</em></p>\n<h3>Legumbres</h3>\n<ul>\n<li>Lentejones o lentejas — 600 a 800 gramos</li>\n</ul>\n<h3>Carnes</h3>\n<ul>\n<li>Carne — 1,0 a 1,2 kg</li>\n<li>Longaniza o chorizo — 1 unidad chica</li>\n</ul>\n<h3>Verduras</h3>\n<ul>\n<li>Cebolla — 2 unidades</li>\n<li>Papa — 1 unidad</li>\n<li>Zanahoria — 2 unidades</li>\n<li>Morrón — ½ unidad</li>\n</ul>\n<h3>Caldos</h3>\n<ul>\n<li>Salsa de tomate — 300 a 400 cm³. No escatimar: que el guiso quede bien naranja.</li>\n<li>Caldo o agua — 1 litro</li>\n</ul>\n<h3>Condimentos</h3>\n<ul>\n<li>Sal</li>\n<li>Azúcar</li>\n<li>Pimienta</li>\n<li>Aceite</li>\n<li>Perejil</li>\n<li>Ajo</li>\n<li>Caldo Knorr</li>\n</ul>\n<h2>Materiales</h2>\n<ul>\n<li>Ollas: Olla 1 (la principal, donde queda el guiso) y Olla 2 (auxiliar, para reahogar chorizo/panceta).</li>\n<li>Hervidor, para calentar agua.</li>\n<li>Tablas para cortar verduras y carne.</li>\n<li>Cuchillos (uno para carne, uno para verduras).</li>\n<li>Recipientes para almacenar verduras cortadas.</li>\n<li>Tupper para agua y colador.</li>\n</ul>\n<h2>Paso a paso</h2>\n<h3>El día anterior</h3>\n<ul>\n<li>Poner las lentejas en agua (6 a 8 horas), salvo que vengan enlatadas. Llenar un tupper con la lenteja y agua.</li>\n<li>Sacar la carne del freezer y dejarla en la heladera (se descongela rápido, es solo 1 kilo).</li>\n</ul>\n<blockquote>\n<p>ℹ️ Si la querés tener cortada para el día del guiso, sacá la carne a la mañana del día anterior para que esté lista para cortar a la noche de ese mismo día.</p>\n</blockquote>\n<h3>El día del guiso</h3>\n<ol>\n<li>Colar la lenteja: volcar el tupper en el colador y lavarla un poco ahí.</li>\n<li>Preparar el caldo: poner agua a fuego entre mínimo y medio en el hervidor, condimentar con caldo Knorr y perejil, y una vez que hierve, apagar y dejar ahí.</li>\n<li>🔪 Cortar papa y zanahoria: lavar bien (no hace falta pelar la papa si se lava bien) y poner en el recipiente 1.</li>\n<li>🔪 Cortar cebolla y morrón: morrón en tiritas, cebolla pelada y cortada; poner ambos juntos en el recipiente 2.</li>\n<li>🔪 Cortar la carne en cuadraditos y sacarle la grasa.</li>\n</ol>\n<blockquote>\n<p>ℹ️ Cuanto más congelada está la carne, más fácil es cortarla.</p>\n</blockquote>\n<ol start=\"6\">\n<li>🚮 Poner cebolla, morrón y carne a reahogar en la OLLA 1: chorro de aceite, fuego fuerte al principio y después bajar. Opcional: sellar primero la carne, después la cebolla y al final el morrón (se deshace rápido).</li>\n</ol>\n<blockquote>\n<p>ℹ️ ¿Cómo dorar la carne? Ponerla en la olla con un chorrito de aceite y no tocarla hasta que empiece a hacer ruido de cocción; después moverla un poco, buscando que se dore por todos sus lados.</p>\n</blockquote>\n<ol start=\"7\">\n<li>🍳 Cocinar 20 a 30 minutos la carne y la cebolla. Condimentar con ajo, azúcar, pimienta y sal. Revolver cada tanto —cuanto más chilla, más hay que revolver— y agregar agua si falta o si chilla mucho.</li>\n</ol>\n<blockquote>\n<p>ℹ️ La carne se podría rehogar sola para que quede más dorada, pero tarda mucho más.</p>\n</blockquote>\n<ol start=\"8\">\n<li>🚮 Agregar papa y zanahoria cortadas a la OLLA 1, junto con el caldo del hervidor, hasta tapar la verdura.</li>\n<li>🍳 Cocinar 30 minutos a fuego alto.</li>\n</ol>\n<blockquote>\n<p>ℹ️ Revolver siempre para que no se pegue.</p>\n</blockquote>\n<ol start=\"10\">\n<li>🚮 Agregar la lenteja. Condimentar con ají molido —la última vez probamos con una cucharada sopera a ras (no explotada) y anduvo bien—, sal y pimienta.</li>\n<li>🍳 Cocinar 20 a 30 minutos a fuego medio.</li>\n</ol>\n<blockquote>\n<p>ℹ️ Hacer refill de agua para que todo quede siempre bajo agua.</p>\n</blockquote>\n<ol start=\"12\">\n<li>Mientras se cocina, preparar el chorizo: cortarlo en fetas o cuadraditos, reahogarlo en la OLLA 2 (sin aceite, el chorizo/panceta ya tiene grasa propia) hasta que esté crocante y apagar el fuego.</li>\n</ol>\n<blockquote>\n<p>ℹ️ No dejarlo mucho tiempo con el fuego apagado, porque la grasa se solidifica y se le vuelve a pegar al chorizo.</p>\n</blockquote>\n<ol start=\"13\">\n<li>🚮 Agregar la salsa de tomate y el chorizo a la OLLA 1 (pasar el chorizo con una espátula con agujeritos, para no llevar toda la grasa sobrante).</li>\n<li>🍳 Cocinar 20 a 30 minutos a fuego lento.</li>\n</ol>\n<blockquote>\n<p>ℹ️ Refill de agua para que todo quede siempre bajo agua.</p>\n</blockquote>\n<ol start=\"15\">\n<li>Apagar el fuego y comer.</li>\n</ol>\n<blockquote>\n<p>ℹ️ Si se deja reposar unas horas, el guiso agarra más sabor y queda mucho más sabroso.</p>\n</blockquote>\n<h3>Tips generales</h3>\n<ul>\n<li>Revolver siempre para que no se pegue.</li>\n<li>El fuego medio-alto o medio-bajo depende de la hornalla.</li>\n<li>No escatimar en condimentos —salen varias porciones, un guiso sin condimentar es insulso.</li>\n<li>La olla siempre tiene que estar cubierta de agua al ras de las lentejas; agregar el agua ya caliente, no fría.</li>\n</ul>\n<h3>Método alternativo (versión resumida, más antigua)</h3>\n<p>Una versión anterior y más corta de esta receta, que se conserva como referencia:</p>\n<ol>\n<li>Poner en agua las lentejas la noche anterior (6 a 8 horas).</li>\n<li>Preparar el caldo o calentar agua por separado.</li>\n<li>Cortar la cebolla y rehogar en aceite (15 a 20 minutos a fuego medio).</li>\n<li>Cortar la carne y agregarla a la cebolla rehogada (15 a 20 minutos a fuego medio).</li>\n<li>Cortar la papa, la zanahoria y el morrón, y agregarlos a la preparación.</li>\n<li>Agregar el caldo hasta tapar la verdura.</li>\n<li>Condimentar con sal, pimienta y ají molido.</li>\n<li>Cocinar 30 minutos a fuego alto.</li>\n<li>Agregar la lenteja (cocinar 20 a 30 minutos a fuego medio).</li>\n<li>Agregar la salsa de tomate y el chorizo (cocinar 20 a 30 minutos a fuego lento).</li>\n</ol>"
+    },
+    {
+      "id": "papas-al-horno",
+      "titulo": "Papas al horno",
+      "categorias": [
+        "almuerzo",
+        "cena"
+      ],
+      "dificultad": "baja",
+      "tiempo_minutos": 75,
+      "tiempo_minutos_max": null,
+      "porciones": null,
+      "foto": null,
+      "fecha_actualizacion": null,
+      "fuente": "Recetas.docx — Comidas Saladas",
+      "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Papas</li>\n<li>Aceite normal (nunca de oliva)</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Cortar las papas en forma de líneas, como las de McDonald's —ni muy finas (quedan demasiado crocantes y sin relleno) ni muy gordas.</li>\n<li>Poner aceite en la bandeja y mover la bandeja de lado a lado para que cubra toda la superficie.</li>\n<li>Calentar la bandeja con el aceite en el horno, buscando que el aceite esté bien caliente antes de que toque las papas (así las dora).</li>\n</ol>\n<blockquote>\n<p>ℹ️ Podés poner una papa mini en la bandeja para ver qué tan caliente está el aceite.</p>\n</blockquote>\n<ol start=\"4\">\n<li>Una vez que el aceite está bien caliente, poner las papas ya cortadas y mezclar para que toda la superficie quede con aceite.</li>\n<li>Ordenar las papas ocupando toda la superficie de la bandeja, sin encimarlas.</li>\n<li>Volver a poner la bandeja en el horno. A los 10 minutos, despegar las papas de la bandeja porque se pegan.</li>\n</ol>\n<blockquote>\n<p>ℹ️ Si se pegan mucho, es porque falta aceite.</p>\n</blockquote>\n<ol start=\"7\">\n<li>A la hora, sacar la bandeja del horno y salar las papas.</li>\n</ol>\n<p>¡Y listo!</p>"
+    },
+    {
+      "id": "pastel-de-papa",
+      "titulo": "Pastel de papa",
+      "categorias": [
+        "almuerzo",
+        "cena"
+      ],
+      "dificultad": "media",
+      "tiempo_minutos": 90,
+      "tiempo_minutos_max": null,
+      "porciones": null,
+      "foto": null,
+      "fecha_actualizacion": null,
+      "fuente": "Recetas.docx — Comidas Saladas",
+      "body_html": "<h2>Ingredientes</h2>\n<h3>Relleno</h3>\n<ul>\n<li>Calabacín — 1</li>\n<li>Papas — a gusto</li>\n<li>Cebolla — 2 o 3</li>\n<li>Carne picada — 1,2 kg</li>\n<li>Morrón — 1</li>\n</ul>\n<h3>Masa</h3>\n<ul>\n<li>Agua</li>\n<li>Aceite</li>\n<li>Harina</li>\n<li>Sal</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li><strong>Cebolla, morrón y carne</strong>: reahogar la cebolla y el morrón, y agregar la carne picada.</li>\n<li><strong>Masa</strong>: preparar una masa casera y ponerla en el horno.</li>\n<li><strong>Puré de verduras</strong>: cortar la calabaza y la papa, hervirlas, pisarlas y agregarles leche y queso.</li>\n<li><strong>Armar las capas</strong>: calabaza, queso, carne, calabaza y queso.</li>\n</ol>"
+    },
+    {
+      "id": "tacos",
+      "titulo": "Tacos",
+      "categorias": [
+        "almuerzo",
+        "cena"
+      ],
+      "dificultad": "media",
+      "tiempo_minutos": 60,
+      "tiempo_minutos_max": null,
+      "porciones": 4,
+      "foto": null,
+      "fecha_actualizacion": null,
+      "fuente": "Recetas.docx — Comidas Saladas",
+      "body_html": "<h2>Ingredientes</h2>\n<p><em>(para 4 porciones)</em></p>\n<h3>Tortillas integrales con sésamo</h3>\n<ul>\n<li>Harina integral — 250 g</li>\n<li>Harina 0000 — 250 g</li>\n<li>Sésamo blanco — 2 cdas</li>\n<li>Sal — 10 g</li>\n<li>Manteca — 30 g</li>\n<li>Agua — 240 cc</li>\n</ul>\n<h3>Relleno</h3>\n<ul>\n<li>Carne — 500 gramos</li>\n<li>Cebolla — 2 unidades</li>\n<li>Morrón rojo — 1 unidad</li>\n<li>Morrón verde — 1 unidad</li>\n<li>Tomate — 2 unidades</li>\n<li>Calabaza — 1 bandeja</li>\n<li>Perejil fresco</li>\n<li>Vino blanco — ½ taza</li>\n<li>Mozzarella — c/n</li>\n</ul>\n<h2>Paso a paso</h2>\n<h3>Si hacés la masa casera</h3>\n<ol>\n<li>Mezclar las harinas con la sal. Agregar la manteca derretida con el agua. Amasar unos minutos hasta que esté lisa.</li>\n<li>Separar en bollitos grandes y dejar descansar.</li>\n<li>Estirar cada bollo hasta 25 cm de diámetro.</li>\n<li>Cocinar en la sartén, vuelta y vuelta.</li>\n</ol>\n<h3>Relleno (empezar acá si no hacés masa casera)</h3>\n<ol>\n<li>Cortar la calabaza y hervirla en una olla.</li>\n<li>Cortar la cebolla y el morrón en tiras largas.</li>\n<li>En una olla, dorar la cebolla en juliana con el morrón; mientras tanto, cortar la carne en tiras largas y condimentarla con sal y pimienta.</li>\n<li>En la misma olla, dorar las pechugas de pollo 🍗 cortadas en tiras largas, bien de cada lado, y retirar del fuego. Opcional: desglasar con vino blanco, cerveza o mostaza.</li>\n<li>Agregar los tomates y la calabaza cortados en tiras. Cocinar unos minutos más.</li>\n<li>Agregar mozzarella rallada 🧀 a último momento y perejil picado. Servir dentro de las tortillas integrales con sésamo.</li>\n</ol>\n<p>¡Que las disfrutes! 🌮✨</p>"
+    }
+  ]
+}

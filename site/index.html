@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recetas</title>
+<meta name="description" content="Recetas de casa: foto, tiempo, dificultad y categoría de un vistazo, filtrables y ordenables.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%B2%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <h1 class="logo"><span class="logo-emoji" aria-hidden="true">🍲</span> Recetas</h1>
+  </div>
+</header>
+
+<main class="container">
+  <section id="vista-grid">
+    <div class="filtros-card">
+      <button class="filtros-toggle" id="filtros-toggle" type="button" aria-expanded="false" aria-controls="filtros-panel">
+        Filtros <span class="filtros-badge" id="filtros-badge" hidden>0</span>
+      </button>
+      <div class="filtros-panel" id="filtros-panel">
+        <div class="filtro-grupo">
+          <span class="filtro-label">Categoría</span>
+          <div class="chips" id="chips-categoria"></div>
+        </div>
+        <div class="filtro-grupo">
+          <span class="filtro-label">Dificultad</span>
+          <div class="chips" id="chips-dificultad"></div>
+        </div>
+        <div class="filtro-grupo filtro-orden">
+          <label class="filtro-label" for="orden-select">Ordenar por</label>
+          <select id="orden-select">
+            <option value="tiempo-asc">Tiempo: menor a mayor</option>
+            <option value="tiempo-desc">Tiempo: mayor a menor</option>
+            <option value="alfabetico">Alfabético</option>
+          </select>
+        </div>
+        <a href="#" id="limpiar-filtros" class="limpiar-filtros" hidden>Limpiar filtros</a>
+      </div>
+    </div>
+
+    <p class="resultado-count" id="resultado-count"></p>
+    <div class="grid" id="grid"></div>
+    <p class="estado-vacio" id="estado-vacio" hidden>No hay recetas que coincidan con estos filtros.</p>
+  </section>
+
+  <section id="vista-detalle" hidden>
+    <a href="#/" class="volver">← Volver</a>
+    <article id="detalle-contenido"></article>
+  </section>
+</main>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
