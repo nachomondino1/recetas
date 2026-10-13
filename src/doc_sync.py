@@ -19,11 +19,16 @@ sincronizar.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import sys
 import unicodedata
 from pathlib import Path
+
+import yaml
+
+FRONTMATTER_RE = re.compile(r"\A---\n(.*?)\n---\n?", re.DOTALL)
 
 TAB_CATEGORIAS: dict[str, list[str]] = {
     "Comidas Saladas": ["principal"],
@@ -61,6 +66,28 @@ def fecha_a_iso(texto: str) -> str | None:
     if not mes:
         return None
     return f"{anio}-{mes:02d}-{int(dia):02d}"
+
+
+def contenido_hash(receta: dict) -> str:
+    """Hash determinístico del contenido parseado de una receta (no de metadata
+    de archivo ni de `completa`/`tab`). Mismo contenido en el Doc -> mismo
+    hash; se guarda como `doc_hash` en el frontmatter para poder detectar, en
+    la próxima lectura del Doc, qué recetas cambiaron de verdad desde el
+    último sync (ver `detectar_cambios`).
+    """
+    campos = {
+        "titulo": receta["titulo"],
+        "categorias": receta["categorias"],
+        "tipo_bebida": receta.get("tipo_bebida"),
+        "fuente": receta["fuente"],
+        "fecha_actualizacion": receta["fecha_actualizacion"],
+        "materiales": receta["materiales"],
+        "ingredientes": receta["ingredientes"],
+        "paso_a_paso": receta["paso_a_paso"],
+        "cuerpo_libre": receta["cuerpo_libre"],
+    }
+    canon = json.dumps(campos, sort_keys=True, ensure_ascii=True)
+    return hashlib.sha256(canon.encode("utf-8")).hexdigest()[:12]
 
 
 def slugify(titulo: str) -> str:
@@ -223,6 +250,7 @@ def parse_doc(doc_json: dict) -> tuple[list[dict], list[dict]]:
             receta["categorias"] = categorias
             receta["tipo_bebida"] = TAB_TIPO_BEBIDA.get(titulo_tab)
             receta["tab"] = titulo_tab
+            receta["doc_hash"] = contenido_hash(receta)
             if receta["completa"]:
                 completas.append(receta)
             else:
@@ -233,6 +261,37 @@ def parse_doc(doc_json: dict) -> tuple[list[dict], list[dict]]:
                               else "sin paso a paso",
                 })
     return completas, incompletas
+
+
+def _doc_hash_guardado(md_path: Path) -> str | None:
+    """Lee el `doc_hash` del frontmatter de un `recipes/<slug>.md` ya mergeado,
+    si lo tiene. Un archivo sin ese campo (ej. migrado antes de que existiera)
+    se trata como "sin hash guardado", nunca como error.
+    """
+    match = FRONTMATTER_RE.match(md_path.read_text(encoding="utf-8"))
+    if not match:
+        return None
+    front = yaml.safe_load(match.group(1)) or {}
+    return front.get("doc_hash")
+
+
+def detectar_cambios(completas: list[dict], recipes_dir: Path) -> dict[str, list[dict]]:
+    """Compara el `doc_hash` de cada receta recién leída del Doc contra el que
+    quedó guardado en `recipes/<slug>.md` la última vez que se mergeó. Pura:
+    solo lee `recipes_dir`, no escribe nada. Para que esto siga siendo preciso,
+    el merge a mano tiene que copiar el `doc_hash` del borrador al archivo
+    final (ver README, sección del sync).
+    """
+    nuevas, cambiadas, sin_cambios = [], [], []
+    for receta in completas:
+        md_path = recipes_dir / f'{receta["slug"]}.md'
+        if not md_path.exists():
+            nuevas.append(receta)
+        elif _doc_hash_guardado(md_path) != receta["doc_hash"]:
+            cambiadas.append(receta)
+        else:
+            sin_cambios.append(receta)
+    return {"nuevas": nuevas, "cambiadas": cambiadas, "sin_cambios": sin_cambios}
 
 
 def render_markdown(receta: dict) -> str:
@@ -247,6 +306,7 @@ def render_markdown(receta: dict) -> str:
         front.append(f'fuente: "{receta["fuente"]}"')
     if receta["fecha_actualizacion"]:
         front.append(f'fecha_actualizacion: "{receta["fecha_actualizacion"]}"')
+    front.append(f'doc_hash: "{receta["doc_hash"]}"')
     front.append("---")
 
     cuerpo = []
@@ -262,7 +322,7 @@ def render_markdown(receta: dict) -> str:
     return "\n".join(front) + "\n" + "\n\n".join(cuerpo) + "\n"
 
 
-def run_sync(doc_json_path: Path, out_dir: Path) -> int:
+def run_sync(doc_json_path: Path, out_dir: Path, recipes_dir: Path = Path("recipes")) -> int:
     doc_json = json.loads(doc_json_path.read_text(encoding="utf-8"))
     completas, incompletas = parse_doc(doc_json)
 
@@ -270,8 +330,17 @@ def run_sync(doc_json_path: Path, out_dir: Path) -> int:
     for receta in completas:
         (out_dir / f'{receta["slug"]}.md').write_text(render_markdown(receta), encoding="utf-8")
 
+    cambios = detectar_cambios(completas, recipes_dir)
     print(f"OK: {len(completas)} borrador(es) escrito(s) en {out_dir}/")
     print("No se tocó recipes/ — comparar a mano y mergear preservando foto/porciones curados.")
+    print(
+        f"Del Doc: {len(cambios['nuevas'])} nueva(s), {len(cambios['cambiadas'])} cambiada(s) "
+        f"respecto al último sync, {len(cambios['sin_cambios'])} sin cambios (se pueden ignorar)."
+    )
+    if cambios["nuevas"]:
+        print("  Nuevas: " + ", ".join(r["slug"] for r in cambios["nuevas"]))
+    if cambios["cambiadas"]:
+        print("  Cambiadas: " + ", ".join(r["slug"] for r in cambios["cambiadas"]))
     if incompletas:
         print(f"{len(incompletas)} receta(s) del Doc NO se generaron (faltan datos):")
         for i in incompletas:
@@ -284,8 +353,10 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("doc_json", type=Path, help="JSON crudo devuelto por read_doc")
     parser.add_argument("--out", type=Path, default=Path("recipes_draft"))
+    parser.add_argument("--recipes", type=Path, default=Path("recipes"),
+                         help="Directorio con las recetas ya mergeadas, para detectar qué cambió")
     args = parser.parse_args()
-    return run_sync(args.doc_json, args.out)
+    return run_sync(args.doc_json, args.out, args.recipes)
 
 
 if __name__ == "__main__":

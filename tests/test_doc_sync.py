@@ -1,4 +1,4 @@
-from src.doc_sync import fecha_a_iso, parse_doc, render_markdown, slugify
+from src.doc_sync import contenido_hash, detectar_cambios, fecha_a_iso, parse_doc, render_markdown, slugify
 
 
 def _parrafo(texto, style="NORMAL_TEXT", list_id=None, ordenada=False):
@@ -106,6 +106,50 @@ def test_jugos_naturales_mapea_a_bebidas_con_tipo():
     md = render_markdown(receta)
     assert 'categorias: ["bebidas"]' in md
     assert 'tipo_bebida: "jugos"' in md
+
+
+def test_doc_hash_estable_y_sensible_al_contenido():
+    base = {
+        "titulo": "Flan", "categorias": ["postre"], "tipo_bebida": None,
+        "fuente": None, "fecha_actualizacion": None,
+        "materiales": [], "ingredientes": ["- Huevos — 10"], "paso_a_paso": ["1. Batir"],
+        "cuerpo_libre": [],
+    }
+    igual = dict(base)
+    distinto = dict(base, ingredientes=["- Huevos — 12"])
+
+    assert contenido_hash(base) == contenido_hash(igual)
+    assert contenido_hash(base) != contenido_hash(distinto)
+
+
+def test_detectar_cambios_nueva_cambiada_y_sin_cambios(tmp_path):
+    receta_sin_cambios = {"slug": "flan", "titulo": "Flan", "categorias": ["postre"],
+                           "tipo_bebida": None, "fuente": None, "fecha_actualizacion": None,
+                           "materiales": [], "ingredientes": ["- a"], "paso_a_paso": ["1. b"],
+                           "cuerpo_libre": []}
+    receta_sin_cambios["doc_hash"] = contenido_hash(receta_sin_cambios)
+
+    receta_cambiada = dict(receta_sin_cambios, slug="budin", ingredientes=["- a", "- b"])
+    receta_cambiada["doc_hash"] = contenido_hash(receta_cambiada)
+
+    receta_nueva = dict(receta_sin_cambios, slug="torta")
+    receta_nueva["doc_hash"] = contenido_hash(receta_nueva)
+
+    (tmp_path / "flan.md").write_text(
+        f'---\ntitulo: "Flan"\ncategorias: ["postre"]\ndoc_hash: "{receta_sin_cambios["doc_hash"]}"\n---\ncuerpo\n',
+        encoding="utf-8",
+    )
+    (tmp_path / "budin.md").write_text(
+        '---\ntitulo: "Budín"\ncategorias: ["postre"]\ndoc_hash: "otrohash"\n---\ncuerpo\n',
+        encoding="utf-8",
+    )
+    # "torta" no tiene archivo en recipes/: es nueva.
+
+    cambios = detectar_cambios([receta_sin_cambios, receta_cambiada, receta_nueva], tmp_path)
+
+    assert [r["slug"] for r in cambios["sin_cambios"]] == ["flan"]
+    assert [r["slug"] for r in cambios["cambiadas"]] == ["budin"]
+    assert [r["slug"] for r in cambios["nuevas"]] == ["torta"]
 
 
 def test_heading_1_no_abre_receta_propia():

@@ -10,15 +10,16 @@ Las recetas se editan en un Google Doc (una pestaña por categoría: Comidas Sal
 
 1. Claude lee el Doc con el conector (`read_doc`) y guarda el JSON crudo.
 2. `python -m src.doc_sync <doc.json> --out recipes_draft/` — parsea cada pestaña (mapeo pestaña → categoría en `TAB_CATEGORIAS`, `src/doc_sync.py`) y escribe un borrador `.md` por receta completa. Las recetas sin "Ingredientes"/"Paso a paso" se listan como incompletas y no se escriben (no inventa contenido).
-3. Comparar `recipes_draft/` contra `recipes/` y aplicar los cambios a mano, **preservando los campos que el Doc no tiene** (`foto`, a veces `porciones`, fusiones de contenido duplicado ya resueltas). El sync nunca pisa `recipes/` directamente por esto.
-4. `make update && make test`, revisar en el navegador (`make open`) y commitear.
+3. **El comando también imprime qué cambió de verdad**: compara el `doc_hash` de cada borrador contra el que ya está guardado en `recipes/<slug>.md` y separa las recetas en nuevas / cambiadas / sin cambios desde el último sync. Las "sin cambios" se pueden ignorar — no hace falta revisarlas a mano cada vez.
+4. Para las nuevas/cambiadas: comparar el borrador contra `recipes/` y aplicar los cambios a mano, **preservando los campos que el Doc no tiene** (`foto`, a veces `porciones`, fusiones de contenido duplicado ya resueltas) y **copiando el `doc_hash` del borrador al archivo final** (si no se copia, esa receta va a aparecer como "cambiada" otra vez en el próximo sync aunque no haya cambiado). El sync nunca pisa `recipes/` directamente por esto.
+5. `make update && make test`, revisar en el navegador (`make open`) y commitear.
 
 Ver `DECISIONS.md` (entrada "Google Doc como fuente, no Markdown a mano") para el porqué.
 
 ## Formato de `recipes/<slug>.md`
 
 1. Frontmatter obligatorio: `titulo` y `categorias` (lista, valores válidos en `src/schema.py`: `principal`, `acompañante`, `postre`, `merienda`, `bebidas` — clasifican por **qué es el plato**, no por cuándo se come). Una receta puede tener varias (poco común) y aparece en cada pestaña del sitio que le corresponda.
-2. Frontmatter opcional: `dificultad` (`baja`/`media`/`alta`), `tiempo_minutos`, `tiempo_minutos_max` (para rangos), `porciones`, `foto`, `fecha_actualizacion`, `fuente`, y el sub-filtro condicionado a la categoría correspondiente (`src/schema.py: SUBFILTROS`): `tipo_bebida` (`jugos`/`tragos`, solo si `categorias` incluye `bebidas`), `tipo_merienda` (`dulce`/`salado`, solo si incluye `merienda`), `momento` (`mediodía`/`cena`, solo si incluye `principal` — excepción puntual, ej. Asado y Guiso con lentejas que se comen solo al mediodía; la mayoría de las recetas `principal` no lo tiene y eso es lo normal, no un dato faltante).
+2. Frontmatter opcional: `dificultad` (`baja`/`media`/`alta`), `tiempo_minutos`, `tiempo_minutos_max` (para rangos), `porciones`, `foto`, `fecha_actualizacion`, `fuente`, `doc_hash` (interno — lo escribe `doc_sync.py`, no se edita a mano, ver sección anterior), y el sub-filtro condicionado a la categoría correspondiente (`src/schema.py: SUBFILTROS`): `tipo_bebida` (`jugos`/`tragos`, solo si `categorias` incluye `bebidas`), `tipo_merienda` (`dulce`/`salado`, solo si incluye `merienda`), `momento` (`mediodía`/`cena`, solo si incluye `principal` — excepción puntual, ej. Asado y Guiso con lentejas que se comen solo al mediodía; la mayoría de las recetas `principal` no lo tiene y eso es lo normal, no un dato faltante).
 3. Si hay foto, ponerla en `images/<slug>/<archivo>` (normalmente `images/<slug>/cover.jpg`) y referenciarla en el frontmatter como `foto: <slug>/<archivo>`. Es un campo que se completa a mano — ver abajo de dónde sacarla.
 4. El cuerpo es Markdown normal: `## Materiales`, `## Ingredientes` (con `### <subgrupo>` si hace falta agrupar), `## Paso a paso`. Tips y advertencias como citas: `> ℹ️ ...` / `> ⚠️ ...`.
 

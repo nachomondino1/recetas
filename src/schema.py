@@ -43,5 +43,6 @@ OPTIONAL_FIELDS = {
     "foto",
     "fecha_actualizacion",
     "fuente",
+    "doc_hash",
 } | SUBFILTRO_CAMPOS
 KNOWN_FIELDS = REQUIRED_FIELDS | OPTIONAL_FIELDS
