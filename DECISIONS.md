@@ -99,3 +99,9 @@ El script agrupa las fotos por receta reusando el mismo criterio que `_agrupar_r
 **Búsquedas usadas (texto exacto, elegido a partir de los ingredientes/pasos de cada receta, no del título solo):** `torta chocolinas dulce de leche`, `galletitas de harina de lino y avena saladas caseras`, `jugo de naranja y zanahoria casero vaso`, `jugo detox apio pepino manzana verde menta vaso`, `jugo de zanahoria manzana verde y jengibre vaso`, `jugo de naranja ananá y limón antioxidante vaso`, `papas al horno doradas fuente`, `pastel de papa con carne casero fuente`, `tacos caseros tortilla integral con carne`.
 
 **No se integra a ningún script.** Es manual y puntual por naturaleza (cada imagen se elige con criterio visual humano, no hay regla determinística "buscar X para la receta Y"); si se agregan recetas nuevas sin fuente propia en el futuro, se repite el proceso a mano.
+
+## 2026-10-13 — Consolidar el orden de prioridad de fotos como playbook del repo
+
+**Pedido del usuario:** las 4 decisiones de arriba sobre `foto` quedaron como narrativa cronológica, no como un procedimiento claro para la próxima vez que falte una foto.
+
+**Decisión:** el orden de prioridad (1. `cover.jpg` ya curada → 2. fotos embebidas en el Doc → 3. derivarla de `fuente` enlazada → 4. búsqueda genérica en Bing como último recurso → 5. queda sin foto, nunca se inventa) se escribió como procedimiento en `README.md` ("Cómo conseguir la foto de portada"), que es el playbook operativo de este repo — las entradas de arriba quedan como el registro histórico de por qué se llegó a ese orden. Mismo patrón propuesto en `DATA_FLOW_PLAYBOOK_unificado.md` (sección Arquetipo C) para que aplique a cualquier proyecto futuro con el mismo problema (campo de imagen curado faltante, pero la entidad tiene más de una fuente posible de la cual derivarlo).
