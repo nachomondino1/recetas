@@ -27,3 +27,5 @@
 **Problema:** GitHub Pages estaba configurado con fuente `main` / `/` (root), así que servía `README.md` en vez del sitio — el sitio real vivía en `site/`, una carpeta que Pages (modo legacy) no puede apuntar a directamente (solo soporta `/` o `/docs`).
 
 **Decisión:** renombrar `site/` → `docs/` (sin tocar su contenido ni estructura) y apuntar GitHub Pages a `/docs` en la rama `main`. Sigue la decisión #3 del playbook de datos unificado (modo simple: artefacto versionado en `docs/`, sin Actions ni build en CI) — coherente con que este proyecto no tiene CI (ver arriba). `make update` + commit + push es el único paso de "deploy".
+
+**`docs/.nojekyll` obligatorio.** Sin ese archivo, GitHub Pages corre Jekyll sobre `docs/`: como `index.html` no tiene front matter YAML, Jekyll no lo reconoce como página y arma la home a partir del `README.md` de la raíz del repo (y no copia `style.css`/`app.js` tal cual, por eso daban 404). `.nojekyll` desactiva ese pipeline y sirve `docs/` como estático plano.
