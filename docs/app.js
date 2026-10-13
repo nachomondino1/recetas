@@ -213,6 +213,95 @@
     renderFiltrosEstado();
   }
 
+  function slugify(texto) {
+    return (texto || "")
+      .normalize("NFD").replace(/[̀-ͯ]/g, "")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "") || "seccion";
+  }
+
+  // Envuelve cada sección (desde un <h2> hasta el próximo <h2>) en su propio
+  // <details> colapsable. El h3 (ej. cada paso del paso a paso) queda como
+  // contenido normal adentro de la sección, no se colapsa por separado.
+  function agruparSecciones(cuerpo) {
+    var nodos = Array.prototype.slice.call(cuerpo.childNodes);
+    var fragmento = document.createDocumentFragment();
+    var seccionActual = null;
+
+    nodos.forEach(function (nodo) {
+      if (nodo.nodeType === 1 && nodo.tagName === "H2") {
+        var detalle = document.createElement("details");
+        detalle.className = "detalle-seccion";
+        detalle.open = true;
+
+        var resumen = document.createElement("summary");
+        resumen.appendChild(nodo);
+        detalle.appendChild(resumen);
+
+        fragmento.appendChild(detalle);
+        seccionActual = detalle;
+      } else if (seccionActual) {
+        seccionActual.appendChild(nodo);
+      } else {
+        fragmento.appendChild(nodo);
+      }
+    });
+
+    cuerpo.innerHTML = "";
+    cuerpo.appendChild(fragmento);
+  }
+
+  // Índice de las secciones principales (los <h2>) únicamente: no lista cada
+  // paso del paso a paso ni otros <h3>, para que no sea una lista eterna.
+  function crearIndice(headingsH2) {
+    var headings = Array.prototype.filter.call(headingsH2, function (h) {
+      return h.textContent.trim() !== "";
+    });
+    if (headings.length < 2) return null;
+
+    var reducirMovimiento = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var idsUsados = {};
+
+    var detalle = document.createElement("details");
+    detalle.className = "detalle-indice";
+    detalle.open = true;
+
+    var resumen = document.createElement("summary");
+    resumen.textContent = "En esta receta";
+    detalle.appendChild(resumen);
+
+    var lista = document.createElement("ul");
+    lista.className = "detalle-indice-lista";
+
+    headings.forEach(function (h) {
+      var texto = h.textContent.trim();
+      var base = slugify(texto);
+      var id = base, i = 2;
+      while (idsUsados[id]) { id = base + "-" + i; i++; }
+      idsUsados[id] = true;
+      h.id = id;
+
+      var li = document.createElement("li");
+
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "detalle-indice-item";
+      btn.textContent = texto;
+      btn.addEventListener("click", function () {
+        var seccion = h.closest("details.detalle-seccion");
+        if (seccion && !seccion.open) seccion.open = true;
+        h.scrollIntoView({ behavior: reducirMovimiento ? "auto" : "smooth", block: "start" });
+      });
+
+      li.appendChild(btn);
+      lista.appendChild(li);
+    });
+
+    detalle.appendChild(lista);
+    return detalle;
+  }
+
   function renderDetalle(id) {
     var receta = RECETAS.find(function (r) { return r.id === id; });
     els.detalleContenido.innerHTML = "";
@@ -271,6 +360,11 @@
     var cuerpo = document.createElement("div");
     cuerpo.className = "detalle-cuerpo";
     cuerpo.innerHTML = receta.body_html || "";
+    agruparSecciones(cuerpo);
+
+    var indice = crearIndice(cuerpo.querySelectorAll("h2"));
+    if (indice) els.detalleContenido.appendChild(indice);
+
     els.detalleContenido.appendChild(cuerpo);
 
     if (receta.fuente) {

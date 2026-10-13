@@ -291,14 +291,103 @@ main.container { padding-top: 24px; padding-bottom: 48px; }
 .detalle-meta { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 8px; }
 .detalle-fuente { color: var(--muted-soft); font-size: 0.75rem; margin-top: 8px; }
 
-.detalle-cuerpo h2 {
+.detalle-indice {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-xs);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 20px;
+}
+.detalle-indice summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text);
+  list-style: none;
+}
+.detalle-indice summary::-webkit-details-marker { display: none; }
+.detalle-indice summary::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 6px;
+  margin-right: 8px;
+  background: var(--chevron) no-repeat center / contain;
+  transition: transform .15s ease;
+  vertical-align: middle;
+}
+.detalle-indice summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.detalle-indice[open] summary::before { transform: rotate(180deg); }
+
+.detalle-indice-lista {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.detalle-indice-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font: inherit;
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding: 5px 8px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background .12s ease, color .12s ease;
+}
+.detalle-indice-item:hover { background: var(--accent-soft); color: var(--text); }
+.detalle-indice-item:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.detalle-cuerpo h2,
+.detalle-cuerpo h3 {
+  scroll-margin-top: 80px;
+}
+
+/* Cada sección principal (un <h2> y todo lo que le sigue hasta el próximo)
+   es un <details> colapsable independiente; ver agruparSecciones() en app.js. */
+.detalle-seccion {
+  border-top: 1px solid var(--border-soft);
+  padding-top: 16px;
+  margin-top: 28px;
+}
+.detalle-seccion:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+
+.detalle-seccion > summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  border-radius: var(--radius-sm);
+}
+.detalle-seccion > summary::-webkit-details-marker { display: none; }
+.detalle-seccion > summary::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 10px;
+  height: 6px;
+  background: var(--chevron) no-repeat center / contain;
+  transition: transform .15s ease;
+}
+.detalle-seccion[open] > summary::before { transform: rotate(180deg); }
+.detalle-seccion > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.detalle-seccion > summary h2 {
+  margin: 0;
+  padding: 0;
+  border: none;
   font-size: 1.1rem;
   font-weight: 700;
-  margin: 28px 0 12px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border-soft);
 }
-.detalle-cuerpo h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+
 .detalle-cuerpo h3 { font-size: 0.95rem; font-weight: 700; margin: 20px 0 8px; }
 .detalle-cuerpo p, .detalle-cuerpo li { color: var(--text); }
 .detalle-cuerpo ul, .detalle-cuerpo ol { padding-left: 1.3em; margin: 0 0 12px; }
