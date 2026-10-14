@@ -2,6 +2,7 @@
 titulo: "Daiquiri"
 categorias: ["bebidas"]
 tipo_bebida: "tragos"
+foto: "daiquiri/cover.jpg"
 ---
 _(para 6 vasos)_
 
