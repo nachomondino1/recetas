@@ -29,3 +29,12 @@ doc_hash: "31c3859cf524"
 8. Colocar en el molde la mitad de la mezcla del budín, encima otra capa de láminas de manzana, y completar con el resto de la mezcla (se pueden poner más láminas por arriba).
 9. Llevar a horno a 180 °C unos 40 minutos o hasta que se vea dorado por arriba.
 10. Al desmoldar, dar vuelta para que las manzanas del fondo queden arriba.
+
+### Imágenes del paso a paso
+![Foto del proceso 1](images/budin-de-manzana/doc-01.jpg)
+![Foto del proceso 2](images/budin-de-manzana/doc-02.jpg)
+![Foto del proceso 3](images/budin-de-manzana/doc-03.jpg)
+![Foto del proceso 4](images/budin-de-manzana/doc-04.jpg)
+![Foto del proceso 5](images/budin-de-manzana/doc-05.jpg)
+![Foto del proceso 6](images/budin-de-manzana/doc-06.jpg)
+![Foto del proceso 7](images/budin-de-manzana/doc-07.jpg)

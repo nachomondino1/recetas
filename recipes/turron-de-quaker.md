@@ -23,3 +23,6 @@ doc_hash: "ef1dd935b7ff"
 4. Cuando apagues el fuego, agregar las 2 cucharadas de dulce de leche.
 5. Armar el turrón: una capa de galletitas y otra de la mezcla.
 6. Llevar a la heladera.
+
+### Imágenes del paso a paso
+![Foto del proceso 1](images/turron-de-quaker/doc-01.jpg)

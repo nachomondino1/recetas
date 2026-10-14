@@ -110,3 +110,25 @@ Cortar la carne y servir en bandeja. Disfrutar del asado.
 
 ### 🪥 P10) Limpiar
 Limpiar la parrilla con cartón o papel de diario. Guardar los fósforos y demás.
+
+### Imágenes del paso a paso
+![Foto del proceso 1](images/asado/doc-01.jpg)
+![Foto del proceso 2](images/asado/doc-02.jpg)
+![Foto del proceso 3](images/asado/doc-03.jpg)
+![Foto del proceso 4](images/asado/doc-04.jpg)
+![Foto del proceso 5](images/asado/doc-05.jpg)
+![Foto del proceso 6](images/asado/doc-06.jpg)
+![Foto del proceso 7](images/asado/doc-07.jpg)
+![Foto del proceso 8](images/asado/doc-08.jpg)
+![Foto del proceso 9](images/asado/doc-09.jpg)
+![Foto del proceso 10](images/asado/doc-10.jpg)
+![Foto del proceso 11](images/asado/doc-11.jpg)
+![Foto del proceso 12](images/asado/doc-12.jpg)
+![Foto del proceso 13](images/asado/doc-13.jpg)
+![Foto del proceso 14](images/asado/doc-14.jpg)
+![Foto del proceso 15](images/asado/doc-15.jpg)
+![Foto del proceso 16](images/asado/doc-16.jpg)
+![Foto del proceso 17](images/asado/doc-17.jpg)
+![Foto del proceso 18](images/asado/doc-18.jpg)
+![Foto del proceso 19](images/asado/doc-19.jpg)
+![Foto del proceso 20](images/asado/doc-20.jpg)

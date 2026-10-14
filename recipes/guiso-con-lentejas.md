@@ -114,3 +114,7 @@ Una versión anterior y más corta de esta receta, que se conserva como referenc
 8. Cocinar 30 minutos a fuego alto.
 9. Agregar la lenteja (cocinar 20 a 30 minutos a fuego medio).
 10. Agregar la salsa de tomate y el chorizo (cocinar 20 a 30 minutos a fuego lento).
+
+### Imágenes del paso a paso
+![Foto del proceso 1](images/guiso-con-lentejas/doc-01.jpg)
+![Foto del proceso 2](images/guiso-con-lentejas/doc-02.jpg)

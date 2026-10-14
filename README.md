@@ -21,7 +21,15 @@ Ver `DECISIONS.md` (entrada "Google Doc como fuente, no Markdown a mano") para e
 1. Frontmatter obligatorio: `titulo` y `categorias` (lista, valores válidos en `src/schema.py`: `principal`, `acompañante`, `postre`, `merienda`, `bebidas` — clasifican por **qué es el plato**, no por cuándo se come). Una receta puede tener varias (poco común) y aparece en cada pestaña del sitio que le corresponda.
 2. Frontmatter opcional: `dificultad` (`baja`/`media`/`alta`), `tiempo_minutos`, `tiempo_minutos_max` (para rangos), `porciones`, `foto`, `fecha_actualizacion`, `fuente`, `doc_hash` (interno — lo escribe `doc_sync.py`, no se edita a mano, ver sección anterior), y el sub-filtro condicionado a la categoría correspondiente (`src/schema.py: SUBFILTROS`): `tipo_bebida` (`jugos`/`tragos`, solo si `categorias` incluye `bebidas`), `tipo_merienda` (`dulce`/`salado`, solo si incluye `merienda`), `momento` (`mediodía`/`cena`, solo si incluye `principal` — excepción puntual, ej. Asado y Guiso con lentejas que se comen solo al mediodía; la mayoría de las recetas `principal` no lo tiene y eso es lo normal, no un dato faltante).
 3. Si hay foto, ponerla en `images/<slug>/<archivo>` (normalmente `images/<slug>/cover.jpg`) y referenciarla en el frontmatter como `foto: <slug>/<archivo>`. Es un campo que se completa a mano — ver abajo de dónde sacarla.
-4. El cuerpo es Markdown normal: `## Materiales`, `## Ingredientes` (con `### <subgrupo>` si hace falta agrupar), `## Paso a paso`. Tips y advertencias como citas: `> ℹ️ ...` / `> ⚠️ ...`.
+4. El cuerpo sigue un orden fijo de secciones (igual para toda receta):
+   1. **Índice** ("En esta receta") — automático, lo genera `docs/app.js` (`crearIndice`) a partir de los `##` del cuerpo; no se escribe a mano.
+   2. `## Materiales` — **opcional**, solo si la receta lo necesita (ver *Asado*).
+   3. `## Ingredientes` — **obligatorio** en toda receta real (con `### <subgrupo>` si hay varias partes, ver *Lemon pie*/*Tarta de frutillas*). Los stubs "pendiente de completar" (*Empanadas*, *Tarta de espinaca*) son la única excepción.
+   4. `## Paso a paso` — **obligatorio**. Incluye una subsección `### Imágenes del paso a paso` con **todas** las fotos del proceso que estén en el Google Doc para esa receta (las mismas que baja `src/extract_doc_images.py` a `images/<slug>/doc-NN.jpg`) — no solo la portada curada (`foto`/`cover.jpg`).
+
+   Tips y advertencias como citas: `> ℹ️ ...` / `> ⚠️ ...`.
+
+5. **Sub-recetas que se repiten en más de una receta** (masa sablée, crema pastelera): no se copia el contenido completo en cada archivo — viven una sola vez en `recipes/utils/<fragmento>.md` y se traen con `<!-- incluir: <fragmento>#ingredientes -->` / `#paso-a-paso` en el lugar donde iría ese contenido. Ver `recipes/utils/README.md` para el formato y cuándo vale la pena crear un fragmento nuevo.
 
 ## Cómo conseguir la foto de portada (`foto`) de una receta
 

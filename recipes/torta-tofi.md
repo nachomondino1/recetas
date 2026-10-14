@@ -37,3 +37,6 @@ doc_hash: "3ef8ca34d653"
 16. Mezclar el chocolate con la crema.
 17. Desmoldar la tarta, colocar una capa de dulce de leche y arriba el chocolate.
 18. Con un pela papas, poner un poco de chocolate en el centro a modo de decoración.
+
+### Imágenes del paso a paso
+![Foto del proceso 1](images/torta-tofi/doc-01.jpg)

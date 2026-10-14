@@ -38,3 +38,23 @@ _¿Cuánto rinde esto? 4 tazas grandes. Cada persona tiene una taza y le puede d
 7. Triturar las galletitas de vainilla a mano (con una procesadora no funcionó bien). Más o menos medio paquete de las Lincoln de 219 g.
 8. Armar cada vaso en capas, alternando galletita triturada y mezcla: primera capa de galleta, segunda de mezcla (una cucharada sopera), tercera de galleta, cuarta de mezcla, quinta de galleta, sexta de mezcla, y decorar arriba con ralladura de limón.
 9. Poner los 4 vasos en el freezer y enfriar durante al menos 2 horas.
+
+### Imágenes del paso a paso
+![Foto del proceso 1](images/mousse-de-limon/doc-01.jpg)
+![Foto del proceso 2](images/mousse-de-limon/doc-02.jpg)
+![Foto del proceso 3](images/mousse-de-limon/doc-03.jpg)
+![Foto del proceso 4](images/mousse-de-limon/doc-04.jpg)
+![Foto del proceso 5](images/mousse-de-limon/doc-05.jpg)
+![Foto del proceso 6](images/mousse-de-limon/doc-06.jpg)
+![Foto del proceso 7](images/mousse-de-limon/doc-07.jpg)
+![Foto del proceso 8](images/mousse-de-limon/doc-08.jpg)
+![Foto del proceso 9](images/mousse-de-limon/doc-09.jpg)
+![Foto del proceso 10](images/mousse-de-limon/doc-10.jpg)
+![Foto del proceso 11](images/mousse-de-limon/doc-11.jpg)
+![Foto del proceso 12](images/mousse-de-limon/doc-12.jpg)
+![Foto del proceso 13](images/mousse-de-limon/doc-13.jpg)
+![Foto del proceso 14](images/mousse-de-limon/doc-14.jpg)
+![Foto del proceso 15](images/mousse-de-limon/doc-15.jpg)
+![Foto del proceso 16](images/mousse-de-limon/doc-16.jpg)
+![Foto del proceso 17](images/mousse-de-limon/doc-17.jpg)
+![Foto del proceso 18](images/mousse-de-limon/doc-18.jpg)

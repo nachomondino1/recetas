@@ -40,3 +40,6 @@ _Nota: 340 g de nueces mariposa en total (entre la base y el praliné)._
 1. Tostar las nueces en el horno a 180 °C, 8–10 min.
 2. Caramelo: en una cacerolita, colocar el azúcar a fuego mínimo. Cuando empiece a ponerse líquida, mover con cuchara de madera o espátula resistente al calor para que no se queme. Cuando se forme un caramelo color clarito, sin terrones, retirar del fuego y agregar las nueces de una sola vez, mezclando rápido hasta cubrirlas.
 3. Volcar las nueces sobre una plancha de silicona o papel manteca, separándolas un poco con la misma cuchara. Una vez frío, picar del tamaño deseado y usar para decorar.
+
+### Imágenes del paso a paso
+![Foto del proceso 1](images/torta-de-nuez/doc-01.jpg)

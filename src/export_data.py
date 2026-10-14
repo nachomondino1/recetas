@@ -46,6 +46,60 @@ def load_recipes(recipes_dir: Path) -> list[dict]:
     return recipes
 
 
+_SECCION_RE = re.compile(r"^## +(.+?) *$", re.MULTILINE)
+_INCLUDE_RE = re.compile(r"<!--\s*incluir:\s*([a-z0-9-]+)#([a-z-]+)\s*-->")
+
+
+def _slug_seccion(texto: str) -> str:
+    return texto.strip().lower().replace(" ", "-")
+
+
+def _parsear_secciones_utils(texto: str) -> dict[str, str]:
+    """De un fragmento en recipes/utils/: {slug de sección '##' -> su contenido}."""
+    secciones = {}
+    matches = list(_SECCION_RE.finditer(texto))
+    for i, m in enumerate(matches):
+        inicio = m.end()
+        fin = matches[i + 1].start() if i + 1 < len(matches) else len(texto)
+        secciones[_slug_seccion(m.group(1))] = texto[inicio:fin].strip()
+    return secciones
+
+
+def cargar_utils(utils_dir: Path) -> dict[str, dict[str, str]]:
+    """slug de archivo (sin .md, sin README) -> sus secciones parseadas."""
+    fragments: dict[str, dict[str, str]] = {}
+    if not utils_dir.exists():
+        return fragments
+    for path in sorted(utils_dir.glob("*.md")):
+        if path.name == "README.md":
+            continue
+        fragments[path.stem] = _parsear_secciones_utils(path.read_text(encoding="utf-8"))
+    return fragments
+
+
+def resolver_includes(body: str, utils: dict[str, dict[str, str]]) -> tuple[str, list[str]]:
+    """Reemplaza <!-- incluir: fragmento#seccion --> por el contenido de
+    recipes/utils/<fragmento>.md. Un include a un fragmento o sección
+    inexistente es un error (ver recipes/utils/README.md) — nunca se resuelve
+    en silencio ni deja el comentario tal cual en el sitio publicado.
+    """
+    errores: list[str] = []
+
+    def _reemplazar(m: re.Match) -> str:
+        fragmento, seccion = m.group(1), m.group(2)
+        if fragmento not in utils:
+            errores.append(f"incluir '{fragmento}' no existe en recipes/utils/")
+            return m.group(0)
+        if seccion not in utils[fragmento]:
+            errores.append(
+                f"incluir '{fragmento}#{seccion}': la sección '{seccion}' no existe en ese fragmento"
+            )
+            return m.group(0)
+        return utils[fragmento][seccion]
+
+    return _INCLUDE_RE.sub(_reemplazar, body), errores
+
+
 def _as_categorias(value) -> list[str]:
     if value is None:
         return []
@@ -54,11 +108,15 @@ def _as_categorias(value) -> list[str]:
     return [str(value).strip().lower()]
 
 
-def normalizar(raws: list[dict]) -> list[dict]:
+def normalizar(raws: list[dict], utils: dict[str, dict[str, str]] | None = None) -> list[dict]:
     """raw -> normalizado: trim de strings, categorías/dificultad en minúscula.
 
+    También resuelve los <!-- incluir: ... --> del cuerpo contra `utils`
+    (ver resolver_includes) — los errores de include quedan en
+    `_include_errors`, para que validar() los convierta en ERROR.
     No valida reglas de negocio (eso es validar()); solo da forma a los datos.
     """
+    utils = utils or {}
     records = []
     for raw in raws:
         front = raw["front"] or {}
@@ -66,10 +124,12 @@ def normalizar(raws: list[dict]) -> list[dict]:
         foto = front.get("foto")
         fecha = front.get("fecha_actualizacion")
         fuente = front.get("fuente")
+        body, include_errors = resolver_includes(raw["body"], utils)
         record = {
             "id": raw["id"],
             "_parse_error": raw["_parse_error"],
-            "body": raw["body"],
+            "_include_errors": include_errors,
+            "body": body,
             "titulo": str(front.get("titulo") or "").strip(),
             "categorias": _as_categorias(front.get("categorias")),
             "dificultad": str(dificultad).strip().lower() if dificultad else None,
@@ -113,6 +173,9 @@ def validar(records: list[dict], images_dir: Path) -> tuple[list[str], list[dict
         if r["_parse_error"]:
             errors.append(f"{rid}: {r['_parse_error']}")
             continue
+
+        for include_error in r.get("_include_errors") or []:
+            errors.append(f"{rid}: {include_error}")
 
         if not r["titulo"]:
             errors.append(f"{rid}: falta 'titulo'")
@@ -209,21 +272,29 @@ def construir_json(records: list[dict], warnings: list[dict]) -> dict:
     }
 
 
-def copiar_fotos(records: list[dict], images_dir: Path, site_images_dir: Path) -> None:
+def copiar_imagenes(records: list[dict], images_dir: Path, site_images_dir: Path) -> None:
+    """Copia todo `images/<slug>/` al sitio, no solo `foto`.
+
+    El cuerpo puede referenciar otras imágenes de esa misma carpeta (ver
+    `### Imágenes del paso a paso`, `images/<slug>/doc-NN.jpg`) — si solo se
+    copiara `foto`, esas quedarían rotas en el sitio publicado aunque
+    rendericen bien al abrir el `.md` crudo.
+    """
     for r in records:
-        if not r["foto"]:
+        src_dir = images_dir / r["id"]
+        if not src_dir.is_dir():
             continue
-        src = images_dir / r["foto"]
-        if not src.exists():
-            continue
-        dst = site_images_dir / r["foto"]
-        dst.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(src, dst)
+        dst_dir = site_images_dir / r["id"]
+        dst_dir.mkdir(parents=True, exist_ok=True)
+        for src in src_dir.iterdir():
+            if src.is_file():
+                shutil.copyfile(src, dst_dir / src.name)
 
 
-def run_export(recipes_dir: Path, images_dir: Path, site_dir: Path) -> int:
+def run_export(recipes_dir: Path, images_dir: Path, site_dir: Path, utils_dir: Path | None = None) -> int:
     raws = load_recipes(recipes_dir)
-    records = normalizar(raws)
+    utils = cargar_utils(utils_dir) if utils_dir else {}
+    records = normalizar(raws, utils)
     errors, warnings = validar(records, images_dir)
 
     if errors:
@@ -234,7 +305,7 @@ def run_export(recipes_dir: Path, images_dir: Path, site_dir: Path) -> int:
 
     data = construir_json(records, warnings)
     site_images_dir = site_dir / "images"
-    copiar_fotos(records, images_dir, site_images_dir)
+    copiar_imagenes(records, images_dir, site_images_dir)
 
     site_dir.mkdir(parents=True, exist_ok=True)
     json_str = json.dumps(data, ensure_ascii=False, indent=2, allow_nan=False)
@@ -250,7 +321,7 @@ def run_export(recipes_dir: Path, images_dir: Path, site_dir: Path) -> int:
 
 
 def main() -> int:
-    return run_export(config.RECIPES_DIR, config.IMAGES_DIR, config.SITE_DIR)
+    return run_export(config.RECIPES_DIR, config.IMAGES_DIR, config.SITE_DIR, config.RECIPES_UTILS_DIR)
 
 
 if __name__ == "__main__":

@@ -3,9 +3,18 @@ import shutil
 from pathlib import Path
 
 from src import schema
-from src.export_data import construir_json, load_recipes, normalizar, run_export, validar
+from src.export_data import (
+    cargar_utils,
+    construir_json,
+    load_recipes,
+    normalizar,
+    resolver_includes,
+    run_export,
+    validar,
+)
 
 FIXTURES = Path(__file__).parent / "fixtures"
+UTILS_FIXTURES = FIXTURES / "utils"
 
 
 def _load_one(tmp_path, filename):
@@ -139,6 +148,97 @@ def test_error_deja_intacto_lo_publicado(tmp_path):
     assert exit_code != 0
     assert (site_dir / "recetas.json").read_text(encoding="utf-8") == '{"previo": true}'
     assert not (site_dir / "data.js").exists()
+
+
+def test_run_export_copia_toda_la_carpeta_de_imagenes_no_solo_foto(tmp_path):
+    recipes_dir = tmp_path / "recipes"
+    images_dir = tmp_path / "images"
+    site_dir = tmp_path / "site"
+    recipes_dir.mkdir()
+    site_dir.mkdir()
+    (recipes_dir / "con-fotos.md").write_text(
+        '---\ntitulo: "Con fotos"\ncategorias: ["principal"]\n'
+        'foto: "con-fotos/cover.jpg"\n---\n## Paso a paso\n1. Un paso.\n',
+        encoding="utf-8",
+    )
+    (images_dir / "con-fotos").mkdir(parents=True)
+    (images_dir / "con-fotos" / "cover.jpg").write_text("portada", encoding="utf-8")
+    (images_dir / "con-fotos" / "doc-01.jpg").write_text("paso 1", encoding="utf-8")
+
+    exit_code = run_export(recipes_dir, images_dir, site_dir)
+
+    assert exit_code == 0
+    assert (site_dir / "images" / "con-fotos" / "cover.jpg").read_text(encoding="utf-8") == "portada"
+    assert (site_dir / "images" / "con-fotos" / "doc-01.jpg").read_text(encoding="utf-8") == "paso 1"
+
+
+def test_cargar_utils_parsea_secciones():
+    utils = cargar_utils(UTILS_FIXTURES)
+    assert set(utils.keys()) == {"fragmento-prueba"}
+    assert "Item de prueba" in utils["fragmento-prueba"]["ingredientes"]
+    assert "Paso de prueba" in utils["fragmento-prueba"]["paso-a-paso"]
+
+
+def test_cargar_utils_ignora_readme():
+    utils = cargar_utils(Path(__file__).parent.parent / "recipes" / "utils")
+    assert "README" not in utils
+
+
+def test_resolver_includes_reemplaza_contenido():
+    utils = cargar_utils(UTILS_FIXTURES)
+    body, errores = resolver_includes(
+        "### Parte\n<!-- incluir: fragmento-prueba#ingredientes -->", utils
+    )
+    assert errores == []
+    assert "Item de prueba" in body
+    assert "incluir:" not in body
+
+
+def test_resolver_includes_fragmento_inexistente_es_error():
+    body, errores = resolver_includes("<!-- incluir: no-existe#ingredientes -->", {})
+    assert len(errores) == 1
+    assert "no-existe" in errores[0]
+    assert "incluir:" in body  # no se resuelve en silencio, queda visible
+
+
+def test_resolver_includes_seccion_inexistente_es_error():
+    utils = cargar_utils(UTILS_FIXTURES)
+    body, errores = resolver_includes("<!-- incluir: fragmento-prueba#no-existe -->", utils)
+    assert len(errores) == 1
+    assert "no-existe" in errores[0]
+
+
+def test_normalizar_resuelve_includes_antes_de_validar(tmp_path):
+    shutil.copy(FIXTURES / "ok_con_include.md", tmp_path / "ok_con_include.md")
+    utils = cargar_utils(UTILS_FIXTURES)
+    raws = load_recipes(tmp_path)
+    records = normalizar(raws, utils)
+    errors, _ = validar(records, tmp_path)
+    assert errors == []
+    assert "Item de prueba" in records[0]["body"]
+
+
+def test_include_inexistente_es_error(tmp_path):
+    shutil.copy(FIXTURES / "broken_include_inexistente.md", tmp_path / "broken_include_inexistente.md")
+    raws = load_recipes(tmp_path)
+    records = normalizar(raws, {})
+    errors, _ = validar(records, tmp_path)
+    assert any("no-existe" in e for e in errors)
+
+
+def test_run_export_con_utils_dir(tmp_path):
+    recipes_dir = tmp_path / "recipes"
+    images_dir = tmp_path / "images"
+    site_dir = tmp_path / "site"
+    recipes_dir.mkdir()
+    images_dir.mkdir()
+    shutil.copy(FIXTURES / "ok_con_include.md", recipes_dir / "ok_con_include.md")
+
+    exit_code = run_export(recipes_dir, images_dir, site_dir, UTILS_FIXTURES)
+
+    assert exit_code == 0
+    data = json.loads((site_dir / "recetas.json").read_text(encoding="utf-8"))
+    assert "Item de prueba" in data["recetas"][0]["body_html"]
 
 
 def test_rebuild_deterministico(tmp_path):

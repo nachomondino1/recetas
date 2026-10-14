@@ -57,3 +57,15 @@ _Nota: 1 limón cubre las dos ralladuras (relleno y masa)._
 ### Horneado
 1. 180 °C, 30–35 min, hasta que esté dorada.
 2. Dejar enfriar por completo antes de desmoldar. Para despegar el papel de la base, levantarla con una base de tartera o espátula grande.
+
+### Imágenes del paso a paso
+![Foto del proceso 1](images/apple-crumble/doc-01.jpg)
+![Foto del proceso 2](images/apple-crumble/doc-02.jpg)
+![Foto del proceso 3](images/apple-crumble/doc-03.jpg)
+![Foto del proceso 4](images/apple-crumble/doc-04.jpg)
+![Foto del proceso 5](images/apple-crumble/doc-05.jpg)
+![Foto del proceso 6](images/apple-crumble/doc-06.jpg)
+![Foto del proceso 7](images/apple-crumble/doc-07.jpg)
+![Foto del proceso 8](images/apple-crumble/doc-08.jpg)
+![Foto del proceso 9](images/apple-crumble/doc-09.jpg)
+![Foto del proceso 10](images/apple-crumble/doc-10.jpg)
