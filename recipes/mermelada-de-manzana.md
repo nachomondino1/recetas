@@ -1,8 +1,8 @@
 ---
 titulo: "Mermelada de manzana"
-categorias: ["🍰 meriendas"]
+categorias: ["🌆 meriendas"]
 tipo_merienda: "🍯 untables"
-doc_hash: "1a76d01c8b35"
+doc_hash: "5eb1ac1bb0ba"
 ---
 Fuentes: <https://www.youtube.com/shorts/fXV-SjgVD4s> y <https://youtu.be/eXyNtLVpFf0?si=ZpWzCNCREu0cSRoV> (la que siguió mamá).
 

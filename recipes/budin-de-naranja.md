@@ -1,11 +1,11 @@
 ---
 titulo: "Budín de naranja"
-categorias: ["🍰 meriendas"]
+categorias: ["🌆 meriendas"]
 tipo_merienda: "🍰 budines"
 fuente: "https://www.paulinacocina.net/budin-de-naranja/8585"
 fecha_actualizacion: "2026-04-20"
 foto: "budin-de-naranja/cover.jpg"
-doc_hash: "29481c05a531"
+doc_hash: "e51884ed3194"
 ---
 ## Ingredientes
 - Huevos — 3

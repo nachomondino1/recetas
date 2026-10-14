@@ -1,11 +1,11 @@
 ---
 titulo: "Budín de banana"
-categorias: ["🍰 meriendas"]
+categorias: ["🌆 meriendas"]
 tipo_merienda: "🍰 budines"
 fuente: "https://www.youtube.com/watch?v=7sKXzEynyKE"
 fecha_actualizacion: "2026-04-20"
 foto: "budin-de-banana/cover.jpg"
-doc_hash: "e89ce9bc0649"
+doc_hash: "f2d9babd0edd"
 ---
 ## Ingredientes
 - Huevos — 3

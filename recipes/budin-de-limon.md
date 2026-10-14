@@ -1,11 +1,11 @@
 ---
 titulo: "Budín de limón"
-categorias: ["🍰 meriendas"]
+categorias: ["🌆 meriendas"]
 tipo_merienda: "🍰 budines"
 fuente: "https://www.youtube.com/watch?v=nuvxNKN65QI"
 fecha_actualizacion: "2026-04-20"
 foto: "budin-de-limon/cover.jpg"
-doc_hash: "266242a02794"
+doc_hash: "5f2c33f84026"
 ---
 ## Ingredientes
 - Huevos — 2

@@ -1,14 +1,14 @@
 ---
 titulo: "Guiso con lentejas"
 categorias: ["🍗 principales"]
-momento: "🌆 almuerzo"
+momento: "🏙️ almuerzo"
 fuente: "Recetas.docx — Comidas Saladas"
 foto: "guiso-con-lentejas/guiso-listo.jpg"
 porciones: 8
 tiempo_minutos: 120
 tiempo_minutos_max: 180
 dificultad: "baja"
-doc_hash: "218e8ff7e7cf"
+doc_hash: "547d8b590192"
 ---
 ## Ingredientes
 _(para 8 porciones)_

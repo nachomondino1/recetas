@@ -1,7 +1,7 @@
 ---
 titulo: "Pastel de papa"
 categorias: ["🍗 principales"]
-momento: "🌆 almuerzo"
+momento: "🏙️ almuerzo"
 dificultad: "media"
 tiempo_minutos: 90
 foto: "pastel-de-papa/cover.jpg"

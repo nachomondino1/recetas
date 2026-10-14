@@ -1,13 +1,13 @@
 ---
 titulo: "Tacos"
 categorias: ["🍗 principales"]
-momento: "🌆 almuerzo"
+momento: "🏙️ almuerzo"
 fuente: "Recetas.docx — Comidas Saladas"
 foto: "tacos/cover.jpg"
 porciones: 4
 tiempo_minutos: 60
 dificultad: "media"
-doc_hash: "f9fddf01295f"
+doc_hash: "36ceae197af2"
 ---
 ## Ingredientes
 _(para 4 porciones)_

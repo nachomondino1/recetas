@@ -1,9 +1,9 @@
 ---
 titulo: "Pancakes"
-categorias: ["🍰 meriendas"]
+categorias: ["🌆 meriendas"]
 tipo_merienda: "otros"
 fuente: "https://youtube.com/shorts/o6VMb0wrSyc?si=dvpqQEQSKLu4huwP"
-doc_hash: "cfdabde8313c"
+doc_hash: "3efd80e0f14d"
 ---
 _(mamá los hizo de banana, siguiendo ese video — esta versión es de avena y manzana)_
 
