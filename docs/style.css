@@ -363,6 +363,9 @@ main.container { padding-top: 24px; padding-bottom: 48px; }
 .detalle-indice-item:hover { background: var(--accent-soft); color: var(--text); }
 .detalle-indice-item:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
+.detalle-indice-sublista { margin: 2px 0 4px; }
+.detalle-indice-subitem { padding-left: 24px; font-size: 0.8rem; }
+
 .detalle-cuerpo h2,
 .detalle-cuerpo h3 {
   scroll-margin-top: 80px;

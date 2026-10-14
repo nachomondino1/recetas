@@ -352,6 +352,15 @@
       .replace(/^-+|-+$/g, "") || "seccion";
   }
 
+  // Los links del cuerpo (URLs linkificadas por export_data.py) deben abrir
+  // en una pestaña nueva en vez de navegar fuera del sitio.
+  function abrirLinksEnNuevaPestana(cuerpo) {
+    cuerpo.querySelectorAll("a[href]").forEach(function (link) {
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener noreferrer");
+    });
+  }
+
   // Envuelve cada sección (desde un <h2> hasta el próximo <h2>) en su propio
   // <details> colapsable. El h3 (ej. cada paso del paso a paso) queda como
   // contenido normal adentro de la sección, no se colapsa por separado.
@@ -386,16 +395,40 @@
     cuerpo.appendChild(fragmento);
   }
 
-  // Índice de las secciones principales (los <h2>) únicamente: no lista cada
-  // paso del paso a paso ni otros <h3>, para que no sea una lista eterna.
-  function crearIndice(headingsH2) {
-    var headings = Array.prototype.filter.call(headingsH2, function (h) {
+  // Índice de las secciones: los <h2> y, debajo de cada uno, sus <h3>
+  // (ej. cada paso del paso a paso) anidados como sub-ítems.
+  function crearIndice(cuerpo) {
+    var headings = Array.prototype.filter.call(cuerpo.querySelectorAll("h2, h3"), function (h) {
       return h.textContent.trim() !== "";
     });
-    if (headings.length < 2) return null;
+    var totalH2 = headings.filter(function (h) { return h.tagName === "H2"; }).length;
+    if (totalH2 < 2) return null;
 
     var reducirMovimiento = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var idsUsados = {};
+
+    function asignarId(h) {
+      var texto = h.textContent.trim();
+      var base = slugify(texto);
+      var id = base, i = 2;
+      while (idsUsados[id]) { id = base + "-" + i; i++; }
+      idsUsados[id] = true;
+      h.id = id;
+      return texto;
+    }
+
+    function crearBoton(h, texto, claseExtra) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "detalle-indice-item" + (claseExtra ? " " + claseExtra : "");
+      btn.textContent = texto;
+      btn.addEventListener("click", function () {
+        var seccion = h.closest("details.detalle-seccion");
+        if (seccion && !seccion.open) seccion.open = true;
+        h.scrollIntoView({ behavior: reducirMovimiento ? "auto" : "smooth", block: "start" });
+      });
+      return btn;
+    }
 
     var detalle = document.createElement("details");
     detalle.className = "detalle-indice";
@@ -408,28 +441,22 @@
     var lista = document.createElement("ul");
     lista.className = "detalle-indice-lista";
 
-    headings.forEach(function (h) {
-      var texto = h.textContent.trim();
-      var base = slugify(texto);
-      var id = base, i = 2;
-      while (idsUsados[id]) { id = base + "-" + i; i++; }
-      idsUsados[id] = true;
-      h.id = id;
+    var subLista = null;
 
+    headings.forEach(function (h) {
+      var texto = asignarId(h);
       var li = document.createElement("li");
 
-      var btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "detalle-indice-item";
-      btn.textContent = texto;
-      btn.addEventListener("click", function () {
-        var seccion = h.closest("details.detalle-seccion");
-        if (seccion && !seccion.open) seccion.open = true;
-        h.scrollIntoView({ behavior: reducirMovimiento ? "auto" : "smooth", block: "start" });
-      });
-
-      li.appendChild(btn);
-      lista.appendChild(li);
+      if (h.tagName === "H2") {
+        li.appendChild(crearBoton(h, texto));
+        lista.appendChild(li);
+        subLista = document.createElement("ul");
+        subLista.className = "detalle-indice-lista detalle-indice-sublista";
+        li.appendChild(subLista);
+      } else if (subLista) {
+        li.appendChild(crearBoton(h, texto, "detalle-indice-subitem"));
+        subLista.appendChild(li);
+      }
     });
 
     detalle.appendChild(lista);
@@ -500,9 +527,10 @@
     var cuerpo = document.createElement("div");
     cuerpo.className = "detalle-cuerpo";
     cuerpo.innerHTML = receta.body_html || "";
+    abrirLinksEnNuevaPestana(cuerpo);
     agruparSecciones(cuerpo);
 
-    var indice = crearIndice(cuerpo.querySelectorAll("h2"));
+    var indice = crearIndice(cuerpo);
     if (indice) els.detalleContenido.appendChild(indice);
 
     els.detalleContenido.appendChild(cuerpo);

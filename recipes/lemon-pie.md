@@ -24,12 +24,34 @@ doc_hash: "a2fcd60d42bb"
 
 En conjunto forman la clásica tarta de limón con merengue italiano: base de masa sablée, relleno de curd de limón y cobertura de merengue dorado.
 
+## Ingredientes
+
+### Masa sablée
+- Harina 0000 — 200 g
+- Sal — 1 cdita (¼ tsp)
+- Manteca — 70 g
+- Azúcar impalpable — 70 g
+- Esencia de vainilla — 1 cdita
+- Huevo — 1 unidad
+
+### Curd de limón
+- Huevos — 2
+- Azúcar — 100 g
+- Maicena — 15 g
+- Ralladura de limón — 1 cucharadita (mínimo la de 1 limón, aporta aroma)
+- Jugo de limón — 75 ml (120 g en la receta original)
+- Manteca — 40 g
+
+### Merengue italiano
+- Claras — 3 (a temperatura ambiente)
+- Ácido (jugo de limón) — unas gotas
+- Azúcar blanca — 200 g
+- Agua — 150 ml
+
 ## Paso a paso
 
 ### Masa sablée
 _Fuente: https://www.youtube.com/watch?v=Dsb0C9QIqgU_
-
-Ingredientes: harina 0000 200 g, sal 1 cdita (¼ tsp), manteca 70 g, azúcar impalpable 70 g, esencia de vainilla 1 cdita, huevo 1 unidad.
 
 1. Agregar la sal a la harina y tamizar en un bol.
 2. Cortar la manteca fría en cubos y agregarla a la harina.
@@ -45,8 +67,6 @@ Ingredientes: harina 0000 200 g, sal 1 cdita (¼ tsp), manteca 70 g, azúcar imp
 ### Curd de limón (en microondas)
 _Fuentes: https://www.youtube.com/watch?v=jTz7wBy5pI8 (cantidades) y https://www.youtube.com/watch?v=8Mp8AsyJYj8 (cómo cocinarla)_
 
-Ingredientes: huevos 2, azúcar 100 g, maicena 15 g, ralladura de limón 1 cucharadita (mínimo la de 1 limón, aporta aroma), jugo de limón 75 ml (120 g en la receta original), manteca 40 g.
-
 1. Separar la yema de 2 huevos.
 2. Mezclar rápidamente las yemas con el azúcar — no dejarlas reposar juntas sin integrar, porque el azúcar puede "cocinar" las yemas y formar puntos amarillos difíciles de disolver.
 3. Agregar la maicena y mezclar bien hasta disolver todos los grumos.
@@ -57,8 +77,6 @@ Ingredientes: huevos 2, azúcar 100 g, maicena 15 g, ralladura de limón 1 cucha
 
 ### Merengue italiano
 > ⚠️ Importante: limpiar todo con alcohol. Cualquier materia grasa que quede hace que el merengue no quede como tiene que quedar.
-
-Ingredientes: claras 3 (a temperatura ambiente), unas gotas de ácido (jugo de limón), azúcar blanca 200 g, agua 150 ml.
 
 1. Para el almíbar: colocar el azúcar en la cacerola. Se necesita el doble de azúcar que de claras (cada clara pesa entre 30 y 35 g, es decir entre 60 y 70 g de azúcar por clara).
 2. Cubrir el azúcar con el agua, a ojo, asegurándose de que todo el azúcar quede cubierto y no quede ningún granito en las paredes de la cacerola (se puede limpiar con un pincel mojado). Llevar a fuego fuerte sin revolver y cocinar hasta formar un almíbar.

@@ -170,3 +170,11 @@ El script agrupa las fotos por receta reusando el mismo criterio que `_agrupar_r
 **Campo nuevo en el schema:** `doc_hash` se agregó a `OPTIONAL_FIELDS` (`src/schema.py`) para que `export_data.py` no lo marque como "clave de frontmatter desconocida". No se expone en `docs/recetas.json` — es bookkeeping interno del sync, no un dato para mostrar en el sitio.
 
 **Generalizable:** ver `DATA_FLOW_PLAYBOOK_unificado.md`, Arquetipo C — se agregó esto como patrón reusable para detectar cambios reales en una fuente de prosa larga sin backend propio.
+
+## 2026-10-14 — Toda receta debe tener una sección `## Ingredientes`
+
+**Problema:** *Lemon pie* tiene 3 sub-recetas (masa sablée, curd de limón, merengue italiano) y en vez de una sección `## Ingredientes` como el resto de las recetas con partes (ver *Tarta de frutillas*, que sí tiene `## Ingredientes` con un `###` por parte), los ingredientes de cada parte estaban como una línea de texto suelta ("Ingredientes: harina 0000 200 g, ...") al principio de cada subsección de `## Paso a paso`. El resultado: el índice de la receta ("En esta receta") no mostraba nunca un ítem "Ingredientes", a diferencia de las demás.
+
+**Decisión:** toda receta real (no los stubs "pendiente de completar" como *Empanadas*/*Tarta de espinaca*, que no tienen ninguna sección todavía) tiene que tener un `## Ingredientes` de nivel 2, aunque tenga varias partes — en ese caso, igual que en `## Paso a paso`, se usa un `### <nombre de la parte>` por cada una, con la misma lista de ingredientes en formato `- Item — cantidad`. Se corrigió *Lemon pie* siguiendo este patrón (`recipes/lemon-pie.md`) y se sacó el texto de ingredientes suelto de cada paso.
+
+**Por qué:** consistencia con el resto de las recetas multi-parte y con cómo arma el índice `docs/app.js` (`crearIndice`): una receta sin `## Ingredientes` pierde ese ítem del índice sin que se note a simple vista, ya que el resto del contenido se ve igual de completo.
