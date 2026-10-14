@@ -1,6 +1,7 @@
 ---
 titulo: "Mousse de limón"
 categorias: ["postre"]
+tipo_postre: "frutal"
 porciones: 4
 foto: "mousse-de-limon/cover.jpg"
 fuente: "https://www.recetasnestle.com.ar/recetas/mousse-de-limon"

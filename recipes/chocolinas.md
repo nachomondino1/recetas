@@ -1,6 +1,7 @@
 ---
 titulo: "Chocolinas"
 categorias: ["postre"]
+tipo_postre: "chocolatoso"
 foto: "chocolinas/cover.jpg"
 fecha_actualizacion: "2026-05-02"
 ---

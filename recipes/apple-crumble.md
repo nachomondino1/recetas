@@ -1,6 +1,7 @@
 ---
 titulo: "Apple crumble"
 categorias: ["postre"]
+tipo_postre: "frutal"
 tiempo_minutos: 60
 foto: "apple-crumble/cover.jpg"
 fuente: "https://www.youtube.com/watch?v=KwIRgwd52Ic&t=147s"

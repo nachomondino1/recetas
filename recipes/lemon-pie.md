@@ -1,6 +1,7 @@
 ---
 titulo: "Lemon pie"
 categorias: ["postre"]
+tipo_postre: "frutal"
 foto: "lemon-pie/cover.jpg"
 fuente: "https://www.youtube.com/watch?v=7P8J3vkFeJg"
 fecha_actualizacion: "2026-09-23"

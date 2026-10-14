@@ -1,6 +1,7 @@
 ---
 titulo: "Tarta de frutillas (Tarte aux Fraises)"
 categorias: ["postre"]
+tipo_postre: "frutal"
 porciones: 8
 foto: "tarta-de-frutillas/cover.jpg"
 fuente: "https://www.youtube.com/watch?v=UwuSq9yP2Zk"

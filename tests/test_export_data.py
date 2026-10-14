@@ -118,7 +118,7 @@ def test_build_json_contrato_y_allowlist(tmp_path):
     allowed = {
         "id", "titulo", "categorias", "dificultad", "tiempo_minutos",
         "tiempo_minutos_max", "porciones", "foto", "fecha_actualizacion",
-        "fuente", "tipo_bebida", "tipo_merienda", "momento", "body_html",
+        "fuente", "tipo_bebida", "tipo_merienda", "momento", "tipo_postre", "body_html",
     }
     assert set(receta.keys()) == allowed
     assert receta["foto"] == "images/cover.jpg"

@@ -24,13 +24,15 @@ class SubFiltro(NamedTuple):
 # - bebidas/merienda: el sub-tipo clasifica TODA receta de esa categoría
 #   (jugos/tragos, dulce/salado) → falta de dato es un WARNING, igual que
 #   dificultad.
-# - principal/momento: es una excepción puntual (ej. Asado, que se come solo
-#   al mediodía), no algo que toda receta "principal" deba tener → su
-#   ausencia es el caso normal, nunca WARNING.
+# - principal/momento y postre/tipo_postre: excepciones puntuales (ej. Asado,
+#   que se come solo al mediodía; Flan o Torta de nuez, que no son ni
+#   frutales ni chocolatosos) — no algo que toda receta de esa categoría deba
+#   tener → su ausencia es el caso normal, nunca WARNING.
 SUBFILTROS: dict[str, SubFiltro] = {
     "bebidas": SubFiltro("tipo_bebida", {"jugos", "tragos"}, True),
     "merienda": SubFiltro("tipo_merienda", {"dulce", "salado"}, True),
     "principal": SubFiltro("momento", {"mediodía", "cena"}, False),
+    "postre": SubFiltro("tipo_postre", {"frutal", "chocolatoso"}, False),
 }
 SUBFILTRO_CAMPOS = {sf.campo for sf in SUBFILTROS.values()}
 

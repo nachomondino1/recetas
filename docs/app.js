@@ -15,6 +15,7 @@
     principal: { campo: "momento", label: "Momento", orden: ["mediodía", "cena"] },
     merienda: { campo: "tipo_merienda", label: "Tipo", orden: ["dulce", "salado"] },
     bebidas: { campo: "tipo_bebida", label: "Tipo de bebida", orden: ["jugos", "tragos"] },
+    postre: { campo: "tipo_postre", label: "Tipo", orden: ["frutal", "chocolatoso"] },
   };
   var PLACEHOLDER_EMOJI = "🍲";
 
