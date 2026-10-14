@@ -1,10 +1,11 @@
 ---
 titulo: "Torta de nuez"
-categorias: ["postre"]
-foto: "torta-de-nuez/cover.jpg"
+categorias: ["postres"]
+tipo_postre: "ddl"
 fuente: "https://luciapaula.com/es/torta-de-nuez-con-dulce-de-leche-y-crema-chantilly/"
 fecha_actualizacion: "2026-05-01"
-doc_hash: "dc119fd19f75"
+foto: "torta-de-nuez/cover.jpg"
+doc_hash: "0daba9e61190"
 ---
 ## Ingredientes
 - Huevos — 4

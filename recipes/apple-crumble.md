@@ -1,12 +1,12 @@
 ---
 titulo: "Apple crumble"
-categorias: ["postre"]
+categorias: ["postres"]
 tipo_postre: "frutal"
-tiempo_minutos: 60
-foto: "apple-crumble/cover.jpg"
 fuente: "https://www.youtube.com/watch?v=KwIRgwd52Ic&t=147s"
 fecha_actualizacion: "2026-09-13"
-doc_hash: "417f1361ee3a"
+foto: "apple-crumble/cover.jpg"
+tiempo_minutos: 60
+doc_hash: "a99fbc0c03f7"
 ---
 ## Ingredientes
 

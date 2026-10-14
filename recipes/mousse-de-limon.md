@@ -1,12 +1,12 @@
 ---
 titulo: "Mousse de limón"
-categorias: ["postre"]
+categorias: ["postres"]
 tipo_postre: "frutal"
-porciones: 4
-foto: "mousse-de-limon/cover.jpg"
 fuente: "https://www.recetasnestle.com.ar/recetas/mousse-de-limon"
 fecha_actualizacion: "2026-07-05"
-doc_hash: "bcc2fce8ea68"
+foto: "mousse-de-limon/cover.jpg"
+porciones: 4
+doc_hash: "3f28171a09cb"
 ---
 ## Materiales
 - Licuadora.

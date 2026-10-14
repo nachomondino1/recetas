@@ -1,7 +1,7 @@
 ---
 titulo: "Asado"
-categorias: ["principal"]
-momento: "mediodía"
+categorias: ["principales"]
+momento: "almuerzo"
 dificultad: "baja"
 tiempo_minutos: 180
 porciones: 3

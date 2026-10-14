@@ -1,11 +1,11 @@
 ---
 titulo: "Papas al horno"
-categorias: ["acompañante"]
-dificultad: "baja"
-tiempo_minutos: 75
-foto: "papas-al-horno/cover.jpg"
+categorias: ["acompañantes"]
 fuente: "Recetas.docx — Comidas Saladas"
-doc_hash: "3d23aec3b365"
+foto: "papas-al-horno/cover.jpg"
+tiempo_minutos: 75
+dificultad: "baja"
+doc_hash: "824a5b2714a6"
 ---
 ## Ingredientes
 - Papas

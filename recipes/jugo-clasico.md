@@ -1,11 +1,11 @@
 ---
 titulo: "El Clásico"
 categorias: ["bebidas"]
-tipo_bebida: "jugos"
-foto: "jugo-clasico/cover.jpg"
+tipo_bebida: "jugos naturales"
 fuente: "Gemini"
 fecha_actualizacion: "2026-08-30"
-doc_hash: "4bd93405ee9a"
+foto: "jugo-clasico/cover.jpg"
+doc_hash: "5b5bf24ae1b2"
 ---
 ## Ingredientes
 - Naranjas (peladas y sin semillas grandes) — 3

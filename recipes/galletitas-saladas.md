@@ -1,11 +1,11 @@
 ---
 titulo: "Galletitas saladas"
-categorias: ["merienda"]
-tipo_merienda: "salado"
-foto: "galletitas-saladas/cover.jpg"
+categorias: ["meriendas"]
+tipo_merienda: "🍪 cookies"
 fuente: "https://www.instagram.com/p/CNNUl1_g9yC"
 fecha_actualizacion: "2026-10-05"
-doc_hash: "232258e3df95"
+foto: "galletitas-saladas/cover.jpg"
+doc_hash: "dda939fb1956"
 ---
 ## Ingredientes
 - Harina de lino — 1 taza

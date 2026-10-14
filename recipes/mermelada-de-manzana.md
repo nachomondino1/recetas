@@ -1,12 +1,9 @@
 ---
-titulo: "Mermelada"
-categorias: ["merienda"]
-tipo_merienda: "dulce"
-doc_hash: "98349afa5297"
+titulo: "Mermelada de manzana"
+categorias: ["meriendas"]
+tipo_merienda: "🍯 untables"
+doc_hash: "7063f6e60c5d"
 ---
-Hay dos variantes: manzana (completa) y naranja (<https://www.youtube.com/shorts/26iPiBKpOcM>, todavía sin ingredientes ni paso a paso en el Doc).
-
-### Manzana
 Fuentes: <https://www.youtube.com/shorts/fXV-SjgVD4s> y <https://youtu.be/eXyNtLVpFf0?si=ZpWzCNCREu0cSRoV> (la que siguió mamá).
 
 ## Ingredientes

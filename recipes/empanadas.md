@@ -1,6 +1,6 @@
 ---
 titulo: "Empanadas"
-categorias: ["principal"]
+categorias: ["principales"]
 momento: "cena"
 foto: "empanadas/cover.jpg"
 ---

@@ -1,8 +1,8 @@
 ---
 titulo: "Morrón y huevo asados"
-categorias: ["acompañante"]
+categorias: ["acompañantes"]
 foto: "morron-y-huevo-asados/cover.jpg"
-doc_hash: "ca9aa29656b3"
+doc_hash: "a49f5d466896"
 ---
 _(rinde 8 morrones con huevo)_
 

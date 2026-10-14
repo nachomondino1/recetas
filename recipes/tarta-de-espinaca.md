@@ -1,6 +1,6 @@
 ---
 titulo: "Tarta de espinaca"
-categorias: ["principal"]
+categorias: ["principales"]
 momento: "cena"
 foto: "tarta-de-espinaca/cover.webp"
 ---

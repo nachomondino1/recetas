@@ -1,11 +1,11 @@
 ---
 titulo: "El Detox Digestivo"
 categorias: ["bebidas"]
-tipo_bebida: "jugos"
-foto: "jugo-detox-digestivo/cover.jpg"
+tipo_bebida: "jugos naturales"
 fuente: "Gemini"
 fecha_actualizacion: "2026-08-30"
-doc_hash: "0a84f7b67116"
+foto: "jugo-detox-digestivo/cover.jpg"
+doc_hash: "570316ac5a3f"
 ---
 ## Ingredientes
 - Tallos de apio — 2
