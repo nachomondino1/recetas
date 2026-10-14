@@ -40,4 +40,4 @@ doc_hash: "3ef8ca34d653"
 
 ### Imágenes del paso a paso
 ![Resultado final](images/torta-tofi/doc-01.jpg){: .foto-paso #foto-resultado-1 }
-_Resultado final_
+_Resultado final_{: .foto-paso-caption }

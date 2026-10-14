@@ -43,4 +43,4 @@ _Nota: 340 g de nueces mariposa en total (entre la base y el praliné)._
 
 ### Imágenes del paso a paso
 ![Resultado final](images/torta-de-nuez/doc-01.jpg){: .foto-paso #foto-resultado-1 }
-_Resultado final_
+_Resultado final_{: .foto-paso-caption }

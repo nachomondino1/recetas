@@ -26,4 +26,4 @@ doc_hash: "ef1dd935b7ff"
 
 ### Imágenes del paso a paso
 ![Foto del paso: turrón a medio armar, capas de galletitas y mezcla](images/turron-de-quaker/doc-01.jpg){: .foto-paso #foto-paso-5 }
-_Paso 5: armando las capas de galletitas y mezcla_
+_Paso 5: armando las capas de galletitas y mezcla_{: .foto-paso-caption }

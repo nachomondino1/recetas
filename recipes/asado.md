@@ -121,61 +121,61 @@ Limpiar la parrilla con cartón o papel de diario. Guardar los fósforos y demá
 
 ### Imágenes del paso a paso
 ![Foto del paso: armando la base de troncos](images/asado/doc-01.jpg){: .foto-paso #foto-p1-1 }
-_P1: armando la base de troncos_
+_P1: armando la base de troncos_{: .foto-paso-caption }
 
 ![Foto del paso: anillo de papel y cartón en el centro](images/asado/doc-02.jpg){: .foto-paso #foto-p1-2 }
-_P1: anillo de papel y cartón en el centro_
+_P1: anillo de papel y cartón en el centro_{: .foto-paso-caption }
 
 ![Foto del paso: segunda capa de ramitas en cuadrado hueco](images/asado/doc-03.jpg){: .foto-paso #foto-p1-3 }
-_P1: segunda capa de ramitas en cuadrado hueco_
+_P1: segunda capa de ramitas en cuadrado hueco_{: .foto-paso-caption }
 
 ![Foto del paso: segunda capa de ramitas en cuadrado hueco](images/asado/doc-04.jpg){: .foto-paso #foto-p1-4 }
-_P1: segunda capa de ramitas en cuadrado hueco_
+_P1: segunda capa de ramitas en cuadrado hueco_{: .foto-paso-caption }
 
 ![Foto del paso: líquido combustible en el centro](images/asado/doc-05.jpg){: .foto-paso #foto-p1-5 }
-_P1: líquido combustible en el centro_
+_P1: líquido combustible en el centro_{: .foto-paso-caption }
 
 ![Foto del paso: encendiendo el fuego](images/asado/doc-06.jpg){: .foto-paso #foto-p1-6 }
-_P1: encendiendo el fuego_
+_P1: encendiendo el fuego_{: .foto-paso-caption }
 
 ![Foto del paso: ramitas pequeñas tapando el fuego](images/asado/doc-07.jpg){: .foto-paso #foto-p1-7 }
-_P1: ramitas pequeñas tapando el fuego_
+_P1: ramitas pequeñas tapando el fuego_{: .foto-paso-caption }
 
 ![Foto del paso: ramitas pequeñas tapando el fuego](images/asado/doc-08.jpg){: .foto-paso #foto-p1-8 }
-_P1: ramitas pequeñas tapando el fuego_
+_P1: ramitas pequeñas tapando el fuego_{: .foto-paso-caption }
 
 ![Foto del paso: agregando pedazos de leña grandes](images/asado/doc-09.jpg){: .foto-paso #foto-p1-9 }
-_P1: agregando pedazos de leña grandes_
+_P1: agregando pedazos de leña grandes_{: .foto-paso-caption }
 
 ![Foto del paso: agregando pedazos de leña grandes](images/asado/doc-10.jpg){: .foto-paso #foto-p1-10 }
-_P1: agregando pedazos de leña grandes_
+_P1: agregando pedazos de leña grandes_{: .foto-paso-caption }
 
 ![Foto del paso: carbón arriba de la leña](images/asado/doc-11.jpg){: .foto-paso #foto-p1-11 }
-_P1: carbón arriba de la leña_
+_P1: carbón arriba de la leña_{: .foto-paso-caption }
 
 ![Foto del paso: carbón arriba de la leña](images/asado/doc-12.jpg){: .foto-paso #foto-p1-12 }
-_P1: carbón arriba de la leña_
+_P1: carbón arriba de la leña_{: .foto-paso-caption }
 
 ![Foto del paso: muro de leña con carbón de reserva](images/asado/doc-13.jpg){: .foto-paso #foto-p1-13 }
-_P1: muro de leña con carbón de reserva para refills_
+_P1: muro de leña con carbón de reserva para refills_{: .foto-paso-caption }
 
 ![Foto del paso: salando la carne](images/asado/doc-14.jpg){: .foto-paso #foto-p2-1 }
-_P2: salando la carne_
+_P2: salando la carne_{: .foto-paso-caption }
 
 ![Foto del paso: salando la carne](images/asado/doc-15.jpg){: .foto-paso #foto-p2-2 }
-_P2: salando la carne_
+_P2: salando la carne_{: .foto-paso-caption }
 
 ![Foto del paso: carne al costado de la parrilla](images/asado/doc-16.jpg){: .foto-paso #foto-p3-1 }
-_P3: carne al costado, esperando que el fuego esté listo_
+_P3: carne al costado, esperando que el fuego esté listo_{: .foto-paso-caption }
 
 ![Foto del paso: carne al costado de la parrilla](images/asado/doc-17.jpg){: .foto-paso #foto-p3-2 }
-_P3: carne al costado, esperando que el fuego esté listo_
+_P3: carne al costado, esperando que el fuego esté listo_{: .foto-paso-caption }
 
 ![Foto del paso: desarmando el fuego para obtener brasas](images/asado/doc-18.jpg){: .foto-paso #foto-p4-1 }
-_P4: desarmando el fuego para obtener brasas_
+_P4: desarmando el fuego para obtener brasas_{: .foto-paso-caption }
 
 ![Foto del paso: distribuyendo las brasas debajo de la carne](images/asado/doc-19.jpg){: .foto-paso #foto-p4-2 }
-_P4: distribuyendo las brasas debajo de la carne_
+_P4: distribuyendo las brasas debajo de la carne_{: .foto-paso-caption }
 
 ![Foto del paso: distribuyendo las brasas debajo de la carne](images/asado/doc-20.jpg){: .foto-paso #foto-p4-3 }
-_P4: distribuyendo las brasas debajo de la carne_
+_P4: distribuyendo las brasas debajo de la carne_{: .foto-paso-caption }

@@ -352,10 +352,12 @@
       .replace(/^-+|-+$/g, "") || "seccion";
   }
 
-  // Los links del cuerpo (URLs linkificadas por export_data.py) deben abrir
-  // en una pestaña nueva en vez de navegar fuera del sitio.
+  // Los links externos del cuerpo (ej. URLs a YouTube linkificadas por
+  // export_data.py) deben abrir en una pestaña nueva. Los links internos
+  // "ver foto" (#/receta/<slug>/foto-<id>) tienen que navegar en la misma
+  // pestaña: son parte del router hash-based, no una salida del sitio.
   function abrirLinksEnNuevaPestana(cuerpo) {
-    cuerpo.querySelectorAll("a[href]").forEach(function (link) {
+    cuerpo.querySelectorAll('a[href^="http://"], a[href^="https://"]').forEach(function (link) {
       link.setAttribute("target", "_blank");
       link.setAttribute("rel", "noopener noreferrer");
     });

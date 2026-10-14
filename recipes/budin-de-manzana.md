@@ -31,23 +31,23 @@ doc_hash: "31c3859cf524"
 10. Al desmoldar, dar vuelta para que las manzanas del fondo queden arriba.
 
 ### Imágenes del paso a paso
-![Foto del paso: recién horneado](images/budin-de-manzana/doc-01.jpg){: .foto-paso #foto-paso-9 }
-_Paso 9: recién horneado_
-
-![Foto del paso: recién horneado, otro ángulo](images/budin-de-manzana/doc-02.jpg){: .foto-paso #foto-paso-9b }
-_Paso 9: recién horneado, otro ángulo_
-
 ![Foto del paso: molde espolvoreado con azúcar](images/budin-de-manzana/doc-03.jpg){: .foto-paso #foto-paso-5 }
-_Paso 5: molde espolvoreado con azúcar_
+_Paso 5: molde espolvoreado con azúcar_{: .foto-paso-caption }
 
 ![Foto del paso: molde espolvoreado con azúcar](images/budin-de-manzana/doc-04.jpg){: .foto-paso #foto-paso-5b }
-_Paso 5: molde espolvoreado con azúcar_
+_Paso 5: molde espolvoreado con azúcar_{: .foto-paso-caption }
 
 ![Foto del paso: manzana pelada y laminada](images/budin-de-manzana/doc-05.jpg){: .foto-paso #foto-paso-6 }
-_Paso 6: manzana pelada y laminada_
+_Paso 6: manzana pelada y laminada_{: .foto-paso-caption }
 
 ![Foto del paso: láminas de manzana cubriendo el molde](images/budin-de-manzana/doc-06.jpg){: .foto-paso #foto-paso-7 }
-_Paso 7: láminas de manzana cubriendo el molde_
+_Paso 7: láminas de manzana cubriendo el molde_{: .foto-paso-caption }
 
 ![Foto del paso: láminas de manzana cubriendo el molde](images/budin-de-manzana/doc-07.jpg){: .foto-paso #foto-paso-7b }
-_Paso 7: láminas de manzana cubriendo el molde_
+_Paso 7: láminas de manzana cubriendo el molde_{: .foto-paso-caption }
+
+![Foto del paso: recién horneado](images/budin-de-manzana/doc-01.jpg){: .foto-paso #foto-paso-9 }
+_Paso 9: recién horneado_{: .foto-paso-caption }
+
+![Foto del paso: recién horneado, otro ángulo](images/budin-de-manzana/doc-02.jpg){: .foto-paso #foto-paso-9b }
+_Paso 9: recién horneado, otro ángulo_{: .foto-paso-caption }

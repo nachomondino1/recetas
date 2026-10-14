@@ -117,7 +117,7 @@ Una versión anterior y más corta de esta receta, que se conserva como referenc
 
 ### Imágenes del paso a paso
 ![Foto del paso: grasa del chorizo reahogado](images/guiso-con-lentejas/doc-01.jpg){: .foto-paso #foto-paso-12 }
-_Paso 12: grasa solidificada del chorizo reahogado_
+_Paso 12: grasa solidificada del chorizo reahogado_{: .foto-paso-caption }
 
 ![Foto del paso: guiso listo para comer](images/guiso-con-lentejas/doc-02.jpg){: .foto-paso #foto-paso-15 }
-_Paso 15: guiso listo para comer_
+_Paso 15: guiso listo para comer_{: .foto-paso-caption }

@@ -59,32 +59,32 @@ _Nota: 1 limón cubre las dos ralladuras (relleno y masa)._
 2. Dejar enfriar por completo antes de desmoldar. Para despegar el papel de la base, levantarla con una base de tartera o espátula grande. [📷 ver foto](#/receta/apple-crumble/foto-horneado-2){: .ver-foto }
 
 ### Imágenes del paso a paso
-![Resultado final](images/apple-crumble/doc-01.jpg){: .foto-paso #foto-resultado-1 }
-_Resultado final_
-
-![Resultado final, porción servida](images/apple-crumble/doc-02.jpg){: .foto-paso #foto-resultado-2 }
-_Resultado final, porción servida_
-
-![Resultado final, porción servida](images/apple-crumble/doc-03.jpg){: .foto-paso #foto-resultado-3 }
-_Resultado final, porción servida_
-
 ![Foto del paso: poner manteca en la sartén](images/apple-crumble/doc-04.jpg){: .foto-paso #foto-relleno-2 }
-_Relleno, paso 2: poner manteca en la sartén_
+_Relleno, paso 2: poner manteca en la sartén_{: .foto-paso-caption }
 
 ![Foto del paso: manzanas y azúcar en la sartén](images/apple-crumble/doc-05.jpg){: .foto-paso #foto-relleno-3 }
-_Relleno, paso 3: manzanas y azúcar en la sartén_
+_Relleno, paso 3: manzanas y azúcar en la sartén_{: .foto-paso-caption }
 
 ![Foto del paso: espolvorear maicena](images/apple-crumble/doc-06.jpg){: .foto-paso #foto-relleno-7 }
-_Relleno, paso 7: espolvorear maicena_
+_Relleno, paso 7: espolvorear maicena_{: .foto-paso-caption }
 
 ![Foto del paso: masa crumble arenada](images/apple-crumble/doc-07.jpg){: .foto-paso #foto-masa-3 }
-_Masa crumble, paso 3: arenada con los dedos_
+_Masa crumble, paso 3: arenada con los dedos_{: .foto-paso-caption }
 
 ![Foto del paso: nueces sobre el relleno](images/apple-crumble/doc-08.jpg){: .foto-paso #foto-armado-3 }
-_Armado, paso 3: nueces sobre el relleno_
+_Armado, paso 3: nueces sobre el relleno_{: .foto-paso-caption }
 
 ![Foto del paso: crumble cubriendo el relleno](images/apple-crumble/doc-09.jpg){: .foto-paso #foto-armado-5 }
-_Armado, paso 5: crumble cubriendo el relleno_
+_Armado, paso 5: crumble cubriendo el relleno_{: .foto-paso-caption }
 
 ![Foto del paso: recién horneada, enfriando](images/apple-crumble/doc-10.jpg){: .foto-paso #foto-horneado-2 }
-_Horneado, paso 2: recién horneada, enfriando_
+_Horneado, paso 2: recién horneada, enfriando_{: .foto-paso-caption }
+
+![Resultado final](images/apple-crumble/doc-01.jpg){: .foto-paso #foto-resultado-1 }
+_Resultado final_{: .foto-paso-caption }
+
+![Resultado final, porción servida](images/apple-crumble/doc-02.jpg){: .foto-paso #foto-resultado-2 }
+_Resultado final, porción servida_{: .foto-paso-caption }
+
+![Resultado final, porción servida](images/apple-crumble/doc-03.jpg){: .foto-paso #foto-resultado-3 }
+_Resultado final, porción servida_{: .foto-paso-caption }
