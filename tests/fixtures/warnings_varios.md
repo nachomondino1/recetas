@@ -1,6 +1,6 @@
 ---
 titulo: "Receta con varios campos pendientes"
-categorias: ["merienda"]
+categorias: ["meriendas"]
 foto: "no-existe.jpg"
 nota_extra: "esto no está en el schema"
 ---

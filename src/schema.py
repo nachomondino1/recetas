@@ -4,37 +4,27 @@ Lo importan tanto export_data.py (para validar) como los tests (para
 construir fixtures) — la lista de campos nunca se duplica.
 """
 
-from typing import NamedTuple
+SCHEMA_VERSION = 2
 
-SCHEMA_VERSION = 1
-
-CATEGORIAS = {"principal", "acompañante", "postre", "merienda", "bebidas"}
 DIFICULTADES = {"baja", "media", "alta"}
 
-
-class SubFiltro(NamedTuple):
-    campo: str
-    valores: set[str]
-    avisar_si_falta: bool  # True = WARNING si la categoría está pero el campo no
-
-
-# Campo opcional condicionado a una categoría ("qué es"), para distinguir
-# adentro de ella sin volver a mezclar ejes en CATEGORIAS (ver DECISIONS.md,
-# "Un solo eje de clasificación"). `avisar_si_falta` distingue dos casos:
-# - bebidas/merienda: el sub-tipo clasifica TODA receta de esa categoría
-#   (jugos/tragos, dulce/salado) → falta de dato es un WARNING, igual que
-#   dificultad.
-# - principal/momento y postre/tipo_postre: excepciones puntuales (ej. Asado,
-#   que se come solo al mediodía; Flan o Torta de nuez, que no son ni
-#   frutales ni chocolatosos) — no algo que toda receta de esa categoría deba
-#   tener → su ausencia es el caso normal, nunca WARNING.
-SUBFILTROS: dict[str, SubFiltro] = {
-    "bebidas": SubFiltro("tipo_bebida", {"jugos", "tragos"}, True),
-    "merienda": SubFiltro("tipo_merienda", {"dulce", "salado"}, True),
-    "principal": SubFiltro("momento", {"mediodía", "cena"}, False),
-    "postre": SubFiltro("tipo_postre", {"frutal", "chocolatoso"}, False),
+# Categoría y subcategoría son dinámicas: su VALOR es el texto del heading
+# H1/H2 del Google Doc (ver doc_sync.normalizar_encabezado), no un enum
+# cerrado — agregar/renombrar un H1 o H2 en el Doc no requiere tocar este
+# archivo. Lo único que sigue siendo código (estable, no viaja en el Doc) es
+# el NOMBRE del campo de subcategoría de cada categoría — para no volver a
+# mezclar ejes en un solo campo "subcategoria" cuando ya tenemos un nombre
+# con sentido semántico (ver DECISIONS.md, "Un solo eje de clasificación").
+# Una categoría nueva que todavía no tiene entrada acá usa
+# CAMPO_SUBCATEGORIA_DEFAULT hasta que se le ponga nombre.
+CAMPO_SUBCATEGORIA_DEFAULT = "subcategoria"
+CAMPO_SUBCATEGORIA: dict[str, str] = {
+    "principales": "momento",
+    "postres": "tipo_postre",
+    "meriendas": "tipo_merienda",
+    "bebidas": "tipo_bebida",
 }
-SUBFILTRO_CAMPOS = {sf.campo for sf in SUBFILTROS.values()}
+SUBFILTRO_CAMPOS = set(CAMPO_SUBCATEGORIA.values()) | {CAMPO_SUBCATEGORIA_DEFAULT}
 
 REQUIRED_FIELDS = {"titulo", "categorias"}
 OPTIONAL_FIELDS = {

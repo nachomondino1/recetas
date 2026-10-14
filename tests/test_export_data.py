@@ -43,19 +43,17 @@ def test_sin_categorias_es_error(tmp_path):
     assert any("categorias" in e for e in errors)
 
 
-def test_categoria_invalida_es_error(tmp_path):
-    _, errors, _ = _load_one(tmp_path, "broken_categoria_invalida.md")
-    assert any("categoria desconocida" in e for e in errors)
-
-
 def test_dificultad_invalida_es_error(tmp_path):
     _, errors, _ = _load_one(tmp_path, "broken_dificultad_invalida.md")
     assert any("dificultad desconocida" in e for e in errors)
 
 
-def test_tipo_bebida_invalido_es_error(tmp_path):
-    _, errors, _ = _load_one(tmp_path, "broken_tipo_bebida_invalido.md")
-    assert any("tipo_bebida desconocido" in e for e in errors)
+def test_categoria_y_subcategoria_son_libres_no_hay_enum_que_validar(tmp_path):
+    # Categoría/subcategoría son dinámicas (vienen del H1/H2 del Doc, ver
+    # doc_sync.normalizar_encabezado): cualquier valor no vacío es válido,
+    # no hay lista cerrada que mantener acá.
+    _, errors, _ = _load_one(tmp_path, "warnings_bebida_sin_tipo.md")
+    assert errors == []
 
 
 def test_bebida_sin_tipo_bebida_es_warning(tmp_path):
@@ -64,15 +62,12 @@ def test_bebida_sin_tipo_bebida_es_warning(tmp_path):
     assert any(w["field"] == "tipo_bebida" for w in warnings)
 
 
-def test_postre_sin_tipo_bebida_no_es_warning(tmp_path):
+def test_acompanante_sin_tipo_bebida_no_es_warning(tmp_path):
+    # "acompañantes" no tiene subcategoría en el Doc (no hay H2 ahí) — no es
+    # un campo que deba avisar si falta.
     _, errors, warnings = _load_one(tmp_path, "ok_minimal.md")
     assert errors == []
     assert not any(w["field"] == "tipo_bebida" for w in warnings)
-
-
-def test_tipo_merienda_invalido_es_error(tmp_path):
-    _, errors, _ = _load_one(tmp_path, "broken_tipo_merienda_invalido.md")
-    assert any("tipo_merienda desconocido" in e for e in errors)
 
 
 def test_merienda_sin_tipo_merienda_es_warning(tmp_path):
@@ -81,12 +76,14 @@ def test_merienda_sin_tipo_merienda_es_warning(tmp_path):
     assert any(w["field"] == "tipo_merienda" for w in warnings)
 
 
-def test_principal_sin_momento_no_es_warning(tmp_path):
-    # "momento" es una excepción puntual (ej. Asado), no algo que toda
-    # receta "principal" deba tener — su ausencia es el caso normal.
-    _, errors, warnings = _load_one(tmp_path, "ok_minimal.md")
+def test_principal_sin_momento_es_warning(tmp_path):
+    # A diferencia del esquema viejo (momento era una excepción puntual),
+    # el Doc unificado ahora pone SIEMPRE las recetas de "Principales" bajo
+    # un H2 "Almuerzo"/"Cena" — el sync mecánico siempre completa `momento`,
+    # así que su ausencia señala una receta agregada a mano sin clasificar.
+    _, errors, warnings = _load_one(tmp_path, "warnings_principal_sin_momento.md")
     assert errors == []
-    assert not any(w["field"] == "momento" for w in warnings)
+    assert any(w["field"] == "momento" for w in warnings)
 
 
 def test_tiempo_no_numerico_es_error(tmp_path):
@@ -127,7 +124,8 @@ def test_build_json_contrato_y_allowlist(tmp_path):
     allowed = {
         "id", "titulo", "categorias", "dificultad", "tiempo_minutos",
         "tiempo_minutos_max", "porciones", "foto", "fecha_actualizacion",
-        "fuente", "tipo_bebida", "tipo_merienda", "momento", "tipo_postre", "body_html",
+        "fuente", "tipo_bebida", "tipo_merienda", "momento", "tipo_postre",
+        "subcategoria", "body_html",
     }
     assert set(receta.keys()) == allowed
     assert receta["foto"] == "images/cover.jpg"

@@ -182,25 +182,20 @@ def validar(records: list[dict], images_dir: Path) -> tuple[list[str], list[dict
 
         if not r["categorias"]:
             errors.append(f"{rid}: falta 'categorias' (tiene que tener al menos una)")
-        else:
-            for c in r["categorias"]:
-                if c not in schema.CATEGORIAS:
-                    errors.append(f"{rid}: categoria desconocida '{c}' (válidas: {sorted(schema.CATEGORIAS)})")
 
         if r["dificultad"] is not None and r["dificultad"] not in schema.DIFICULTADES:
             errors.append(f"{rid}: dificultad desconocida '{r['dificultad']}' (válidas: {sorted(schema.DIFICULTADES)})")
         elif r["dificultad"] is None:
             warnings.append({"recipe": rid, "field": "dificultad", "message": "sin dato"})
 
-        # Sub-filtro condicionado a una categoría (ver schema.SUBFILTROS): el
-        # WARNING por "sin dato" solo se dispara si la receta ya está en esa
-        # categoría, y solo para los sub-filtros que avisan_si_falta.
-        for categoria, sf in schema.SUBFILTROS.items():
-            valor = r[sf.campo]
-            if valor is not None and valor not in sf.valores:
-                errors.append(f"{rid}: {sf.campo} desconocido '{valor}' (válidos: {sorted(sf.valores)})")
-            elif valor is None and sf.avisar_si_falta and categoria in r["categorias"]:
-                warnings.append({"recipe": rid, "field": sf.campo, "message": "sin dato"})
+        # Sub-filtro condicionado a una categoría (ver schema.CAMPO_SUBCATEGORIA):
+        # el valor es libre (viene del H2 del Doc, sin enum que mantener acá);
+        # el WARNING por "sin dato" solo se dispara si la receta ya está en esa
+        # categoría — el sync mecánico siempre lo completa, así que su
+        # ausencia señala una receta agregada a mano todavía sin clasificar.
+        for categoria, campo in schema.CAMPO_SUBCATEGORIA.items():
+            if r[campo] is None and categoria in r["categorias"]:
+                warnings.append({"recipe": rid, "field": campo, "message": "sin dato"})
 
         for field in ("tiempo_minutos", "tiempo_minutos_max", "porciones"):
             if not _es_entero_valido(r[field]):

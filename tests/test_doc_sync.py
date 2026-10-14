@@ -1,4 +1,4 @@
-from src.doc_sync import contenido_hash, detectar_cambios, fecha_a_iso, parse_doc, render_markdown, slugify
+from src.doc_sync import contenido_hash, detectar_cambios, fecha_a_iso, normalizar_encabezado, parse_doc, render_markdown, slugify
 
 
 def _parrafo(texto, style="NORMAL_TEXT", list_id=None, ordenada=False):
@@ -36,13 +36,21 @@ def test_slugify_saca_emoji_y_acentos():
     assert slugify("Mousse de limón") == "mousse-de-limon"
 
 
+def test_normalizar_encabezado_colapsa_espacios_y_minuscula_sin_tocar_acentos_ni_emoji():
+    assert normalizar_encabezado("Acompañantes") == "acompañantes"
+    assert normalizar_encabezado("🥚 Huevo") == "🥚 huevo"
+    assert normalizar_encabezado("  Jugos   naturales  ") == "jugos naturales"
+
+
 def test_receta_completa_se_extrae():
     listas = {
         "L1": {"listProperties": {"nestingLevels": [{"glyphType": None}]}},
         "L2": {"listProperties": {"nestingLevels": [{"glyphType": "DECIMAL"}]}},
     }
     parrafos = [
-        _parrafo("Flan\n", style="HEADING_2"),
+        _parrafo("Postres\n", style="HEADING_1"),
+        _parrafo("Huevo\n", style="HEADING_2"),
+        _parrafo("Flan\n", style="HEADING_3"),
         _parrafo("Fuente: https://ejemplo.com\n"),
         _parrafo("Última actualización: 5 jul 2026\n"),
         _parrafo("Ingredientes:\n"),
@@ -50,13 +58,14 @@ def test_receta_completa_se_extrae():
         _parrafo("Paso a paso\n"),
         _parrafo("Batir los huevos\n", list_id="L2"),
     ]
-    completas, incompletas = parse_doc(_doc([_tab("Postres y Tartas", parrafos, listas)]))
+    completas, incompletas = parse_doc(_doc([_tab("Recetas", parrafos, listas)]))
 
     assert incompletas == []
     assert len(completas) == 1
     receta = completas[0]
     assert receta["titulo"] == "Flan"
-    assert receta["categorias"] == ["postre"]
+    assert receta["categorias"] == ["postres"]
+    assert receta["tipo_postre"] == "huevo"
     assert receta["fuente"] == "https://ejemplo.com"
     assert receta["fecha_actualizacion"] == "2026-07-05"
     assert receta["ingredientes"] == ["- Huevos — 10"]
@@ -64,56 +73,99 @@ def test_receta_completa_se_extrae():
 
     md = render_markdown(receta)
     assert 'titulo: "Flan"' in md
+    assert 'categorias: ["postres"]' in md
+    assert 'tipo_postre: "huevo"' in md
     assert "## Ingredientes" in md
     assert "## Paso a paso" in md
 
 
 def test_receta_sin_paso_a_paso_se_reporta_incompleta():
     parrafos = [
-        _parrafo("Mermelada\n", style="HEADING_2"),
+        _parrafo("Meriendas\n", style="HEADING_1"),
+        _parrafo("Mermelada\n", style="HEADING_3"),
         _parrafo("Agregar receta.\n"),
     ]
-    completas, incompletas = parse_doc(_doc([_tab("Meriendas", parrafos)]))
+    completas, incompletas = parse_doc(_doc([_tab("Recetas", parrafos)]))
 
     assert completas == []
     assert len(incompletas) == 1
     assert incompletas[0]["titulo"] == "Mermelada"
-    assert incompletas[0]["tab"] == "Meriendas"
+    assert incompletas[0]["tab"] == "Recetas"
 
 
-def test_pestana_desconocida_no_corta_el_resto():
-    completas, incompletas = parse_doc(_doc([_tab("Otra pestaña nueva", [])]))
+def test_pestana_recetas_ausente_no_corta_el_resto():
+    completas, incompletas = parse_doc(_doc([_tab("Otra pestaña", [])]))
     assert completas == []
-    assert any("no mapeada" in i["motivo"] for i in incompletas)
+    assert any("no se encontró" in i["motivo"] for i in incompletas)
 
 
-def test_bebidas_mapea_a_bebidas_sin_tipo_default():
-    # "Bebidas" (antes "Jugos naturales") ya no es 100% jugos — ahora mezcla
-    # jugos con tragos (ej. Daiquiri) — así que no hay default de tipo_bebida
-    # por pestaña: se decide a mano por receta al mergear.
-    parrafos = [
-        _parrafo("Jugo verde\n", style="HEADING_2"),
+def test_otras_pestanas_se_ignoran_en_silencio():
+    parrafos_template = [_parrafo("Lo que sea\n", style="HEADING_1")]
+    parrafos_recetas = [
+        _parrafo("Bebidas\n", style="HEADING_1"),
+        _parrafo("Tragos\n", style="HEADING_2"),
+        _parrafo("Daiquiri\n", style="HEADING_3"),
         _parrafo("Ingredientes:\n"),
-        _parrafo("Pepino — 1\n", list_id="L1"),
+        _parrafo("Ron — 50ml\n", list_id="L1"),
         _parrafo("Paso a paso\n"),
         _parrafo("Licuar\n", list_id="L1"),
     ]
     listas = {"L1": {"listProperties": {"nestingLevels": [{"glyphType": None}]}}}
-    completas, incompletas = parse_doc(_doc([_tab("Bebidas", parrafos, listas)]))
+    completas, incompletas = parse_doc(_doc([
+        _tab("Template receta", parrafos_template),
+        _tab("Recetas", parrafos_recetas, listas),
+    ]))
+
+    assert incompletas == []
+    assert [r["titulo"] for r in completas] == ["Daiquiri"]
+
+
+def test_categoria_sin_subcategoria_no_setea_campo():
+    # "Acompañantes" no tiene H2 en el Doc: las recetas van directo bajo
+    # el H1, sin subcategoría (no es un dato faltante, es la estructura real).
+    parrafos = [
+        _parrafo("Acompañantes\n", style="HEADING_1"),
+        _parrafo("Papas al horno\n", style="HEADING_3"),
+        _parrafo("Ingredientes:\n"),
+        _parrafo("Papas — 4\n", list_id="L1"),
+        _parrafo("Paso a paso\n"),
+        _parrafo("Hornear\n", list_id="L1"),
+    ]
+    listas = {"L1": {"listProperties": {"nestingLevels": [{"glyphType": None}]}}}
+    completas, incompletas = parse_doc(_doc([_tab("Recetas", parrafos, listas)]))
 
     assert incompletas == []
     receta = completas[0]
-    assert receta["categorias"] == ["bebidas"]
-    assert receta["tipo_bebida"] is None
+    assert receta["categorias"] == ["acompañantes"]
+    assert receta["subcategoria"] is None
 
     md = render_markdown(receta)
-    assert 'categorias: ["bebidas"]' in md
-    assert "tipo_bebida" not in md
+    assert 'categorias: ["acompañantes"]' in md
+    assert "subcategoria" not in md
+
+
+def test_categoria_nueva_sin_campo_dedicado_usa_subcategoria_generica():
+    parrafos = [
+        _parrafo("Salsas\n", style="HEADING_1"),
+        _parrafo("Picantes\n", style="HEADING_2"),
+        _parrafo("Chimichurri\n", style="HEADING_3"),
+        _parrafo("Ingredientes:\n"),
+        _parrafo("Perejil — 1 atado\n", list_id="L1"),
+        _parrafo("Paso a paso\n"),
+        _parrafo("Picar todo\n", list_id="L1"),
+    ]
+    listas = {"L1": {"listProperties": {"nestingLevels": [{"glyphType": None}]}}}
+    completas, _ = parse_doc(_doc([_tab("Recetas", parrafos, listas)]))
+
+    receta = completas[0]
+    assert receta["categorias"] == ["salsas"]
+    assert receta["subcategoria"] == "picantes"
 
 
 def test_doc_hash_estable_y_sensible_al_contenido():
     base = {
-        "titulo": "Flan", "categorias": ["postre"], "tipo_bebida": None,
+        "titulo": "Flan", "categorias": ["postres"], "tipo_postre": "huevo",
+        "momento": None, "tipo_merienda": None, "tipo_bebida": None, "subcategoria": None,
         "fuente": None, "fecha_actualizacion": None,
         "materiales": [], "ingredientes": ["- Huevos — 10"], "paso_a_paso": ["1. Batir"],
         "cuerpo_libre": [],
@@ -126,10 +178,14 @@ def test_doc_hash_estable_y_sensible_al_contenido():
 
 
 def test_detectar_cambios_nueva_cambiada_y_sin_cambios(tmp_path):
-    receta_sin_cambios = {"slug": "flan", "titulo": "Flan", "categorias": ["postre"],
-                           "tipo_bebida": None, "fuente": None, "fecha_actualizacion": None,
-                           "materiales": [], "ingredientes": ["- a"], "paso_a_paso": ["1. b"],
-                           "cuerpo_libre": []}
+    receta_sin_cambios = {
+        "slug": "flan", "titulo": "Flan", "categorias": ["postres"],
+        "tipo_postre": "huevo", "momento": None, "tipo_merienda": None,
+        "tipo_bebida": None, "subcategoria": None,
+        "fuente": None, "fecha_actualizacion": None,
+        "materiales": [], "ingredientes": ["- a"], "paso_a_paso": ["1. b"],
+        "cuerpo_libre": [],
+    }
     receta_sin_cambios["doc_hash"] = contenido_hash(receta_sin_cambios)
 
     receta_cambiada = dict(receta_sin_cambios, slug="budin", ingredientes=["- a", "- b"])
@@ -139,11 +195,11 @@ def test_detectar_cambios_nueva_cambiada_y_sin_cambios(tmp_path):
     receta_nueva["doc_hash"] = contenido_hash(receta_nueva)
 
     (tmp_path / "flan.md").write_text(
-        f'---\ntitulo: "Flan"\ncategorias: ["postre"]\ndoc_hash: "{receta_sin_cambios["doc_hash"]}"\n---\ncuerpo\n',
+        f'---\ntitulo: "Flan"\ncategorias: ["postres"]\ndoc_hash: "{receta_sin_cambios["doc_hash"]}"\n---\ncuerpo\n',
         encoding="utf-8",
     )
     (tmp_path / "budin.md").write_text(
-        '---\ntitulo: "Budín"\ncategorias: ["postre"]\ndoc_hash: "otrohash"\n---\ncuerpo\n',
+        '---\ntitulo: "Budín"\ncategorias: ["postres"]\ndoc_hash: "otrohash"\n---\ncuerpo\n',
         encoding="utf-8",
     )
     # "torta" no tiene archivo en recipes/: es nueva.
@@ -155,17 +211,31 @@ def test_detectar_cambios_nueva_cambiada_y_sin_cambios(tmp_path):
     assert [r["slug"] for r in cambios["nuevas"]] == ["torta"]
 
 
-def test_heading_1_no_abre_receta_propia():
+def test_receta_con_sub_partes_acumula_ingredientes_y_pasos_de_todas():
+    # Un H4/H5+ que no matchea Ingredientes/Materiales/Paso a paso (ej. el
+    # nombre de una sub-parte como "Masa sablée") no abre receta nueva ni
+    # corta nada — sigue perteneciendo a la receta hasta el próximo H1/H2/H3,
+    # y sus propias secciones (típicamente un nivel más de heading) se
+    # detectan igual, por texto.
     parrafos = [
-        _parrafo("Budines\n", style="HEADING_1"),
-        _parrafo("Naranja\n", style="HEADING_2"),
-        _parrafo("Ingredientes:\n"),
-        _parrafo("Naranjas — 2\n", list_id="L1"),
-        _parrafo("Paso a paso\n"),
-        _parrafo("Exprimir\n", list_id="L1"),
+        _parrafo("Postres\n", style="HEADING_1"),
+        _parrafo("Frutal\n", style="HEADING_2"),
+        _parrafo("Lemon pie\n", style="HEADING_3"),
+        _parrafo("Masa sablée\n", style="HEADING_5"),
+        _parrafo("Ingredientes\n", style="HEADING_6"),
+        _parrafo("Harina — 200g\n", list_id="L1"),
+        _parrafo("Paso a paso\n", style="HEADING_6"),
+        _parrafo("Amasar\n", list_id="L1"),
+        _parrafo("Curd de limón\n", style="HEADING_5"),
+        _parrafo("Ingredientes\n", style="HEADING_6"),
+        _parrafo("Limón — 3\n", list_id="L1"),
+        _parrafo("Paso a paso\n", style="HEADING_6"),
+        _parrafo("Cocinar\n", list_id="L1"),
     ]
     listas = {"L1": {"listProperties": {"nestingLevels": [{"glyphType": None}]}}}
-    completas, incompletas = parse_doc(_doc([_tab("Meriendas", parrafos, listas)]))
+    completas, incompletas = parse_doc(_doc([_tab("Recetas", parrafos, listas)]))
 
     assert incompletas == []
-    assert [r["titulo"] for r in completas] == ["Naranja"]
+    receta = completas[0]
+    assert receta["ingredientes"] == ["- Harina — 200g", "- Limón — 3"]
+    assert receta["paso_a_paso"] == ["- Amasar", "- Cocinar"]

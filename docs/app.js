@@ -4,31 +4,23 @@
   var DATA = window.RECETAS_DATA || { meta: { count: 0, warnings: [] }, recetas: [] };
   var RECETAS = DATA.recetas || [];
 
-  var CATEGORIA_ORDEN = ["principal", "acompañante", "postre", "merienda", "bebidas"];
   var DIFICULTAD_ORDEN = ["baja", "media", "alta"];
   var TODAS = "__todas__";
 
-  // Filtro secundario opcional por categoría (progressive disclosure: solo
-  // aparece dentro de la pestaña a la que corresponde). Mismo campo que
-  // schema.SUBFILTROS en el export — no mezcla ejes nuevos en CATEGORIA_ORDEN.
+  // Categoría y subcategoría son dinámicas: el valor es el texto del H1/H2
+  // del Google Doc (ver src/doc_sync.py: normalizar_encabezado), sin lista
+  // cerrada que mantener acá — ni de categorías ni de valores de subfiltro.
+  // Lo único fijo es el NOMBRE del campo de subfiltro por categoría, igual
+  // que schema.CAMPO_SUBCATEGORIA en el export (mismo motivo: no mezclar
+  // ejes en un solo campo).
   var SUBFILTROS = {
-    principal: { campo: "momento", label: "Momento", orden: ["mediodía", "cena"] },
-    merienda: { campo: "tipo_merienda", label: "Tipo", orden: ["dulce", "salado"] },
-    bebidas: { campo: "tipo_bebida", label: "Tipo de bebida", orden: ["jugos", "tragos"] },
-    postre: { campo: "tipo_postre", label: "Tipo", orden: ["frutal", "chocolatoso"] },
+    principales: { campo: "momento", label: "Momento" },
+    meriendas: { campo: "tipo_merienda", label: "Tipo" },
+    bebidas: { campo: "tipo_bebida", label: "Tipo de bebida" },
+    postres: { campo: "tipo_postre", label: "Tipo" },
   };
   var PLACEHOLDER_EMOJI = "🍲";
-
-  // Emoji por categoría, solo decorativo para el navbar (no afecta el valor
-  // que viaja en `state.categoria` ni los datos).
-  var CATEGORIA_EMOJI = {
-    __todas__: "🍽️",
-    principal: "🍖",
-    acompañante: "🥗",
-    postre: "🍰",
-    merienda: "☕",
-    bebidas: "🥤",
-  };
+  var EMOJI_TODAS = "🍽️"; // concepto de UI ("todas las categorías"), no viene del Doc
 
   // Emoji fijo por tipo de sección (coincidencia por texto normalizado, en orden:
   // la primera regla que matchea gana). Secciones que no matchean ninguna regla
@@ -60,8 +52,8 @@
     orden: "tiempo-asc",
   };
 
-  // Categorías con al menos una receta, en CATEGORIA_ORDEN. Se calcula una
-  // vez en init() y la reusan renderNavCategorias/onCambioCategoria.
+  // Categorías con al menos una receta, orden alfabético. Se calcula una vez
+  // en init() y la reusan renderNavCategorias/onCambioCategoria.
   var categoriasDisponibles = [];
 
   var els = {
@@ -83,8 +75,15 @@
     detalleContenido: document.getElementById("detalle-contenido"),
   };
 
+  // Mayúscula en la primera LETRA (no en la posición 0): los valores de
+  // subcategoría pueden traer un emoji adelante tal cual lo escribió el
+  // usuario en el Doc (ej. "🍰 budines"), y no hay que tocarlo.
   function capitalize(s) {
-    return s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
+    if (!s) return s;
+    var i = 0;
+    while (i < s.length && !/[a-zA-ZÀ-ÿ]/.test(s[i])) i++;
+    if (i >= s.length) return s;
+    return s.slice(0, i) + s[i].toUpperCase() + s.slice(i + 1);
   }
 
   function formatTiempo(min, max) {
@@ -98,7 +97,11 @@
     return fmt(min);
   }
 
+  // `orden` es un hint de orden preferido, opcional y nunca bloqueante: un
+  // valor que no está ahí (ej. una subcategoría nueva agregada en el Doc)
+  // simplemente cae en los "extras", ordenado alfabéticamente.
   function ordenarValores(valores, orden) {
+    orden = orden || [];
     var presentes = new Set(valores);
     var ordenados = orden.filter(function (v) { return presentes.has(v); });
     var extras = valores.filter(function (v) { return orden.indexOf(v) === -1; }).sort();
@@ -159,13 +162,8 @@
       els.categoriasNav.appendChild(btn);
     }
 
-    function conEmoji(valor, texto) {
-      var emoji = CATEGORIA_EMOJI[valor];
-      return emoji ? emoji + " " + texto : texto;
-    }
-
-    crearPestana(TODAS, conEmoji(TODAS, "Todas"));
-    valores.forEach(function (valor) { crearPestana(valor, conEmoji(valor, capitalize(valor))); });
+    crearPestana(TODAS, EMOJI_TODAS + " Todas");
+    valores.forEach(function (valor) { crearPestana(valor, capitalize(valor)); });
   }
 
   function onCambioCategoria() {
@@ -180,7 +178,7 @@
     var disponibles = sf
       ? ordenarValores(valoresUnicos(function (r) {
           return r.categorias.indexOf(state.categoria) !== -1 ? r[sf.campo] : null;
-        }), sf.orden)
+        }))
       : [];
     els.grupoSubfiltro.hidden = disponibles.length === 0;
     els.subfiltroLabel.textContent = sf ? sf.label : "";
@@ -577,7 +575,7 @@
   }
 
   function init() {
-    categoriasDisponibles = ordenarValores(valoresUnicos(function (r) { return r.categorias; }), CATEGORIA_ORDEN);
+    categoriasDisponibles = ordenarValores(valoresUnicos(function (r) { return r.categorias; }));
     var dificultadesDisponibles = ordenarValores(valoresUnicos(function (r) { return r.dificultad; }), DIFICULTAD_ORDEN);
 
     renderNavCategorias(categoriasDisponibles);

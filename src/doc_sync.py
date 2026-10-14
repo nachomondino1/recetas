@@ -1,6 +1,22 @@
-"""Convierte el JSON crudo de la Google Docs API (una pestaña por categoría)
-en borradores de receta (.md con frontmatter), para no tener que transcribir
-el Google Doc a mano cada vez que cambia.
+"""Convierte el JSON crudo de la Google Docs API (una sola pestaña "Recetas"
+con jerarquía de headers H1-H5) en borradores de receta (.md con
+frontmatter), para no tener que transcribir el Google Doc a mano cada vez
+que cambia.
+
+Jerarquía de headers en el Doc (ver DECISIONS.md):
+  H1 = categoría (ej. "Principales")
+  H2 = subcategoría, opcional — algunas categorías no la tienen y sus
+       recetas van directo bajo el H1 (ej. "Acompañantes")
+  H3 = receta
+  H4 = sección dentro de la receta (Materiales/Ingredientes/Paso a paso)
+  H5 = sub-parte cuando una receta tiene partes (ej. Lemon pie: masa sablée,
+       curd de limón...), con sus propias secciones (típicamente H6)
+
+Categoría y subcategoría son dinámicas: el valor es el texto del heading tal
+cual lo escribe el usuario (ver `normalizar_encabezado`), nunca un enum
+cerrado en código — agregar o renombrar un H1/H2 en el Doc no requiere tocar
+este módulo. El nombre del CAMPO de subcategoría por categoría sí es fijo
+(`schema.CAMPO_SUBCATEGORIA`), porque es una decisión de código estable.
 
 No hay credenciales propias para leer el Doc en este script: Claude lo lee
 con el conector de Google Docs (`read_doc`) y guarda ese JSON en un archivo;
@@ -28,21 +44,11 @@ from pathlib import Path
 
 import yaml
 
+from src import schema
+
 FRONTMATTER_RE = re.compile(r"\A---\n(.*?)\n---\n?", re.DOTALL)
 
-TAB_CATEGORIAS: dict[str, list[str]] = {
-    "Principales": ["principal"],
-    "Postres y Tartas": ["postre"],
-    "Meriendas": ["merienda"],
-    "Bebidas": ["bebidas"],
-    "Acompañantes": ["acompañante"],
-}
-# Default de tipo_bebida por pestaña, igual de determinístico que TAB_CATEGORIAS
-# (ver schema.SUBFILTROS). Pestañas no listadas acá no setean tipo_bebida.
-# "Bebidas" ya no es 100% jugos (ahora mezcla jugos con al menos un trago,
-# Daiquiri) → sin default; tipo_bebida se decide a mano por receta al mergear.
-TAB_TIPO_BEBIDA: dict[str, str] = {}
-TABS_IGNORADAS = {"Template receta"}
+TAB_RECETAS = "Recetas"
 
 MESES = {
     "ene": 1, "feb": 2, "mar": 3, "abr": 4, "may": 5, "jun": 6,
@@ -79,7 +85,7 @@ def contenido_hash(receta: dict) -> str:
     campos = {
         "titulo": receta["titulo"],
         "categorias": receta["categorias"],
-        "tipo_bebida": receta.get("tipo_bebida"),
+        "subfiltro": {c: receta[c] for c in schema.SUBFILTRO_CAMPOS if receta.get(c)},
         "fuente": receta["fuente"],
         "fecha_actualizacion": receta["fecha_actualizacion"],
         "materiales": receta["materiales"],
@@ -96,6 +102,16 @@ def slugify(titulo: str) -> str:
     sin_acentos = unicodedata.normalize("NFKD", sin_emoji).encode("ascii", "ignore").decode()
     slug = re.sub(r"[^a-zA-Z0-9]+", "-", sin_acentos).strip("-").lower()
     return slug or "receta"
+
+
+def normalizar_encabezado(texto: str) -> str:
+    """Valor estable para categoria/subcategoria: el texto del heading tal
+    cual lo escribió el usuario (emoji incluido), solo colapsando espacios y
+    pasando a minúscula. A diferencia de `slugify` (pensado para nombres de
+    archivo) nunca se fuerza a ASCII, para no perder tildes/ñ ni los emoji
+    que el usuario ya elige a mano por subcategoría (ej. "🍰 Budines").
+    """
+    return " ".join(texto.split()).lower()
 
 
 def _texto_parrafo(elemento: dict) -> str:
@@ -136,18 +152,33 @@ def _parrafos_de_tab(tab: dict) -> list[dict]:
 
 
 def _agrupar_recetas(parrafos: list[dict]) -> list[dict]:
-    """HEADING_1 agrupa visualmente (ej. 'Postres') pero no abre receta nueva.
-    HEADING_2 es el título de cada receta; todo lo que sigue (incluidos
-    HEADING_3+ de subrecetas como 'Masa sablée') pertenece a esa receta
-    hasta el próximo HEADING_2.
+    """HEADING_1 = categoría, HEADING_2 = subcategoría (opcional, puede no
+    haber ninguno entre un H1 y el primer H3), HEADING_3 = receta. Todo lo
+    que sigue a un H3 (incluidos HEADING_4+ de secciones y sub-partes como
+    'Masa sablée') pertenece a esa receta hasta el próximo H1/H2/H3.
+    Un H1 nuevo resetea la subcategoría (no se "hereda" entre categorías).
     """
     recetas = []
+    categoria_actual = None
+    subcategoria_actual = None
     actual = None
     for p in parrafos:
-        if p["style"] == "HEADING_2":
+        if p["style"] == "HEADING_1":
+            categoria_actual = p["texto"] or None
+            subcategoria_actual = None
+            actual = None
+        elif p["style"] == "HEADING_2":
+            subcategoria_actual = p["texto"] or None
+            actual = None
+        elif p["style"] == "HEADING_3":
             if not p["texto"]:
                 continue
-            actual = {"titulo": p["texto"], "parrafos": []}
+            actual = {
+                "titulo": p["texto"],
+                "categoria_texto": categoria_actual,
+                "subcategoria_texto": subcategoria_actual,
+                "parrafos": [],
+            }
             recetas.append(actual)
         elif actual is not None:
             actual["parrafos"].append(p)
@@ -232,35 +263,46 @@ def parse_doc(doc_json: dict) -> tuple[list[dict], list[dict]]:
 
     Pura: no toca disco. `recetas_completas` trae todo lo necesario para
     escribir un .md; `incompletas_o_ignoradas` trae {tab, titulo, motivo}
-    para reportar sin cortar el resto del sync.
+    para reportar sin cortar el resto del sync. Solo se procesa la pestaña
+    `TAB_RECETAS` ("Recetas"); cualquier otra (ej. "Template receta") se
+    ignora en silencio — ya no hay una pestaña por categoría.
     """
     completas, incompletas = [], []
-    for tab in doc_json.get("content", {}).get("tabs", []):
-        titulo_tab = tab.get("tabProperties", {}).get("title", "")
-        if titulo_tab in TABS_IGNORADAS:
-            continue
-        categorias = TAB_CATEGORIAS.get(titulo_tab)
-        if categorias is None:
-            incompletas.append({"tab": titulo_tab, "titulo": None,
-                                 "motivo": f"pestaña desconocida, no mapeada en TAB_CATEGORIAS"})
+    tabs = doc_json.get("content", {}).get("tabs", [])
+    tab = next((t for t in tabs if t.get("tabProperties", {}).get("title", "") == TAB_RECETAS), None)
+    if tab is None:
+        incompletas.append({"tab": None, "titulo": None,
+                             "motivo": f"no se encontró la pestaña '{TAB_RECETAS}' en el Doc"})
+        return completas, incompletas
+
+    parrafos = _parrafos_de_tab(tab)
+    for bloque in _agrupar_recetas(parrafos):
+        if not bloque["categoria_texto"]:
+            incompletas.append({"tab": TAB_RECETAS, "titulo": bloque["titulo"],
+                                 "motivo": "receta sin categoría (falta un HEADING_1 que la contenga)"})
             continue
 
-        parrafos = _parrafos_de_tab(tab)
-        for bloque in _agrupar_recetas(parrafos):
-            receta = _parsear_receta(bloque["titulo"], bloque["parrafos"])
-            receta["categorias"] = categorias
-            receta["tipo_bebida"] = TAB_TIPO_BEBIDA.get(titulo_tab)
-            receta["tab"] = titulo_tab
-            receta["doc_hash"] = contenido_hash(receta)
-            if receta["completa"]:
-                completas.append(receta)
-            else:
-                incompletas.append({
-                    "tab": titulo_tab,
-                    "titulo": receta["titulo"],
-                    "motivo": "sin ingredientes/materiales" if not (receta["ingredientes"] or receta["materiales"])
-                              else "sin paso a paso",
-                })
+        receta = _parsear_receta(bloque["titulo"], bloque["parrafos"])
+        categoria = normalizar_encabezado(bloque["categoria_texto"])
+        subcategoria = normalizar_encabezado(bloque["subcategoria_texto"]) if bloque["subcategoria_texto"] else None
+        campo_subcategoria = schema.CAMPO_SUBCATEGORIA.get(categoria, schema.CAMPO_SUBCATEGORIA_DEFAULT)
+
+        receta["categorias"] = [categoria]
+        for campo in schema.SUBFILTRO_CAMPOS:
+            receta[campo] = None
+        if subcategoria:
+            receta[campo_subcategoria] = subcategoria
+        receta["tab"] = TAB_RECETAS
+        receta["doc_hash"] = contenido_hash(receta)
+        if receta["completa"]:
+            completas.append(receta)
+        else:
+            incompletas.append({
+                "tab": TAB_RECETAS,
+                "titulo": receta["titulo"],
+                "motivo": "sin ingredientes/materiales" if not (receta["ingredientes"] or receta["materiales"])
+                          else "sin paso a paso",
+            })
     return completas, incompletas
 
 
@@ -301,8 +343,9 @@ def render_markdown(receta: dict) -> str:
         f'titulo: "{receta["titulo"]}"',
         "categorias: [" + ", ".join(f'"{c}"' for c in receta["categorias"]) + "]",
     ]
-    if receta.get("tipo_bebida"):
-        front.append(f'tipo_bebida: "{receta["tipo_bebida"]}"')
+    for campo in sorted(schema.SUBFILTRO_CAMPOS):
+        if receta.get(campo):
+            front.append(f'{campo}: "{receta[campo]}"')
     if receta["fuente"]:
         front.append(f'fuente: "{receta["fuente"]}"')
     if receta["fecha_actualizacion"]:

@@ -1,6 +1,6 @@
 ---
 titulo: "Receta de prueba"
-categorias: ["principal"]
+categorias: ["acompañantes"]
 dificultad: "baja"
 tiempo_minutos: 30
 foto: "cover.jpg"

@@ -1,6 +1,6 @@
 ---
 titulo: "Merienda sin tipo"
-categorias: ["merienda"]
+categorias: ["meriendas"]
 dificultad: "baja"
 tiempo_minutos: 10
 foto: "cover.jpg"

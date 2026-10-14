@@ -37,7 +37,7 @@ import urllib.request
 from pathlib import Path
 
 from src import config
-from src.doc_sync import TAB_CATEGORIAS, TABS_IGNORADAS, _texto_parrafo, slugify
+from src.doc_sync import TAB_RECETAS, _texto_parrafo, slugify
 
 UA = "Mozilla/5.0 (compatible; recetas-image-extract/1.0)"
 
@@ -91,15 +91,15 @@ def _imagenes_de_parrafo(parrafo: dict, doc_tab: dict) -> list[str]:
 
 
 def _recorrer_tab(tab: dict) -> tuple[dict[str, list[str]], list[str]]:
-    """Misma lógica de agrupamiento que doc_sync._agrupar_recetas (HEADING_2
-    abre receta nueva, HEADING_1+ no), pero sobre los párrafos crudos — acá
+    """Misma lógica de agrupamiento que doc_sync._agrupar_recetas (HEADING_3
+    abre receta nueva, HEADING_1/2 no), pero sobre los párrafos crudos — acá
     hace falta `elements`/`positionedObjectIds`, que _parrafos_de_tab no
     conserva porque los aplana a texto plano.
 
     Devuelve (fotos_por_titulo, fotos_de_front_matter). `fotos_por_titulo`
     usa el título tal cual aparece en el Doc (sin slugify todavía) como
     clave, en orden de aparición; `fotos_de_front_matter` son las fotos
-    encontradas antes del primer HEADING_2 de la pestaña (no pertenecen a
+    encontradas antes del primer HEADING_3 de la pestaña (no pertenecen a
     ninguna receta).
     """
     doc_tab = tab.get("documentTab", {})
@@ -113,7 +113,7 @@ def _recorrer_tab(tab: dict) -> tuple[dict[str, list[str]], list[str]]:
             continue
         style = parrafo.get("paragraphStyle", {}).get("namedStyleType", "NORMAL_TEXT")
         texto = _texto_parrafo(elemento).strip()
-        if style == "HEADING_2" and texto:
+        if style == "HEADING_3" and texto:
             titulo_actual = texto
             fotos_por_titulo.setdefault(titulo_actual, [])
 
@@ -143,7 +143,7 @@ def extraer_imagenes(doc_json: dict) -> dict:
 
     for tab in doc_json.get("content", {}).get("tabs", []):
         titulo_tab = tab.get("tabProperties", {}).get("title", "")
-        if titulo_tab in TABS_IGNORADAS or titulo_tab not in TAB_CATEGORIAS:
+        if titulo_tab != TAB_RECETAS:
             continue
 
         fotos_por_titulo, fotos_front = _recorrer_tab(tab)
@@ -207,7 +207,7 @@ def run(doc_json_path: Path) -> int:
             print(f"  - {titulo!r} -> images/{slug}/ ({n} img)")
 
     if extraido["front_matter"]:
-        print("\nFotos antes del primer HEADING_2 de la pestaña (no asignadas a ninguna receta):")
+        print("\nFotos antes del primer HEADING_3 de la pestaña (no asignadas a ninguna receta):")
         for tab_titulo, uris in extraido["front_matter"].items():
             print(f"  - [{tab_titulo}]: {len(uris)} imagen(es) sin asignar")
 
