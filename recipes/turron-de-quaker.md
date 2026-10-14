@@ -1,11 +1,11 @@
 ---
 titulo: "Turrón de quaker"
-categorias: ["postres"]
+categorias: ["🍨 postres"]
 tipo_postre: "🍫 chocolatoso"
 fuente: "Marina Renna"
 fecha_actualizacion: "2026-04-20"
 foto: "turron-de-quaker/cover.jpg"
-doc_hash: "8a8a28465719"
+doc_hash: "9e3b9a1da65e"
 ---
 ## Ingredientes
 - Manteca — 200 g

@@ -1,11 +1,11 @@
 ---
 titulo: "Lemon pie"
-categorias: ["postres"]
-tipo_postre: "frutal"
+categorias: ["🍨 postres"]
+tipo_postre: "🍎 frutal"
 fuente: "https://www.youtube.com/watch?v=7P8J3vkFeJg"
 fecha_actualizacion: "2026-09-23"
 foto: "lemon-pie/cover.jpg"
-doc_hash: "60f58c5a526c"
+doc_hash: "a059aedf5465"
 ---
 ## ¿Dónde comprarlo?
 - Vicente López: El Ombú

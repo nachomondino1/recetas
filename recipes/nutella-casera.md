@@ -1,6 +1,6 @@
 ---
 titulo: "Nutella casera"
-categorias: ["meriendas"]
+categorias: ["🍰 meriendas"]
 tipo_merienda: "🍯 untables"
 foto: "nutella-casera/cover.jpg"
 fuente: "https://cocineraymadre.com/2021/09/12/nutella-casera-y-saludable-o-crema-de-cacao-y-avellanas/"

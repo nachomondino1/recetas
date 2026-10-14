@@ -1,12 +1,12 @@
 ---
 titulo: "Tarta de frutillas (Tarte aux Fraises)"
-categorias: ["postres"]
-tipo_postre: "frutal"
+categorias: ["🍨 postres"]
+tipo_postre: "🍎 frutal"
 fuente: "https://www.youtube.com/watch?v=UwuSq9yP2Zk"
 fecha_actualizacion: "2026-09-28"
 foto: "tarta-de-frutillas/cover.jpg"
 porciones: 8
-doc_hash: "c292854b6805"
+doc_hash: "755688117fc3"
 ---
 Hay varios tipos de tarta de frutillas. Esta es la clásica con crema pastelera (Tarte aux Fraises): el estándar de la pastelería francesa tradicional, con masa sablée o sucrée, relleno de crème pâtissière y frutillas de cubierta con brillo (nappage).
 

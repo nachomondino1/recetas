@@ -1,7 +1,7 @@
 window.RECETAS_DATA = {
   "meta": {
     "schema_version": 2,
-    "generated_at": "2026-10-14T20:03:49+00:00",
+    "generated_at": "2026-10-14T20:39:39+00:00",
     "count": 32,
     "warnings": [
       {
@@ -286,7 +286,7 @@ window.RECETAS_DATA = {
       "id": "apple-crumble",
       "titulo": "Apple crumble",
       "categorias": [
-        "postres"
+        "🍨 postres"
       ],
       "dificultad": null,
       "tiempo_minutos": 60,
@@ -296,17 +296,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": "2026-09-13",
       "fuente": "https://www.youtube.com/watch?v=KwIRgwd52Ic&t=147s",
       "body_html": "<h2>Ingredientes</h2>\n<h3>Relleno</h3>\n<ul>\n<li>Manzanas verdes medianas, peladas y en cubos — 1,1 kg (a probar: 1,5 kg, para que quede más manzana)</li>\n<li>Azúcar — 3 cdas</li>\n<li>Manteca, apenas (solo para la sartén) — 1 cdita</li>\n<li>Esencia de vainilla — 1 cdita</li>\n<li>Ralladura de limón (poca)</li>\n<li>Maicena, opcional, para espolvorear al final — 1 cdita</li>\n</ul>\n<h3>Masa crumble (base y cubierta, es la misma)</h3>\n<ul>\n<li>Harina común (o leudante; si es común, + 1 cdita de polvo de hornear) — 250 g (a probar: 3 cdas más)</li>\n<li>Sal — 1 pizca</li>\n<li>Azúcar, parte rubia para mejor color — 100 g</li>\n<li>Manteca derretida — 150 g</li>\n<li>Esencia de vainilla — 1 cdita</li>\n<li>Ralladura de limón (poca)</li>\n<li>Nueces partidas, un puñado (opcional)</li>\n</ul>\n<p><em>Nota: 1 limón cubre las dos ralladuras (relleno y masa).</em></p>\n<h2>Paso a paso</h2>\n<h3>Relleno (hacerlo primero, tiene que enfriarse)</h3>\n<ol>\n<li>Pelar (con el pela papas) las manzanas verdes y cortarlas en cubos.</li>\n<li>Poner un poquito de manteca en una sartén para que se derrita — muy poca, si no las manzanas quedan demasiado jugosas. <a class=\"ver-foto\" href=\"#/receta/apple-crumble/foto-relleno-2\">📷 ver foto</a></li>\n<li>Colocar las manzanas cortadas y luego el azúcar. <a class=\"ver-foto\" href=\"#/receta/apple-crumble/foto-relleno-3\">📷 ver foto</a></li>\n<li>Tapar y cocinar a fuego bajo hasta que estén cocidas pero firmes (no blandas).</li>\n<li>Fuera del fuego, sumar la vainilla y la ralladura de limón.</li>\n<li>Pasar a otro recipiente para que enfríe más rápido y descartar el jugo de cocción (si queda el jugo, se moja la base y la porción no se sostiene al cortar).</li>\n<li>Espolvorear maicena y mezclar, para que suelte menos líquido en el horno. <a class=\"ver-foto\" href=\"#/receta/apple-crumble/foto-relleno-7\">📷 ver foto</a></li>\n</ol>\n<h3>Masa crumble</h3>\n<ol>\n<li>Mezclar los secos: harina, sal, azúcar y ralladura de limón.</li>\n<li>Agregar la manteca derretida y la vainilla.</li>\n<li>Arenar con los dedos hasta lograr una mezcla granulosa. <a class=\"ver-foto\" href=\"#/receta/apple-crumble/foto-masa-3\">📷 ver foto</a></li>\n</ol>\n<blockquote>\n<p>ℹ️ Punto justo: si se aprieta en el puño, se compacta en bollitos. Si no liga, sumar un poco más de manteca (depende de la harina).</p>\n</blockquote>\n<h3>Armado</h3>\n<ol>\n<li>Agarrar un molde de 20 cm, enmantecado y enharinado, o con papel manteca.</li>\n<li>Presionar parte de la mezcla contra el fondo y las paredes, con la mano o una cuchara. Finita, 2 dedos de alto en los bordes.</li>\n<li>Distribuir las nueces por encima, apoyándose sobre el relleno. <a class=\"ver-foto\" href=\"#/receta/apple-crumble/foto-armado-3\">📷 ver foto</a></li>\n<li>Volcar el relleno frío y emparejar.</li>\n<li>Cubrir con el resto del crumble suelto, sin aplastar — eso es lo que da el crocante. <a class=\"ver-foto\" href=\"#/receta/apple-crumble/foto-armado-5\">📷 ver foto</a></li>\n</ol>\n<h3>Horneado</h3>\n<ol>\n<li>180 °C, 30–35 min, hasta que esté dorada.</li>\n<li>Dejar enfriar por completo antes de desmoldar. Para despegar el papel de la base, levantarla con una base de tartera o espátula grande. <a class=\"ver-foto\" href=\"#/receta/apple-crumble/foto-horneado-2\">📷 ver foto</a></li>\n</ol>\n<h3>Imágenes del paso a paso</h3>\n<p><img alt=\"Foto del paso: poner manteca en la sartén\" class=\"foto-paso\" id=\"foto-relleno-2\" src=\"images/apple-crumble/doc-04.jpg\" />\n<em class=\"foto-paso-caption\">Relleno, paso 2: poner manteca en la sartén</em></p>\n<p><img alt=\"Foto del paso: manzanas y azúcar en la sartén\" class=\"foto-paso\" id=\"foto-relleno-3\" src=\"images/apple-crumble/doc-05.jpg\" />\n<em class=\"foto-paso-caption\">Relleno, paso 3: manzanas y azúcar en la sartén</em></p>\n<p><img alt=\"Foto del paso: espolvorear maicena\" class=\"foto-paso\" id=\"foto-relleno-7\" src=\"images/apple-crumble/doc-06.jpg\" />\n<em class=\"foto-paso-caption\">Relleno, paso 7: espolvorear maicena</em></p>\n<p><img alt=\"Foto del paso: masa crumble arenada\" class=\"foto-paso\" id=\"foto-masa-3\" src=\"images/apple-crumble/doc-07.jpg\" />\n<em class=\"foto-paso-caption\">Masa crumble, paso 3: arenada con los dedos</em></p>\n<p><img alt=\"Foto del paso: nueces sobre el relleno\" class=\"foto-paso\" id=\"foto-armado-3\" src=\"images/apple-crumble/doc-08.jpg\" />\n<em class=\"foto-paso-caption\">Armado, paso 3: nueces sobre el relleno</em></p>\n<p><img alt=\"Foto del paso: crumble cubriendo el relleno\" class=\"foto-paso\" id=\"foto-armado-5\" src=\"images/apple-crumble/doc-09.jpg\" />\n<em class=\"foto-paso-caption\">Armado, paso 5: crumble cubriendo el relleno</em></p>\n<p><img alt=\"Foto del paso: recién horneada, enfriando\" class=\"foto-paso\" id=\"foto-horneado-2\" src=\"images/apple-crumble/doc-10.jpg\" />\n<em class=\"foto-paso-caption\">Horneado, paso 2: recién horneada, enfriando</em></p>\n<p><img alt=\"Resultado final\" class=\"foto-paso\" id=\"foto-resultado-1\" src=\"images/apple-crumble/doc-01.jpg\" />\n<em class=\"foto-paso-caption\">Resultado final</em></p>\n<p><img alt=\"Resultado final, porción servida\" class=\"foto-paso\" id=\"foto-resultado-2\" src=\"images/apple-crumble/doc-02.jpg\" />\n<em class=\"foto-paso-caption\">Resultado final, porción servida</em></p>\n<p><img alt=\"Resultado final, porción servida\" class=\"foto-paso\" id=\"foto-resultado-3\" src=\"images/apple-crumble/doc-03.jpg\" />\n<em class=\"foto-paso-caption\">Resultado final, porción servida</em></p>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": null,
-      "tipo_postre": "frutal",
-      "momento": null
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": "🍎 frutal"
     },
     {
       "id": "asado",
       "titulo": "Asado",
       "categorias": [
-        "principales"
+        "🍗 principales"
       ],
       "dificultad": "baja",
       "tiempo_minutos": 180,
@@ -316,17 +316,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": "2026-07-05",
       "fuente": "Recetas.docx — Comidas Saladas",
       "body_html": "<h2>Materiales</h2>\n<ul>\n<li>Parrilla y pala.</li>\n<li>Cuchillo y tenedor de asador.</li>\n<li>2 bandejas: una para condimentar la carne y otra para servir la carne ya lista.</li>\n</ul>\n<h2>Ingredientes</h2>\n<ul>\n<li>Carne. El cálculo normal es 0,5 kg por persona. En lo personal, suelo hacer entre 5 y 6 kg por asado para 3 personas, tal que sobra en la semana hasta el viernes.</li>\n<li>Sal y pimienta.</li>\n<li>Carbón y leña.</li>\n<li>Ramas, papel, cartón, etc.</li>\n</ul>\n<h2>Paso a paso</h2>\n<h3>🧊 P0) Descongelar la carne</h3>\n<p>El día anterior, descongelar la carne. Sacarla unas 12 horas antes del freezer y ponerla en una bandeja.</p>\n<h3>🔥 P1) Arranco el fuego</h3>\n<p><a class=\"ver-foto\" href=\"#/receta/asado/foto-p1-1\">📷 ver fotos de este paso</a></p>\n<p>Abajo cosas bien combustibles (ej. papel, diario, cartón, ramitas), arriba menos (ej. carbón, leña grande).</p>\n<ul>\n<li>Poner dos troncos grandes de cada lado para armar la base donde luego poner encima las ramas y demás, como un techito.</li>\n<li>Abajo de todo, armar un anillo de papel o cartón. En el centro, un papel o leña chica a la que se le va a poner el líquido combustible (rodear bien el centro con papel, sin mucha distancia al anillo).</li>\n<li>Hacer una segunda capa de ramitas formando un cuadrado hueco, para tener espacio en el centro y poder prender con el fósforo.</li>\n<li>Poner líquido combustible en el centro.</li>\n<li>Encender el líquido con un fósforo.</li>\n<li>Agregar ramitas pequeñas \"tapando\" el fuego para que prendan.</li>\n<li>Agregar pedazos de leña grandes.</li>\n<li>Arriba de las leñas, agregar pedazos grandes de carbón de manera estratégica. Buscamos que se prenda un poco el carbón para mantener el fuego.</li>\n<li>Con leña, armar un muro alrededor del carbón y dejar carbón preparado para los próximos refills.</li>\n</ul>\n<blockquote>\n<p>ℹ️ Aprendizajes: abajo de todo nunca poner carbón —todo papel, ramitas o similar—, porque si no el carbón que queda abajo no prende. Siempre usar ramas chiquitas para prender el fuego, si no se apaga: no alcanza con solo carbón o leña grande y papel. Poner el líquido combustible sobre un material muy combustible (una piña, una rama, papel), nunca sobre carbón directamente.</p>\n<p>⚠️ Ojo con quemar cartón cuando hay viento: puede dejar todo el cartón quemado sobre la carne. Mejor quemar papel.</p>\n</blockquote>\n<p><strong>¿Cuál es la relación kg de carbón y kg de carne?</strong></p>\n<ul>\n<li>100% carbón: la relación estándar es 1 kg de carbón por cada 1 kg de carne. Para cortes de cocción larga (vacío, costillar entero, tapa de asado a fuego lento), calcular entre 1,5 y 2 kg de carbón por kg de carne.</li>\n<li>80% carbón + 20% leña (la leña solo para dar sabor/ahumar) — la que generalmente hago: por cada 1 kg de carne, unos 0,8 kg de carbón y pedazos chicos o astillas de leña seca (preferentemente quebracho, espinillo o frutal; nunca pino).</li>\n<li>Leña como fuente principal de calor (mixto): reemplaza parte del carbón, pero rinde menos en peso (genera más llama y se consume más rápido). Proporción: 2 kg de leña por cada 1 kg de carbón reemplazado.</li>\n<li>100% leña: entre 2 y 3 kg de leña por cada 1 kg de carne, ya que buena parte del volumen se quema en forma de fuego y humo antes de convertirse en brasa útil.</li>\n</ul>\n<h3>🧂 P2) Condimentar la carne</h3>\n<p><a class=\"ver-foto\" href=\"#/receta/asado/foto-p2-1\">📷 ver fotos de este paso</a></p>\n<p>Salar la carne con pimienta y sal (el chorizo y la morcilla no necesitan sal). Pimienta con el frasquito de tapa negra, vuelta y vuelta, como la sal.</p>\n<ul>\n<li>Carne gruesa = mucha sal.</li>\n<li>Carne fina = menos sal.</li>\n</ul>\n<h3>🍳 P3) Poner la carne en la parrilla</h3>\n<p><a class=\"ver-foto\" href=\"#/receta/asado/foto-p3-1\">📷 ver fotos de este paso</a></p>\n<p>Posibles estrategias:</p>\n<ol>\n<li>La carne gruesa donde está más caliente —brasas gruesas, más cerca del fuego— y la más fina con brasas chicas y alejada del fuego.</li>\n<li>Lo grueso en el centro y lo fino a los costados. <strong>Elección actual: esta.</strong></li>\n</ol>\n<ul>\n<li>Siempre la grasa hacia abajo, para que se queme y caiga directo a la brasa sin pasar por la carne.</li>\n<li>El pollo: inicialmente con la piel y la grasa hacia abajo.</li>\n<li>Si la carne es una costilla, por ejemplo, el hueso va abajo primero.</li>\n</ul>\n<blockquote>\n<p>⚠️ Cada 15 minutos, despegar la piel y grasa del pollo de la parrilla porque se pega por el calor. Si se pega, después se separa la piel o se rompe por partes.</p>\n</blockquote>\n<p>Llevar la carne al costado de la parrilla y esperar a que el fuego esté listo. Lavar cuchillo y tenedor grande con detergente, junto con las cosas de plástico de la carne.</p>\n<p>En casa, la altura desde la parrilla hasta el suelo es de 4 dedos.</p>\n<h3>P4) Poner las brasas iniciales</h3>\n<p><a class=\"ver-foto\" href=\"#/receta/asado/foto-p4-1\">📷 ver fotos de este paso</a></p>\n<p>El fuego está listo más o menos a la media hora (30 min) o más. Una vez que está bien rojo y prendido:</p>\n<ul>\n<li>Desarmar el fuego para obtener brasas.</li>\n<li>Distribuir las brasas debajo de la carne (el centro queda medio sin brasas porque está recontra caliente).</li>\n<li>Agregar carbón o leña al fuego.</li>\n</ul>\n<blockquote>\n<p>⚠️ Mucho cuidado: no dejar mucho tiempo el fuego desarmado porque se apaga. Garantizar que queden brasas suficientes para que el fuego continúe —tienen que estar bien naranjas.</p>\n</blockquote>\n<h3>↕️ P5) Ajustar la altura de la parrilla</h3>\n<p>Una vez puestas las brasas iniciales, bajar la parrilla para que queden 4 dedos entre esta y el suelo.</p>\n<h3>P6) Refills periódicos de brasas y carbón</h3>\n<p>La carne tiene que chillar (la grasa cae sobre la brasa y eso chilla). El próximo refill de brasas se pone más donde está la carne gruesa. Se puede dejar un poco de carbón al costado para después.</p>\n<blockquote>\n<p>⚠️ Si chilla mucho, chequear la parte de abajo de la carne: puede que el fuego esté muy cerca o fuerte y la esté quemando, formando una capa negra.</p>\n</blockquote>\n<h3>P7) Dar vuelta la carne</h3>\n<p>La morcilla se pone faltando 20/15 minutos para sacar la carne. Chequear regularmente que no se queme de abajo.</p>\n<p>Una buena señal de que hay que darla vuelta es cuando ya está bien cocida de un lado y estuvo un buen tiempo así. Generalmente está más tiempo del lado inicial que del final —depende el corte, pero puede ser una hora y 15 del lado inicial y 30/45 min del final.</p>\n<p>Si se quema abajo, levantar la parrilla o sacarle brasa, pero seguir cocinándolo de ese lado.</p>\n<h3>P8) Sacar del fuego la carne que ya está lista</h3>\n<p>Dejarla en una parte de la parrilla sin brasa, o encima de un pedazo de carne que aún le falte. Lo ideal es que no quede tan lejos de la brasa, porque se enfría.</p>\n<p><strong>¿Cómo saber si la carne está lista?</strong></p>\n<ul>\n<li>Vaca/cerdo: hacer un solo corte estratégico para separar un pedazo grande en dos y ver cómo está.</li>\n<li>Pollo: al no poder cortarlo para ver si está rojo (como con la vaca), conviene cocinar de más porque no puede quedar rojo.</li>\n</ul>\n<blockquote>\n<p>⚠️ Evitar hacer más de un corte a la carne, porque pierde el líquido y se seca.</p>\n</blockquote>\n<h3>✂️ P9) Cortar y servir</h3>\n<p>Cortar la carne y servir en bandeja. Disfrutar del asado.</p>\n<h3>🪥 P10) Limpiar</h3>\n<p>Limpiar la parrilla con cartón o papel de diario. Guardar los fósforos y demás.</p>\n<h3>Imágenes del paso a paso</h3>\n<p><img alt=\"Foto del paso: armando la base de troncos\" class=\"foto-paso\" id=\"foto-p1-1\" src=\"images/asado/doc-01.jpg\" />\n<em class=\"foto-paso-caption\">P1: armando la base de troncos</em></p>\n<p><img alt=\"Foto del paso: anillo de papel y cartón en el centro\" class=\"foto-paso\" id=\"foto-p1-2\" src=\"images/asado/doc-02.jpg\" />\n<em class=\"foto-paso-caption\">P1: anillo de papel y cartón en el centro</em></p>\n<p><img alt=\"Foto del paso: segunda capa de ramitas en cuadrado hueco\" class=\"foto-paso\" id=\"foto-p1-3\" src=\"images/asado/doc-03.jpg\" />\n<em class=\"foto-paso-caption\">P1: segunda capa de ramitas en cuadrado hueco</em></p>\n<p><img alt=\"Foto del paso: segunda capa de ramitas en cuadrado hueco\" class=\"foto-paso\" id=\"foto-p1-4\" src=\"images/asado/doc-04.jpg\" />\n<em class=\"foto-paso-caption\">P1: segunda capa de ramitas en cuadrado hueco</em></p>\n<p><img alt=\"Foto del paso: líquido combustible en el centro\" class=\"foto-paso\" id=\"foto-p1-5\" src=\"images/asado/doc-05.jpg\" />\n<em class=\"foto-paso-caption\">P1: líquido combustible en el centro</em></p>\n<p><img alt=\"Foto del paso: encendiendo el fuego\" class=\"foto-paso\" id=\"foto-p1-6\" src=\"images/asado/doc-06.jpg\" />\n<em class=\"foto-paso-caption\">P1: encendiendo el fuego</em></p>\n<p><img alt=\"Foto del paso: ramitas pequeñas tapando el fuego\" class=\"foto-paso\" id=\"foto-p1-7\" src=\"images/asado/doc-07.jpg\" />\n<em class=\"foto-paso-caption\">P1: ramitas pequeñas tapando el fuego</em></p>\n<p><img alt=\"Foto del paso: ramitas pequeñas tapando el fuego\" class=\"foto-paso\" id=\"foto-p1-8\" src=\"images/asado/doc-08.jpg\" />\n<em class=\"foto-paso-caption\">P1: ramitas pequeñas tapando el fuego</em></p>\n<p><img alt=\"Foto del paso: agregando pedazos de leña grandes\" class=\"foto-paso\" id=\"foto-p1-9\" src=\"images/asado/doc-09.jpg\" />\n<em class=\"foto-paso-caption\">P1: agregando pedazos de leña grandes</em></p>\n<p><img alt=\"Foto del paso: agregando pedazos de leña grandes\" class=\"foto-paso\" id=\"foto-p1-10\" src=\"images/asado/doc-10.jpg\" />\n<em class=\"foto-paso-caption\">P1: agregando pedazos de leña grandes</em></p>\n<p><img alt=\"Foto del paso: carbón arriba de la leña\" class=\"foto-paso\" id=\"foto-p1-11\" src=\"images/asado/doc-11.jpg\" />\n<em class=\"foto-paso-caption\">P1: carbón arriba de la leña</em></p>\n<p><img alt=\"Foto del paso: carbón arriba de la leña\" class=\"foto-paso\" id=\"foto-p1-12\" src=\"images/asado/doc-12.jpg\" />\n<em class=\"foto-paso-caption\">P1: carbón arriba de la leña</em></p>\n<p><img alt=\"Foto del paso: muro de leña con carbón de reserva\" class=\"foto-paso\" id=\"foto-p1-13\" src=\"images/asado/doc-13.jpg\" />\n<em class=\"foto-paso-caption\">P1: muro de leña con carbón de reserva para refills</em></p>\n<p><img alt=\"Foto del paso: salando la carne\" class=\"foto-paso\" id=\"foto-p2-1\" src=\"images/asado/doc-14.jpg\" />\n<em class=\"foto-paso-caption\">P2: salando la carne</em></p>\n<p><img alt=\"Foto del paso: salando la carne\" class=\"foto-paso\" id=\"foto-p2-2\" src=\"images/asado/doc-15.jpg\" />\n<em class=\"foto-paso-caption\">P2: salando la carne</em></p>\n<p><img alt=\"Foto del paso: carne al costado de la parrilla\" class=\"foto-paso\" id=\"foto-p3-1\" src=\"images/asado/doc-16.jpg\" />\n<em class=\"foto-paso-caption\">P3: carne al costado, esperando que el fuego esté listo</em></p>\n<p><img alt=\"Foto del paso: carne al costado de la parrilla\" class=\"foto-paso\" id=\"foto-p3-2\" src=\"images/asado/doc-17.jpg\" />\n<em class=\"foto-paso-caption\">P3: carne al costado, esperando que el fuego esté listo</em></p>\n<p><img alt=\"Foto del paso: desarmando el fuego para obtener brasas\" class=\"foto-paso\" id=\"foto-p4-1\" src=\"images/asado/doc-18.jpg\" />\n<em class=\"foto-paso-caption\">P4: desarmando el fuego para obtener brasas</em></p>\n<p><img alt=\"Foto del paso: distribuyendo las brasas debajo de la carne\" class=\"foto-paso\" id=\"foto-p4-2\" src=\"images/asado/doc-19.jpg\" />\n<em class=\"foto-paso-caption\">P4: distribuyendo las brasas debajo de la carne</em></p>\n<p><img alt=\"Foto del paso: distribuyendo las brasas debajo de la carne\" class=\"foto-paso\" id=\"foto-p4-3\" src=\"images/asado/doc-20.jpg\" />\n<em class=\"foto-paso-caption\">P4: distribuyendo las brasas debajo de la carne</em></p>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": null,
-      "tipo_postre": null,
-      "momento": "almuerzo"
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": "🌆 almuerzo",
+      "tipo_postre": null
     },
     {
       "id": "budin-de-banana",
       "titulo": "Budín de banana",
       "categorias": [
-        "meriendas"
+        "🍰 meriendas"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -336,17 +336,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": "2026-04-20",
       "fuente": "https://www.youtube.com/watch?v=7sKXzEynyKE",
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Huevos — 3</li>\n<li>Azúcar — 3/4 taza</li>\n<li>Vainilla — 1 cdita</li>\n<li>Ralladura de un limón</li>\n<li>Sal, pizca</li>\n<li>Aceite neutro (de girasol o maíz) — 1/3 taza</li>\n<li>Bananas chicas o 2 grandes — 3</li>\n<li>Harina leudante — 2 tazas y 1/4</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Prender el horno a 180 °C para precalentar.</li>\n<li>Batir los huevos y el azúcar hasta quedar espumoso y blanquecino.</li>\n<li>Añadir la vainilla, la ralladura de limón y la pizca de sal.</li>\n<li>Añadir el aceite y batir hasta integrar.</li>\n<li>Pisar las bananas y agregarlas a la preparación.</li>\n<li>Agregar la harina.</li>\n<li>Poner fritolim y harina en el molde, y verter el contenido.</li>\n<li>Hornear a 180 °C entre 30 y 40 minutos. Verificar la cocción introduciendo un palito.</li>\n</ol>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": "🍰 budines",
-      "tipo_postre": null,
-      "momento": null
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": null
     },
     {
       "id": "budin-de-chocolate",
       "titulo": "Budín de chocolate",
       "categorias": [
-        "meriendas"
+        "🍰 meriendas"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -356,17 +356,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": "2026-04-20",
       "fuente": "https://cookpad.com/uy/recetas/11255242",
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Huevos — 2</li>\n<li>Azúcar — 3/4 taza</li>\n<li>Leche — 1 taza</li>\n<li>Aceite — 1/2 taza</li>\n<li>Chocolate amargo — 2 barras (50 g aprox)</li>\n<li>Harina leudante — 2 tazas</li>\n<li>Cacao — 3/4 taza</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Prender el horno a 180 °C para precalentar.</li>\n<li>Batir los huevos y el azúcar hasta quedar espumoso y blanquecino.</li>\n<li>Añadir la leche y el aceite y batir hasta integrar.</li>\n<li>Cortar las barras de chocolate en trozos y mezclarlas con un poco de harina (para que no se vayan al fondo).</li>\n<li>Agregar a la preparación la harina y el cacao, mezclando hasta integrar.</li>\n<li>Añadir los trozos de chocolate y mezclar.</li>\n<li>Poner fritolim y harina en el molde, y verter el contenido.</li>\n<li>Hornear a 180 °C entre 30 y 40 minutos. Verificar la cocción introduciendo un palito.</li>\n</ol>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": "🍰 budines",
-      "tipo_postre": null,
-      "momento": null
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": null
     },
     {
       "id": "budin-de-limon",
       "titulo": "Budín de limón",
       "categorias": [
-        "meriendas"
+        "🍰 meriendas"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -376,17 +376,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": "2026-04-20",
       "fuente": "https://www.youtube.com/watch?v=nuvxNKN65QI",
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Huevos — 2</li>\n<li>Azúcar — 3/4 taza</li>\n<li>Aceite neutro (de girasol o maíz) — 3/4 taza</li>\n<li>Limón, para ralladura y jugo — 1</li>\n<li>Leche — 1/2 taza</li>\n<li>Sal — 1/4 cdita</li>\n<li>Harina leudante (depende del jugo del limón) — 2 o 3 tazas</li>\n<li>Glaseado: azúcar impalpable — 1/2 taza</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Prender el horno a 180 °C para precalentar.</li>\n<li>Batir los huevos y el azúcar hasta quedar espumoso y blanquecino.</li>\n<li>Añadir el aceite y batir.</li>\n<li>Rallar y exprimir el limón; agregar la cáscara y el jugo a la preparación y batir.</li>\n<li>Añadir la leche y batir. Añadir la sal y batir.</li>\n<li>Agregar la harina de a poco: primero 2 tazas y verificar la consistencia, incorporando la tercera de a poco según sea necesario hasta lograr la textura deseada.</li>\n<li>Poner fritolim y harina en el molde, y verter el contenido.</li>\n<li>Hornear a 180 °C entre 30 y 40 minutos. Verificar la cocción introduciendo un palito.</li>\n<li>Mezclar el azúcar impalpable con jugo de limón y verter arriba del budín ya horneado.</li>\n</ol>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": "🍰 budines",
-      "tipo_postre": null,
-      "momento": null
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": null
     },
     {
       "id": "budin-de-manzana",
       "titulo": "Budín de manzana",
       "categorias": [
-        "meriendas"
+        "🍰 meriendas"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -396,17 +396,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": "2026-05-09",
       "fuente": null,
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Huevos — 3</li>\n<li>Azúcar — 3/4 taza (la receta original usa 1 taza)</li>\n<li>Aceite neutro — 3/4 taza (la receta original usa 1 taza)</li>\n<li>Ralladura de limón</li>\n<li>Harina — 3 × 3/4 de taza</li>\n<li>Azúcar para espolvorear el molde</li>\n<li>Manzanas — 3</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Precalentar el horno.</li>\n<li>Mezclar el huevo con el azúcar y batir hasta que espume, agregando el azúcar de a poco mientras se bate.</li>\n<li>Cuando el huevo con azúcar esté espumoso, agregar el aceite sin dejar de batir hasta incorporar. Incorporar también la ralladura de limón y batir un par de minutos más.</li>\n<li>Agregar con espátula la harina hasta unir bien, sin grumos.</li>\n<li>Enmantecar el molde y, en lugar de enharinar, espolvorear con azúcar de la misma forma. <a class=\"ver-foto\" href=\"#/receta/budin-de-manzana/foto-paso-5\">📷 ver foto</a></li>\n</ol>\n<blockquote>\n<p>ℹ️ Probar espolvoreando con azúcar impalpable en vez de común.</p>\n</blockquote>\n<ol start=\"6\">\n<li>Pelar la manzana, cortarla en cuartos y cada cuarto en láminas finas. <a class=\"ver-foto\" href=\"#/receta/budin-de-manzana/foto-paso-6\">📷 ver foto</a></li>\n<li>Colocar debajo del molde varias láminas de manzana, cubriéndolo por completo. <a class=\"ver-foto\" href=\"#/receta/budin-de-manzana/foto-paso-7\">📷 ver foto</a></li>\n<li>Colocar en el molde la mitad de la mezcla del budín, encima otra capa de láminas de manzana, y completar con el resto de la mezcla (se pueden poner más láminas por arriba).</li>\n<li>Llevar a horno a 180 °C unos 40 minutos o hasta que se vea dorado por arriba. <a class=\"ver-foto\" href=\"#/receta/budin-de-manzana/foto-paso-9\">📷 ver foto</a></li>\n<li>Al desmoldar, dar vuelta para que las manzanas del fondo queden arriba.</li>\n</ol>\n<h3>Imágenes del paso a paso</h3>\n<p><img alt=\"Foto del paso: molde espolvoreado con azúcar\" class=\"foto-paso\" id=\"foto-paso-5\" src=\"images/budin-de-manzana/doc-03.jpg\" />\n<em class=\"foto-paso-caption\">Paso 5: molde espolvoreado con azúcar</em></p>\n<p><img alt=\"Foto del paso: molde espolvoreado con azúcar\" class=\"foto-paso\" id=\"foto-paso-5b\" src=\"images/budin-de-manzana/doc-04.jpg\" />\n<em class=\"foto-paso-caption\">Paso 5: molde espolvoreado con azúcar</em></p>\n<p><img alt=\"Foto del paso: manzana pelada y laminada\" class=\"foto-paso\" id=\"foto-paso-6\" src=\"images/budin-de-manzana/doc-05.jpg\" />\n<em class=\"foto-paso-caption\">Paso 6: manzana pelada y laminada</em></p>\n<p><img alt=\"Foto del paso: láminas de manzana cubriendo el molde\" class=\"foto-paso\" id=\"foto-paso-7\" src=\"images/budin-de-manzana/doc-06.jpg\" />\n<em class=\"foto-paso-caption\">Paso 7: láminas de manzana cubriendo el molde</em></p>\n<p><img alt=\"Foto del paso: láminas de manzana cubriendo el molde\" class=\"foto-paso\" id=\"foto-paso-7b\" src=\"images/budin-de-manzana/doc-07.jpg\" />\n<em class=\"foto-paso-caption\">Paso 7: láminas de manzana cubriendo el molde</em></p>\n<p><img alt=\"Foto del paso: recién horneado\" class=\"foto-paso\" id=\"foto-paso-9\" src=\"images/budin-de-manzana/doc-01.jpg\" />\n<em class=\"foto-paso-caption\">Paso 9: recién horneado</em></p>\n<p><img alt=\"Foto del paso: recién horneado, otro ángulo\" class=\"foto-paso\" id=\"foto-paso-9b\" src=\"images/budin-de-manzana/doc-02.jpg\" />\n<em class=\"foto-paso-caption\">Paso 9: recién horneado, otro ángulo</em></p>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": "🍰 budines",
-      "tipo_postre": null,
-      "momento": null
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": null
     },
     {
       "id": "budin-de-naranja",
       "titulo": "Budín de naranja",
       "categorias": [
-        "meriendas"
+        "🍰 meriendas"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -416,17 +416,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": "2026-04-20",
       "fuente": "https://www.paulinacocina.net/budin-de-naranja/8585",
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Huevos — 3</li>\n<li>Azúcar — 3/4 taza</li>\n<li>Harina leudante — 2 tazas</li>\n<li>Aceite neutro (de girasol o maíz) — 3/4 taza</li>\n<li>Naranjas — 2</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Prender el horno a 180 °C para precalentar.</li>\n<li>Batir los huevos con el azúcar hasta que estén espumosos y cremosos.</li>\n<li>Agregar una de las tazas de harina y remover hasta unir completamente.</li>\n<li>Agregar la taza de aceite y remover hasta unir.</li>\n<li>Rallar la cáscara de las naranjas y exprimir su jugo.</li>\n<li>Incorporar la cáscara rallada y el jugo de las 2 naranjas.</li>\n<li>Incorporar la última taza de harina hasta unir, sin grumos.</li>\n<li>Poner fritolim y harina en el molde, y verter el contenido.</li>\n<li>Hornear a 180 °C entre 30 y 40 minutos. Verificar la cocción introduciendo un palito.</li>\n</ol>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": "🍰 budines",
-      "tipo_postre": null,
-      "momento": null
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": null
     },
     {
       "id": "chocolinas",
       "titulo": "Chocolinas",
       "categorias": [
-        "postres"
+        "🍨 postres"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -436,17 +436,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": "2026-05-02",
       "fuente": null,
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Crema de leche — 200 g</li>\n<li>Dulce de leche — 400 g</li>\n<li>Cacao amargo — 3 cucharadas</li>\n<li>Chocolate amargo — 1 barra</li>\n<li>Galletitas chocolina</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Mezclar el dulce de leche con la crema.</li>\n<li>Agregar el cacao.</li>\n<li>Agarrar una fuente de vidrio.</li>\n<li>Colocar la primera capa de galletitas chocolinas.</li>\n<li>Colocar la mezcla de crema y dulce de leche.</li>\n<li>Otra capa de chocolinas, en dirección opuesta a la anterior (a 90 grados).</li>\n<li>Continuar así hasta terminar la mezcla.</li>\n<li>Rallar chocolate arriba para decorar.</li>\n<li>Poner en el freezer.</li>\n</ol>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": null,
-      "tipo_postre": "🍫 chocolatoso",
-      "momento": null
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": "🍫 chocolatoso"
     },
     {
       "id": "daiquiri",
       "titulo": "Daiquiri",
       "categorias": [
-        "bebidas"
+        "🥛 bebidas"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -456,17 +456,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": null,
       "fuente": null,
       "body_html": "<p><em>(para 6 vasos)</em></p>\n<h2>Ingredientes</h2>\n<ul>\n<li>Hielo, a tope (regula lo espeso que queda)</li>\n<li>Ron — 120 ml (aprox. ¼ taza)</li>\n<li>Pulpa de frutilla — 170 ml</li>\n<li>Jugo de limón — 30 ml</li>\n<li>Soda, unos chorritos</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Licuar el ron, la pulpa de frutilla, el jugo de limón y el hielo hasta lograr la consistencia deseada.</li>\n<li>Agregar unos chorritos de soda y mezclar suave.</li>\n</ol>\n<blockquote>\n<p>ℹ️ Cálculo para 12 personas: una botella de ron (a lo sumo 2), una lata de pulpa de frutilla de 900 g (a lo sumo 2), una botella de soda, una botella de jugo de limón Minerva y al menos 2 bolsas de hielo en rolito de 2 kg cada una.</p>\n</blockquote>",
-      "subcategoria": null,
-      "tipo_bebida": "tragos",
       "tipo_merienda": null,
-      "tipo_postre": null,
-      "momento": null
+      "tipo_bebida": "🍹 tragos",
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": null
     },
     {
       "id": "empanadas",
       "titulo": "Empanadas",
       "categorias": [
-        "principales"
+        "🍗 principales"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -476,17 +476,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": null,
       "fuente": null,
       "body_html": "<blockquote>\n<p>ℹ️ Receta pendiente de completar — el Google Doc todavía no tiene ingredientes ni paso a paso.</p>\n</blockquote>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": null,
-      "tipo_postre": null,
-      "momento": "cena"
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": "🌃 cena",
+      "tipo_postre": null
     },
     {
       "id": "flan",
       "titulo": "Flan",
       "categorias": [
-        "postres"
+        "🍨 postres"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -496,17 +496,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": "2026-07-05",
       "fuente": "https://www.paulinacocina.net/flan-casero-clasico/13997",
       "body_html": "<h2>Ingredientes</h2>\n<p><em>(para flan grande)</em>\n- Huevos — 10\n- Leche — 1 litro\n- Azúcar — 400 g (200 g para el flan y 200 g para el caramelo)\n- Agua caliente — 2 cucharadas (para el caramelo)</p>\n<h2>Paso a paso</h2>\n<ol>\n<li>Preparar la mezcla del flan: cascar los huevos en un bol, agregar el azúcar y batir suavemente hasta romper el ligue sin incorporar aire. Añadir la leche y mezclar con un tenedor o batidor de mano hasta integrar, sin espumar.</li>\n<li>Preparar el caramelo: colocar la flanera a fuego medio y agregar los 100 g de azúcar. Cocinar sin remover al inicio hasta que empiece a derretirse, luego revolver con cuchara de madera hasta obtener un color marrón claro. Retirar del fuego y añadir con cuidado 1 cucharada de agua caliente, mezclando rápidamente hasta lograr una textura más fluida. Mover para cubrir el fondo y los bordes de la flanera.</li>\n<li>Colocar la mezcla en la flanera, que ya tiene el caramelo.</li>\n<li>Cocinar a baño maría: colocar la flanera dentro de una fuente más grande en el horno (normalmente la bandeja negra del horno) y verter agua caliente en la fuente.</li>\n<li>Hornear a 160 °C durante 50–60 minutos, hasta que el flan esté firme en los bordes y ligeramente tembloroso en el centro.</li>\n<li>Enfriar y desmoldar: retirar del horno, dejar enfriar a temperatura ambiente y luego llevar a la heladera por al menos 3–4 horas. Pasar un cuchillo por los bordes y desmoldar sobre un plato hondo para aprovechar el caramelo.</li>\n</ol>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": null,
-      "tipo_postre": "🥚 huevo",
-      "momento": null
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": "🥚 huevo"
     },
     {
       "id": "galletitas-saladas",
       "titulo": "Galletitas saladas",
       "categorias": [
-        "meriendas"
+        "🍰 meriendas"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -516,17 +516,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": "2026-10-05",
       "fuente": "https://www.instagram.com/p/CNNUl1_g9yC",
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Harina de lino — 1 taza</li>\n<li>Harina de avena — 1 taza</li>\n<li>Sal, al ras — 1 cdita</li>\n<li>Orégano — 2 cucharadas</li>\n<li>Pimienta, 1 pizca</li>\n<li>Aceite de oliva — 2 cdas</li>\n<li>Agua, aproximadamente — 1/2 taza</li>\n<li>Semillas de sésamo, lino o chía</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Mezclar las 2 tazas de harina.</li>\n<li>Agregar la sal, el orégano y la pimienta.</li>\n<li>Mezclar bien y, en el centro, incorporar el aceite de oliva y el agua de a poco hasta obtener la masa.</li>\n<li>Dejar descansar la masa 15 a 20 minutos.</li>\n<li>Estirarla, agregar semillas de sésamo, lino o chía y seguir estirando para que se adhieran bien.</li>\n<li>Cortar en tiritas, colocar en placa aceitada y cocinar unos 10 minutos de cada lado.</li>\n</ol>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": "🍪 cookies",
-      "tipo_postre": null,
-      "momento": null
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": null
     },
     {
       "id": "guiso-con-lentejas",
       "titulo": "Guiso con lentejas",
       "categorias": [
-        "principales"
+        "🍗 principales"
       ],
       "dificultad": "baja",
       "tiempo_minutos": 120,
@@ -535,18 +535,18 @@ window.RECETAS_DATA = {
       "foto": "images/guiso-con-lentejas/guiso-listo.jpg",
       "fecha_actualizacion": null,
       "fuente": "Recetas.docx — Comidas Saladas",
-      "body_html": "<h2>Ingredientes</h2>\n<p><em>(para 8 porciones)</em></p>\n<h3>Legumbres</h3>\n<ul>\n<li>Lentejones o lentejas — 600 a 800 gramos</li>\n</ul>\n<h3>Carnes</h3>\n<ul>\n<li>Carne — 1,0 a 1,2 kg</li>\n<li>Longaniza o chorizo — 1 unidad chica</li>\n</ul>\n<h3>Verduras</h3>\n<ul>\n<li>Cebolla — 2 unidades</li>\n<li>Papa — 1 unidad</li>\n<li>Zanahoria — 2 unidades</li>\n<li>Morrón — ½ unidad</li>\n</ul>\n<h3>Caldos</h3>\n<ul>\n<li>Salsa de tomate — 300 a 400 cm³. No escatimar: que el guiso quede bien naranja.</li>\n<li>Caldo o agua — 1 litro</li>\n</ul>\n<h3>Condimentos</h3>\n<ul>\n<li>Sal</li>\n<li>Azúcar</li>\n<li>Pimienta</li>\n<li>Aceite</li>\n<li>Perejil</li>\n<li>Ajo</li>\n<li>Caldo Knorr</li>\n</ul>\n<h2>Materiales</h2>\n<ul>\n<li>Ollas: Olla 1 (la principal, donde queda el guiso) y Olla 2 (auxiliar, para reahogar chorizo/panceta).</li>\n<li>Hervidor, para calentar agua.</li>\n<li>Tablas para cortar verduras y carne.</li>\n<li>Cuchillos (uno para carne, uno para verduras).</li>\n<li>Recipientes para almacenar verduras cortadas.</li>\n<li>Tupper para agua y colador.</li>\n</ul>\n<h2>Paso a paso</h2>\n<h3>El día anterior</h3>\n<ul>\n<li>Poner las lentejas en agua (6 a 8 horas), salvo que vengan enlatadas. Llenar un tupper con la lenteja y agua.</li>\n<li>Sacar la carne del freezer y dejarla en la heladera (se descongela rápido, es solo 1 kilo).</li>\n</ul>\n<blockquote>\n<p>ℹ️ Si la querés tener cortada para el día del guiso, sacá la carne a la mañana del día anterior para que esté lista para cortar a la noche de ese mismo día.</p>\n</blockquote>\n<h3>El día del guiso</h3>\n<ol>\n<li>Colar la lenteja: volcar el tupper en el colador y lavarla un poco ahí.</li>\n<li>Preparar el caldo: poner agua a fuego entre mínimo y medio en el hervidor, condimentar con caldo Knorr y perejil, y una vez que hierve, apagar y dejar ahí.</li>\n<li>🔪 Cortar papa y zanahoria: lavar bien (no hace falta pelar la papa si se lava bien) y poner en el recipiente 1.</li>\n<li>🔪 Cortar cebolla y morrón: morrón en tiritas, cebolla pelada y cortada; poner ambos juntos en el recipiente 2.</li>\n<li>🔪 Cortar la carne en cuadraditos y sacarle la grasa.</li>\n</ol>\n<blockquote>\n<p>ℹ️ Cuanto más congelada está la carne, más fácil es cortarla.</p>\n</blockquote>\n<ol start=\"6\">\n<li>🚮 Poner cebolla, morrón y carne a reahogar en la OLLA 1: chorro de aceite, fuego fuerte al principio y después bajar. Opcional: sellar primero la carne, después la cebolla y al final el morrón (se deshace rápido).</li>\n</ol>\n<blockquote>\n<p>ℹ️ ¿Cómo dorar la carne? Ponerla en la olla con un chorrito de aceite y no tocarla hasta que empiece a hacer ruido de cocción; después moverla un poco, buscando que se dore por todos sus lados.</p>\n</blockquote>\n<ol start=\"7\">\n<li>🍳 Cocinar 20 a 30 minutos la carne y la cebolla. Condimentar con ajo, azúcar, pimienta y sal. Revolver cada tanto —cuanto más chilla, más hay que revolver— y agregar agua si falta o si chilla mucho.</li>\n</ol>\n<blockquote>\n<p>ℹ️ La carne se podría rehogar sola para que quede más dorada, pero tarda mucho más.</p>\n</blockquote>\n<ol start=\"8\">\n<li>🚮 Agregar papa y zanahoria cortadas a la OLLA 1, junto con el caldo del hervidor, hasta tapar la verdura.</li>\n<li>🍳 Cocinar 30 minutos a fuego alto.</li>\n</ol>\n<blockquote>\n<p>ℹ️ Revolver siempre para que no se pegue.</p>\n</blockquote>\n<ol start=\"10\">\n<li>🚮 Agregar la lenteja. Condimentar con ají molido —la última vez probamos con una cucharada sopera a ras (no explotada) y anduvo bien—, sal y pimienta.</li>\n<li>🍳 Cocinar 20 a 30 minutos a fuego medio.</li>\n</ol>\n<blockquote>\n<p>ℹ️ Hacer refill de agua para que todo quede siempre bajo agua.</p>\n</blockquote>\n<ol start=\"12\">\n<li>Mientras se cocina, preparar el chorizo: cortarlo en fetas o cuadraditos, reahogarlo en la OLLA 2 (sin aceite, el chorizo/panceta ya tiene grasa propia) hasta que esté crocante y apagar el fuego. <a class=\"ver-foto\" href=\"#/receta/guiso-con-lentejas/foto-paso-12\">📷 ver foto</a></li>\n</ol>\n<blockquote>\n<p>ℹ️ No dejarlo mucho tiempo con el fuego apagado, porque la grasa se solidifica y se le vuelve a pegar al chorizo.</p>\n</blockquote>\n<ol start=\"13\">\n<li>🚮 Agregar la salsa de tomate y el chorizo a la OLLA 1 (pasar el chorizo con una espátula con agujeritos, para no llevar toda la grasa sobrante).</li>\n<li>🍳 Cocinar 20 a 30 minutos a fuego lento.</li>\n</ol>\n<blockquote>\n<p>ℹ️ Refill de agua para que todo quede siempre bajo agua.</p>\n</blockquote>\n<ol start=\"15\">\n<li>Apagar el fuego y comer. <a class=\"ver-foto\" href=\"#/receta/guiso-con-lentejas/foto-paso-15\">📷 ver foto</a></li>\n</ol>\n<blockquote>\n<p>ℹ️ Si se deja reposar unas horas, el guiso agarra más sabor y queda mucho más sabroso.</p>\n</blockquote>\n<h3>Tips generales</h3>\n<ul>\n<li>Revolver siempre para que no se pegue.</li>\n<li>El fuego medio-alto o medio-bajo depende de la hornalla.</li>\n<li>No escatimar en condimentos —salen varias porciones, un guiso sin condimentar es insulso.</li>\n<li>La olla siempre tiene que estar cubierta de agua al ras de las lentejas; agregar el agua ya caliente, no fría.</li>\n</ul>\n<h3>Método alternativo (versión resumida, más antigua)</h3>\n<p>Una versión anterior y más corta de esta receta, que se conserva como referencia:</p>\n<ol>\n<li>Poner en agua las lentejas la noche anterior (6 a 8 horas).</li>\n<li>Preparar el caldo o calentar agua por separado.</li>\n<li>Cortar la cebolla y rehogar en aceite (15 a 20 minutos a fuego medio).</li>\n<li>Cortar la carne y agregarla a la cebolla rehogada (15 a 20 minutos a fuego medio).</li>\n<li>Cortar la papa, la zanahoria y el morrón, y agregarlos a la preparación.</li>\n<li>Agregar el caldo hasta tapar la verdura.</li>\n<li>Condimentar con sal, pimienta y ají molido.</li>\n<li>Cocinar 30 minutos a fuego alto.</li>\n<li>Agregar la lenteja (cocinar 20 a 30 minutos a fuego medio).</li>\n<li>Agregar la salsa de tomate y el chorizo (cocinar 20 a 30 minutos a fuego lento).</li>\n</ol>\n<h3>Imágenes del paso a paso</h3>\n<p><img alt=\"Foto del paso: grasa del chorizo reahogado\" class=\"foto-paso\" id=\"foto-paso-12\" src=\"images/guiso-con-lentejas/doc-01.jpg\" />\n<em class=\"foto-paso-caption\">Paso 12: grasa solidificada del chorizo reahogado</em></p>\n<p><img alt=\"Foto del paso: guiso listo para comer\" class=\"foto-paso\" id=\"foto-paso-15\" src=\"images/guiso-con-lentejas/doc-02.jpg\" />\n<em class=\"foto-paso-caption\">Paso 15: guiso listo para comer</em></p>",
-      "subcategoria": null,
-      "tipo_bebida": null,
+      "body_html": "<h2>Ingredientes</h2>\n<p><em>(para 8 porciones)</em></p>\n<h3>Legumbres</h3>\n<ul>\n<li>Lentejones o lentejas — 600 a 800 gramos</li>\n</ul>\n<h3>Carnes</h3>\n<ul>\n<li>Carne — 1,0 a 1,2 kg</li>\n<li>Longaniza o chorizo — 1 unidad chica</li>\n</ul>\n<h3>Verduras</h3>\n<ul>\n<li>Cebolla — 2 unidades</li>\n<li>Papa — 1 unidad</li>\n<li>Zanahoria — 2 unidades</li>\n<li>Morrón — ½ unidad</li>\n</ul>\n<h3>Caldos</h3>\n<ul>\n<li>Salsa de tomate — 300 a 400 cm³. No escatimar: que el guiso quede bien naranja.</li>\n<li>Caldo o agua — 1 litro</li>\n</ul>\n<h3>Condimentos</h3>\n<ul>\n<li>Sal</li>\n<li>Azúcar</li>\n<li>Pimienta</li>\n<li>Aceite</li>\n<li>Perejil</li>\n<li>Ajo</li>\n<li>Caldo Knorr</li>\n</ul>\n<h2>Materiales</h2>\n<ul>\n<li>Ollas: Olla 1 (la principal, donde queda el guiso) y Olla 2 (auxiliar, para reahogar chorizo/panceta).</li>\n<li>Hervidor, para calentar agua.</li>\n<li>Tablas para cortar verduras y carne.</li>\n<li>Cuchillos (uno para carne, uno para verduras).</li>\n<li>Recipientes para almacenar verduras cortadas.</li>\n<li>Tupper para agua y colador.</li>\n</ul>\n<h2>Paso a paso</h2>\n<h3>El día anterior</h3>\n<ul>\n<li>Poner las lentejas en agua (6 a 8 horas), salvo que vengan enlatadas. Llenar un tupper con la lenteja y agua.</li>\n<li>Sacar la carne del freezer y dejarla en la heladera (se descongela rápido, es solo 1 kilo).</li>\n</ul>\n<blockquote>\n<p>ℹ️ Si la querés tener cortada para el día del guiso, sacá la carne a la mañana del día anterior para que esté lista para cortar a la noche de ese mismo día.</p>\n<p>ℹ️ Las verduras también se pueden cortar con anticipación, pero no es tan necesario — son pocas y, de hecho, la papa se pone fea si se deja cortada.</p>\n</blockquote>\n<h3>El día del guiso</h3>\n<ol>\n<li>Colar la lenteja: volcar el tupper en el colador y lavarla un poco ahí.</li>\n<li>Preparar el caldo: poner agua a fuego entre mínimo y medio en el hervidor, condimentar con caldo Knorr y perejil, y una vez que hierve, apagar y dejar ahí.</li>\n<li>🔪 Cortar papa y zanahoria: lavar bien (no hace falta pelar la papa si se lava bien) y poner en el recipiente 1.</li>\n<li>🔪 Cortar cebolla y morrón: morrón en tiritas, cebolla pelada y cortada; poner ambos juntos en el recipiente 2.</li>\n<li>🔪 Cortar la carne en cuadraditos y sacarle la grasa.</li>\n</ol>\n<blockquote>\n<p>ℹ️ Cuanto más congelada está la carne, más fácil es cortarla.</p>\n</blockquote>\n<ol start=\"6\">\n<li>🚮 Poner cebolla, morrón y carne a reahogar en la OLLA 1: chorro de aceite, fuego fuerte al principio y después bajar. Opcional: sellar primero la carne, después la cebolla y al final el morrón (se deshace rápido).</li>\n</ol>\n<blockquote>\n<p>ℹ️ ¿Cómo dorar la carne? Ponerla en la olla con un chorrito de aceite y no tocarla hasta que empiece a hacer ruido de cocción; después moverla un poco, buscando que se dore por todos sus lados.</p>\n</blockquote>\n<ol start=\"7\">\n<li>🍳 Cocinar 20 a 30 minutos la carne y la cebolla. Condimentar con ajo, azúcar, pimienta y sal. Revolver cada tanto —cuanto más chilla, más hay que revolver— y agregar agua si falta o si chilla mucho.</li>\n</ol>\n<blockquote>\n<p>ℹ️ La carne se podría rehogar sola para que quede más dorada, pero tarda mucho más.</p>\n</blockquote>\n<ol start=\"8\">\n<li>🚮 Agregar papa y zanahoria cortadas a la OLLA 1, junto con el caldo del hervidor, hasta tapar la verdura.</li>\n<li>🍳 Cocinar 30 minutos a fuego alto.</li>\n</ol>\n<blockquote>\n<p>ℹ️ Revolver siempre para que no se pegue.</p>\n</blockquote>\n<ol start=\"10\">\n<li>🚮 Agregar la lenteja. Condimentar con ají molido —la última vez probamos con una cucharada sopera a ras (no explotada) y anduvo bien—, sal y pimienta.</li>\n<li>🍳 Cocinar 20 a 30 minutos a fuego medio.</li>\n</ol>\n<blockquote>\n<p>ℹ️ Hacer refill de agua para que todo quede siempre bajo agua.</p>\n</blockquote>\n<ol start=\"12\">\n<li>Mientras se cocina, preparar el chorizo: cortarlo en fetas o cuadraditos, reahogarlo en la OLLA 2 (sin aceite, el chorizo/panceta ya tiene grasa propia) hasta que esté crocante y apagar el fuego. <a class=\"ver-foto\" href=\"#/receta/guiso-con-lentejas/foto-paso-12\">📷 ver foto</a></li>\n</ol>\n<blockquote>\n<p>ℹ️ No dejarlo mucho tiempo con el fuego apagado, porque la grasa se solidifica y se le vuelve a pegar al chorizo.</p>\n</blockquote>\n<ol start=\"13\">\n<li>🚮 Agregar la salsa de tomate y el chorizo a la OLLA 1 (pasar el chorizo con una espátula con agujeritos, para no llevar toda la grasa sobrante).</li>\n<li>🍳 Cocinar 20 a 30 minutos a fuego lento.</li>\n</ol>\n<blockquote>\n<p>ℹ️ Refill de agua para que todo quede siempre bajo agua.</p>\n</blockquote>\n<ol start=\"15\">\n<li>Apagar el fuego y comer. <a class=\"ver-foto\" href=\"#/receta/guiso-con-lentejas/foto-paso-15\">📷 ver foto</a></li>\n</ol>\n<blockquote>\n<p>ℹ️ Si se deja reposar unas horas, el guiso agarra más sabor y queda mucho más sabroso.</p>\n</blockquote>\n<h3>Tips generales</h3>\n<ul>\n<li>Revolver siempre para que no se pegue.</li>\n<li>El fuego medio-alto o medio-bajo depende de la hornalla.</li>\n<li>No escatimar en condimentos —salen varias porciones, un guiso sin condimentar es insulso.</li>\n<li>La olla siempre tiene que estar cubierta de agua al ras de las lentejas; agregar el agua ya caliente, no fría.</li>\n</ul>\n<h3>Método alternativo (versión resumida, más antigua)</h3>\n<p>Una versión anterior y más corta de esta receta, que se conserva como referencia:</p>\n<ol>\n<li>Poner en agua las lentejas la noche anterior (6 a 8 horas).</li>\n<li>Preparar el caldo o calentar agua por separado.</li>\n<li>Cortar la cebolla y rehogar en aceite (15 a 20 minutos a fuego medio).</li>\n<li>Cortar la carne y agregarla a la cebolla rehogada (15 a 20 minutos a fuego medio).</li>\n<li>Cortar la papa, la zanahoria y el morrón, y agregarlos a la preparación.</li>\n<li>Agregar el caldo hasta tapar la verdura.</li>\n<li>Condimentar con sal, pimienta y ají molido.</li>\n<li>Cocinar 30 minutos a fuego alto.</li>\n<li>Agregar la lenteja (cocinar 20 a 30 minutos a fuego medio).</li>\n<li>Agregar la salsa de tomate y el chorizo (cocinar 20 a 30 minutos a fuego lento).</li>\n</ol>\n<h3>Imágenes del paso a paso</h3>\n<p><img alt=\"Foto del paso: grasa del chorizo reahogado\" class=\"foto-paso\" id=\"foto-paso-12\" src=\"images/guiso-con-lentejas/doc-01.jpg\" />\n<em class=\"foto-paso-caption\">Paso 12: grasa solidificada del chorizo reahogado</em></p>\n<p><img alt=\"Foto del paso: guiso listo para comer\" class=\"foto-paso\" id=\"foto-paso-15\" src=\"images/guiso-con-lentejas/doc-02.jpg\" />\n<em class=\"foto-paso-caption\">Paso 15: guiso listo para comer</em></p>",
       "tipo_merienda": null,
-      "tipo_postre": null,
-      "momento": "almuerzo"
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": "🌆 almuerzo",
+      "tipo_postre": null
     },
     {
       "id": "jugo-clasico",
       "titulo": "El Clásico",
       "categorias": [
-        "bebidas"
+        "🥛 bebidas"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -556,17 +556,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": "2026-08-30",
       "fuente": "Gemini",
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Naranjas (peladas y sin semillas grandes) — 3</li>\n<li>Zanahorias medianas — 2 o 3</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Pelar las zanahorias.</li>\n<li>Pelar las naranjas, cortarlas a la mitad y sacarles las semillas.</li>\n<li>Encender la juguera a velocidad alta.</li>\n<li>Introducir las zanahorias y naranjas enteras.</li>\n<li>Recolectar todo el líquido resultante y disfrutar.</li>\n</ol>",
-      "subcategoria": null,
-      "tipo_bebida": "jugos naturales",
       "tipo_merienda": null,
-      "tipo_postre": null,
-      "momento": null
+      "tipo_bebida": "jugos naturales",
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": null
     },
     {
       "id": "jugo-detox-digestivo",
       "titulo": "El Detox Digestivo",
       "categorias": [
-        "bebidas"
+        "🥛 bebidas"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -576,17 +576,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": "2026-08-30",
       "fuente": "Gemini",
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Tallos de apio — 2</li>\n<li>Pepino entero — 1</li>\n<li>Manzana verde — 1</li>\n<li>Hojitas de menta fresca, unas pocas</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Lavar bien los tallos de apio, el pepino, la manzana verde y las hojas de menta.</li>\n<li>Cortar la manzana en trozos y quitarle las semillas; trozar el pepino y el apio para facilitar el paso por la máquina.</li>\n<li>Encender la juguera.</li>\n<li>Introducir los ingredientes alternando los vegetales de alta hidratación (como el pepino y el apio) con la manzana y las hojas de menta.</li>\n<li>Obtener el jugo y mezclar levemente antes de consumir.</li>\n</ol>",
-      "subcategoria": null,
-      "tipo_bebida": "jugos naturales",
       "tipo_merienda": null,
-      "tipo_postre": null,
-      "momento": null
+      "tipo_bebida": "jugos naturales",
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": null
     },
     {
       "id": "jugo-energetico",
       "titulo": "El Energético",
       "categorias": [
-        "bebidas"
+        "🥛 bebidas"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -596,17 +596,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": "2026-08-30",
       "fuente": "Gemini",
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Zanahorias — 2</li>\n<li>Manzana verde (con cáscara, sin semillas) — 1</li>\n<li>Jengibre fresco, un trocito pequeño</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Lavar y pelar las zanahorias, y lavar la manzana verde.</li>\n<li>Cortar todos los ingredientes en trozos que entren cómodamente por el tubo de la juguera.</li>\n<li>Encender la juguera.</li>\n<li>Introducir los ingredientes alternándolos (por ejemplo, un trozo de zanahoria, luego manzana y un pedacito de jengibre) para que el filtro trabaje de manera uniforme.</li>\n<li>Recoger el jugo puro en un recipiente y servir inmediatamente, o preparar para conservar.</li>\n</ol>",
-      "subcategoria": null,
-      "tipo_bebida": "jugos naturales",
       "tipo_merienda": null,
-      "tipo_postre": null,
-      "momento": null
+      "tipo_bebida": "jugos naturales",
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": null
     },
     {
       "id": "jugo-inmunologico",
       "titulo": "El Inmunológico / Antiox",
       "categorias": [
-        "bebidas"
+        "🥛 bebidas"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -616,17 +616,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": "2026-08-30",
       "fuente": "Gemini",
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Naranjas peladas — 2</li>\n<li>Ananá (piña), 1 rodaja gruesa</li>\n<li>Limón pelado — 1/2</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Pelar las naranjas y el medio limón, retirando las semillas grandes.</li>\n<li>Cortar el ananá en rodajas o trozos adecuados para el tubo de la máquina.</li>\n<li>Encender la juguera.</li>\n<li>Introducir los gajos de naranja, los trozos de ananá y el limón de forma alternada.</li>\n<li>Extraer el jugo por completo y servir.</li>\n</ol>",
-      "subcategoria": null,
-      "tipo_bebida": "jugos naturales",
       "tipo_merienda": null,
-      "tipo_postre": null,
-      "momento": null
+      "tipo_bebida": "jugos naturales",
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": null
     },
     {
       "id": "lemon-pie",
       "titulo": "Lemon pie",
       "categorias": [
-        "postres"
+        "🍨 postres"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -636,17 +636,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": "2026-09-23",
       "fuente": "https://www.youtube.com/watch?v=7P8J3vkFeJg",
       "body_html": "<h2>¿Dónde comprarlo?</h2>\n<ul>\n<li>Vicente López: El Ombú</li>\n<li>Laguna del Sol: Kuki Kitchen</li>\n<li>Agus</li>\n</ul>\n<h2>¿Dónde NO comprarlo?</h2>\n<ul>\n<li>La Fábrica de Pan (tiene gusto a vainilla).</li>\n</ul>\n<h2>Partes del lemon pie</h2>\n<ul>\n<li><strong>Masa sablée</strong>: masa quebrada francesa, rica en manteca, de textura arenosa y friable. Base para tartas dulces porque queda crocante y delicada. Se prepara con harina, manteca, azúcar y huevo, sin mucho amasado para no desarrollar gluten.</li>\n<li><strong>Curd de limón</strong>: crema untuosa de jugo y ralladura de limón, huevos, azúcar y manteca. Sabor intenso y ácido, textura suave. Se usa como relleno de tartas, macarons o para untar (los ingleses lo usan como mermelada).</li>\n<li>Variante: en lugar del curd, crema pastelera de limón.</li>\n<li>Variante: con leche condensada — es el key lime pie.</li>\n<li><strong>Merengue italiano</strong>: se obtiene batiendo claras de huevo y añadiendo almíbar caliente (agua + azúcar) en forma de hilo. Más estable y brillante que otros merengues, ideal para decorar tartas como esta o para mousses.</li>\n</ul>\n<p>En conjunto forman la clásica tarta de limón con merengue italiano: base de masa sablée, relleno de curd de limón y cobertura de merengue dorado.</p>\n<h2>Ingredientes</h2>\n<h3>Masa sablée</h3>\n<ul>\n<li>Harina 0000 — 200 g</li>\n<li>Sal — 1 cdita (¼ tsp)</li>\n<li>Manteca — 70 g</li>\n<li>Azúcar impalpable — 70 g</li>\n<li>Esencia de vainilla — 1 cdita</li>\n<li>Huevo — 1 unidad</li>\n</ul>\n<h3>Curd de limón</h3>\n<ul>\n<li>Huevos — 2</li>\n<li>Azúcar — 100 g</li>\n<li>Maicena — 15 g</li>\n<li>Ralladura de limón — 1 cucharadita (mínimo la de 1 limón, aporta aroma)</li>\n<li>Jugo de limón — 75 ml (120 g en la receta original)</li>\n<li>Manteca — 40 g</li>\n</ul>\n<h3>Merengue italiano</h3>\n<ul>\n<li>Claras — 3 (a temperatura ambiente)</li>\n<li>Ácido (jugo de limón) — unas gotas</li>\n<li>Azúcar blanca — 200 g</li>\n<li>Agua — 150 ml</li>\n</ul>\n<h2>Paso a paso</h2>\n<h3>Masa sablée</h3>\n<p>_Fuente: <a href=\"https://www.youtube.com/watch?v=Dsb0C9QIqgU_\">https://www.youtube.com/watch?v=Dsb0C9QIqgU_</a></p>\n<ol>\n<li>Agregar la sal a la harina y tamizar en un bol.</li>\n<li>Cortar la manteca fría en cubos y agregarla a la harina.</li>\n<li>Amasar con batidora, sin amasar en ningún momento, hasta cubrir la harina con grasa (impide que se desarrolle gluten).</li>\n<li>Agregar azúcar y, si se quiere, ralladura de limón.</li>\n<li>Agregar el huevo y la esencia de vainilla, integrando sin amasar.</li>\n<li>Unir los ingredientes con la mano, sin amasar.</li>\n<li>Estirar entre dos papeles manteca con el palo de amasar.</li>\n<li>Llevar a la heladera por lo menos 2 horas.</li>\n<li>Cubrir el molde de tarta (fonzar), pinchar la base con un tenedor y llevar 30 minutos al freezer.</li>\n<li>Precalentar el horno a 160 °C y cocinar 22 a 25 minutos.</li>\n</ol>\n<h3>Curd de limón (en microondas)</h3>\n<p><em>Fuentes: <a href=\"https://www.youtube.com/watch?v=jTz7wBy5pI8\">https://www.youtube.com/watch?v=jTz7wBy5pI8</a> (cantidades) y <a href=\"https://www.youtube.com/watch?v=8Mp8AsyJYj8\">https://www.youtube.com/watch?v=8Mp8AsyJYj8</a> (cómo cocinarla)</em></p>\n<ol>\n<li>Separar la yema de 2 huevos.</li>\n<li>Mezclar rápidamente las yemas con el azúcar — no dejarlas reposar juntas sin integrar, porque el azúcar puede \"cocinar\" las yemas y formar puntos amarillos difíciles de disolver.</li>\n<li>Agregar la maicena y mezclar bien hasta disolver todos los grumos.</li>\n<li>Incorporar la ralladura de limón y luego el jugo de limón, integrando bien.</li>\n<li>Cocinar al microondas (o a baño maría): llevar el bol en lapsos de 1 minuto, sacándolo entre cada intervalo para revolver. Repetir unos 3 a 4 minutos en total hasta que espese, con consistencia similar a un flan o crema suave.</li>\n<li>Una vez caliente y espesa, retirar del calor e integrar la manteca fría en cubos (a mano o con minipimer, hasta lograr una emulsión brillante y homogénea).</li>\n<li>Pasar a un recipiente, cubrir con film en contacto y dejar enfriar en la heladera un mínimo de 2 horas.</li>\n</ol>\n<h3>Merengue italiano</h3>\n<blockquote>\n<p>⚠️ Importante: limpiar todo con alcohol. Cualquier materia grasa que quede hace que el merengue no quede como tiene que quedar.</p>\n</blockquote>\n<ol>\n<li>Para el almíbar: colocar el azúcar en la cacerola. Se necesita el doble de azúcar que de claras (cada clara pesa entre 30 y 35 g, es decir entre 60 y 70 g de azúcar por clara).</li>\n<li>Cubrir el azúcar con el agua, a ojo, asegurándose de que todo el azúcar quede cubierto y no quede ningún granito en las paredes de la cacerola (se puede limpiar con un pincel mojado). Llevar a fuego fuerte sin revolver y cocinar hasta formar un almíbar.</li>\n<li>Cuando el almíbar esté en aprox. 116 °C, prender la batidora para que empiecen a espumar las claras — es importante volcar el almíbar sobre las claras ya algo montadas, para que el merengue no quede tan denso.</li>\n<li>Cuando el almíbar llegue a 118–121 °C, retirar del fuego (esa temperatura es la que hace que el merengue sea estable y no pierda agua).</li>\n<li>Mover el almíbar en forma circular para eliminar las burbujas y volcarlo en forma de hilo por el lateral de la cuba de la batidora, mientras se baten las claras a toda velocidad. Si no se forma ese canal, el almíbar puede tocar el batidor y formar hilos de caramelo que arruinan el merengue.</li>\n<li>Batir hasta que el merengue se enfríe y esté bien brillante, al menos 15 minutos. El batido estabiliza al merengue; si no se bate lo suficiente, puede perder agua.</li>\n</ol>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": null,
-      "tipo_postre": "frutal",
-      "momento": null
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": "🍎 frutal"
     },
     {
       "id": "mayonesa-de-zanahoria",
       "titulo": "Mayonesa de zanahoria",
       "categorias": [
-        "meriendas"
+        "🍰 meriendas"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -656,17 +656,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": "2026-10-05",
       "fuente": "https://www.paulinacocina.net/mayonesa-de-zanahoria/37212",
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Zanahorias grandes — 3</li>\n<li>Aceite de oliva</li>\n<li>Jugo de limón — 1 cucharada</li>\n<li>Sal y pimienta a gusto</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Cortar la zanahoria en trozos y hervirla.</li>\n<li>Cuando esté blanda, sacarla del fuego y procesarla con la minipimer.</li>\n<li>Agregar aceite de oliva, sal y pimienta a gusto.</li>\n<li>Procesar más y listo.</li>\n</ol>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": "🍯 untables",
-      "tipo_postre": null,
-      "momento": null
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": null
     },
     {
       "id": "mermelada-de-manzana",
       "titulo": "Mermelada de manzana",
       "categorias": [
-        "meriendas"
+        "🍰 meriendas"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -676,17 +676,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": null,
       "fuente": null,
       "body_html": "<p>Fuentes: <a href=\"https://www.youtube.com/shorts/fXV-SjgVD4s\">https://www.youtube.com/shorts/fXV-SjgVD4s</a> y <a href=\"https://youtu.be/eXyNtLVpFf0?si=ZpWzCNCREu0cSRoV\">https://youtu.be/eXyNtLVpFf0?si=ZpWzCNCREu0cSRoV</a> (la que siguió mamá).</p>\n<h2>Ingredientes</h2>\n<ul>\n<li>Manzanas</li>\n<li>Azúcar</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Preparar las manzanas: pelarlas sobre un bol, cortar el centro dejando los corazones aparte y picar la pulpa en cubos pequeños. Reservar 3 corazones (tienen pectina, que ayuda a espesar).</li>\n<li>Primera cocción: colocar las manzanas y los 3 corazones en una olla a fuego medio/bajo. Agregar la mitad del azúcar, revolver y cocinar 10 minutos hasta que la manzana libere agua y el azúcar se disuelva.</li>\n<li>Segunda cocción: incorporar la otra mitad del azúcar, mezclar bien y dejar cocinar a fuego lento aproximadamente 1 hora. A mitad de la cocción, retirar los corazones de manzana.</li>\n<li>Esterilizar frascos: en otra olla con agua hirviendo, colocar el frasco de vidrio y su tapa durante 10 minutos. Retirar y dejar secar al aire.</li>\n<li>Comprobar punto y envasar: la mermelada está lista cuando la manzana luce translúcida — verificar pasando un dedo por la cuchara sumergida en la mermelada; si el trazo no se une, está lista. Retirar del fuego, verter en el frasco esterilizado y dejar enfriar a temperatura ambiente antes de refrigerar.</li>\n</ol>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": "🍯 untables",
-      "tipo_postre": null,
-      "momento": null
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": null
     },
     {
       "id": "morron-y-huevo-asados",
       "titulo": "Morrón y huevo asados",
       "categorias": [
-        "acompañantes"
+        "🥔 acompañantes"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -696,17 +696,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": null,
       "fuente": null,
       "body_html": "<p><em>(rinde 8 morrones con huevo)</em></p>\n<h2>Ingredientes</h2>\n<ul>\n<li>Morrones — 4</li>\n<li>Huevos — 8</li>\n<li>Queso cremoso</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Cortar los morrones al medio.</li>\n<li>Dentro de cada mitad, poner una rodaja de queso cremoso.</li>\n<li>Poner un huevo crudo encima.</li>\n<li>Llevar a la parrilla, una horita aproximadamente.</li>\n</ol>\n<blockquote>\n<p>ℹ️ ¿Cuándo sacarlo? Lo ideal es que la clara esté seca y la yema quede como un juguito. De abajo siempre se va a poner negro — es normal.</p>\n</blockquote>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": null,
-      "tipo_postre": null,
-      "momento": null
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": null
     },
     {
       "id": "mousse-de-limon",
       "titulo": "Mousse de limón",
       "categorias": [
-        "postres"
+        "🍨 postres"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -716,17 +716,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": "2026-07-05",
       "fuente": "https://www.recetasnestle.com.ar/recetas/mousse-de-limon",
       "body_html": "<h2>Materiales</h2>\n<ul>\n<li>Licuadora.</li>\n<li>Exprimidor: el cosito verde para exprimir limones o frutas.</li>\n<li>2 bowls: uno para galletitas trituradas y otro para la mezcla de leche condensada y jugo de limón.</li>\n<li>4 vasos o tazas.</li>\n<li>Rallador.</li>\n<li>1 plato.</li>\n<li>Utensilios: cuchara sopera (la del guiso), cuchara de goma, cucharas normales y cuchillos.</li>\n</ul>\n<h2>Ingredientes</h2>\n<ul>\n<li>Crema de leche deslactosada — 300 ml (1 pote y medio de 200)</li>\n<li>Leche condensada — 400 g (1 pote)</li>\n<li>Limones — 2 o 3</li>\n<li>Galletitas de vainilla, varias (con 1 paquete de las Lincoln de 219 g alcanza)</li>\n</ul>\n<p><em>¿Cuánto rinde esto? 4 tazas grandes. Cada persona tiene una taza y le puede durar al menos dos comidas.</em></p>\n<h2>Paso a paso</h2>\n<ol>\n<li>Batir la crema con la licuadora. Esperar a que la crema levante, pero sin pasarse porque se corta. <a class=\"ver-foto\" href=\"#/receta/mousse-de-limon/foto-paso-1\">📷 ver foto</a></li>\n<li>Rallar los limones y guardar la ralladura para después. <a class=\"ver-foto\" href=\"#/receta/mousse-de-limon/foto-paso-2\">📷 ver foto</a></li>\n<li>Cortar al medio y exprimir los dos limones ya rallados. Guardar el jugo.</li>\n<li>En un bowl nuevo, verter la leche condensada, agregar el jugo de limón y mezclar. <a class=\"ver-foto\" href=\"#/receta/mousse-de-limon/foto-paso-4\">📷 ver foto</a></li>\n<li>Verter ese bowl en el de la licuadora, donde está la crema batida. (Opcional) agregarle ralladura de limón a la mezcla — lo probamos y quedó bien.</li>\n<li>Mezclar en forma envolvente, con cuchara de goma y despacito, dentro del bowl de la licuadora. <a class=\"ver-foto\" href=\"#/receta/mousse-de-limon/foto-paso-6\">📷 ver foto</a></li>\n</ol>\n<blockquote>\n<p>⚠️ No mezclar mucho porque la crema se puede bajar.</p>\n</blockquote>\n<ol start=\"7\">\n<li>Triturar las galletitas de vainilla a mano (con una procesadora no funcionó bien). Más o menos medio paquete de las Lincoln de 219 g. <a class=\"ver-foto\" href=\"#/receta/mousse-de-limon/foto-paso-7\">📷 ver foto</a></li>\n<li>Armar cada vaso en capas, alternando galletita triturada y mezcla: primera capa de galleta, segunda de mezcla (una cucharada sopera), tercera de galleta, cuarta de mezcla, quinta de galleta, sexta de mezcla, y decorar arriba con ralladura de limón. <a class=\"ver-foto\" href=\"#/receta/mousse-de-limon/foto-paso-8\">📷 ver fotos</a></li>\n<li>Poner los 4 vasos en el freezer y enfriar durante al menos 2 horas. <a class=\"ver-foto\" href=\"#/receta/mousse-de-limon/foto-paso-9\">📷 ver foto</a></li>\n</ol>\n<h3>Imágenes del paso a paso</h3>\n<p><img alt=\"Foto del paso: batiendo la crema\" class=\"foto-paso\" id=\"foto-paso-1\" src=\"images/mousse-de-limon/doc-03.jpg\" />\n<em class=\"foto-paso-caption\">Paso 1: batiendo la crema</em></p>\n<p><img alt=\"Foto del paso: batiendo la crema\" class=\"foto-paso\" id=\"foto-paso-1b\" src=\"images/mousse-de-limon/doc-04.jpg\" />\n<em class=\"foto-paso-caption\">Paso 1: batiendo la crema</em></p>\n<p><img alt=\"Foto del paso: batiendo la crema\" class=\"foto-paso\" id=\"foto-paso-1c\" src=\"images/mousse-de-limon/doc-05.jpg\" />\n<em class=\"foto-paso-caption\">Paso 1: batiendo la crema</em></p>\n<p><img alt=\"Foto del paso: rallando los limones\" class=\"foto-paso\" id=\"foto-paso-2\" src=\"images/mousse-de-limon/doc-06.jpg\" />\n<em class=\"foto-paso-caption\">Paso 2: rallando los limones</em></p>\n<p><img alt=\"Foto del paso: leche condensada con jugo de limón\" class=\"foto-paso\" id=\"foto-paso-4\" src=\"images/mousse-de-limon/doc-07.jpg\" />\n<em class=\"foto-paso-caption\">Paso 4: leche condensada con jugo de limón</em></p>\n<p><img alt=\"Foto del paso: leche condensada con jugo de limón, mezclada\" class=\"foto-paso\" id=\"foto-paso-4b\" src=\"images/mousse-de-limon/doc-08.jpg\" />\n<em class=\"foto-paso-caption\">Paso 4: leche condensada con jugo de limón, mezclada</em></p>\n<p><img alt=\"Foto del paso: mezcla envolviéndose con la crema\" class=\"foto-paso\" id=\"foto-paso-6\" src=\"images/mousse-de-limon/doc-09.jpg\" />\n<em class=\"foto-paso-caption\">Paso 6: mezcla envolviéndose con la crema</em></p>\n<p><img alt=\"Foto del paso: galletitas trituradas\" class=\"foto-paso\" id=\"foto-paso-7\" src=\"images/mousse-de-limon/doc-10.jpg\" />\n<em class=\"foto-paso-caption\">Paso 7: galletitas trituradas</em></p>\n<p><img alt=\"Foto del paso: primera capa de galletita en el vaso\" class=\"foto-paso\" id=\"foto-paso-8\" src=\"images/mousse-de-limon/doc-11.jpg\" />\n<em class=\"foto-paso-caption\">Paso 8: primera capa, galletita triturada</em></p>\n<p><img alt=\"Foto del paso: segunda capa, la mezcla\" class=\"foto-paso\" id=\"foto-paso-8b\" src=\"images/mousse-de-limon/doc-12.jpg\" />\n<em class=\"foto-paso-caption\">Paso 8: segunda capa, la mezcla</em></p>\n<p><img alt=\"Foto del paso: tercera capa, galletita\" class=\"foto-paso\" id=\"foto-paso-8c\" src=\"images/mousse-de-limon/doc-13.jpg\" />\n<em class=\"foto-paso-caption\">Paso 8: tercera capa, galletita</em></p>\n<p><img alt=\"Foto del paso: cuarta capa, la mezcla\" class=\"foto-paso\" id=\"foto-paso-8d\" src=\"images/mousse-de-limon/doc-14.jpg\" />\n<em class=\"foto-paso-caption\">Paso 8: cuarta capa, la mezcla</em></p>\n<p><img alt=\"Foto del paso: quinta capa, galletita\" class=\"foto-paso\" id=\"foto-paso-8e\" src=\"images/mousse-de-limon/doc-15.jpg\" />\n<em class=\"foto-paso-caption\">Paso 8: quinta capa, galletita</em></p>\n<p><img alt=\"Foto del paso: sexta capa, la mezcla\" class=\"foto-paso\" id=\"foto-paso-8f\" src=\"images/mousse-de-limon/doc-16.jpg\" />\n<em class=\"foto-paso-caption\">Paso 8: sexta capa, la mezcla</em></p>\n<p><img alt=\"Foto del paso: decorado con ralladura de limón\" class=\"foto-paso\" id=\"foto-paso-8g\" src=\"images/mousse-de-limon/doc-17.jpg\" />\n<em class=\"foto-paso-caption\">Paso 8: decorado con ralladura de limón</em></p>\n<p><img alt=\"Foto del paso: vasos en el freezer\" class=\"foto-paso\" id=\"foto-paso-9\" src=\"images/mousse-de-limon/doc-18.jpg\" />\n<em class=\"foto-paso-caption\">Paso 9: vasos listos para el freezer</em></p>\n<p><img alt=\"Resultado final\" class=\"foto-paso\" id=\"foto-resultado-1\" src=\"images/mousse-de-limon/doc-01.jpg\" />\n<em class=\"foto-paso-caption\">Resultado final</em></p>\n<p><img alt=\"Resultado final\" class=\"foto-paso\" id=\"foto-resultado-2\" src=\"images/mousse-de-limon/doc-02.jpg\" />\n<em class=\"foto-paso-caption\">Resultado final</em></p>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": null,
-      "tipo_postre": "frutal",
-      "momento": null
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": "🍎 frutal"
     },
     {
       "id": "nutella-casera",
       "titulo": "Nutella casera",
       "categorias": [
-        "meriendas"
+        "🍰 meriendas"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -736,17 +736,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": null,
       "fuente": "https://cocineraymadre.com/2021/09/12/nutella-casera-y-saludable-o-crema-de-cacao-y-avellanas/",
       "body_html": "<p>Dos recetas de referencia:\n- <a href=\"https://www.youtube.com/watch?v=RszJkbrVqkM\">https://www.youtube.com/watch?v=RszJkbrVqkM</a>\n- <a href=\"https://cocineraymadre.com/2021/09/12/nutella-casera-y-saludable-o-crema-de-cacao-y-avellanas/\">https://cocineraymadre.com/2021/09/12/nutella-casera-y-saludable-o-crema-de-cacao-y-avellanas/</a></p>\n<p>La segunda gustó más: usa 250 g de avellanas y solo agrega cacao y un poco de dátiles o miel si se quiere endulzar. Sabor más intenso a avellana.</p>\n<h2>Ingredientes (receta base)</h2>\n<ul>\n<li>Avellanas tostadas — 250 g</li>\n<li>Cacao amargo — 2 cucharadas</li>\n<li>Dátiles — 2 a 4 (o 1 cucharada de miel)</li>\n<li>Sal, pizca</li>\n<li>Vainilla (opcional)</li>\n</ul>\n<h2>Ingredientes (versión a probar, más rica)</h2>\n<ul>\n<li>Avellanas tostadas — 250 g</li>\n<li>Chocolate 85% cacao — 40 g</li>\n<li>Cacao amargo — 1 cucharada</li>\n<li>Miel (o azúcar mascabo) — 1 cucharada</li>\n<li>Sal — 1 pizca</li>\n<li>Esencia de vainilla — 1/2 cucharadita</li>\n</ul>\n<p><em>Falta todavía el paso a paso detallado en el doc — por ahora son ingredientes de referencia, procesar hasta lograr una pasta untable.</em></p>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": "🍯 untables",
-      "tipo_postre": null,
-      "momento": null
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": null
     },
     {
       "id": "pancakes",
       "titulo": "Pancakes",
       "categorias": [
-        "meriendas"
+        "🍰 meriendas"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -756,17 +756,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": null,
       "fuente": "https://youtube.com/shorts/o6VMb0wrSyc?si=dvpqQEQSKLu4huwP",
       "body_html": "<p><em>(mamá los hizo de banana, siguiendo ese video — esta versión es de avena y manzana)</em></p>\n<h2>Ingredientes</h2>\n<ul>\n<li>Avena</li>\n<li>Manzana</li>\n<li>Ingredientes base para pancakes (huevo, leche o endulzante a gusto)</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Preparar la mezcla: procesar o mezclar la avena con la manzana rallada o cortada (el secreto es dejar reposar bastante la preparación) junto con el resto de los ingredientes, hasta lograr una masa húmeda.</li>\n<li>Cocinar los pancakes: verter porciones de la mezcla en una sartén caliente y cocinar de ambos lados hasta que estén dorados.</li>\n</ol>\n<blockquote>\n<p>⚠️ Los primeros pancakes tardan más en cocinarse que los últimos, porque la sartén al principio está fría.\n⚠️ Estar cerca para evitar que se quemen de abajo.</p>\n</blockquote>\n<ol start=\"3\">\n<li>Conservar o servir: dejar enfriar para congelar en cantidad (se pueden calentar luego 30 segundos en el microondas, o sacar un rato antes) y acompañar con fruta por encima.</li>\n</ol>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": "otros",
-      "tipo_postre": null,
-      "momento": null
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": null
     },
     {
       "id": "papas-al-horno",
       "titulo": "Papas al horno",
       "categorias": [
-        "acompañantes"
+        "🥔 acompañantes"
       ],
       "dificultad": "baja",
       "tiempo_minutos": 75,
@@ -776,17 +776,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": null,
       "fuente": "Recetas.docx — Comidas Saladas",
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Papas</li>\n<li>Aceite normal (nunca de oliva)</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Cortar las papas en forma de líneas, como las de McDonald's —ni muy finas (quedan demasiado crocantes y sin relleno) ni muy gordas.</li>\n<li>Poner aceite en la bandeja y mover la bandeja de lado a lado para que cubra toda la superficie.</li>\n<li>Calentar la bandeja con el aceite en el horno, buscando que el aceite esté bien caliente antes de que toque las papas (así las dora).</li>\n</ol>\n<blockquote>\n<p>ℹ️ Podés poner una papa mini en la bandeja para ver qué tan caliente está el aceite.</p>\n</blockquote>\n<ol start=\"4\">\n<li>Una vez que el aceite está bien caliente, poner las papas ya cortadas y mezclar para que toda la superficie quede con aceite.</li>\n<li>Ordenar las papas ocupando toda la superficie de la bandeja, sin encimarlas.</li>\n<li>Volver a poner la bandeja en el horno. A los 10 minutos, despegar las papas de la bandeja porque se pegan.</li>\n</ol>\n<blockquote>\n<p>ℹ️ Si se pegan mucho, es porque falta aceite.</p>\n</blockquote>\n<ol start=\"7\">\n<li>A la hora, sacar la bandeja del horno y salar las papas.</li>\n</ol>\n<p>¡Y listo!</p>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": null,
-      "tipo_postre": null,
-      "momento": null
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": null
     },
     {
       "id": "pastel-de-papa",
       "titulo": "Pastel de papa",
       "categorias": [
-        "principales"
+        "🍗 principales"
       ],
       "dificultad": "media",
       "tiempo_minutos": 90,
@@ -796,17 +796,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": null,
       "fuente": "Recetas.docx — Comidas Saladas",
       "body_html": "<h2>Ingredientes</h2>\n<h3>Relleno</h3>\n<ul>\n<li>Calabacín — 1</li>\n<li>Papas — a gusto</li>\n<li>Cebolla — 2 o 3</li>\n<li>Carne picada — 1,2 kg</li>\n<li>Morrón — 1</li>\n</ul>\n<h3>Masa</h3>\n<ul>\n<li>Agua</li>\n<li>Aceite</li>\n<li>Harina</li>\n<li>Sal</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li><strong>Cebolla, morrón y carne</strong>: reahogar la cebolla y el morrón, y agregar la carne picada.</li>\n<li><strong>Masa</strong>: preparar una masa casera y ponerla en el horno.</li>\n<li><strong>Puré de verduras</strong>: cortar la calabaza y la papa, hervirlas, pisarlas y agregarles leche y queso.</li>\n<li><strong>Armar las capas</strong>: calabaza, queso, carne, calabaza y queso.</li>\n</ol>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": null,
-      "tipo_postre": null,
-      "momento": "almuerzo"
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": "🌆 almuerzo",
+      "tipo_postre": null
     },
     {
       "id": "tacos",
       "titulo": "Tacos",
       "categorias": [
-        "principales"
+        "🍗 principales"
       ],
       "dificultad": "media",
       "tiempo_minutos": 60,
@@ -816,17 +816,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": null,
       "fuente": "Recetas.docx — Comidas Saladas",
       "body_html": "<h2>Ingredientes</h2>\n<p><em>(para 4 porciones)</em></p>\n<h3>Tortillas integrales con sésamo</h3>\n<ul>\n<li>Harina integral — 250 g</li>\n<li>Harina 0000 — 250 g</li>\n<li>Sésamo blanco — 2 cdas</li>\n<li>Sal — 10 g</li>\n<li>Manteca — 30 g</li>\n<li>Agua — 240 cc</li>\n</ul>\n<h3>Relleno</h3>\n<ul>\n<li>Carne — 500 gramos</li>\n<li>Cebolla — 2 unidades</li>\n<li>Morrón rojo — 1 unidad</li>\n<li>Morrón verde — 1 unidad</li>\n<li>Tomate — 2 unidades</li>\n<li>Calabaza — 1 bandeja</li>\n<li>Perejil fresco</li>\n<li>Vino blanco — ½ taza</li>\n<li>Mozzarella — c/n</li>\n</ul>\n<h2>Paso a paso</h2>\n<h3>Si hacés la masa casera</h3>\n<ol>\n<li>Mezclar las harinas con la sal. Agregar la manteca derretida con el agua. Amasar unos minutos hasta que esté lisa.</li>\n<li>Separar en bollitos grandes y dejar descansar.</li>\n<li>Estirar cada bollo hasta 25 cm de diámetro.</li>\n<li>Cocinar en la sartén, vuelta y vuelta.</li>\n</ol>\n<h3>Relleno (empezar acá si no hacés masa casera)</h3>\n<ol>\n<li>Cortar la calabaza y hervirla en una olla.</li>\n<li>Cortar la cebolla y el morrón en tiras largas.</li>\n<li>En una olla, dorar la cebolla en juliana con el morrón; mientras tanto, cortar la carne en tiras largas y condimentarla con sal y pimienta.</li>\n<li>En la misma olla, dorar las pechugas de pollo 🍗 cortadas en tiras largas, bien de cada lado, y retirar del fuego. Opcional: desglasar con vino blanco, cerveza o mostaza.</li>\n<li>Agregar los tomates y la calabaza cortados en tiras. Cocinar unos minutos más.</li>\n<li>Agregar mozzarella rallada 🧀 a último momento y perejil picado. Servir dentro de las tortillas integrales con sésamo.</li>\n</ol>\n<p>¡Que las disfrutes! 🌮✨</p>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": null,
-      "tipo_postre": null,
-      "momento": "almuerzo"
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": "🌆 almuerzo",
+      "tipo_postre": null
     },
     {
       "id": "tarta-de-espinaca",
       "titulo": "Tarta de espinaca",
       "categorias": [
-        "principales"
+        "🍗 principales"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -836,17 +836,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": null,
       "fuente": null,
       "body_html": "<blockquote>\n<p>ℹ️ Receta pendiente de completar — el Google Doc todavía no tiene ingredientes ni paso a paso.</p>\n</blockquote>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": null,
-      "tipo_postre": null,
-      "momento": "cena"
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": "🌃 cena",
+      "tipo_postre": null
     },
     {
       "id": "tarta-de-frutillas",
       "titulo": "Tarta de frutillas (Tarte aux Fraises)",
       "categorias": [
-        "postres"
+        "🍨 postres"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -856,17 +856,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": "2026-09-28",
       "fuente": "https://www.youtube.com/watch?v=UwuSq9yP2Zk",
       "body_html": "<p>Hay varios tipos de tarta de frutillas. Esta es la clásica con crema pastelera (Tarte aux Fraises): el estándar de la pastelería francesa tradicional, con masa sablée o sucrée, relleno de crème pâtissière y frutillas de cubierta con brillo (nappage).</p>\n<p><em>(Existe también una versión con crema chantilly — \"Tarta Primavera\" — con base crocante o bizcochuelo y crema de leche montada aromatizada con vainilla y azúcar impalpable. Esta receta no es esa.)</em></p>\n<h2>Ingredientes</h2>\n<p><em>(para una tartera de 30 cm aprox.)</em></p>\n<h3>Masa dulce clásica (sablée)</h3>\n<ul>\n<li>Harina 0000 — 200 g</li>\n<li>Sal — 1 cdita (¼ tsp)</li>\n<li>Manteca — 70 g</li>\n<li>Azúcar impalpable — 70 g</li>\n<li>Esencia de vainilla — 1 cdita</li>\n<li>Huevo — 1 unidad</li>\n</ul>\n<h3>Crema pastelera de yemas</h3>\n<ul>\n<li>Leche — 600 ml</li>\n<li>Azúcar blanca común — 140 g</li>\n<li>Huevos — 2 (la receta original usa 4 yemas; se usan 2 huevos enteros para no desperdiciar)</li>\n<li>Maicena, tamizada — 60 g</li>\n<li>Esencia de vainilla — 1 cdita</li>\n<li>Ralladura fina de limón (aprox. medio limón) — 1 cdita</li>\n</ul>\n<h3>Armado y terminación</h3>\n<ul>\n<li>Masa dulce clásica horneada y fría — 1</li>\n<li>Crema pastelera de yemas fría y batida</li>\n<li>Frutillas frescas — 650 a 750 g</li>\n</ul>\n<h2>Paso a paso</h2>\n<h3>Masa sablée</h3>\n<p>_Fuente: <a href=\"https://www.youtube.com/watch?v=Dsb0C9QIqgU_\">https://www.youtube.com/watch?v=Dsb0C9QIqgU_</a></p>\n<ol>\n<li>Agregar la sal a la harina y tamizar en un bol.</li>\n<li>Cortar la manteca fría en cubos y agregarla a la harina.</li>\n<li>Amasar con batidora, sin amasar en ningún momento, hasta cubrir la harina con grasa (impide que se desarrolle gluten).</li>\n<li>Agregar azúcar y, si se quiere, ralladura de limón.</li>\n<li>Agregar el huevo y la esencia de vainilla, integrando sin amasar.</li>\n<li>Unir los ingredientes con la mano, sin amasar.</li>\n<li>Estirar entre dos papeles manteca con el palo de amasar.</li>\n<li>Llevar a la heladera por lo menos 2 horas.</li>\n<li>Cubrir el molde de tarta (fonzar), pinchar la base con un tenedor y llevar 30 minutos al freezer.</li>\n<li>Precalentar el horno a 160 °C y cocinar 22 a 25 minutos.</li>\n</ol>\n<blockquote>\n<p>ℹ️ Variante que también funcionó: 300 g harina 0000, un toque de sal, 150 g manteca fría, 100 g azúcar impalpable, 1 huevo y 1 cucharada de esencia de vainilla. Integrar azúcar y manteca, agregar el huevo y la vainilla, agregar harina y sal tamizados, armar un bollo, cubrir con film y llevar 2 horas a frío. Estirar a 2 mm de espesor y llevar a frío de nuevo, fonzar el molde y llevar a frío otra vez. Cocinar a horno mínimo 180 °C, 20 a 25 minutos, chequeando que no se infle (horneado a blanco o pinchando la masa antes de meterla al horno).</p>\n</blockquote>\n<h3>Opción rápida en microondas (preferida)</h3>\n<p>_Fuente: <a href=\"https://www.youtube.com/watch?v=PukiTXTVCB0_\">https://www.youtube.com/watch?v=PukiTXTVCB0_</a></p>\n<ol>\n<li>En un bowl de vidrio (va al microondas), volcar casi toda la leche, agregar el azúcar y el gusto deseado (vainilla, limón o naranja). Llevar al microondas 2 minutos a potencia máxima.</li>\n<li>Mientras tanto, en otro bowl unir lo que quedó de la leche con el huevo y batir. Agregar la maicena tamizada y batir hasta que no queden grumos.</li>\n<li>Agregar esta segunda preparación a la leche caliente en forma de hilo, revolviendo constantemente.</li>\n<li>Llevar al microondas 1 minuto a potencia máxima, chequear la textura, revolver y llevar un rato más.</li>\n<li>Llevar al microondas 1 minuto más a potencia máxima y batir de nuevo hasta que esté homogénea y lisa.</li>\n</ol>\n<h3>Opción tradicional en cacerola</h3>\n<p>_Fuente: <a href=\"https://www.youtube.com/watch?v=UwuSq9yP2Zk_\">https://www.youtube.com/watch?v=UwuSq9yP2Zk_</a></p>\n<ol>\n<li>En el bowl de la batidora: separar 4 yemas de las claras, agregar la azúcar y batir, agregar la maicena y batir.</li>\n<li>En una cacerola aparte, llevar la leche a fuego fuerte y, cuando hierve, sacarla del fuego.</li>\n<li>Agregar la leche en forma de hilo al bowl de la batidora, batiendo mientras tanto.</li>\n<li>Volcar la mezcla en la cacerola, tamizándola. A fuego medio, seguir batiendo.</li>\n<li>Cuando empiece a tomar consistencia, sacarla del fuego para integrarla bien sin que el fuego apure. Cuando esté homogénea, volver al fuego y cocinar hasta que hierva (se vean burbujas).</li>\n<li>Al sacarla, agregar esencia de vainilla.</li>\n<li>Pasar a un bowl para llevar a la heladera, con un film que toque la crema (si no, se forma una capa dura arriba). Llevar al freezer por 6 horas y luego batir hasta que esté cremosa de nuevo.</li>\n</ol>\n<h3>Armado</h3>\n<ol>\n<li>Sacar la masa cocida del horno, sacarla del molde y quitarle el papel manteca antes de rellenar.</li>\n<li>Rellenar la tarta con la crema pastelera.</li>\n<li>Cortar las frutillas en láminas y colocarlas encima de la crema.</li>\n</ol>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": null,
-      "tipo_postre": "frutal",
-      "momento": null
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": "🍎 frutal"
     },
     {
       "id": "torta-de-nuez",
       "titulo": "Torta de nuez",
       "categorias": [
-        "postres"
+        "🍨 postres"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -876,17 +876,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": "2026-05-01",
       "fuente": "https://luciapaula.com/es/torta-de-nuez-con-dulce-de-leche-y-crema-chantilly/",
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Huevos — 4</li>\n<li>Azúcar blanca — 180 g</li>\n<li>Nueces mariposa — 220 g</li>\n<li>Dulce de leche repostero — 300 g</li>\n<li>Crema de leche sin lactosa — 300 g</li>\n<li>Praliné: nueces mariposa 120 g, azúcar blanca 60 g</li>\n</ul>\n<p><em>Nota: 340 g de nueces mariposa en total (entre la base y el praliné).</em></p>\n<h2>Paso a paso</h2>\n<ol>\n<li>Precalentar el horno a 160 °C.</li>\n<li>Enmantecar y enharinar un molde (20–22 cm).</li>\n</ol>\n<h3>Base de nuez</h3>\n<ol>\n<li>Procesar las nueces hasta lograr una textura tipo harina gruesa, no pasta.</li>\n<li>Separar claras y yemas. Batir yemas + azúcar con batidora eléctrica a máxima velocidad hasta lograr un batido amarillo pálido y cremoso. Batir las claras a punto nieve — una espuma firme que al dar vuelta el bowl no se cae.</li>\n<li>Mezclar: primero yemas + nuez (suavemente, con espátula de goma o silicona, hasta integrar); después las claras, en 3 partes, con movimientos envolventes para que la mezcla no se baje.</li>\n</ol>\n<h3>Horneado</h3>\n<ol>\n<li>Volcar en el molde.</li>\n<li>Hornear 35 a 40 min aprox. a 160 °C. Está lista cuando el cuchillo sale limpio.</li>\n<li>Dejar descansar unos 10–15 minutos antes de desmoldar — así no se desarma al dejar el molde, aunque tampoco conviene dejarla enfriar del todo adentro porque se puede pegar.</li>\n<li>Desmoldar sobre el plato en el que se va a servir y dejar enfriar.</li>\n</ol>\n<h3>Decoración</h3>\n<ol>\n<li>Cubrir la torta con dulce de leche.</li>\n<li>Preparar una crema chantilly: enfriar el bowl y las varillas de la batidora en la heladera 15–20 minutos, batir la crema de leche hasta lograr picos firmes (se puede endulzar con 2 cucharadas de azúcar blanca).</li>\n<li>Colocar la crema batida por arriba del dulce de leche, haciendo marcas con espátula para decorar. Decorar con nueces o praliné.</li>\n</ol>\n<h3>Praliné de nuez</h3>\n<ol>\n<li>Tostar las nueces en el horno a 180 °C, 8–10 min.</li>\n<li>Caramelo: en una cacerolita, colocar el azúcar a fuego mínimo. Cuando empiece a ponerse líquida, mover con cuchara de madera o espátula resistente al calor para que no se queme. Cuando se forme un caramelo color clarito, sin terrones, retirar del fuego y agregar las nueces de una sola vez, mezclando rápido hasta cubrirlas.</li>\n<li>Volcar las nueces sobre una plancha de silicona o papel manteca, separándolas un poco con la misma cuchara. Una vez frío, picar del tamaño deseado y usar para decorar.</li>\n</ol>\n<h3>Imágenes del paso a paso</h3>\n<p><img alt=\"Resultado final\" class=\"foto-paso\" id=\"foto-resultado-1\" src=\"images/torta-de-nuez/doc-01.jpg\" />\n<em class=\"foto-paso-caption\">Resultado final</em></p>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": null,
-      "tipo_postre": "ddl",
-      "momento": null
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": "🟤 ddl"
     },
     {
       "id": "torta-tofi",
       "titulo": "Torta Tofi",
       "categorias": [
-        "postres"
+        "🍨 postres"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -896,17 +896,17 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": "2026-04-20",
       "fuente": "https://www.youtube.com/watch?v=RP58m9CNQ3Q",
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Manteca — 100 g</li>\n<li>Azúcar — 100 g</li>\n<li>Sal, pizca</li>\n<li>Huevos — 2</li>\n<li>Vainilla — 1 cdita</li>\n<li>Harina 0000 — 350 g</li>\n<li>Dulce de leche repostero — 300 g</li>\n<li>Chocolate en barra — 200 g</li>\n<li>Crema de leche — 200 g</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Sacar la manteca de la heladera.</li>\n<li>Batir la manteca, el azúcar y la pizca de sal.</li>\n<li>Agregar los huevos y la vainilla.</li>\n<li>Agregar la harina.</li>\n<li>Armar la masa sin amasar, solo con un poco de presión.</li>\n<li>Aplastar un poco el bollo para que sea más fácil estirar después.</li>\n<li>Envolver la masa con papel film y llevar a la heladera por unos 30 minutos.</li>\n<li>Espolvorear harina en la mesada y en el palo de amasar, y estirar la masa.</li>\n<li>Con el palo enharinado, enrollar la masa en el mismo y desenrollarla sobre el molde.</li>\n<li>Acomodar la masa en el molde, sacar los restos y pasar el palote por el borde para cortar el excedente (se puede usar para galletas).</li>\n<li>Pinchar la base de la tarta con el tenedor, para que no se infle en el horno al cocinarla.</li>\n<li>Ponerla dentro de una bolsa para que no se seque la masa y llevarla al freezer por 15 a 30 minutos.</li>\n<li>Con la masa congelada (tiene que estar dura durante la cocción), llevar al horno ya precalentado: 15 min a 180 °C.</li>\n<li>Cortar el chocolate en trozos y ponerlo en un bowl.</li>\n<li>Calentar la crema de leche hasta el hervor y, justo ahí, sacarla del fuego. Verter la crema sobre el chocolate y dejar reposar unos 4 minutos para que se derrita.</li>\n<li>Mezclar el chocolate con la crema.</li>\n<li>Desmoldar la tarta, colocar una capa de dulce de leche y arriba el chocolate.</li>\n<li>Con un pela papas, poner un poco de chocolate en el centro a modo de decoración.</li>\n</ol>\n<h3>Imágenes del paso a paso</h3>\n<p><img alt=\"Resultado final\" class=\"foto-paso\" id=\"foto-resultado-1\" src=\"images/torta-tofi/doc-01.jpg\" />\n<em class=\"foto-paso-caption\">Resultado final</em></p>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": null,
-      "tipo_postre": "🍫 chocolatoso",
-      "momento": null
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": "🍫 chocolatoso"
     },
     {
       "id": "turron-de-quaker",
       "titulo": "Turrón de quaker",
       "categorias": [
-        "postres"
+        "🍨 postres"
       ],
       "dificultad": null,
       "tiempo_minutos": null,
@@ -916,11 +916,11 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": "2026-04-20",
       "fuente": "Marina Renna",
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Manteca — 200 g</li>\n<li>Azúcar — 1 taza</li>\n<li>Cacao amargo — 180 g</li>\n<li>Avena Quaker — 300 g</li>\n<li>Leche — 10 cdas</li>\n<li>Galletitas saladas Criollitas o Serranitas</li>\n<li>Dulce de leche — 2 cucharadas</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Derretir la manteca en una olla.</li>\n<li>Agregar el azúcar y el cacao.</li>\n<li>Agregar el quaker y las cucharadas de leche.</li>\n<li>Cuando apagues el fuego, agregar las 2 cucharadas de dulce de leche.</li>\n<li>Armar el turrón: una capa de galletitas y otra de la mezcla. <a class=\"ver-foto\" href=\"#/receta/turron-de-quaker/foto-paso-5\">📷 ver foto</a></li>\n<li>Llevar a la heladera.</li>\n</ol>\n<h3>Imágenes del paso a paso</h3>\n<p><img alt=\"Foto del paso: turrón a medio armar, capas de galletitas y mezcla\" class=\"foto-paso\" id=\"foto-paso-5\" src=\"images/turron-de-quaker/doc-01.jpg\" />\n<em class=\"foto-paso-caption\">Paso 5: armando las capas de galletitas y mezcla</em></p>",
-      "subcategoria": null,
-      "tipo_bebida": null,
       "tipo_merienda": null,
-      "tipo_postre": "🍫 chocolatoso",
-      "momento": null
+      "tipo_bebida": null,
+      "subcategoria": null,
+      "momento": null,
+      "tipo_postre": "🍫 chocolatoso"
     }
   ]
 };

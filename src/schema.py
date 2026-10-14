@@ -4,6 +4,8 @@ Lo importan tanto export_data.py (para validar) como los tests (para
 construir fixtures) — la lista de campos nunca se duplica.
 """
 
+import re
+
 SCHEMA_VERSION = 2
 
 DIFICULTADES = {"baja", "media", "alta"}
@@ -25,6 +27,20 @@ CAMPO_SUBCATEGORIA: dict[str, str] = {
     "bebidas": "tipo_bebida",
 }
 SUBFILTRO_CAMPOS = set(CAMPO_SUBCATEGORIA.values()) | {CAMPO_SUBCATEGORIA_DEFAULT}
+
+_LETRA_RE = re.compile(r"[a-zA-ZÀ-ÿ]")
+
+
+def clave_categoria(categoria: str) -> str:
+    """Texto de categoría sin emoji/símbolos decorativos al inicio, usado
+    como clave de CAMPO_SUBCATEGORIA. El usuario decora los H1 del Doc con
+    emoji libremente (ej. "🍰 meriendas") y puede cambiarlo cuando quiera —
+    la clave de lookup no debe depender de qué emoji eligió hoy (ver
+    DECISIONS.md, "Emoji decorativo en categoría no rompe CAMPO_SUBCATEGORIA").
+    """
+    m = _LETRA_RE.search(categoria)
+    return categoria[m.start():] if m else categoria
+
 
 REQUIRED_FIELDS = {"titulo", "categorias"}
 OPTIONAL_FIELDS = {

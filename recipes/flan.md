@@ -1,11 +1,11 @@
 ---
 titulo: "Flan"
-categorias: ["postres"]
+categorias: ["🍨 postres"]
 tipo_postre: "🥚 huevo"
 fuente: "https://www.paulinacocina.net/flan-casero-clasico/13997"
 fecha_actualizacion: "2026-07-05"
 foto: "flan/cover.jpg"
-doc_hash: "a0dac87a89f0"
+doc_hash: "96128ba1e316"
 ---
 ## Ingredientes
 _(para flan grande)_

@@ -1,9 +1,9 @@
 ---
 titulo: "Daiquiri"
-categorias: ["bebidas"]
-tipo_bebida: "tragos"
+categorias: ["🥛 bebidas"]
+tipo_bebida: "🍹 tragos"
 foto: "daiquiri/cover.jpg"
-doc_hash: "7e2e6ed31986"
+doc_hash: "ee3a2b053d0e"
 ---
 _(para 6 vasos)_
 

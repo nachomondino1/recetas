@@ -1,11 +1,11 @@
 ---
 titulo: "El Energético"
-categorias: ["bebidas"]
+categorias: ["🥛 bebidas"]
 tipo_bebida: "jugos naturales"
 fuente: "Gemini"
 fecha_actualizacion: "2026-08-30"
 foto: "jugo-energetico/cover.jpg"
-doc_hash: "0b70aa3a472b"
+doc_hash: "73e5b7a20cfa"
 ---
 ## Ingredientes
 - Zanahorias — 2

@@ -1,14 +1,14 @@
 ---
 titulo: "Guiso con lentejas"
-categorias: ["principales"]
-momento: "almuerzo"
+categorias: ["🍗 principales"]
+momento: "🌆 almuerzo"
 fuente: "Recetas.docx — Comidas Saladas"
 foto: "guiso-con-lentejas/guiso-listo.jpg"
 porciones: 8
 tiempo_minutos: 120
 tiempo_minutos_max: 180
 dificultad: "baja"
-doc_hash: "909c2ba6a742"
+doc_hash: "218e8ff7e7cf"
 ---
 ## Ingredientes
 _(para 8 porciones)_
@@ -54,6 +54,8 @@ _(para 8 porciones)_
 - Sacar la carne del freezer y dejarla en la heladera (se descongela rápido, es solo 1 kilo).
 
 > ℹ️ Si la querés tener cortada para el día del guiso, sacá la carne a la mañana del día anterior para que esté lista para cortar a la noche de ese mismo día.
+
+> ℹ️ Las verduras también se pueden cortar con anticipación, pero no es tan necesario — son pocas y, de hecho, la papa se pone fea si se deja cortada.
 
 ### El día del guiso
 1. Colar la lenteja: volcar el tupper en el colador y lavarla un poco ahí.

@@ -285,7 +285,9 @@ def parse_doc(doc_json: dict) -> tuple[list[dict], list[dict]]:
         receta = _parsear_receta(bloque["titulo"], bloque["parrafos"])
         categoria = normalizar_encabezado(bloque["categoria_texto"])
         subcategoria = normalizar_encabezado(bloque["subcategoria_texto"]) if bloque["subcategoria_texto"] else None
-        campo_subcategoria = schema.CAMPO_SUBCATEGORIA.get(categoria, schema.CAMPO_SUBCATEGORIA_DEFAULT)
+        campo_subcategoria = schema.CAMPO_SUBCATEGORIA.get(
+            schema.clave_categoria(categoria), schema.CAMPO_SUBCATEGORIA_DEFAULT
+        )
 
         receta["categorias"] = [categoria]
         for campo in schema.SUBFILTRO_CAMPOS:

@@ -1,11 +1,11 @@
 ---
 titulo: "Budín de chocolate"
-categorias: ["meriendas"]
+categorias: ["🍰 meriendas"]
 tipo_merienda: "🍰 budines"
 fuente: "https://cookpad.com/uy/recetas/11255242"
 fecha_actualizacion: "2026-04-20"
 foto: "budin-de-chocolate/cover.jpg"
-doc_hash: "2c876403a1d6"
+doc_hash: "db96b32ed53d"
 ---
 ## Ingredientes
 - Huevos — 2

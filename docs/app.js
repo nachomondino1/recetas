@@ -86,6 +86,16 @@
     return s.slice(0, i) + s[i].toUpperCase() + s.slice(i + 1);
   }
 
+  // Clave de lookup en SUBFILTROS sin el emoji/símbolo decorativo que el
+  // usuario le puso al H1 de categoría en el Doc (ej. "🍰 meriendas" ->
+  // "meriendas") — mismo motivo que schema.clave_categoria en Python: el
+  // emoji puede cambiar sin romper el mapeo de campo de subfiltro.
+  function quitarEmojiInicial(s) {
+    var i = 0;
+    while (i < s.length && !/[a-zA-ZÀ-ÿ]/.test(s[i])) i++;
+    return s.slice(i);
+  }
+
   function formatTiempo(min, max) {
     if (min == null) return "Sin dato";
     var fmt = function (m) {
@@ -174,7 +184,7 @@
   }
 
   function renderGrupoSubfiltro() {
-    var sf = SUBFILTROS[state.categoria];
+    var sf = SUBFILTROS[quitarEmojiInicial(state.categoria || "")];
     var disponibles = sf
       ? ordenarValores(valoresUnicos(function (r) {
           return r.categorias.indexOf(state.categoria) !== -1 ? r[sf.campo] : null;
@@ -190,10 +200,10 @@
   // depender de la pestaña activa.
   function valoresSubfiltro(receta) {
     var valores = [];
-    Object.keys(SUBFILTROS).forEach(function (categoria) {
-      var sf = SUBFILTROS[categoria];
-      var valor = receta[sf.campo];
-      if (valor && receta.categorias.indexOf(categoria) !== -1 && valores.indexOf(valor) === -1) {
+    (receta.categorias || []).forEach(function (categoria) {
+      var sf = SUBFILTROS[quitarEmojiInicial(categoria)];
+      var valor = sf ? receta[sf.campo] : null;
+      if (valor && valores.indexOf(valor) === -1) {
         valores.push(valor);
       }
     });
@@ -221,7 +231,7 @@
         if (!r.dificultad || !state.dificultades.has(r.dificultad)) return false;
       }
       if (state.subfiltro.size > 0) {
-        var sf = SUBFILTROS[state.categoria];
+        var sf = SUBFILTROS[quitarEmojiInicial(state.categoria || "")];
         var valor = sf ? r[sf.campo] : null;
         if (!valor || !state.subfiltro.has(valor)) return false;
       }

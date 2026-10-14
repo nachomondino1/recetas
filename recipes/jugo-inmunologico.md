@@ -1,11 +1,11 @@
 ---
 titulo: "El Inmunológico / Antiox"
-categorias: ["bebidas"]
+categorias: ["🥛 bebidas"]
 tipo_bebida: "jugos naturales"
 fuente: "Gemini"
 fecha_actualizacion: "2026-08-30"
 foto: "jugo-inmunologico/cover.jpg"
-doc_hash: "0ee2cbca566f"
+doc_hash: "7135c839c37c"
 ---
 ## Ingredientes
 - Naranjas peladas — 2
