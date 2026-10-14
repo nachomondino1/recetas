@@ -25,7 +25,7 @@ Ver `DECISIONS.md` (entrada "Google Doc como fuente, no Markdown a mano") para e
    1. **Índice** ("En esta receta") — automático, lo genera `docs/app.js` (`crearIndice`) a partir de los `##` del cuerpo; no se escribe a mano.
    2. `## Materiales` — **opcional**, solo si la receta lo necesita (ver *Asado*).
    3. `## Ingredientes` — **obligatorio** en toda receta real (con `### <subgrupo>` si hay varias partes, ver *Lemon pie*/*Tarta de frutillas*). Los stubs "pendiente de completar" (*Empanadas*, *Tarta de espinaca*) son la única excepción.
-   4. `## Paso a paso` — **obligatorio**. Incluye una subsección `### Imágenes del paso a paso` con **todas** las fotos del proceso que estén en el Google Doc para esa receta (las mismas que baja `src/extract_doc_images.py` a `images/<slug>/doc-NN.jpg`) — no solo la portada curada (`foto`/`cover.jpg`).
+   4. `## Paso a paso` — **obligatorio**. Incluye una subsección `### Imágenes del paso a paso` con **todas** las fotos del proceso que estén en el Google Doc para esa receta (las mismas que baja `src/extract_doc_images.py` a `images/<slug>/doc-NN.jpg`) — no solo la portada curada (`foto`/`cover.jpg`). Cada imagen lleva un id (`![alt](ruta){: .foto-paso #foto-<algo> }`, extensión `attr_list`) y un caption en cursiva debajo diciendo a qué paso corresponde; el paso correspondiente del texto linkea a esa imagen con `[📷 ver foto](#/receta/<slug>/foto-<algo>){: .ver-foto }` (nunca un `#ancla` suelto — rompe el router hash-based, ver `docs/app.js: route()`). Una foto que no corresponde a ningún paso puntual (resultado final, ingredientes) no lleva link entrante, solo el caption. Ver "Cómo elegir a qué paso corresponde cada foto" más abajo.
 
    Tips y advertencias como citas: `> ℹ️ ...` / `> ⚠️ ...`.
 
@@ -50,6 +50,12 @@ Orden de prioridad — probar cada paso solo si el anterior no dio una imagen ac
 5. **Si ninguna opción anterior da una imagen aceptable**, la receta queda sin `foto`. Es un WARNING de `export_data.py`, no un ERROR — nunca forzar una imagen que no representa el plato, y nunca generar una imagen (IA, placeholder genérico) en su lugar.
 
 Ninguno de estos pasos está en el `Makefile` ni en CI: bajar fotos de fuentes externas necesita revisión visual humana antes de aceptar cada una, así que es manual por diseño. Detalle completo y el porqué de cada decisión en `DECISIONS.md`.
+
+## Cómo elegir a qué paso corresponde cada foto del paso a paso
+
+`extract_doc_images.py` baja las fotos en el mismo orden en que aparecen en el Doc, pero sin decir a qué paso pertenece cada una. Para asignarlas sin inventar: releer el `doc.json` ya descargado y, para cada imagen, mirar el párrafo de texto que la precede inmediatamente dentro de esa receta (mismo criterio que usa `_agrupar_recetas`: todo lo que cuelga de un `HEADING_2` hasta el próximo). Ese texto casi siempre es el paso que la foto ilustra — el usuario saca la foto y la inserta ahí mismo, en el momento. Confirmar con la foto en sí solo cuando la posición es ambigua (ej. está justo entre dos pasos, o pegada al encabezado antes de cualquier paso — en ese caso suele ser una foto del resultado final o de los ingredientes, sin paso puntual asociado). **No asignar un paso mirando solo el contenido de la foto a ojo** — con pasos visualmente parecidos (ej. "agregar leña" repetido varias veces en *Asado*) es fácil errar el número; la posición en el documento es la señal confiable.
+
+Ojo con un artefacto del Doc: después del primer `HEADING_2` de cada receta suele venir un **segundo `HEADING_2` vacío** (seguido de una tabla) antes del contenido real — si el parseo corta al encontrar cualquier `HEADING_2`, pierde todo lo que viene después de ese vacío. Hay que seguir *después* de ese bloque vacío, no cortar ahí (pasó con *Apple crumble*: un primer intento perdió 7 de sus 10 fotos por esto).
 
 ## Comandos
 

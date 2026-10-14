@@ -39,4 +39,5 @@ doc_hash: "3ef8ca34d653"
 18. Con un pela papas, poner un poco de chocolate en el centro a modo de decoración.
 
 ### Imágenes del paso a paso
-![Foto del proceso 1](images/torta-tofi/doc-01.jpg)
+![Resultado final](images/torta-tofi/doc-01.jpg){: .foto-paso #foto-resultado-1 }
+_Resultado final_

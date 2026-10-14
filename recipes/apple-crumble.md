@@ -33,39 +33,58 @@ _Nota: 1 limón cubre las dos ralladuras (relleno y masa)._
 
 ### Relleno (hacerlo primero, tiene que enfriarse)
 1. Pelar (con el pela papas) las manzanas verdes y cortarlas en cubos.
-2. Poner un poquito de manteca en una sartén para que se derrita — muy poca, si no las manzanas quedan demasiado jugosas.
-3. Colocar las manzanas cortadas y luego el azúcar.
+2. Poner un poquito de manteca en una sartén para que se derrita — muy poca, si no las manzanas quedan demasiado jugosas. [📷 ver foto](#/receta/apple-crumble/foto-relleno-2){: .ver-foto }
+3. Colocar las manzanas cortadas y luego el azúcar. [📷 ver foto](#/receta/apple-crumble/foto-relleno-3){: .ver-foto }
 4. Tapar y cocinar a fuego bajo hasta que estén cocidas pero firmes (no blandas).
 5. Fuera del fuego, sumar la vainilla y la ralladura de limón.
 6. Pasar a otro recipiente para que enfríe más rápido y descartar el jugo de cocción (si queda el jugo, se moja la base y la porción no se sostiene al cortar).
-7. Espolvorear maicena y mezclar, para que suelte menos líquido en el horno.
+7. Espolvorear maicena y mezclar, para que suelte menos líquido en el horno. [📷 ver foto](#/receta/apple-crumble/foto-relleno-7){: .ver-foto }
 
 ### Masa crumble
 1. Mezclar los secos: harina, sal, azúcar y ralladura de limón.
 2. Agregar la manteca derretida y la vainilla.
-3. Arenar con los dedos hasta lograr una mezcla granulosa.
+3. Arenar con los dedos hasta lograr una mezcla granulosa. [📷 ver foto](#/receta/apple-crumble/foto-masa-3){: .ver-foto }
 
 > ℹ️ Punto justo: si se aprieta en el puño, se compacta en bollitos. Si no liga, sumar un poco más de manteca (depende de la harina).
 
 ### Armado
 1. Agarrar un molde de 20 cm, enmantecado y enharinado, o con papel manteca.
 2. Presionar parte de la mezcla contra el fondo y las paredes, con la mano o una cuchara. Finita, 2 dedos de alto en los bordes.
-3. Distribuir las nueces por encima, apoyándose sobre el relleno.
+3. Distribuir las nueces por encima, apoyándose sobre el relleno. [📷 ver foto](#/receta/apple-crumble/foto-armado-3){: .ver-foto }
 4. Volcar el relleno frío y emparejar.
-5. Cubrir con el resto del crumble suelto, sin aplastar — eso es lo que da el crocante.
+5. Cubrir con el resto del crumble suelto, sin aplastar — eso es lo que da el crocante. [📷 ver foto](#/receta/apple-crumble/foto-armado-5){: .ver-foto }
 
 ### Horneado
 1. 180 °C, 30–35 min, hasta que esté dorada.
-2. Dejar enfriar por completo antes de desmoldar. Para despegar el papel de la base, levantarla con una base de tartera o espátula grande.
+2. Dejar enfriar por completo antes de desmoldar. Para despegar el papel de la base, levantarla con una base de tartera o espátula grande. [📷 ver foto](#/receta/apple-crumble/foto-horneado-2){: .ver-foto }
 
 ### Imágenes del paso a paso
-![Foto del proceso 1](images/apple-crumble/doc-01.jpg)
-![Foto del proceso 2](images/apple-crumble/doc-02.jpg)
-![Foto del proceso 3](images/apple-crumble/doc-03.jpg)
-![Foto del proceso 4](images/apple-crumble/doc-04.jpg)
-![Foto del proceso 5](images/apple-crumble/doc-05.jpg)
-![Foto del proceso 6](images/apple-crumble/doc-06.jpg)
-![Foto del proceso 7](images/apple-crumble/doc-07.jpg)
-![Foto del proceso 8](images/apple-crumble/doc-08.jpg)
-![Foto del proceso 9](images/apple-crumble/doc-09.jpg)
-![Foto del proceso 10](images/apple-crumble/doc-10.jpg)
+![Resultado final](images/apple-crumble/doc-01.jpg){: .foto-paso #foto-resultado-1 }
+_Resultado final_
+
+![Resultado final, porción servida](images/apple-crumble/doc-02.jpg){: .foto-paso #foto-resultado-2 }
+_Resultado final, porción servida_
+
+![Resultado final, porción servida](images/apple-crumble/doc-03.jpg){: .foto-paso #foto-resultado-3 }
+_Resultado final, porción servida_
+
+![Foto del paso: poner manteca en la sartén](images/apple-crumble/doc-04.jpg){: .foto-paso #foto-relleno-2 }
+_Relleno, paso 2: poner manteca en la sartén_
+
+![Foto del paso: manzanas y azúcar en la sartén](images/apple-crumble/doc-05.jpg){: .foto-paso #foto-relleno-3 }
+_Relleno, paso 3: manzanas y azúcar en la sartén_
+
+![Foto del paso: espolvorear maicena](images/apple-crumble/doc-06.jpg){: .foto-paso #foto-relleno-7 }
+_Relleno, paso 7: espolvorear maicena_
+
+![Foto del paso: masa crumble arenada](images/apple-crumble/doc-07.jpg){: .foto-paso #foto-masa-3 }
+_Masa crumble, paso 3: arenada con los dedos_
+
+![Foto del paso: nueces sobre el relleno](images/apple-crumble/doc-08.jpg){: .foto-paso #foto-armado-3 }
+_Armado, paso 3: nueces sobre el relleno_
+
+![Foto del paso: crumble cubriendo el relleno](images/apple-crumble/doc-09.jpg){: .foto-paso #foto-armado-5 }
+_Armado, paso 5: crumble cubriendo el relleno_
+
+![Foto del paso: recién horneada, enfriando](images/apple-crumble/doc-10.jpg){: .foto-paso #foto-horneado-2 }
+_Horneado, paso 2: recién horneada, enfriando_

@@ -21,8 +21,9 @@ doc_hash: "ef1dd935b7ff"
 2. Agregar el azúcar y el cacao.
 3. Agregar el quaker y las cucharadas de leche.
 4. Cuando apagues el fuego, agregar las 2 cucharadas de dulce de leche.
-5. Armar el turrón: una capa de galletitas y otra de la mezcla.
+5. Armar el turrón: una capa de galletitas y otra de la mezcla. [📷 ver foto](#/receta/turron-de-quaker/foto-paso-5){: .ver-foto }
 6. Llevar a la heladera.
 
 ### Imágenes del paso a paso
-![Foto del proceso 1](images/turron-de-quaker/doc-01.jpg)
+![Foto del paso: turrón a medio armar, capas de galletitas y mezcla](images/turron-de-quaker/doc-01.jpg){: .foto-paso #foto-paso-5 }
+_Paso 5: armando las capas de galletitas y mezcla_

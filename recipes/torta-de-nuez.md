@@ -42,4 +42,5 @@ _Nota: 340 g de nueces mariposa en total (entre la base y el praliné)._
 3. Volcar las nueces sobre una plancha de silicona o papel manteca, separándolas un poco con la misma cuchara. Una vez frío, picar del tamaño deseado y usar para decorar.
 
 ### Imágenes del paso a paso
-![Foto del proceso 1](images/torta-de-nuez/doc-01.jpg)
+![Resultado final](images/torta-de-nuez/doc-01.jpg){: .foto-paso #foto-resultado-1 }
+_Resultado final_

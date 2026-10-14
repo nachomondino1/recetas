@@ -238,7 +238,7 @@ def _linkificar_urls_sueltas(body_markdown: str) -> str:
 
 
 def render_body_html(body_markdown: str) -> str:
-    return md.markdown(_linkificar_urls_sueltas(body_markdown), extensions=["sane_lists"])
+    return md.markdown(_linkificar_urls_sueltas(body_markdown), extensions=["sane_lists", "attr_list"])
 
 
 def construir_json(records: list[dict], warnings: list[dict]) -> dict:

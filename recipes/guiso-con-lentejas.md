@@ -82,7 +82,7 @@ _(para 8 porciones)_
 
 > ℹ️ Hacer refill de agua para que todo quede siempre bajo agua.
 
-12. Mientras se cocina, preparar el chorizo: cortarlo en fetas o cuadraditos, reahogarlo en la OLLA 2 (sin aceite, el chorizo/panceta ya tiene grasa propia) hasta que esté crocante y apagar el fuego.
+12. Mientras se cocina, preparar el chorizo: cortarlo en fetas o cuadraditos, reahogarlo en la OLLA 2 (sin aceite, el chorizo/panceta ya tiene grasa propia) hasta que esté crocante y apagar el fuego. [📷 ver foto](#/receta/guiso-con-lentejas/foto-paso-12){: .ver-foto }
 
 > ℹ️ No dejarlo mucho tiempo con el fuego apagado, porque la grasa se solidifica y se le vuelve a pegar al chorizo.
 
@@ -91,7 +91,7 @@ _(para 8 porciones)_
 
 > ℹ️ Refill de agua para que todo quede siempre bajo agua.
 
-15. Apagar el fuego y comer.
+15. Apagar el fuego y comer. [📷 ver foto](#/receta/guiso-con-lentejas/foto-paso-15){: .ver-foto }
 
 > ℹ️ Si se deja reposar unas horas, el guiso agarra más sabor y queda mucho más sabroso.
 
@@ -116,5 +116,8 @@ Una versión anterior y más corta de esta receta, que se conserva como referenc
 10. Agregar la salsa de tomate y el chorizo (cocinar 20 a 30 minutos a fuego lento).
 
 ### Imágenes del paso a paso
-![Foto del proceso 1](images/guiso-con-lentejas/doc-01.jpg)
-![Foto del proceso 2](images/guiso-con-lentejas/doc-02.jpg)
+![Foto del paso: grasa del chorizo reahogado](images/guiso-con-lentejas/doc-01.jpg){: .foto-paso #foto-paso-12 }
+_Paso 12: grasa solidificada del chorizo reahogado_
+
+![Foto del paso: guiso listo para comer](images/guiso-con-lentejas/doc-02.jpg){: .foto-paso #foto-paso-15 }
+_Paso 15: guiso listo para comer_

@@ -423,6 +423,39 @@ main.container { padding-top: 24px; padding-bottom: 48px; }
 }
 .detalle-cuerpo blockquote p { margin: 0; color: inherit; }
 
+/* Fotos del paso a paso (images/<slug>/doc-NN.jpg): cada una en su propio
+   "contenedor" chico en vez de a tamaño natural de cámara, que desbordaba. */
+.detalle-cuerpo .foto-paso {
+  display: block;
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+.detalle-cuerpo .foto-paso-caption {
+  margin-top: -4px;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* Link "ver foto(s)" que salta de un paso a su imagen en la galería. */
+.detalle-cuerpo .ver-foto {
+  display: inline-block;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin: -4px 0 10px;
+}
+.detalle-cuerpo .ver-foto:hover { background: var(--accent-soft); }
+
 @media (max-width: 720px) {
   .container { padding: 0 16px; }
   .filtros-toggle { display: flex; }

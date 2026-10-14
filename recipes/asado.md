@@ -26,6 +26,8 @@ fuente: "Recetas.docx — Comidas Saladas"
 El día anterior, descongelar la carne. Sacarla unas 12 horas antes del freezer y ponerla en una bandeja.
 
 ### 🔥 P1) Arranco el fuego
+[📷 ver fotos de este paso](#/receta/asado/foto-p1-1){: .ver-foto }
+
 Abajo cosas bien combustibles (ej. papel, diario, cartón, ramitas), arriba menos (ej. carbón, leña grande).
 
 - Poner dos troncos grandes de cada lado para armar la base donde luego poner encima las ramas y demás, como un techito.
@@ -50,12 +52,16 @@ Abajo cosas bien combustibles (ej. papel, diario, cartón, ramitas), arriba meno
 - 100% leña: entre 2 y 3 kg de leña por cada 1 kg de carne, ya que buena parte del volumen se quema en forma de fuego y humo antes de convertirse en brasa útil.
 
 ### 🧂 P2) Condimentar la carne
+[📷 ver fotos de este paso](#/receta/asado/foto-p2-1){: .ver-foto }
+
 Salar la carne con pimienta y sal (el chorizo y la morcilla no necesitan sal). Pimienta con el frasquito de tapa negra, vuelta y vuelta, como la sal.
 
 - Carne gruesa = mucha sal.
 - Carne fina = menos sal.
 
 ### 🍳 P3) Poner la carne en la parrilla
+[📷 ver fotos de este paso](#/receta/asado/foto-p3-1){: .ver-foto }
+
 Posibles estrategias:
 
 1. La carne gruesa donde está más caliente —brasas gruesas, más cerca del fuego— y la más fina con brasas chicas y alejada del fuego.
@@ -72,6 +78,8 @@ Llevar la carne al costado de la parrilla y esperar a que el fuego esté listo. 
 En casa, la altura desde la parrilla hasta el suelo es de 4 dedos.
 
 ### P4) Poner las brasas iniciales
+[📷 ver fotos de este paso](#/receta/asado/foto-p4-1){: .ver-foto }
+
 El fuego está listo más o menos a la media hora (30 min) o más. Una vez que está bien rojo y prendido:
 
 - Desarmar el fuego para obtener brasas.
@@ -112,23 +120,62 @@ Cortar la carne y servir en bandeja. Disfrutar del asado.
 Limpiar la parrilla con cartón o papel de diario. Guardar los fósforos y demás.
 
 ### Imágenes del paso a paso
-![Foto del proceso 1](images/asado/doc-01.jpg)
-![Foto del proceso 2](images/asado/doc-02.jpg)
-![Foto del proceso 3](images/asado/doc-03.jpg)
-![Foto del proceso 4](images/asado/doc-04.jpg)
-![Foto del proceso 5](images/asado/doc-05.jpg)
-![Foto del proceso 6](images/asado/doc-06.jpg)
-![Foto del proceso 7](images/asado/doc-07.jpg)
-![Foto del proceso 8](images/asado/doc-08.jpg)
-![Foto del proceso 9](images/asado/doc-09.jpg)
-![Foto del proceso 10](images/asado/doc-10.jpg)
-![Foto del proceso 11](images/asado/doc-11.jpg)
-![Foto del proceso 12](images/asado/doc-12.jpg)
-![Foto del proceso 13](images/asado/doc-13.jpg)
-![Foto del proceso 14](images/asado/doc-14.jpg)
-![Foto del proceso 15](images/asado/doc-15.jpg)
-![Foto del proceso 16](images/asado/doc-16.jpg)
-![Foto del proceso 17](images/asado/doc-17.jpg)
-![Foto del proceso 18](images/asado/doc-18.jpg)
-![Foto del proceso 19](images/asado/doc-19.jpg)
-![Foto del proceso 20](images/asado/doc-20.jpg)
+![Foto del paso: armando la base de troncos](images/asado/doc-01.jpg){: .foto-paso #foto-p1-1 }
+_P1: armando la base de troncos_
+
+![Foto del paso: anillo de papel y cartón en el centro](images/asado/doc-02.jpg){: .foto-paso #foto-p1-2 }
+_P1: anillo de papel y cartón en el centro_
+
+![Foto del paso: segunda capa de ramitas en cuadrado hueco](images/asado/doc-03.jpg){: .foto-paso #foto-p1-3 }
+_P1: segunda capa de ramitas en cuadrado hueco_
+
+![Foto del paso: segunda capa de ramitas en cuadrado hueco](images/asado/doc-04.jpg){: .foto-paso #foto-p1-4 }
+_P1: segunda capa de ramitas en cuadrado hueco_
+
+![Foto del paso: líquido combustible en el centro](images/asado/doc-05.jpg){: .foto-paso #foto-p1-5 }
+_P1: líquido combustible en el centro_
+
+![Foto del paso: encendiendo el fuego](images/asado/doc-06.jpg){: .foto-paso #foto-p1-6 }
+_P1: encendiendo el fuego_
+
+![Foto del paso: ramitas pequeñas tapando el fuego](images/asado/doc-07.jpg){: .foto-paso #foto-p1-7 }
+_P1: ramitas pequeñas tapando el fuego_
+
+![Foto del paso: ramitas pequeñas tapando el fuego](images/asado/doc-08.jpg){: .foto-paso #foto-p1-8 }
+_P1: ramitas pequeñas tapando el fuego_
+
+![Foto del paso: agregando pedazos de leña grandes](images/asado/doc-09.jpg){: .foto-paso #foto-p1-9 }
+_P1: agregando pedazos de leña grandes_
+
+![Foto del paso: agregando pedazos de leña grandes](images/asado/doc-10.jpg){: .foto-paso #foto-p1-10 }
+_P1: agregando pedazos de leña grandes_
+
+![Foto del paso: carbón arriba de la leña](images/asado/doc-11.jpg){: .foto-paso #foto-p1-11 }
+_P1: carbón arriba de la leña_
+
+![Foto del paso: carbón arriba de la leña](images/asado/doc-12.jpg){: .foto-paso #foto-p1-12 }
+_P1: carbón arriba de la leña_
+
+![Foto del paso: muro de leña con carbón de reserva](images/asado/doc-13.jpg){: .foto-paso #foto-p1-13 }
+_P1: muro de leña con carbón de reserva para refills_
+
+![Foto del paso: salando la carne](images/asado/doc-14.jpg){: .foto-paso #foto-p2-1 }
+_P2: salando la carne_
+
+![Foto del paso: salando la carne](images/asado/doc-15.jpg){: .foto-paso #foto-p2-2 }
+_P2: salando la carne_
+
+![Foto del paso: carne al costado de la parrilla](images/asado/doc-16.jpg){: .foto-paso #foto-p3-1 }
+_P3: carne al costado, esperando que el fuego esté listo_
+
+![Foto del paso: carne al costado de la parrilla](images/asado/doc-17.jpg){: .foto-paso #foto-p3-2 }
+_P3: carne al costado, esperando que el fuego esté listo_
+
+![Foto del paso: desarmando el fuego para obtener brasas](images/asado/doc-18.jpg){: .foto-paso #foto-p4-1 }
+_P4: desarmando el fuego para obtener brasas_
+
+![Foto del paso: distribuyendo las brasas debajo de la carne](images/asado/doc-19.jpg){: .foto-paso #foto-p4-2 }
+_P4: distribuyendo las brasas debajo de la carne_
+
+![Foto del paso: distribuyendo las brasas debajo de la carne](images/asado/doc-20.jpg){: .foto-paso #foto-p4-3 }
+_P4: distribuyendo las brasas debajo de la carne_

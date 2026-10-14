@@ -545,14 +545,28 @@
     document.title = receta.titulo + " — Recetas";
   }
 
+  // El router es hash-based (#/receta/<slug>), así que un <a href="#foto-1">
+  // normal rompería la navegación (route() lo interpretaría como "no hay
+  // receta, mostrar la grilla"). Los links "ver foto" del cuerpo usan en vez
+  // /foto-<id> como sufijo de la misma ruta (#/receta/<slug>/foto-<id>): no
+  // cambia de receta, solo le pide a route() hacer scroll a esa imagen.
   function route() {
     var hash = location.hash || "#/";
-    var match = hash.match(/^#\/receta\/(.+)$/);
+    var match = hash.match(/^#\/receta\/([^/]+)(?:\/foto-(.+))?$/);
     if (match) {
       renderDetalle(decodeURIComponent(match[1]));
       els.vistaGrid.hidden = true;
       els.vistaDetalle.hidden = false;
-      window.scrollTo(0, 0);
+      var fotoId = match[2] && "foto-" + decodeURIComponent(match[2]);
+      var fotoEl = fotoId && document.getElementById(fotoId);
+      if (fotoEl) {
+        var seccion = fotoEl.closest("details.detalle-seccion");
+        if (seccion && !seccion.open) seccion.open = true;
+        var reducirMovimiento = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        fotoEl.scrollIntoView({ behavior: reducirMovimiento ? "auto" : "smooth", block: "center" });
+      } else {
+        window.scrollTo(0, 0);
+      }
     } else {
       els.vistaGrid.hidden = false;
       els.vistaDetalle.hidden = true;
