@@ -31,16 +31,17 @@ import yaml
 FRONTMATTER_RE = re.compile(r"\A---\n(.*?)\n---\n?", re.DOTALL)
 
 TAB_CATEGORIAS: dict[str, list[str]] = {
-    "Comidas Saladas": ["principal"],
+    "Principales": ["principal"],
     "Postres y Tartas": ["postre"],
     "Meriendas": ["merienda"],
-    "Jugos naturales": ["bebidas"],
+    "Bebidas": ["bebidas"],
+    "Acompañantes": ["acompañante"],
 }
 # Default de tipo_bebida por pestaña, igual de determinístico que TAB_CATEGORIAS
 # (ver schema.SUBFILTROS). Pestañas no listadas acá no setean tipo_bebida.
-TAB_TIPO_BEBIDA: dict[str, str] = {
-    "Jugos naturales": "jugos",
-}
+# "Bebidas" ya no es 100% jugos (ahora mezcla jugos con al menos un trago,
+# Daiquiri) → sin default; tipo_bebida se decide a mano por receta al mergear.
+TAB_TIPO_BEBIDA: dict[str, str] = {}
 TABS_IGNORADAS = {"Template receta"}
 
 MESES = {

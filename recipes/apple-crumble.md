@@ -6,11 +6,12 @@ tiempo_minutos: 60
 foto: "apple-crumble/cover.jpg"
 fuente: "https://www.youtube.com/watch?v=KwIRgwd52Ic&t=147s"
 fecha_actualizacion: "2026-09-13"
+doc_hash: "417f1361ee3a"
 ---
 ## Ingredientes
 
 ### Relleno
-- Manzanas verdes medianas, peladas y en cubos — 1,1 kg
+- Manzanas verdes medianas, peladas y en cubos — 1,1 kg (a probar: 1,5 kg, para que quede más manzana)
 - Azúcar — 3 cdas
 - Manteca, apenas (solo para la sartén) — 1 cdita
 - Esencia de vainilla — 1 cdita
@@ -18,7 +19,7 @@ fecha_actualizacion: "2026-09-13"
 - Maicena, opcional, para espolvorear al final — 1 cdita
 
 ### Masa crumble (base y cubierta, es la misma)
-- Harina común (o leudante; si es común, + 1 cdita de polvo de hornear) — 250 g
+- Harina común (o leudante; si es común, + 1 cdita de polvo de hornear) — 250 g (a probar: 3 cdas más)
 - Sal — 1 pizca
 - Azúcar, parte rubia para mejor color — 100 g
 - Manteca derretida — 150 g

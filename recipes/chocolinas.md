@@ -4,6 +4,7 @@ categorias: ["postre"]
 tipo_postre: "chocolatoso"
 foto: "chocolinas/cover.jpg"
 fecha_actualizacion: "2026-05-02"
+doc_hash: "33db64851bab"
 ---
 ## Ingredientes
 - Crema de leche — 200 g

@@ -8,6 +8,7 @@ tiempo_minutos_max: 180
 porciones: 8
 foto: "guiso-con-lentejas/guiso-listo.jpg"
 fuente: "Recetas.docx — Comidas Saladas"
+doc_hash: "62ff0ae72e99"
 ---
 ## Ingredientes
 _(para 8 porciones)_

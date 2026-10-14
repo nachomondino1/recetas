@@ -5,6 +5,7 @@ tipo_postre: "chocolatoso"
 foto: "turron-de-quaker/cover.jpg"
 fuente: "Marina Renna"
 fecha_actualizacion: "2026-04-20"
+doc_hash: "ef1dd935b7ff"
 ---
 ## Ingredientes
 - Manteca — 200 g

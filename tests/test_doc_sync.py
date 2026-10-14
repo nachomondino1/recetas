@@ -87,7 +87,10 @@ def test_pestana_desconocida_no_corta_el_resto():
     assert any("no mapeada" in i["motivo"] for i in incompletas)
 
 
-def test_jugos_naturales_mapea_a_bebidas_con_tipo():
+def test_bebidas_mapea_a_bebidas_sin_tipo_default():
+    # "Bebidas" (antes "Jugos naturales") ya no es 100% jugos — ahora mezcla
+    # jugos con tragos (ej. Daiquiri) — así que no hay default de tipo_bebida
+    # por pestaña: se decide a mano por receta al mergear.
     parrafos = [
         _parrafo("Jugo verde\n", style="HEADING_2"),
         _parrafo("Ingredientes:\n"),
@@ -96,16 +99,16 @@ def test_jugos_naturales_mapea_a_bebidas_con_tipo():
         _parrafo("Licuar\n", list_id="L1"),
     ]
     listas = {"L1": {"listProperties": {"nestingLevels": [{"glyphType": None}]}}}
-    completas, incompletas = parse_doc(_doc([_tab("Jugos naturales", parrafos, listas)]))
+    completas, incompletas = parse_doc(_doc([_tab("Bebidas", parrafos, listas)]))
 
     assert incompletas == []
     receta = completas[0]
     assert receta["categorias"] == ["bebidas"]
-    assert receta["tipo_bebida"] == "jugos"
+    assert receta["tipo_bebida"] is None
 
     md = render_markdown(receta)
     assert 'categorias: ["bebidas"]' in md
-    assert 'tipo_bebida: "jugos"' in md
+    assert "tipo_bebida" not in md
 
 
 def test_doc_hash_estable_y_sensible_al_contenido():

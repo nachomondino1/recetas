@@ -5,6 +5,7 @@ tipo_merienda: "salado"
 foto: "mayonesa-de-zanahoria/cover.jpg"
 fuente: "https://www.paulinacocina.net/mayonesa-de-zanahoria/37212"
 fecha_actualizacion: "2026-10-05"
+doc_hash: "f756b95c371d"
 ---
 ## Ingredientes
 - Zanahorias grandes — 3

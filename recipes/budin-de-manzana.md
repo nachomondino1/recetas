@@ -4,6 +4,7 @@ categorias: ["merienda"]
 tipo_merienda: "dulce"
 foto: "budin-de-manzana/cover.jpg"
 fecha_actualizacion: "2026-05-09"
+doc_hash: "31c3859cf524"
 ---
 ## Ingredientes
 - Huevos — 3

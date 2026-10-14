@@ -7,6 +7,7 @@ tiempo_minutos: 60
 porciones: 4
 foto: "tacos/cover.jpg"
 fuente: "Recetas.docx — Comidas Saladas"
+doc_hash: "ca08cf53cfdd"
 ---
 ## Ingredientes
 _(para 4 porciones)_

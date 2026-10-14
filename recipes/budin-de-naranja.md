@@ -5,6 +5,7 @@ tipo_merienda: "dulce"
 foto: "budin-de-naranja/cover.jpg"
 fuente: "https://www.paulinacocina.net/budin-de-naranja/8585"
 fecha_actualizacion: "2026-04-20"
+doc_hash: "fa7f960e18e5"
 ---
 ## Ingredientes
 - Huevos — 3

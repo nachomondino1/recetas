@@ -5,6 +5,7 @@ tipo_merienda: "salado"
 foto: "galletitas-saladas/cover.jpg"
 fuente: "https://www.instagram.com/p/CNNUl1_g9yC"
 fecha_actualizacion: "2026-10-05"
+doc_hash: "42aa45962ff2"
 ---
 ## Ingredientes
 - Harina de lino — 1 taza

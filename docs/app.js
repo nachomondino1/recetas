@@ -19,6 +19,17 @@
   };
   var PLACEHOLDER_EMOJI = "🍲";
 
+  // Emoji por categoría, solo decorativo para el navbar (no afecta el valor
+  // que viaja en `state.categoria` ni los datos).
+  var CATEGORIA_EMOJI = {
+    __todas__: "🍽️",
+    principal: "🍖",
+    acompañante: "🥗",
+    postre: "🍰",
+    merienda: "☕",
+    bebidas: "🥤",
+  };
+
   // Emoji fijo por tipo de sección (coincidencia por texto normalizado, en orden:
   // la primera regla que matchea gana). Secciones que no matchean ninguna regla
   // quedan sin emoji, para no forzar uno arbitrario en encabezados puntuales.
@@ -148,8 +159,13 @@
       els.categoriasNav.appendChild(btn);
     }
 
-    crearPestana(TODAS, "Todas");
-    valores.forEach(function (valor) { crearPestana(valor, capitalize(valor)); });
+    function conEmoji(valor, texto) {
+      var emoji = CATEGORIA_EMOJI[valor];
+      return emoji ? emoji + " " + texto : texto;
+    }
+
+    crearPestana(TODAS, conEmoji(TODAS, "Todas"));
+    valores.forEach(function (valor) { crearPestana(valor, conEmoji(valor, capitalize(valor))); });
   }
 
   function onCambioCategoria() {

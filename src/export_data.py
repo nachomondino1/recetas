@@ -162,8 +162,20 @@ def validar(records: list[dict], images_dir: Path) -> tuple[list[str], list[dict
     return errors, warnings
 
 
+# URLs sueltas en el cuerpo (ej. "Dos recetas de referencia: https://youtube.com/...",
+# pegadas directo del Doc sin armar un link Markdown) no las auto-linkea
+# python-markdown por default. Se envuelven en <...> (sintaxis autolink de
+# Markdown) antes de renderizar — salvo que ya sean el target de un link
+# Markdown (precedidas por "](") o ya estén envueltas en <...>.
+URL_SUELTA_RE = re.compile(r"(?<!\]\()(?<!<)(https?://[^\s<>\]\)]+)")
+
+
+def _linkificar_urls_sueltas(body_markdown: str) -> str:
+    return URL_SUELTA_RE.sub(r"<\1>", body_markdown)
+
+
 def render_body_html(body_markdown: str) -> str:
-    return md.markdown(body_markdown, extensions=["sane_lists"])
+    return md.markdown(_linkificar_urls_sueltas(body_markdown), extensions=["sane_lists"])
 
 
 def construir_json(records: list[dict], warnings: list[dict]) -> dict:

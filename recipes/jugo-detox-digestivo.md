@@ -5,6 +5,7 @@ tipo_bebida: "jugos"
 foto: "jugo-detox-digestivo/cover.jpg"
 fuente: "Gemini"
 fecha_actualizacion: "2026-08-30"
+doc_hash: "0a84f7b67116"
 ---
 ## Ingredientes
 - Tallos de apio — 2

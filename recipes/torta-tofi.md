@@ -5,6 +5,7 @@ tipo_postre: "chocolatoso"
 foto: "torta-tofi/cover.jpg"
 fuente: "https://www.youtube.com/watch?v=RP58m9CNQ3Q"
 fecha_actualizacion: "2026-04-20"
+doc_hash: "3ef8ca34d653"
 ---
 ## Ingredientes
 - Manteca — 100 g

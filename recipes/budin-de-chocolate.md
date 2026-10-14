@@ -5,6 +5,7 @@ tipo_merienda: "dulce"
 foto: "budin-de-chocolate/cover.jpg"
 fuente: "https://cookpad.com/uy/recetas/11255242"
 fecha_actualizacion: "2026-04-20"
+doc_hash: "126851ad5fb7"
 ---
 ## Ingredientes
 - Huevos — 2

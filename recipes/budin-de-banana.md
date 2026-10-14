@@ -5,6 +5,7 @@ tipo_merienda: "dulce"
 foto: "budin-de-banana/cover.jpg"
 fuente: "https://www.youtube.com/watch?v=7sKXzEynyKE"
 fecha_actualizacion: "2026-04-20"
+doc_hash: "bab4f884e294"
 ---
 ## Ingredientes
 - Huevos — 3

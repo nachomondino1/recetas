@@ -5,6 +5,7 @@ tipo_bebida: "jugos"
 foto: "jugo-inmunologico/cover.jpg"
 fuente: "Gemini"
 fecha_actualizacion: "2026-08-30"
+doc_hash: "587a9b45a5c8"
 ---
 ## Ingredientes
 - Naranjas peladas — 2
