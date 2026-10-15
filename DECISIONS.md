@@ -284,3 +284,13 @@ El script agrupa las fotos por receta reusando el mismo criterio que `_agrupar_r
 **Tests agregados (`tests/test_doc_sync.py`):** uno fija el comportamiento nuevo (receta variante se extrae con la frase literal, sin fusionar), otro fija el comportamiento viejo que no debía romperse (párrafo suelto tipo bitácora sigue descartándose) — este último existe específicamente para no repetir la regresión de `guiso-con-lentejas` si alguien amplía el regex a futuro.
 
 **Generalizable, ya propagado a `DATA_FLOW_PLAYBOOK_unificado.md` §12.7 (taxonomía/estructura dinámica desde una fuente en prosa):** cuando una fuente en prosa tiene "recetas variante que remiten a otra por nombre", reconocer la frase de referencia *literal* (regex angosto a un patrón de redacción específico) en vez de capturar todo párrafo suelto — ampliar el alcance de qué se captura en un parser mecánico puede sacar a la luz contenido informal ya curado a mano en otras entradas que comparten la misma sección genérica.
+
+## 2026-10-14 — Consulta externa: ¿invertir la fuente de verdad (Doc → .md en git)?
+
+**Contexto:** un chat de Claude sin acceso a este repo, al ver que `read_doc` devuelve ~3,4 MB de un tirón sin señal por receta, recomendó "un `.md` por receta en git, el Doc deja de ser la fuente" como si fuera un cambio de arquitectura pendiente.
+
+**Ya está hecho, no es un cambio:** `recipes/*.md` es la fuente intermedia versionada desde la entrada "Google Doc como fuente, no Markdown a mano" (arriba), y la detección de cambios por receta (no por Doc completo) ya existe vía `doc_hash` por receta (entrada "Detectar qué recetas cambiaron..."). Es exactamente la opción que ese chat marcó como "mejor" en su propia comparación, sin saber que ya corre así.
+
+**Lo único real que señalaba:** bajar el Doc completo en cada sync. No es un descuido — se intentó usar `revisionId` como atajo y se descartó porque dio falso negativo (mismo `revisionId` con contenido nuevo guardado, ver "El `revisionId`... no es señal confiable"). Sin service account (decisión deliberada, proyecto chico) no hay forma más barata de saber qué cambió sin releer y re-parsear.
+
+**No se cambia nada.** Invertir la fuente (Doc deja de editarse) ya se probó una vez y se revirtió: las 3 cuentas que editan desde el celu perderían comodidad — es el trade-off que el propio chat externo mencionó al final, sin darse cuenta de que ya era la razón de la decisión actual. Si algún día ese costo deja de valer la pena, la salida ya documentada es pasar a `.md` a mano con el Doc como bandeja de entrada — no antes de que haga falta.
