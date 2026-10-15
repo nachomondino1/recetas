@@ -239,3 +239,62 @@ def test_receta_con_sub_partes_acumula_ingredientes_y_pasos_de_todas():
     receta = completas[0]
     assert receta["ingredientes"] == ["- Harina — 200g", "- Limón — 3"]
     assert receta["paso_a_paso"] == ["- Amasar", "- Cocinar"]
+
+
+def test_receta_variante_por_referencia_a_otra_se_extrae_con_la_frase_literal():
+    # Patrón "Cookies": una receta variante remite a otra por nombre en vez
+    # de repetir ingredientes/pasos ("Mismos ingredientes que X, con estos
+    # cambios:" / "Igual que X[...]"). El parser no resuelve la referencia
+    # (no fusiona los ingredientes de la base) — solo evita descartar la
+    # frase literal, para no reportar la receta como incompleta.
+    listas = {"L1": {"listProperties": {"nestingLevels": [{"glyphType": None}]}}}
+    parrafos = [
+        _parrafo("Meriendas\n", style="HEADING_1"),
+        _parrafo("Cookies\n", style="HEADING_2"),
+        _parrafo("Vainilla\n", style="HEADING_3"),
+        _parrafo("Ingredientes:\n"),
+        _parrafo("Avena — 2 tazas\n", list_id="L1"),
+        _parrafo("Paso a paso\n"),
+        _parrafo("Mezclar y hornear\n", list_id="L1"),
+        _parrafo("Limón\n", style="HEADING_3"),
+        _parrafo("Ingredientes:\n"),
+        _parrafo("Mismos ingredientes que Vainilla, con estos cambios:\n"),
+        _parrafo("Jugo de limón en lugar del agua\n", list_id="L1"),
+        _parrafo("Paso a paso\n"),
+        _parrafo("Igual que Vainilla.\n"),
+    ]
+    completas, incompletas = parse_doc(_doc([_tab("Recetas", parrafos, listas)]))
+
+    assert incompletas == []
+    assert [r["titulo"] for r in completas] == ["Vainilla", "Limón"]
+    limon = completas[1]
+    assert limon["ingredientes"] == [
+        "Mismos ingredientes que Vainilla, con estos cambios:",
+        "",
+        "- Jugo de limón en lugar del agua",
+    ]
+    assert limon["paso_a_paso"] == ["Igual que Vainilla."]
+
+
+def test_parrafo_suelto_dentro_de_una_seccion_se_descarta_salvo_referencia():
+    # Notas sueltas tipo bitácora ("Duda: ...", "Nota: ...") mezcladas con
+    # bullets dentro de una sección activa se siguen descartando a propósito
+    # (ver DECISIONS.md) — solo la frase de referencia a otra receta se
+    # conserva. Si esto no se cumple, un sync vuelca prosa informal cruda en
+    # recetas que ya tienen una versión curada a mano (regresión real vista
+    # con `guiso-con-lentejas` al desarrollar este fix).
+    listas = {"L1": {"listProperties": {"nestingLevels": [{"glyphType": None}]}}}
+    parrafos = [
+        _parrafo("Principales\n", style="HEADING_1"),
+        _parrafo("Guiso\n", style="HEADING_3"),
+        _parrafo("Ingredientes:\n"),
+        _parrafo("Lentejas — 1 kg\n", list_id="L1"),
+        _parrafo("Paso a paso\n"),
+        _parrafo("Cocinar la lenteja\n", list_id="L1"),
+        _parrafo("Duda: ¿se puede cortar la verdura antes? Sí, pero no es tan necesario.\n"),
+        _parrafo("Servir\n", list_id="L1"),
+    ]
+    completas, _ = parse_doc(_doc([_tab("Recetas", parrafos, listas)]))
+
+    receta = completas[0]
+    assert receta["paso_a_paso"] == ["- Cocinar la lenteja", "- Servir"]

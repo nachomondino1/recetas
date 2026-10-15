@@ -59,6 +59,13 @@ FUENTE_RE = re.compile(r"^\s*fuentes?\s*:\s*(.*)$", re.IGNORECASE)
 FECHA_RE = re.compile(r"^\s*(?:última|ultima)\s+actualizaci[oó]n\s*:\s*(.*)$", re.IGNORECASE)
 FECHA_VALOR_RE = re.compile(r"(\d{1,2})\s+([a-zA-Zñ]+)\.?\s+(\d{4})")
 SECCION_RE = re.compile(r"^(ingredientes|materiales|paso a paso)\b", re.IGNORECASE)
+# Receta-variante que remite a otra por nombre (ej. "Mismos ingredientes que
+# Dulces: Vainilla con membrillo, con estos cambios:" / "Igual que Dulces:
+# Vainilla con membrillo."). Se captura la frase literal, sin resolver la
+# referencia ni intentar fusionar los ingredientes/pasos de la base: eso
+# requeriría interpretar texto libre ("en lugar de X", "sin Y"), que es
+# justamente el tipo de invención que el playbook de datos prohíbe.
+REFERENCIA_VARIANTE_RE = re.compile(r"^(mismos ingredientes que|igual que)\b", re.IGNORECASE)
 SECCION_MAX_LEN = 60
 CAMPO_VACIO_RE = re.compile(r"^\s*(tiempo|dificultad)\s*:\s*$", re.IGNORECASE)
 ORDERED_GLYPHS = {"DECIMAL", "ALPHA", "ROMAN", "UPPER_ALPHA", "UPPER_ROMAN"}
@@ -191,6 +198,20 @@ def _parsear_receta(titulo: str, parrafos: list[dict]) -> dict:
     seccion = None
     materiales, ingredientes, pasos = [], [], []
     cuerpo_libre = []
+    destinos = {"materiales": materiales, "ingredientes": ingredientes, "paso a paso": pasos}
+    # Para cada sección, si el último elemento agregado era lista o texto plano —
+    # permite intercalar un párrafo (ej. "Mismos ingredientes que X, con estos
+    # cambios:") con bullets dentro de la misma sección sin que Markdown funda
+    # ambos en un solo párrafo (necesita línea en blanco antes/después de una lista).
+    ultimo_es_lista: dict[str, bool | None] = {k: None for k in destinos}
+
+    def _agregar(seccion_actual: str, texto_linea: str, es_lista: bool) -> None:
+        destino = destinos[seccion_actual]
+        anterior = ultimo_es_lista[seccion_actual]
+        if anterior is not None and anterior != es_lista:
+            destino.append("")
+        destino.append(texto_linea)
+        ultimo_es_lista[seccion_actual] = es_lista
 
     for p in parrafos:
         texto = p["texto"]
@@ -200,12 +221,8 @@ def _parsear_receta(titulo: str, parrafos: list[dict]) -> dict:
         if p["es_lista"]:
             marca = "1." if p["ordenada"] else "-"
             linea = f"{marca} {texto}"
-            if seccion == "materiales":
-                materiales.append(linea)
-            elif seccion == "ingredientes":
-                ingredientes.append(linea)
-            elif seccion == "paso a paso":
-                pasos.append(linea)
+            if seccion in destinos:
+                _agregar(seccion, linea, True)
             else:
                 cuerpo_libre.append(linea)
             continue
@@ -241,8 +258,14 @@ def _parsear_receta(titulo: str, parrafos: list[dict]) -> dict:
             seccion = None
             continue
 
-        if seccion is None:
+        if seccion in destinos and REFERENCIA_VARIANTE_RE.match(texto):
+            _agregar(seccion, texto, False)
+        elif seccion is None:
             cuerpo_libre.append(texto)
+        # Cualquier otro párrafo suelto dentro de una sección activa (notas al
+        # paso, comentarios personales, etc.) se sigue descartando a propósito:
+        # son prosa informal que un curador humano resume, no texto a migrar
+        # literalmente (ver DECISIONS.md, "recetas tipo bitácora").
 
     completa = bool(ingredientes or materiales) and bool(pasos)
     return {

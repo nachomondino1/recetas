@@ -141,7 +141,7 @@ def normalizar(raws: list[dict], utils: dict[str, dict[str, str]] | None = None)
             "fuente": str(fuente).strip() if fuente else None,
             "_unknown_fields": sorted(set(front.keys()) - schema.KNOWN_FIELDS) if front else [],
         }
-        for campo in schema.SUBFILTRO_CAMPOS:
+        for campo in sorted(schema.SUBFILTRO_CAMPOS):
             valor = front.get(campo)
             record[campo] = str(valor).strip().lower() if valor else None
         records.append(record)
@@ -253,7 +253,7 @@ def construir_json(records: list[dict], warnings: list[dict]) -> dict:
             "fuente": r["fuente"],
             "body_html": render_body_html(r["body"]),
         }
-        for campo in schema.SUBFILTRO_CAMPOS:
+        for campo in sorted(schema.SUBFILTRO_CAMPOS):
             receta[campo] = r[campo]
         recetas.append(receta)
     return {
