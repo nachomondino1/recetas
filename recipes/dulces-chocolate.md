@@ -2,6 +2,7 @@
 titulo: "Dulces: Chocolate"
 categorias: ["🌆 meriendas"]
 tipo_merienda: "🍪 cookies"
+foto: "dulces-chocolate/cover.jpg"
 fecha_actualizacion: "2026-10-14"
 fuente: "cuaderno (receta manuscrita)"
 doc_hash: "e29d00e93784"

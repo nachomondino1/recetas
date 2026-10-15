@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": 2,
-    "generated_at": "2026-10-15T00:54:45+00:00",
+    "generated_at": "2026-10-15T01:12:28+00:00",
     "count": 37,
     "warnings": [
       {
@@ -90,11 +90,6 @@
         "message": "sin dato"
       },
       {
-        "recipe": "dulces-chocolate",
-        "field": "foto",
-        "message": "sin foto de portada"
-      },
-      {
         "recipe": "dulces-limon",
         "field": "dificultad",
         "message": "sin dato"
@@ -103,11 +98,6 @@
         "recipe": "dulces-limon",
         "field": "tiempo_minutos",
         "message": "sin dato"
-      },
-      {
-        "recipe": "dulces-limon",
-        "field": "foto",
-        "message": "sin foto de portada"
       },
       {
         "recipe": "dulces-nuez-y-coco",
@@ -120,11 +110,6 @@
         "message": "sin dato"
       },
       {
-        "recipe": "dulces-nuez-y-coco",
-        "field": "foto",
-        "message": "sin foto de portada"
-      },
-      {
         "recipe": "dulces-vainilla-con-membrillo",
         "field": "dificultad",
         "message": "sin dato"
@@ -133,11 +118,6 @@
         "recipe": "dulces-vainilla-con-membrillo",
         "field": "tiempo_minutos",
         "message": "sin dato"
-      },
-      {
-        "recipe": "dulces-vainilla-con-membrillo",
-        "field": "foto",
-        "message": "sin foto de portada"
       },
       {
         "recipe": "empanadas",
@@ -240,11 +220,6 @@
         "message": "sin dato"
       },
       {
-        "recipe": "mermelada-de-manzana",
-        "field": "foto",
-        "message": "sin foto de portada"
-      },
-      {
         "recipe": "morron-y-huevo-asados",
         "field": "dificultad",
         "message": "sin dato"
@@ -280,11 +255,6 @@
         "message": "sin dato"
       },
       {
-        "recipe": "paella-de-mariscos",
-        "field": "foto",
-        "message": "sin foto de portada"
-      },
-      {
         "recipe": "pancakes",
         "field": "dificultad",
         "message": "sin dato"
@@ -293,11 +263,6 @@
         "recipe": "pancakes",
         "field": "tiempo_minutos",
         "message": "sin dato"
-      },
-      {
-        "recipe": "pancakes",
-        "field": "foto",
-        "message": "sin foto de portada"
       },
       {
         "recipe": "tarta-de-espinaca",
@@ -542,7 +507,7 @@
       "tiempo_minutos": null,
       "tiempo_minutos_max": null,
       "porciones": null,
-      "foto": null,
+      "foto": "images/dulces-chocolate/cover.jpg",
       "fecha_actualizacion": "2026-10-14",
       "fuente": "cuaderno (receta manuscrita)",
       "body_html": "<h2>Ingredientes</h2>\n<p>Mismos ingredientes que <em>Dulces: Vainilla con membrillo</em>, con estos cambios:</p>\n<ul>\n<li>Cuando se pone la media taza de harina, completar la taza con cacao amargo (en total queda 1 taza entre harina y cacao)</li>\n</ul>\n<h2>Paso a paso</h2>\n<p>Igual que <em>Dulces: Vainilla con membrillo</em>.</p>\n<blockquote>\n<p>ℹ️ Para la taza de harina y las cucharadas de cacao: agarrar la taza y poner cuánto cacao se quiera (más o menos media taza) y completar con la harina.</p>\n<p>Cocción: 10 minutos de un lado, dar vuelta y 10 minutos más del otro.</p>\n</blockquote>",
@@ -562,7 +527,7 @@
       "tiempo_minutos": null,
       "tiempo_minutos_max": null,
       "porciones": null,
-      "foto": null,
+      "foto": "images/dulces-limon/cover.jpg",
       "fecha_actualizacion": "2026-10-14",
       "fuente": "cuaderno (receta manuscrita)",
       "body_html": "<h2>Ingredientes</h2>\n<p>Mismos ingredientes que <em>Dulces: Vainilla con membrillo</em>, con estos cambios:</p>\n<ul>\n<li>Jugo de limón en lugar del agua</li>\n<li>Ralladura de la cáscara de limón, junto al preparado</li>\n<li>Sin esencia de vainilla</li>\n</ul>\n<h2>Paso a paso</h2>\n<p>Igual que <em>Dulces: Vainilla con membrillo</em>.</p>",
@@ -582,7 +547,7 @@
       "tiempo_minutos": null,
       "tiempo_minutos_max": null,
       "porciones": null,
-      "foto": null,
+      "foto": "images/dulces-nuez-y-coco/cover.jpg",
       "fecha_actualizacion": "2026-10-14",
       "fuente": "cuaderno (receta manuscrita)",
       "body_html": "<h2>Ingredientes</h2>\n<p>Mismos ingredientes que <em>Dulces: Vainilla con membrillo</em>, con estos cambios:</p>\n<ul>\n<li>También se pueden hacer de coco, con harina de coco o coco rallado</li>\n<li>Trocitos de nueces</li>\n<li>Un poco de dulce de leche</li>\n</ul>\n<h2>Paso a paso</h2>\n<p>Igual que <em>Dulces: Vainilla con membrillo</em>. Cuando se arman, agregar trocitos de nueces y un poco de dulce de leche.</p>",
@@ -602,7 +567,7 @@
       "tiempo_minutos": null,
       "tiempo_minutos_max": null,
       "porciones": null,
-      "foto": null,
+      "foto": "images/dulces-vainilla-con-membrillo/cover.jpg",
       "fecha_actualizacion": "2026-10-14",
       "fuente": "cuaderno (receta manuscrita)",
       "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Avena — 2 tazas</li>\n<li>Harina (leudante, o común + 1 cucharadita de polvo para hornear) — 1/2 taza</li>\n<li>Azúcar mascabo — 1/2 taza</li>\n<li>Aceite neutro o de maíz — 1/2 taza</li>\n<li>Agua, a gusto según la consistencia — 1/3 de taza</li>\n<li>Esencia de vainilla a gusto</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Mezclar todos los ingredientes con la mano, menos el agua. Ir agregando agua hasta que la mezcla quede homogénea.</li>\n<li>Enharinar un molde (Fritolim) y, con las manos, ir formando las galletitas y ubicarlas una al lado de la otra.</li>\n<li>Calentar el horno a 200 °C y bajarlo a 180 °C. Colocar el molde y hornear 15 minutos, dar vuelta las galletitas y hornear 15 minutos más.</li>\n<li>Retirarlas, dejarlas enfriar y guardar.</li>\n</ol>\n<blockquote>\n<p>ℹ️ Si querés ponerle membrillo o batata, hacerlo cuando se dan vuelta: al sacarlas, aplastar el dulce con una cuchara y quedan pepas de membrillo. Si no, quedan como galletitas de vainilla solas.</p>\n<p>Se pueden hacer con cualquier harina: de arroz, de coco, de avena, de salvado, etc.</p>\n</blockquote>",
@@ -822,7 +787,7 @@
       "tiempo_minutos": null,
       "tiempo_minutos_max": null,
       "porciones": null,
-      "foto": null,
+      "foto": "images/mermelada-de-manzana/cover.jpg",
       "fecha_actualizacion": null,
       "fuente": null,
       "body_html": "<p>Fuentes: <a href=\"https://www.youtube.com/shorts/fXV-SjgVD4s\">https://www.youtube.com/shorts/fXV-SjgVD4s</a> y <a href=\"https://youtu.be/eXyNtLVpFf0?si=ZpWzCNCREu0cSRoV\">https://youtu.be/eXyNtLVpFf0?si=ZpWzCNCREu0cSRoV</a> (la que siguió mamá).</p>\n<h2>Ingredientes</h2>\n<ul>\n<li>Manzanas</li>\n<li>Azúcar</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Preparar las manzanas: pelarlas sobre un bol, cortar el centro dejando los corazones aparte y picar la pulpa en cubos pequeños. Reservar 3 corazones (tienen pectina, que ayuda a espesar).</li>\n<li>Primera cocción: colocar las manzanas y los 3 corazones en una olla a fuego medio/bajo. Agregar la mitad del azúcar, revolver y cocinar 10 minutos hasta que la manzana libere agua y el azúcar se disuelva.</li>\n<li>Segunda cocción: incorporar la otra mitad del azúcar, mezclar bien y dejar cocinar a fuego lento aproximadamente 1 hora. A mitad de la cocción, retirar los corazones de manzana.</li>\n<li>Esterilizar frascos: en otra olla con agua hirviendo, colocar el frasco de vidrio y su tapa durante 10 minutos. Retirar y dejar secar al aire.</li>\n<li>Comprobar punto y envasar: la mermelada está lista cuando la manzana luce translúcida — verificar pasando un dedo por la cuchara sumergida en la mermelada; si el trazo no se une, está lista. Retirar del fuego, verter en el frasco esterilizado y dejar enfriar a temperatura ambiente antes de refrigerar.</li>\n</ol>",
@@ -902,7 +867,7 @@
       "tiempo_minutos": 130,
       "tiempo_minutos_max": null,
       "porciones": 5,
-      "foto": null,
+      "foto": "images/paella-de-mariscos/cover.jpg",
       "fecha_actualizacion": "2026-10-14",
       "fuente": "cuaderno (receta manuscrita)",
       "body_html": "<h2>Ingredientes</h2>\n<p><em>(para 5 porciones)</em></p>\n<ul>\n<li>Cebollas grandes — 2</li>\n<li>Morrones — 2 (1 rojo, otro verde)</li>\n<li>Tomates a punto — 2</li>\n<li>Ajo, 1 gajito (opcional)</li>\n<li>Calamares completos (limpios, sin cabeza) — 3</li>\n<li>Camarones — 1 bandeja (400 g)</li>\n<li>Almejas — 1 bandeja (400 g)</li>\n<li>Arroz — 1 taza y media colmada</li>\n<li>Caldo de verdura — 1</li>\n<li>Cúrcuma — 2 cucharaditas</li>\n<li>Curry — 1 cucharada colmada</li>\n<li>Sal y pimienta a gusto</li>\n</ul>\n<h2>Paso a paso</h2>\n<h3>Limpieza del calamar</h3>\n<p>Limpiar los calamares cortando la cabeza y sacando todo lo del centro con mucha agua caliente, hasta que queden impecables. Cortarlos en tiras, junto con las 2 aletas y los tentáculos (estos últimos también se lavan con agua caliente).</p>\n<h3>Cocción</h3>\n<ol>\n<li>Poner aceite en la paellera tapando el fondo y enchufarla (4 p.).</li>\n<li>Agregar las cebollas cortadas chiquitas y el ajo.</li>\n<li>Rehogar junto con los pedazos de calamar (cortado en tiras). Este paso lleva aprox. 30 minutos, porque el calamar tiene que ablandarse.</li>\n<li>Después de ese tiempo, agregar los morrones y tomates cortados chiquitos y revolver (3 p.).</li>\n<li>Después de 40 minutos aprox., agregar el arroz con parte del caldo. Ir removiendo mientras se hace el arroz, agregando caldo para que no se pegue (3 p.).</li>\n<li>Por último, cuando ya casi está el arroz, agregar los camarones y las almejas, y revolver por 10 minutos más.</li>\n<li>Condimentar y desenchufar la paellera.</li>\n</ol>\n<blockquote>\n<p>ℹ️ Los puntos entre paréntesis indican en qué número debe estar la perilla de la paellera (al costado) en cada etapa.</p>\n</blockquote>",
@@ -922,7 +887,7 @@
       "tiempo_minutos": null,
       "tiempo_minutos_max": null,
       "porciones": null,
-      "foto": null,
+      "foto": "images/pancakes/cover.jpg",
       "fecha_actualizacion": null,
       "fuente": "https://youtube.com/shorts/o6VMb0wrSyc?si=dvpqQEQSKLu4huwP",
       "body_html": "<p><em>(mamá los hizo de banana, siguiendo ese video — esta versión es de avena y manzana)</em></p>\n<h2>Ingredientes</h2>\n<ul>\n<li>Avena</li>\n<li>Manzana</li>\n<li>Ingredientes base para pancakes (huevo, leche o endulzante a gusto)</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Preparar la mezcla: procesar o mezclar la avena con la manzana rallada o cortada (el secreto es dejar reposar bastante la preparación) junto con el resto de los ingredientes, hasta lograr una masa húmeda.</li>\n<li>Cocinar los pancakes: verter porciones de la mezcla en una sartén caliente y cocinar de ambos lados hasta que estén dorados.</li>\n</ol>\n<blockquote>\n<p>⚠️ Los primeros pancakes tardan más en cocinarse que los últimos, porque la sartén al principio está fría.\n⚠️ Estar cerca para evitar que se quemen de abajo.</p>\n</blockquote>\n<ol start=\"3\">\n<li>Conservar o servir: dejar enfriar para congelar en cantidad (se pueden calentar luego 30 segundos en el microondas, o sacar un rato antes) y acompañar con fruta por encima.</li>\n</ol>",

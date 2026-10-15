@@ -2,6 +2,7 @@
 titulo: "Dulces: Nuez y coco"
 categorias: ["🌆 meriendas"]
 tipo_merienda: "🍪 cookies"
+foto: "dulces-nuez-y-coco/cover.jpg"
 fecha_actualizacion: "2026-10-14"
 fuente: "cuaderno (receta manuscrita)"
 doc_hash: "4d0724ae193b"

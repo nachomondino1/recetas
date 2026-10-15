@@ -2,6 +2,7 @@
 titulo: "Paella de mariscos"
 categorias: ["🍗 principales"]
 momento: "🏙️ almuerzo"
+foto: "paella-de-mariscos/cover.jpg"
 porciones: 5
 tiempo_minutos: 130
 fecha_actualizacion: "2026-10-14"
