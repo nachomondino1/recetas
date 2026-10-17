@@ -19,7 +19,7 @@ doc_hash: "d2da56dedcf6"
 ## Paso a paso
 1. Prender el horno a 180 °C para precalentar.
 2. Batir los huevos y el azúcar hasta quedar espumoso y blanquecino.
-3. Añadir la leche y el aceite y batir hasta integrar.
+3. Añadir la **leche** y el **aceite** y batir hasta integrar.
 4. Cortar las barras de chocolate en trozos y mezclarlas con un poco de harina (para que no se vayan al fondo).
 5. Agregar a la preparación la harina y el cacao, mezclando hasta integrar.
 6. Añadir los trozos de chocolate y mezclar.

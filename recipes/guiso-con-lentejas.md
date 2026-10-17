@@ -89,7 +89,7 @@ _(para 8 porciones)_
 > ℹ️ No dejarlo mucho tiempo con el fuego apagado, porque la grasa se solidifica y se le vuelve a pegar al chorizo.
 
 13. 🚮 Agregar la salsa de tomate y el chorizo a la OLLA 1 (pasar el chorizo con una espátula con agujeritos, para no llevar toda la grasa sobrante).
-14. 🍳 Cocinar 20 a 30 minutos a fuego lento.
+14. **🍳 Cocinar** 20 a 30 minutos a fuego **lento**.
 
 > ℹ️ Refill de agua para que todo quede siempre bajo agua.
 

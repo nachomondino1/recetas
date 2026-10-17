@@ -21,7 +21,7 @@ doc_hash: "f2d9babd0edd"
 1. Prender el horno a 180 °C para precalentar.
 2. Batir los huevos y el azúcar hasta quedar espumoso y blanquecino.
 3. Añadir la vainilla, la ralladura de limón y la pizca de sal.
-4. Añadir el aceite y batir hasta integrar.
+4. Añadir el **aceite** y batir hasta integrar.
 5. Pisar las bananas y agregarlas a la preparación.
 6. Agregar la harina.
 7. Poner fritolim y harina en el molde, y verter el contenido.

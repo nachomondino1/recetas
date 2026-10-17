@@ -129,6 +129,42 @@ def _texto_parrafo(elemento: dict) -> str:
     return "".join(partes).rstrip("\n")
 
 
+def _texto_parrafo_md(elemento: dict) -> str:
+    """Igual que `_texto_parrafo`, pero envuelve en `**negrita**` los tramos
+    que el usuario puso en negrita en el Doc (`textRun.textStyle.bold`) — para
+    poder identificar de un vistazo qué palabras importan en cada paso. Fusiona
+    `textRun`s contiguos del mismo valor de `bold` (la Docs API puede partir
+    una misma frase en negrita en varios `textRun`) y recorta los espacios en
+    los bordes de cada tramo en negrita hacia afuera de los `**`, porque
+    Markdown no reconoce `** texto **` con espacio pegado al marcador.
+    """
+    parrafo = elemento.get("paragraph")
+    if not parrafo:
+        return ""
+    runs: list[tuple[str, bool]] = []
+    for e in parrafo.get("elements", []):
+        text_run = e.get("textRun", {})
+        contenido = text_run.get("content", "")
+        if not contenido:
+            continue
+        negrita = bool(text_run.get("textStyle", {}).get("bold"))
+        if runs and runs[-1][1] == negrita:
+            runs[-1] = (runs[-1][0] + contenido, negrita)
+        else:
+            runs.append((contenido, negrita))
+
+    partes = []
+    for contenido, negrita in runs:
+        if not negrita or not contenido.strip():
+            partes.append(contenido)
+            continue
+        inicio = contenido[: len(contenido) - len(contenido.lstrip())]
+        fin = contenido[len(contenido.rstrip()):]
+        nucleo = contenido.strip()
+        partes.append(f"{inicio}**{nucleo}**{fin}")
+    return "".join(partes).rstrip("\n")
+
+
 def _es_ordenada(parrafo: dict, listas: dict) -> bool:
     list_id = (parrafo.get("bullet") or {}).get("listId")
     if not list_id:
@@ -152,6 +188,7 @@ def _parrafos_de_tab(tab: dict) -> list[dict]:
         salida.append({
             "style": parrafo.get("paragraphStyle", {}).get("namedStyleType", "NORMAL_TEXT"),
             "texto": texto,
+            "texto_md": _texto_parrafo_md(elemento).strip(),
             "es_lista": parrafo.get("bullet") is not None,
             "ordenada": _es_ordenada(parrafo, listas),
         })
@@ -217,10 +254,11 @@ def _parsear_receta(titulo: str, parrafos: list[dict]) -> dict:
         texto = p["texto"]
         if not texto:
             continue
+        texto_md = p.get("texto_md") or texto
 
         if p["es_lista"]:
             marca = "1." if p["ordenada"] else "-"
-            linea = f"{marca} {texto}"
+            linea = f"{marca} {texto_md}"
             if seccion in destinos:
                 _agregar(seccion, linea, True)
             else:
@@ -254,14 +292,14 @@ def _parsear_receta(titulo: str, parrafos: list[dict]) -> dict:
 
         if p["style"].startswith("HEADING"):
             nivel = int(p["style"][-1]) if p["style"][-1].isdigit() else 2
-            cuerpo_libre.append(f"{'#' * (nivel + 1)} {texto}")
+            cuerpo_libre.append(f"{'#' * (nivel + 1)} {texto_md}")
             seccion = None
             continue
 
         if seccion in destinos and REFERENCIA_VARIANTE_RE.match(texto):
-            _agregar(seccion, texto, False)
+            _agregar(seccion, texto_md, False)
         elif seccion is None:
-            cuerpo_libre.append(texto)
+            cuerpo_libre.append(texto_md)
         # Cualquier otro párrafo suelto dentro de una sección activa (notas al
         # paso, comentarios personales, etc.) se sigue descartando a propósito:
         # son prosa informal que un curador humano resume, no texto a migrar

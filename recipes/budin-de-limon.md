@@ -20,7 +20,7 @@ doc_hash: "5f2c33f84026"
 ## Paso a paso
 1. Prender el horno a 180 °C para precalentar.
 2. Batir los huevos y el azúcar hasta quedar espumoso y blanquecino.
-3. Añadir el aceite y batir.
+3. Añadir el **aceite** y batir.
 4. Rallar y exprimir el limón; agregar la cáscara y el jugo a la preparación y batir.
 5. Añadir la leche y batir. Añadir la sal y batir.
 6. Agregar la harina de a poco: primero 2 tazas y verificar la consistencia, incorporando la tercera de a poco según sea necesario hasta lograr la textura deseada.

@@ -13,8 +13,8 @@ doc_hash: "7135c839c37c"
 - Limón pelado — 1/2
 
 ## Paso a paso
-1. Pelar las naranjas y el medio limón, retirando las semillas grandes.
-2. Cortar el ananá en rodajas o trozos adecuados para el tubo de la máquina.
-3. Encender la juguera.
-4. Introducir los gajos de naranja, los trozos de ananá y el limón de forma alternada.
-5. Extraer el jugo por completo y servir.
+1. Pelar las **naranjas** y el medio **limón**, retirando las semillas grandes.
+2. Cortar el **ananá** en rodajas o trozos adecuados para el tubo de la máquina.
+3. **Encender** la juguera.
+4. **Introducir** los gajos de naranja, los trozos de ananá y el limón de forma alternada.
+5. **Extraer** el jugo por completo y servir.

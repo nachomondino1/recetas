@@ -13,7 +13,7 @@ doc_hash: "9e3b9a1da65e"
 - Cacao amargo — 180 g
 - Avena Quaker — 300 g
 - Leche — 10 cdas
-- Galletitas saladas Criollitas o Serranitas
+- **Galletitas** saladas Criollitas o Serranitas
 - Dulce de leche — 2 cucharadas
 
 ## Paso a paso

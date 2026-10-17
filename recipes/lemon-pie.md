@@ -53,7 +53,7 @@ _Fuentes: https://www.youtube.com/watch?v=jTz7wBy5pI8 (cantidades) y https://www
 
 1. Separar la yema de 2 huevos.
 2. Mezclar rápidamente las yemas con el azúcar — no dejarlas reposar juntas sin integrar, porque el azúcar puede "cocinar" las yemas y formar puntos amarillos difíciles de disolver.
-3. Agregar la maicena y mezclar bien hasta disolver todos los grumos.
+3. Agregar la **maicena** y mezclar bien hasta disolver todos los grumos.
 4. Incorporar la ralladura de limón y luego el jugo de limón, integrando bien.
 5. Cocinar al microondas (o a baño maría): llevar el bol en lapsos de 1 minuto, sacándolo entre cada intervalo para revolver. Repetir unos 3 a 4 minutos en total hasta que espese, con consistencia similar a un flan o crema suave.
 6. Una vez caliente y espesa, retirar del calor e integrar la manteca fría en cubos (a mano o con minipimer, hasta lograr una emulsión brillante y homogénea).

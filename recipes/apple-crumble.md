@@ -15,7 +15,7 @@ doc_hash: "763e8c6a0cb6"
 - Azúcar — 3 cdas
 - Manteca, apenas (solo para la sartén) — 1 cdita
 - Esencia de vainilla — 1 cdita
-- Ralladura de limón (poca)
+- **Ralladura** de limón (poca)
 - Maicena, opcional, para espolvorear al final — 1 cdita
 
 ### Masa crumble (base y cubierta, es la misma)
@@ -24,8 +24,8 @@ doc_hash: "763e8c6a0cb6"
 - Azúcar, parte rubia para mejor color — 100 g
 - Manteca derretida — 150 g
 - Esencia de vainilla — 1 cdita
-- Ralladura de limón (poca)
-- Nueces partidas, un puñado (opcional)
+- **Ralladura** de limón (poca)
+- **Nueces** partidas, un puñado (opcional)
 
 _Nota: 1 limón cubre las dos ralladuras (relleno y masa)._
 
@@ -41,7 +41,7 @@ _Nota: 1 limón cubre las dos ralladuras (relleno y masa)._
 7. Espolvorear maicena y mezclar, para que suelte menos líquido en el horno. [📷 ver foto](#/receta/apple-crumble/foto-relleno-7){: .ver-foto }
 
 ### Masa crumble
-1. Mezclar los secos: harina, sal, azúcar y ralladura de limón.
+1. Mezclar los secos: **harina**, **sal**, **azúcar** y **ralladura de limón.**
 2. Agregar la manteca derretida y la vainilla.
 3. Arenar con los dedos hasta lograr una mezcla granulosa. [📷 ver foto](#/receta/apple-crumble/foto-masa-3){: .ver-foto }
 
@@ -49,7 +49,7 @@ _Nota: 1 limón cubre las dos ralladuras (relleno y masa)._
 
 ### Armado
 1. Agarrar un molde de 20 cm, enmantecado y enharinado, o con papel manteca.
-2. Presionar parte de la mezcla contra el fondo y las paredes, con la mano o una cuchara. Finita, 2 dedos de alto en los bordes.
+2. **Presionar parte de la mezcla contra el fondo** y las paredes, con la mano o una cuchara. Finita, 2 dedos de alto en los bordes.
 3. Distribuir las nueces por encima, apoyándose sobre el relleno. [📷 ver foto](#/receta/apple-crumble/foto-armado-3){: .ver-foto }
 4. Volcar el relleno frío y emparejar.
 5. Cubrir con el resto del crumble suelto, sin aplastar — eso es lo que da el crocante. [📷 ver foto](#/receta/apple-crumble/foto-armado-5){: .ver-foto }

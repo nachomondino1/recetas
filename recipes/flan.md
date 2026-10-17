@@ -19,5 +19,5 @@ _(para flan grande)_
 2. Preparar el caramelo: colocar la flanera a fuego medio y agregar los 100 g de azúcar. Cocinar sin remover al inicio hasta que empiece a derretirse, luego revolver con cuchara de madera hasta obtener un color marrón claro. Retirar del fuego y añadir con cuidado 1 cucharada de agua caliente, mezclando rápidamente hasta lograr una textura más fluida. Mover para cubrir el fondo y los bordes de la flanera.
 3. Colocar la mezcla en la flanera, que ya tiene el caramelo.
 4. Cocinar a baño maría: colocar la flanera dentro de una fuente más grande en el horno (normalmente la bandeja negra del horno) y verter agua caliente en la fuente.
-5. Hornear a 160 °C durante 50–60 minutos, hasta que el flan esté firme en los bordes y ligeramente tembloroso en el centro.
+5. **Hornear** a **160 °C** durante **50–60 minutos,** hasta que el flan esté firme en los bordes y ligeramente tembloroso en el centro.
 6. Enfriar y desmoldar: retirar del horno, dejar enfriar a temperatura ambiente y luego llevar a la heladera por al menos 3–4 horas. Pasar un cuchillo por los bordes y desmoldar sobre un plato hondo para aprovechar el caramelo.

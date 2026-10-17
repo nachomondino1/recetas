@@ -10,9 +10,9 @@ doc_hash: "714c6ba5c43a"
 - Huevos — 3
 - Azúcar — 3/4 taza (la receta original usa 1 taza)
 - Aceite neutro — 3/4 taza (la receta original usa 1 taza)
-- Ralladura de limón
+- **Ralladura de limón**
 - Harina — 3 × 3/4 de taza
-- Azúcar para espolvorear el molde
+- **Azúcar** para espolvorear el molde
 - Manzanas — 3
 
 ## Paso a paso

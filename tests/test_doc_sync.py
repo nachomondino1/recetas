@@ -11,6 +11,21 @@ def _parrafo(texto, style="NORMAL_TEXT", list_id=None, ordenada=False):
     }}
 
 
+def _parrafo_runs(runs, style="NORMAL_TEXT", list_id=None):
+    """Como `_parrafo`, pero a partir de una lista de (texto, negrita) para
+    simular un párrafo con varios `textRun`s (algunos en negrita)."""
+    elementos = [
+        {"textRun": {"content": texto, "textStyle": {"bold": negrita} if negrita else {}}}
+        for texto, negrita in runs
+    ]
+    bullet = {"listId": list_id} if list_id else None
+    return {"paragraph": {
+        "paragraphStyle": {"namedStyleType": style},
+        "elements": elementos,
+        "bullet": bullet,
+    }}
+
+
 def _doc(tabs):
     return {"content": {"tabs": tabs}}
 
@@ -298,3 +313,54 @@ def test_parrafo_suelto_dentro_de_una_seccion_se_descarta_salvo_referencia():
 
     receta = completas[0]
     assert receta["paso_a_paso"] == ["- Cocinar la lenteja", "- Servir"]
+
+
+def test_negrita_del_doc_se_preserva_como_markdown():
+    # El texto en negrita en el Doc (textRun.textStyle.bold) se marca con
+    # **negrita** en el .md final, para identificar de un vistazo qué importa
+    # en cada paso — pero el matching de secciones/fuente/fecha sigue usando
+    # el texto plano (sin **), así que una palabra en negrita en "Ingredientes:"
+    # no debería romper la detección de la sección.
+    listas = {"L1": {"listProperties": {"nestingLevels": [{"glyphType": None}]}}}
+    parrafos = [
+        _parrafo("Postres\n", style="HEADING_1"),
+        _parrafo("Flan\n", style="HEADING_3"),
+        _parrafo("Ingredientes:\n"),
+        _parrafo_runs([("Huevos", True), (" — 10\n", False)], list_id="L1"),
+        _parrafo("Paso a paso\n"),
+        _parrafo_runs(
+            [("Batir ", False), ("fuerte", True), (" los huevos", False), (" por 5 minutos\n", False)],
+            list_id="L1",
+        ),
+    ]
+    completas, incompletas = parse_doc(_doc([_tab("Recetas", parrafos, listas)]))
+
+    assert incompletas == []
+    receta = completas[0]
+    assert receta["ingredientes"] == ["- **Huevos** — 10"]
+    assert receta["paso_a_paso"] == ["- Batir **fuerte** los huevos por 5 minutos"]
+
+
+def test_negrita_fusiona_runs_contiguos_y_recorta_espacios_de_borde():
+    # Dos textRun en negrita seguidos (la Docs API puede partir una misma
+    # frase en negrita en varios runs) se funden en un solo **...**; y un
+    # espacio pegado al borde de la negrita queda afuera de los `**`, porque
+    # Markdown no reconoce `** texto **` con espacio interno.
+    parrafos = [
+        _parrafo("Principales\n", style="HEADING_1"),
+        _parrafo("Tacos\n", style="HEADING_3"),
+        _parrafo("Ingredientes:\n"),
+        _parrafo_runs([("Tortillas", True), (" de maíz ", False)], list_id=None),
+        _parrafo("Paso a paso\n"),
+        _parrafo_runs(
+            [("Cocinar ", False), (" bien ", True), ("despacio\n", False)],
+        ),
+    ]
+    parrafos[3]["paragraph"]["bullet"] = {"listId": "L1"}
+    parrafos[5]["paragraph"]["bullet"] = {"listId": "L1"}
+    listas = {"L1": {"listProperties": {"nestingLevels": [{"glyphType": None}]}}}
+    completas, _ = parse_doc(_doc([_tab("Recetas", parrafos, listas)]))
+
+    receta = completas[0]
+    assert receta["ingredientes"] == ["- **Tortillas** de maíz"]
+    assert receta["paso_a_paso"] == ["- Cocinar  **bien** despacio"]

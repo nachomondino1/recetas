@@ -30,7 +30,7 @@ _Nota: 340 g de nueces mariposa en total (entre la base y el praliné)._
 1. Volcar en el molde.
 2. Hornear 35 a 40 min aprox. a 160 °C. Está lista cuando el cuchillo sale limpio.
 3. Dejar descansar unos 10–15 minutos antes de desmoldar — así no se desarma al dejar el molde, aunque tampoco conviene dejarla enfriar del todo adentro porque se puede pegar.
-4. Desmoldar sobre el plato en el que se va a servir y dejar enfriar.
+4. **Desmoldar** sobre el **plato en el que se va a servir** y dejar enfriar.
 
 ### Decoración
 1. Cubrir la torta con dulce de leche.

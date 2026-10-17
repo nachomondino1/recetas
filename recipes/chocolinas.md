@@ -11,7 +11,7 @@ doc_hash: "2c1b42fa0e03"
 - Dulce de leche — 400 g
 - Cacao amargo — 3 cucharadas
 - Chocolate amargo — 1 barra
-- Galletitas chocolina
+- Galletitas **chocolina**
 
 ## Paso a paso
 1. Mezclar el dulce de leche con la crema.
