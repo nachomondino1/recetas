@@ -1,8 +1,8 @@
 window.RECETAS_DATA = {
   "meta": {
     "schema_version": 2,
-    "generated_at": "2026-10-17T15:54:44+00:00",
-    "count": 37,
+    "generated_at": "2026-11-15T19:14:00+00:00",
+    "count": 43,
     "warnings": [
       {
         "recipe": "apple-crumble",
@@ -10,6 +10,21 @@ window.RECETAS_DATA = {
         "message": "sin dato"
       },
       {
+        "recipe": "beso-de-dama",
+        "field": "dificultad",
+        "message": "sin dato"
+      },
+      {
+        "recipe": "beso-de-dama",
+        "field": "tiempo_minutos",
+        "message": "sin dato"
+      },
+      {
+        "recipe": "beso-de-dama",
+        "field": "foto",
+        "message": "sin foto de portada"
+      },
+      {
         "recipe": "budin-de-banana",
         "field": "dificultad",
         "message": "sin dato"
@@ -80,6 +95,21 @@ window.RECETAS_DATA = {
         "message": "sin dato"
       },
       {
+        "recipe": "de-limon-sin-manteca",
+        "field": "dificultad",
+        "message": "sin dato"
+      },
+      {
+        "recipe": "de-limon-sin-manteca",
+        "field": "tiempo_minutos",
+        "message": "sin dato"
+      },
+      {
+        "recipe": "de-limon-sin-manteca",
+        "field": "foto",
+        "message": "sin foto de portada"
+      },
+      {
         "recipe": "dulces-chocolate",
         "field": "dificultad",
         "message": "sin dato"
@@ -138,6 +168,21 @@ window.RECETAS_DATA = {
         "recipe": "flan",
         "field": "tiempo_minutos",
         "message": "sin dato"
+      },
+      {
+        "recipe": "frutilla-con-ddl-y-crema-chantilly",
+        "field": "dificultad",
+        "message": "sin dato"
+      },
+      {
+        "recipe": "frutilla-con-ddl-y-crema-chantilly",
+        "field": "tiempo_minutos",
+        "message": "sin dato"
+      },
+      {
+        "recipe": "frutilla-con-ddl-y-crema-chantilly",
+        "field": "foto",
+        "message": "sin foto de portada"
       },
       {
         "recipe": "galletitas-saladas",
@@ -255,6 +300,21 @@ window.RECETAS_DATA = {
         "message": "sin dato"
       },
       {
+        "recipe": "pan-integral-con-semillas",
+        "field": "dificultad",
+        "message": "sin dato"
+      },
+      {
+        "recipe": "pan-integral-con-semillas",
+        "field": "tiempo_minutos",
+        "message": "sin dato"
+      },
+      {
+        "recipe": "pan-integral-con-semillas",
+        "field": "foto",
+        "message": "sin foto de portada"
+      },
+      {
         "recipe": "pancakes",
         "field": "dificultad",
         "message": "sin dato"
@@ -263,6 +323,21 @@ window.RECETAS_DATA = {
         "recipe": "pancakes",
         "field": "tiempo_minutos",
         "message": "sin dato"
+      },
+      {
+        "recipe": "para-bebes",
+        "field": "dificultad",
+        "message": "sin dato"
+      },
+      {
+        "recipe": "para-bebes",
+        "field": "tiempo_minutos",
+        "message": "sin dato"
+      },
+      {
+        "recipe": "para-bebes",
+        "field": "foto",
+        "message": "sin foto de portada"
       },
       {
         "recipe": "tarta-de-espinaca",
@@ -283,6 +358,16 @@ window.RECETAS_DATA = {
         "recipe": "tarta-de-frutillas",
         "field": "tiempo_minutos",
         "message": "sin dato"
+      },
+      {
+        "recipe": "tarta-de-limon",
+        "field": "dificultad",
+        "message": "sin dato"
+      },
+      {
+        "recipe": "tarta-de-limon",
+        "field": "foto",
+        "message": "sin foto de portada"
       },
       {
         "recipe": "torta-de-nuez",
@@ -330,7 +415,7 @@ window.RECETAS_DATA = {
       "foto": "images/apple-crumble/cover.jpg",
       "fecha_actualizacion": "2026-09-13",
       "fuente": "https://www.youtube.com/watch?v=KwIRgwd52Ic&t=147s",
-      "body_html": "<h2>Ingredientes</h2>\n<h3>Relleno</h3>\n<ul>\n<li>Manzanas verdes medianas, peladas y en cubos — 1,1 kg (a probar: 1,5 kg, para que quede más manzana)</li>\n<li>Azúcar — 3 cdas</li>\n<li>Manteca, apenas (solo para la sartén) — 1 cdita</li>\n<li>Esencia de vainilla — 1 cdita</li>\n<li><strong>Ralladura</strong> de limón (poca)</li>\n<li>Maicena, opcional, para espolvorear al final — 1 cdita</li>\n</ul>\n<h3>Masa crumble (base y cubierta, es la misma)</h3>\n<ul>\n<li>Harina común (o leudante; si es común, + 1 cdita de polvo de hornear) — 250 g (a probar: 3 cdas más)</li>\n<li>Sal — 1 pizca</li>\n<li>Azúcar, parte rubia para mejor color — 100 g</li>\n<li>Manteca derretida — 150 g</li>\n<li>Esencia de vainilla — 1 cdita</li>\n<li><strong>Ralladura</strong> de limón (poca)</li>\n<li><strong>Nueces</strong> partidas, un puñado (opcional)</li>\n</ul>\n<p><em>Nota: 1 limón cubre las dos ralladuras (relleno y masa).</em></p>\n<h2>Paso a paso</h2>\n<h3>Relleno (hacerlo primero, tiene que enfriarse)</h3>\n<ol>\n<li>Pelar (con el pela papas) las manzanas verdes y cortarlas en cubos.</li>\n<li>Poner un poquito de manteca en una sartén para que se derrita — muy poca, si no las manzanas quedan demasiado jugosas. <a class=\"ver-foto\" href=\"#/receta/apple-crumble/foto-relleno-2\">📷 ver foto</a></li>\n<li>Colocar las manzanas cortadas y luego el azúcar. <a class=\"ver-foto\" href=\"#/receta/apple-crumble/foto-relleno-3\">📷 ver foto</a></li>\n<li>Tapar y cocinar a fuego bajo hasta que estén cocidas pero firmes (no blandas).</li>\n<li>Fuera del fuego, sumar la vainilla y la ralladura de limón.</li>\n<li>Pasar a otro recipiente para que enfríe más rápido y descartar el jugo de cocción (si queda el jugo, se moja la base y la porción no se sostiene al cortar).</li>\n<li>Espolvorear maicena y mezclar, para que suelte menos líquido en el horno. <a class=\"ver-foto\" href=\"#/receta/apple-crumble/foto-relleno-7\">📷 ver foto</a></li>\n</ol>\n<h3>Masa crumble</h3>\n<ol>\n<li>Mezclar los secos: <strong>harina</strong>, <strong>sal</strong>, <strong>azúcar</strong> y <strong>ralladura de limón.</strong></li>\n<li>Agregar la manteca derretida y la vainilla.</li>\n<li>Arenar con los dedos hasta lograr una mezcla granulosa. <a class=\"ver-foto\" href=\"#/receta/apple-crumble/foto-masa-3\">📷 ver foto</a></li>\n</ol>\n<blockquote>\n<p>ℹ️ Punto justo: si se aprieta en el puño, se compacta en bollitos. Si no liga, sumar un poco más de manteca (depende de la harina).</p>\n</blockquote>\n<h3>Armado</h3>\n<ol>\n<li>Agarrar un molde de 20 cm, enmantecado y enharinado, o con papel manteca.</li>\n<li><strong>Presionar parte de la mezcla contra el fondo</strong> y las paredes, con la mano o una cuchara. Finita, 2 dedos de alto en los bordes.</li>\n<li>Distribuir las nueces por encima, apoyándose sobre el relleno. <a class=\"ver-foto\" href=\"#/receta/apple-crumble/foto-armado-3\">📷 ver foto</a></li>\n<li>Volcar el relleno frío y emparejar.</li>\n<li>Cubrir con el resto del crumble suelto, sin aplastar — eso es lo que da el crocante. <a class=\"ver-foto\" href=\"#/receta/apple-crumble/foto-armado-5\">📷 ver foto</a></li>\n</ol>\n<h3>Horneado</h3>\n<ol>\n<li>180 °C, 30–35 min, hasta que esté dorada.</li>\n<li>Dejar enfriar por completo antes de desmoldar. Para despegar el papel de la base, levantarla con una base de tartera o espátula grande. <a class=\"ver-foto\" href=\"#/receta/apple-crumble/foto-horneado-2\">📷 ver foto</a></li>\n</ol>\n<h3>Imágenes del paso a paso</h3>\n<p><img alt=\"Foto del paso: poner manteca en la sartén\" class=\"foto-paso\" id=\"foto-relleno-2\" src=\"images/apple-crumble/doc-04.jpg\" />\n<em class=\"foto-paso-caption\">Relleno, paso 2: poner manteca en la sartén</em></p>\n<p><img alt=\"Foto del paso: manzanas y azúcar en la sartén\" class=\"foto-paso\" id=\"foto-relleno-3\" src=\"images/apple-crumble/doc-05.jpg\" />\n<em class=\"foto-paso-caption\">Relleno, paso 3: manzanas y azúcar en la sartén</em></p>\n<p><img alt=\"Foto del paso: espolvorear maicena\" class=\"foto-paso\" id=\"foto-relleno-7\" src=\"images/apple-crumble/doc-06.jpg\" />\n<em class=\"foto-paso-caption\">Relleno, paso 7: espolvorear maicena</em></p>\n<p><img alt=\"Foto del paso: masa crumble arenada\" class=\"foto-paso\" id=\"foto-masa-3\" src=\"images/apple-crumble/doc-07.jpg\" />\n<em class=\"foto-paso-caption\">Masa crumble, paso 3: arenada con los dedos</em></p>\n<p><img alt=\"Foto del paso: nueces sobre el relleno\" class=\"foto-paso\" id=\"foto-armado-3\" src=\"images/apple-crumble/doc-08.jpg\" />\n<em class=\"foto-paso-caption\">Armado, paso 3: nueces sobre el relleno</em></p>\n<p><img alt=\"Foto del paso: crumble cubriendo el relleno\" class=\"foto-paso\" id=\"foto-armado-5\" src=\"images/apple-crumble/doc-09.jpg\" />\n<em class=\"foto-paso-caption\">Armado, paso 5: crumble cubriendo el relleno</em></p>\n<p><img alt=\"Foto del paso: recién horneada, enfriando\" class=\"foto-paso\" id=\"foto-horneado-2\" src=\"images/apple-crumble/doc-10.jpg\" />\n<em class=\"foto-paso-caption\">Horneado, paso 2: recién horneada, enfriando</em></p>\n<p><img alt=\"Resultado final\" class=\"foto-paso\" id=\"foto-resultado-1\" src=\"images/apple-crumble/doc-01.jpg\" />\n<em class=\"foto-paso-caption\">Resultado final</em></p>\n<p><img alt=\"Resultado final, porción servida\" class=\"foto-paso\" id=\"foto-resultado-2\" src=\"images/apple-crumble/doc-02.jpg\" />\n<em class=\"foto-paso-caption\">Resultado final, porción servida</em></p>\n<p><img alt=\"Resultado final, porción servida\" class=\"foto-paso\" id=\"foto-resultado-3\" src=\"images/apple-crumble/doc-03.jpg\" />\n<em class=\"foto-paso-caption\">Resultado final, porción servida</em></p>",
+      "body_html": "<h2>Ingredientes</h2>\n<h3>Relleno</h3>\n<ul>\n<li>Manzanas verdes medianas, peladas y en cubos — 1,1 kg (a probar: 1,5 kg, para que quede más manzana)</li>\n<li>Azúcar — 3 cdas</li>\n<li>Manteca, apenas (solo para la sartén) — 1 cdita</li>\n<li>Esencia de vainilla — 1 cdita</li>\n<li><strong>Ralladura</strong> de limón (poca)</li>\n<li>Maicena, opcional, para espolvorear al final — 1 cdita</li>\n</ul>\n<h3>Masa crumble (base y cubierta, es la misma)</h3>\n<ul>\n<li>Harina común (o leudante; si es común, + 1 cdita de polvo de hornear) — 250 g (a probar: 3 cdas más)</li>\n<li>Sal — 1 pizca</li>\n<li>Azúcar, parte rubia para mejor color — 100 g</li>\n<li>Manteca derretida — 150 g</li>\n<li>Esencia de vainilla — 1 cdita</li>\n<li><strong>Ralladura</strong> de limón (poca)</li>\n<li><strong>Nueces</strong> partidas, un puñado (opcional)</li>\n</ul>\n<p><em>Nota: 1 limón cubre las dos ralladuras (relleno y masa).</em></p>\n<h2>Paso a paso</h2>\n<h3>Relleno (hacerlo primero, tiene que enfriarse)</h3>\n<ol>\n<li>Pelar (con el pela papas) las manzanas verdes y cortarlas en cubos.</li>\n<li>Poner un poquito de manteca en una sartén para que se derrita — muy poca, si no las manzanas quedan demasiado jugosas. <a class=\"ver-foto\" href=\"#/receta/apple-crumble/foto-relleno-2\">📷 ver foto</a></li>\n<li>Colocar las manzanas cortadas y luego el azúcar. <a class=\"ver-foto\" href=\"#/receta/apple-crumble/foto-relleno-3\">📷 ver foto</a></li>\n<li>Tapar y cocinar a fuego bajo hasta que estén cocidas pero firmes (no blandas).</li>\n<li>Fuera del fuego, sumar la vainilla y la ralladura de limón.</li>\n<li>Pasar a otro recipiente para que enfríe más rápido y descartar el jugo de cocción (si queda el jugo, se moja la base y la porción no se sostiene al cortar).</li>\n<li>Espolvorear maicena y mezclar, para que suelte menos líquido en el horno. <a class=\"ver-foto\" href=\"#/receta/apple-crumble/foto-relleno-7\">📷 ver foto</a></li>\n</ol>\n<h3>Masa crumble</h3>\n<ol>\n<li>Mezclar los secos: <strong>harina</strong>, <strong>sal</strong>, <strong>azúcar</strong> y <strong>ralladura de limón.</strong></li>\n<li>Agregar la manteca derretida y la vainilla.</li>\n<li>Arenar con los dedos hasta lograr una mezcla granulosa. <a class=\"ver-foto\" href=\"#/receta/apple-crumble/foto-masa-3\">📷 ver foto</a></li>\n</ol>\n<blockquote>\n<p>ℹ️ Punto justo: si se aprieta en el puño, se compacta en bollitos. Si no liga, sumar un poco más de manteca (depende de la harina).</p>\n<p>ℹ️ Idea para probar: ponerle granola arriba para que quede más crocante (todavía no se probó).</p>\n</blockquote>\n<h3>Armado</h3>\n<ol>\n<li>Agarrar un molde de 20 cm, enmantecado y enharinado, o con papel manteca.</li>\n<li><strong>Presionar parte de la mezcla contra el fondo</strong> y las paredes, con la mano o una cuchara. Finita, 2 dedos de alto en los bordes.</li>\n<li>Distribuir las nueces por encima, apoyándose sobre el relleno. <a class=\"ver-foto\" href=\"#/receta/apple-crumble/foto-armado-3\">📷 ver foto</a></li>\n<li>Volcar el relleno frío y emparejar.</li>\n<li>Cubrir con el resto del crumble suelto, sin aplastar — eso es lo que da el crocante. <a class=\"ver-foto\" href=\"#/receta/apple-crumble/foto-armado-5\">📷 ver foto</a></li>\n</ol>\n<h3>Horneado</h3>\n<ol>\n<li>180 °C, 30–35 min, hasta que esté dorada.</li>\n<li>Dejar enfriar por completo antes de desmoldar. Para despegar el papel de la base, levantarla con una base de tartera o espátula grande. <a class=\"ver-foto\" href=\"#/receta/apple-crumble/foto-horneado-2\">📷 ver foto</a></li>\n</ol>\n<h3>Imágenes del paso a paso</h3>\n<p><img alt=\"Foto del paso: poner manteca en la sartén\" class=\"foto-paso\" id=\"foto-relleno-2\" src=\"images/apple-crumble/doc-04.jpg\" />\n<em class=\"foto-paso-caption\">Relleno, paso 2: poner manteca en la sartén</em></p>\n<p><img alt=\"Foto del paso: manzanas y azúcar en la sartén\" class=\"foto-paso\" id=\"foto-relleno-3\" src=\"images/apple-crumble/doc-05.jpg\" />\n<em class=\"foto-paso-caption\">Relleno, paso 3: manzanas y azúcar en la sartén</em></p>\n<p><img alt=\"Foto del paso: espolvorear maicena\" class=\"foto-paso\" id=\"foto-relleno-7\" src=\"images/apple-crumble/doc-06.jpg\" />\n<em class=\"foto-paso-caption\">Relleno, paso 7: espolvorear maicena</em></p>\n<p><img alt=\"Foto del paso: masa crumble arenada\" class=\"foto-paso\" id=\"foto-masa-3\" src=\"images/apple-crumble/doc-07.jpg\" />\n<em class=\"foto-paso-caption\">Masa crumble, paso 3: arenada con los dedos</em></p>\n<p><img alt=\"Foto del paso: nueces sobre el relleno\" class=\"foto-paso\" id=\"foto-armado-3\" src=\"images/apple-crumble/doc-08.jpg\" />\n<em class=\"foto-paso-caption\">Armado, paso 3: nueces sobre el relleno</em></p>\n<p><img alt=\"Foto del paso: crumble cubriendo el relleno\" class=\"foto-paso\" id=\"foto-armado-5\" src=\"images/apple-crumble/doc-09.jpg\" />\n<em class=\"foto-paso-caption\">Armado, paso 5: crumble cubriendo el relleno</em></p>\n<p><img alt=\"Foto del paso: recién horneada, enfriando\" class=\"foto-paso\" id=\"foto-horneado-2\" src=\"images/apple-crumble/doc-10.jpg\" />\n<em class=\"foto-paso-caption\">Horneado, paso 2: recién horneada, enfriando</em></p>\n<p><img alt=\"Resultado final\" class=\"foto-paso\" id=\"foto-resultado-1\" src=\"images/apple-crumble/doc-01.jpg\" />\n<em class=\"foto-paso-caption\">Resultado final</em></p>\n<p><img alt=\"Resultado final, porción servida\" class=\"foto-paso\" id=\"foto-resultado-2\" src=\"images/apple-crumble/doc-02.jpg\" />\n<em class=\"foto-paso-caption\">Resultado final, porción servida</em></p>\n<p><img alt=\"Resultado final, porción servida\" class=\"foto-paso\" id=\"foto-resultado-3\" src=\"images/apple-crumble/doc-03.jpg\" />\n<em class=\"foto-paso-caption\">Resultado final, porción servida</em></p>",
       "momento": null,
       "subcategoria": null,
       "tipo_bebida": null,
@@ -355,6 +440,26 @@ window.RECETAS_DATA = {
       "subcategoria": null,
       "tipo_bebida": null,
       "tipo_merienda": null,
+      "tipo_postre": null
+    },
+    {
+      "id": "beso-de-dama",
+      "titulo": "Beso de dama",
+      "categorias": [
+        "🌆 meriendas"
+      ],
+      "dificultad": null,
+      "tiempo_minutos": null,
+      "tiempo_minutos_max": null,
+      "porciones": null,
+      "foto": null,
+      "fecha_actualizacion": null,
+      "fuente": "libro de Donato Santis",
+      "body_html": "<p>Ganache de referencia: <a href=\"https://www.youtube.com/watch?v=2XDpvbk6LF8\">https://www.youtube.com/watch?v=2XDpvbk6LF8</a></p>\n<h2>Ingredientes</h2>\n<h3>Masa</h3>\n<ul>\n<li>Harina 0000 — 200 g</li>\n<li>Cacao en polvo — 20 g</li>\n<li>Azúcar — 150 g</li>\n<li>Avellanas tostadas y molidas — 150 g</li>\n<li>Manteca — 180 g (la receta original; yo le puse 80 g)</li>\n</ul>\n<h3>Relleno</h3>\n<ul>\n<li>Crema de leche — 150 g</li>\n<li>Chocolate amargo — 150 g</li>\n</ul>\n<h2>Paso a paso</h2>\n<h3>Masa</h3>\n<ol>\n<li>Precalentar el horno a 170 °C.</li>\n<li>Procesar las avellanas con la minipimer.</li>\n<li>En un bowl poner la harina, el cacao, el azúcar y las avellanas molidas.</li>\n<li>Integrar la manteca en pomada hasta lograr una mezcla homogénea.</li>\n<li>Hacer bollitos de aproximadamente 10 g cada uno.</li>\n<li>Colocarlos en una placa de horno cubierta con papel manteca enmantecado y enharinado, y aplastarlos levemente.</li>\n<li>Espolvorear las piezas con harina y cocinarlas por 20 minutos.</li>\n<li>Retirarlas y dejarlas enfriar.</li>\n</ol>\n<h3>Relleno</h3>\n<ol>\n<li>Cortar el chocolate en trozos y colocarlos en un bowl de vidrio.</li>\n<li>Calentar la crema en una cacerola.</li>\n<li>Volcar la crema sobre el chocolate y batir hasta lograr la consistencia deseada.</li>\n</ol>\n<h3>Armado</h3>\n<ol>\n<li>Untar la parte plana de una pieza con la ganache tibia y pegarla con la parte plana de otra.</li>\n</ol>",
+      "momento": null,
+      "subcategoria": null,
+      "tipo_bebida": null,
+      "tipo_merienda": "🍪 alfajores",
       "tipo_postre": null
     },
     {
@@ -498,6 +603,26 @@ window.RECETAS_DATA = {
       "tipo_postre": null
     },
     {
+      "id": "de-limon-sin-manteca",
+      "titulo": "Galletas de limón (sin manteca)",
+      "categorias": [
+        "🌆 meriendas"
+      ],
+      "dificultad": null,
+      "tiempo_minutos": null,
+      "tiempo_minutos_max": null,
+      "porciones": null,
+      "foto": null,
+      "fecha_actualizacion": null,
+      "fuente": "https://www.youtube.com/watch?v=P6zj3e-6f78",
+      "body_html": "<p><em>(En el Doc esta receta trae también una variante de galletas de avena, manzana y banana, que va al final de cada sección.)</em></p>\n<h2>Ingredientes</h2>\n<h3>Galletas de limón</h3>\n<ul>\n<li>Huevo — 1</li>\n<li>Azúcar — 1/2 taza</li>\n<li>Aceite neutro (o común) — 1/4 taza</li>\n<li>Esencia de vainilla — 1 cucharadita</li>\n<li>Ralladura de 1 limón</li>\n<li>Jugo de medio limón</li>\n<li>Harina leudante — 2 tazas</li>\n<li>Opcional: 1 cucharadita de agua si la masa queda muy seca, o un poco más de harina si queda muy pegajosa</li>\n</ul>\n<h3>Glasé de limón</h3>\n<ul>\n<li>Azúcar impalpable</li>\n<li>Jugo de la otra mitad del limón (agregarlo de a poco hasta lograr una consistencia elástica)</li>\n</ul>\n<h3>Variante: avena, manzana y banana</h3>\n<ul>\n<li>Banana — 1</li>\n<li>Manzana rallada — 1</li>\n<li>Copos de avena — 100 g</li>\n</ul>\n<h2>Paso a paso</h2>\n<h3>Galletas de limón</h3>\n<ol>\n<li>Base húmeda: en un bol, batir ligeramente el huevo con la media taza de azúcar.</li>\n<li>Líquidos y aromas: incorporar el aceite, la esencia de vainilla, la ralladura de limón y el jugo de medio limón. Batir un poco más para integrar.</li>\n<li>Agregar la harina leudante de a poco e integrar con una espátula, un cornet o un tenedor.</li>\n<li>Terminar de unir la masa con las manos, sin amasar, solo hasta formar el bollo.</li>\n<li>Envolver en papel film o en una bolsita y llevar a la heladera aproximadamente 1 hora.</li>\n<li>Estirar la masa sobre una mesada espolvoreada con harina y cortar las galletas con un cortante circular (o en cuadrados con un cuchillo).</li>\n<li>Colocar las galletas en una placa enmantecada y enharinada.</li>\n<li>Hornear en horno precalentado a 180 °C durante 15 a 17 minutos. Retirar y dejar enfriar.</li>\n<li>Glasé: mezclar el azúcar impalpable con el jugo de la otra mitad del limón hasta obtener una consistencia elástica y decorar las galletas por encima (se puede chorrear con un tenedor).</li>\n</ol>\n<h3>Variante: avena, manzana y banana</h3>\n<ol>\n<li>Pisar la banana con un tenedor en un bol hasta formar un puré.</li>\n<li>Sumar la manzana rallada y mezclar bien.</li>\n<li>Agregar los copos de avena y mezclar con el tenedor hasta integrar. Terminar de compactar la preparación con las manos.</li>\n<li>Usar un molde o aro redondo sobre una placa para horno, colocar porciones de la mezcla y presionar con una cuchara o los dedos para darles forma de galleta.</li>\n<li>Cocinar en horno precalentado a 170 °C durante 25 minutos.</li>\n</ol>",
+      "momento": null,
+      "subcategoria": null,
+      "tipo_bebida": null,
+      "tipo_merienda": "🍪 cookies",
+      "tipo_postre": null
+    },
+    {
       "id": "dulces-chocolate",
       "titulo": "Dulces: Chocolate",
       "categorias": [
@@ -616,6 +741,26 @@ window.RECETAS_DATA = {
       "tipo_bebida": null,
       "tipo_merienda": null,
       "tipo_postre": "🥚 huevo"
+    },
+    {
+      "id": "frutilla-con-ddl-y-crema-chantilly",
+      "titulo": "Tarta de frutilla con DDL y crema chantilly",
+      "categorias": [
+        "🍨 postres"
+      ],
+      "dificultad": null,
+      "tiempo_minutos": null,
+      "tiempo_minutos_max": null,
+      "porciones": null,
+      "foto": null,
+      "fecha_actualizacion": null,
+      "fuente": null,
+      "body_html": "<p>Videos de referencia de la tarta: <a href=\"https://www.youtube.com/watch?v=gV5pYGfVePA\">https://www.youtube.com/watch?v=gV5pYGfVePA</a> y <a href=\"https://www.youtube.com/watch?v=RHOrDiUiQ6I\">https://www.youtube.com/watch?v=RHOrDiUiQ6I</a>. Crema chantilly: <a href=\"https://www.youtube.com/watch?v=bGY4EH3NIsw\">https://www.youtube.com/watch?v=bGY4EH3NIsw</a>.</p>\n<p><em>(Es la versión \"Tarta Primavera\". La clásica con crema pastelera es <a href=\"#/receta/tarta-de-frutillas\">Tarta de frutillas</a>.)</em></p>\n<h2>Ingredientes</h2>\n<h3>Masa sablée</h3>\n<ul>\n<li>Harina 0000 — 200 g</li>\n<li>Sal — 1 cdita (¼ tsp)</li>\n<li>Manteca — 70 g</li>\n<li>Azúcar impalpable — 70 g</li>\n<li>Esencia de vainilla — 1 cdita</li>\n<li>Huevo — 1 unidad</li>\n</ul>\n<h3>Relleno</h3>\n<ul>\n<li>Dulce de leche repostero — 200 g</li>\n<li>Crema de leche — 200 g</li>\n<li>Azúcar impalpable — 20 g</li>\n<li>Esencia de vainilla, c/n</li>\n<li>Frutillas — 500 g</li>\n</ul>\n<h2>Paso a paso</h2>\n<h3>Masa sablée</h3>\n<p>_Fuente: <a href=\"https://www.youtube.com/watch?v=Dsb0C9QIqgU_\">https://www.youtube.com/watch?v=Dsb0C9QIqgU_</a></p>\n<ol>\n<li>Agregar la sal a la harina y tamizar en un bol.</li>\n<li>Cortar la manteca fría en cubos y agregarla a la harina.</li>\n<li>Amasar con batidora, sin amasar en ningún momento, hasta cubrir la harina con grasa (impide que se desarrolle gluten).</li>\n<li>Agregar azúcar y, si se quiere, ralladura de limón.</li>\n<li>Agregar el huevo y la esencia de vainilla, integrando sin amasar.</li>\n<li>Unir los ingredientes con la mano, sin amasar.</li>\n<li>Estirar entre dos papeles manteca con el palo de amasar.</li>\n<li>Llevar a la heladera por lo menos 2 horas.</li>\n<li>Cubrir el molde de tarta (fonzar), pinchar la base con un tenedor y llevar 30 minutos al freezer.</li>\n<li>Precalentar el horno a 160 °C y cocinar 22 a 25 minutos.</li>\n</ol>\n<h3>Relleno</h3>\n<ol>\n<li>Cubrir la masa cocida con una capa de dulce de leche repostero y reservar.</li>\n<li>Crema chantilly: en un bol, colocar la crema de leche, el azúcar impalpable y la esencia de vainilla. Batir hasta que esté bien firme.</li>\n<li>Colocar la crema sobre la tarta, alisar bien con una espátula y llevar a la heladera.</li>\n</ol>",
+      "momento": null,
+      "subcategoria": null,
+      "tipo_bebida": null,
+      "tipo_merienda": null,
+      "tipo_postre": "🍎 frutal"
     },
     {
       "id": "galletitas-saladas",
@@ -878,6 +1023,26 @@ window.RECETAS_DATA = {
       "tipo_postre": null
     },
     {
+      "id": "pan-integral-con-semillas",
+      "titulo": "Pan integral con semillas",
+      "categorias": [
+        "🌆 meriendas"
+      ],
+      "dificultad": null,
+      "tiempo_minutos": null,
+      "tiempo_minutos_max": null,
+      "porciones": null,
+      "foto": null,
+      "fecha_actualizacion": null,
+      "fuente": "https://www.youtube.com/watch?v=a_zBZD8QQzA",
+      "body_html": "<h2>Ingredientes</h2>\n<ul>\n<li>Harina — 500 g en total (250 g común y 250 g integral)</li>\n<li>Agua a temperatura ambiente — 350 ml</li>\n<li>Levadura seca — 7 g (o 20 g de fresca). Usé la bolsita de 10 g</li>\n<li>Azúcar — 1 cucharada</li>\n<li>Sal — 2 cucharaditas chicas al ras</li>\n<li>Aceite (girasol, maíz u oliva) — 1 cucharada</li>\n</ul>\n<h3>Semillas</h3>\n<ul>\n<li>Para hidratar en el agua: chía — 2 cucharadas, lino — 2 cucharadas</li>\n<li>Para agregar directo a la masa: sésamo — 2 cucharadas, girasol — 3 cucharadas, zapallo — 2 cucharadas</li>\n<li>Opcional para decorar: semillas extra para la superficie y un poco de agua, leche o huevo para pincelar</li>\n</ul>\n<h2>Paso a paso</h2>\n<h3>Fermento</h3>\n<ol>\n<li>En una jarra con el agua, poner el azúcar, la levadura, un poco de la harina total, la chía y el lino.</li>\n<li>Mezclar bien, tapar y dejar espumar/fermentar unos 15 minutos.</li>\n</ol>\n<h3>Masa</h3>\n<ol>\n<li>En un bol grande mezclar la harina común y la integral. Agregar el sésamo, el girasol, las semillas de zapallo y la sal.</li>\n<li>Hacer un hueco en el centro y verter el fermento con las semillas hidratadas.</li>\n<li>Integrar primero con una espátula y luego amasar con las manos hasta formar un bollo uniforme. Si está muy húmeda o muy seca, ajustar con un toque mínimo de agua o de harina.</li>\n<li>Agregar la cucharada de aceite y volver a integrar.</li>\n</ol>\n<h3>Primer levado</h3>\n<ol>\n<li>Amasar bien sobre la mesa.</li>\n<li>Colocar el bollo en un bol aceitado, cubrirlo y dejarlo leudar hasta que duplique su volumen (entre 30 minutos y 1 hora).</li>\n</ol>\n<h3>Armado y segundo levado</h3>\n<ol>\n<li>Estirar levemente la masa con el palote (sin dejarla muy fina) sobre la mesa enharinada y enrollarla dándole forma alargada.</li>\n<li>Colocarla en un molde de budinera (de unos 26 cm) aceitado y con papel manteca también aceitado. Usar papel manteca.</li>\n<li>Dejar leudar dentro del molde hasta que crezca bien, aproximadamente 1 hora. Es el levado más importante.</li>\n</ol>\n<h3>Cocción</h3>\n<ol>\n<li>Pincelar o rociar la superficie con agua (también sirve leche o huevo) y espolvorear más semillas por encima.</li>\n<li>Hornear a 170 °C (horno precalentado) de 50 minutos a 1 hora.</li>\n<li>Pinchar con un palillo o cuchillo para verificar que salga limpio, retirar del horno y dejar enfriar antes de desmoldar.</li>\n<li>Cortar en rodajas y guardar en bolsa ziploc en el freezer.</li>\n</ol>",
+      "momento": null,
+      "subcategoria": null,
+      "tipo_bebida": null,
+      "tipo_merienda": "panificados",
+      "tipo_postre": null
+    },
+    {
       "id": "pancakes",
       "titulo": "Pancakes",
       "categorias": [
@@ -915,6 +1080,26 @@ window.RECETAS_DATA = {
       "subcategoria": null,
       "tipo_bebida": null,
       "tipo_merienda": null,
+      "tipo_postre": null
+    },
+    {
+      "id": "para-bebes",
+      "titulo": "Galletas para bebés",
+      "categorias": [
+        "🌆 meriendas"
+      ],
+      "dificultad": null,
+      "tiempo_minutos": null,
+      "tiempo_minutos_max": null,
+      "porciones": null,
+      "foto": null,
+      "fecha_actualizacion": null,
+      "fuente": "https://www.youtube.com/watch?v=lySp9Dwr3vA",
+      "body_html": "<p>Videos de referencia:\n- Banana y almendras: <a href=\"https://www.youtube.com/shorts/Tz8MJvwrSt4\">https://www.youtube.com/shorts/Tz8MJvwrSt4</a>\n- Naranja: <a href=\"https://www.youtube.com/shorts/P6w-Mr5y67M\">https://www.youtube.com/shorts/P6w-Mr5y67M</a> y <a href=\"https://www.youtube.com/watch?v=lySp9Dwr3vA\">https://www.youtube.com/watch?v=lySp9Dwr3vA</a></p>\n<p><em>(La receta escrita es la de naranja. La de banana y almendras por ahora es solo el video.)</em></p>\n<h2>Ingredientes</h2>\n<ul>\n<li>Harina — la necesaria para formar la masa</li>\n<li>Polvo leudante — 1 cucharadita</li>\n<li>Jugo de naranja — 60 g</li>\n<li>Yema de huevo — 1</li>\n<li>Aceite — 1 cucharada (en el video usan aceite de oliva)</li>\n</ul>\n<h2>Paso a paso</h2>\n<ol>\n<li>Mezclar los secos: en un bol, colocar la harina, agregar el polvo leudante y mezclar un poco.</li>\n<li>Agregar los líquidos: incorporar los 60 g de jugo de naranja, la yema y el aceite.</li>\n<li>Integrar con un tenedor hasta que comience a unirse.</li>\n<li>Pasar la preparación a la mesada y amasar suavemente hasta unificar. Si hace falta, espolvorear más harina para que no se pegue.</li>\n<li>Estirar con el palote hasta que quede de un grosor uniforme.</li>\n<li>Cortar con cortantes de formas (animalitos o figuras divertidas).</li>\n<li>Colocar las galletas en una placa y hornear hasta que estén listas.</li>\n</ol>",
+      "momento": null,
+      "subcategoria": null,
+      "tipo_bebida": null,
+      "tipo_merienda": "🍪 cookies",
       "tipo_postre": null
     },
     {
@@ -991,6 +1176,26 @@ window.RECETAS_DATA = {
       "fecha_actualizacion": "2026-09-28",
       "fuente": "https://www.youtube.com/watch?v=UwuSq9yP2Zk",
       "body_html": "<p>Hay varios tipos de tarta de frutillas. Esta es la clásica con crema pastelera (Tarte aux Fraises): el estándar de la pastelería francesa tradicional, con masa sablée o sucrée, relleno de crème pâtissière y frutillas de cubierta con brillo (nappage).</p>\n<p><em>(Existe también una versión con crema chantilly — \"Tarta Primavera\" — con base crocante o bizcochuelo y crema de leche montada aromatizada con vainilla y azúcar impalpable. Esta receta no es esa.)</em></p>\n<h2>Ingredientes</h2>\n<p><em>(para una tartera de 30 cm aprox.)</em></p>\n<h3>Masa dulce clásica (sablée)</h3>\n<ul>\n<li>Harina 0000 — 200 g</li>\n<li>Sal — 1 cdita (¼ tsp)</li>\n<li>Manteca — 70 g</li>\n<li>Azúcar impalpable — 70 g</li>\n<li>Esencia de vainilla — 1 cdita</li>\n<li>Huevo — 1 unidad</li>\n</ul>\n<h3>Crema pastelera de yemas</h3>\n<ul>\n<li>Leche — 600 ml</li>\n<li>Azúcar blanca común — 140 g</li>\n<li>Huevos — 2 (la receta original usa 4 yemas; se usan 2 huevos enteros para no desperdiciar)</li>\n<li>Maicena, tamizada — 60 g</li>\n<li>Esencia de vainilla — 1 cdita</li>\n<li>Ralladura fina de limón (aprox. medio limón) — 1 cdita</li>\n</ul>\n<h3>Armado y terminación</h3>\n<ul>\n<li>Masa dulce clásica horneada y fría — 1</li>\n<li>Crema pastelera de yemas fría y batida</li>\n<li>Frutillas frescas — 650 a 750 g</li>\n</ul>\n<h2>Paso a paso</h2>\n<h3>Masa sablée</h3>\n<p>_Fuente: <a href=\"https://www.youtube.com/watch?v=Dsb0C9QIqgU_\">https://www.youtube.com/watch?v=Dsb0C9QIqgU_</a></p>\n<ol>\n<li>Agregar la sal a la harina y tamizar en un bol.</li>\n<li>Cortar la manteca fría en cubos y agregarla a la harina.</li>\n<li>Amasar con batidora, sin amasar en ningún momento, hasta cubrir la harina con grasa (impide que se desarrolle gluten).</li>\n<li>Agregar azúcar y, si se quiere, ralladura de limón.</li>\n<li>Agregar el huevo y la esencia de vainilla, integrando sin amasar.</li>\n<li>Unir los ingredientes con la mano, sin amasar.</li>\n<li>Estirar entre dos papeles manteca con el palo de amasar.</li>\n<li>Llevar a la heladera por lo menos 2 horas.</li>\n<li>Cubrir el molde de tarta (fonzar), pinchar la base con un tenedor y llevar 30 minutos al freezer.</li>\n<li>Precalentar el horno a 160 °C y cocinar 22 a 25 minutos.</li>\n</ol>\n<blockquote>\n<p>ℹ️ Variante que también funcionó: 300 g harina 0000, un toque de sal, 150 g manteca fría, 100 g azúcar impalpable, 1 huevo y 1 cucharada de esencia de vainilla. Integrar azúcar y manteca, agregar el huevo y la vainilla, agregar harina y sal tamizados, armar un bollo, cubrir con film y llevar 2 horas a frío. Estirar a 2 mm de espesor y llevar a frío de nuevo, fonzar el molde y llevar a frío otra vez. Cocinar a horno mínimo 180 °C, 20 a 25 minutos, chequeando que no se infle (horneado a blanco o pinchando la masa antes de meterla al horno).</p>\n</blockquote>\n<h3>Opción rápida en microondas (preferida)</h3>\n<p>_Fuente: <a href=\"https://www.youtube.com/watch?v=PukiTXTVCB0_\">https://www.youtube.com/watch?v=PukiTXTVCB0_</a></p>\n<ol>\n<li>En un bowl de vidrio (va al microondas), volcar casi toda la leche, agregar el azúcar y el gusto deseado (vainilla, limón o naranja). Llevar al microondas 2 minutos a potencia máxima.</li>\n<li>Mientras tanto, en otro bowl unir lo que quedó de la leche con el huevo y batir. Agregar la maicena tamizada y batir hasta que no queden grumos.</li>\n<li>Agregar esta segunda preparación a la leche caliente en forma de hilo, revolviendo constantemente.</li>\n<li>Llevar al microondas 1 minuto a potencia máxima, chequear la textura, revolver y llevar un rato más.</li>\n<li>Llevar al microondas 1 minuto más a potencia máxima y batir de nuevo hasta que esté homogénea y lisa.</li>\n</ol>\n<h3>Opción tradicional en cacerola</h3>\n<p>_Fuente: <a href=\"https://www.youtube.com/watch?v=UwuSq9yP2Zk_\">https://www.youtube.com/watch?v=UwuSq9yP2Zk_</a></p>\n<ol>\n<li>En el bowl de la batidora: separar 4 yemas de las claras, agregar la azúcar y batir, agregar la maicena y batir.</li>\n<li>En una cacerola aparte, llevar la leche a fuego fuerte y, cuando hierve, sacarla del fuego.</li>\n<li>Agregar la leche en forma de hilo al bowl de la batidora, batiendo mientras tanto.</li>\n<li>Volcar la mezcla en la cacerola, tamizándola. A fuego medio, seguir batiendo.</li>\n<li>Cuando empiece a tomar consistencia, sacarla del fuego para integrarla bien sin que el fuego apure. Cuando esté homogénea, volver al fuego y cocinar hasta que hierva (se vean burbujas).</li>\n<li>Al sacarla, agregar esencia de vainilla.</li>\n<li>Pasar a un bowl para llevar a la heladera, con un film que toque la crema (si no, se forma una capa dura arriba). Llevar al freezer por 6 horas y luego batir hasta que esté cremosa de nuevo.</li>\n</ol>\n<h3>Armado</h3>\n<ol>\n<li>Sacar la masa cocida del horno, sacarla del molde y quitarle el papel manteca antes de rellenar.</li>\n<li>Rellenar la tarta con la crema pastelera.</li>\n<li>Cortar las frutillas en láminas y colocarlas encima de la crema.</li>\n</ol>",
+      "momento": null,
+      "subcategoria": null,
+      "tipo_bebida": null,
+      "tipo_merienda": null,
+      "tipo_postre": "🍎 frutal"
+    },
+    {
+      "id": "tarta-de-limon",
+      "titulo": "Tarta de limón",
+      "categorias": [
+        "🍨 postres"
+      ],
+      "dificultad": null,
+      "tiempo_minutos": 75,
+      "tiempo_minutos_max": null,
+      "porciones": null,
+      "foto": null,
+      "fecha_actualizacion": null,
+      "fuente": "libro Puro Dolce de Donato Santis",
+      "body_html": "<p>Tiempos: preparación (masa 20 min, relleno 10 min) y cocción (15 min + 25 min), en total 75 minutos.</p>\n<h2>Ingredientes</h2>\n<h3>Masa (se hace en 20 min)</h3>\n<ul>\n<li>Harina 0000 tamizada — 200 g</li>\n<li>Azúcar impalpable — 50 g</li>\n<li>Manteca fría — 80 g (originalmente eran 110 g)</li>\n<li>Agua o leche — 2 o 3 cucharadas</li>\n</ul>\n<h3>Relleno (se hace en 10 min)</h3>\n<ul>\n<li>Huevos — 4</li>\n<li>Azúcar — 200 g (originalmente eran 300 g)</li>\n<li>Ralladura de limón — 4 cucharadas (aprox. 2 limones)</li>\n<li>Jugo de limón — 50 ml (aprox. 1 limón)</li>\n<li>Harina 0000 tamizada — 25 g</li>\n<li>Polvo de hornear — 1/2 cucharadita</li>\n</ul>\n<h2>Paso a paso</h2>\n<h3>Masa</h3>\n<ol>\n<li>Tamizar nuevamente la harina con el azúcar.</li>\n<li>Combinarlas con la manteca en cubos pequeños.</li>\n<li>Agregar el agua o la leche.</li>\n<li>Amasar rápido hasta lograr el bollo.</li>\n<li>Cubrir el molde con la masa.</li>\n<li>Reservar en la heladera durante 30 minutos.</li>\n<li>Cocinar en horno precalentado a 175 °C por 15 minutos, o hasta que esté dorada.</li>\n</ol>\n<h3>Relleno</h3>\n<ol>\n<li>Batir los huevos con el azúcar, la ralladura y el jugo de limón.</li>\n<li>Agregar la harina tamizada con el polvo de hornear.</li>\n<li>Verter en la tarta precocida.</li>\n<li>Cocinar a la misma temperatura por 20 a 25 minutos.</li>\n<li>Dejar enfriar y espolvorear con azúcar impalpable.</li>\n</ol>",
       "momento": null,
       "subcategoria": null,
       "tipo_bebida": null,

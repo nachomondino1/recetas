@@ -47,6 +47,8 @@ _Nota: 1 limón cubre las dos ralladuras (relleno y masa)._
 
 > ℹ️ Punto justo: si se aprieta en el puño, se compacta en bollitos. Si no liga, sumar un poco más de manteca (depende de la harina).
 
+> ℹ️ Idea para probar: ponerle granola arriba para que quede más crocante (todavía no se probó).
+
 ### Armado
 1. Agarrar un molde de 20 cm, enmantecado y enharinado, o con papel manteca.
 2. **Presionar parte de la mezcla contra el fondo** y las paredes, con la mano o una cuchara. Finita, 2 dedos de alto en los bordes.
