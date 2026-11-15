@@ -48,6 +48,7 @@
   var state = {
     categoria: null, // null = "Todas"; si no, un único valor (navbar = selección simple)
     dificultades: new Set(),
+    tiempos: new Set(), // claves de TRAMOS_TIEMPO
     subfiltro: new Set(), // valores del campo de SUBFILTROS[state.categoria]
     orden: "tiempo-asc",
   };
@@ -138,7 +139,28 @@
   // en la fila de resultados, junto al conteo.
   var dificultadesDisponibles = [];
   var menuAbierto = null; // "categoria" | "subcategoria" | "dificultad" | "orden" | null
-  var PILLS = ["categoria", "subcategoria", "dificultad"];
+  var PILLS = ["categoria", "subcategoria", "dificultad", "tiempo"];
+  // Tramos de "cuánto te lleva". Se usa el tiempo máximo si la receta trae rango
+  // (para que "Hasta 1 h" no prometa de más). Las recetas sin tiempo cargado tienen
+  // su propia ficha: un dato sin soporte no se fuerza a un tramo (ver DECISIONS.md).
+  var TRAMOS_TIEMPO = [
+    { k: "hasta30", texto: "Hasta 30 min", test: function (m) { return m <= 30; } },
+    { k: "31-60", texto: "31 a 60 min", test: function (m) { return m > 30 && m <= 60; } },
+    { k: "61-120", texto: "1 a 2 h", test: function (m) { return m > 60 && m <= 120; } },
+    { k: "mas120", texto: "Más de 2 h", test: function (m) { return m > 120; } },
+    { k: "sin-dato", texto: "Sin dato", test: null },
+  ];
+  function tramoDe(receta) {
+    var m = receta.tiempo_minutos_max != null ? receta.tiempo_minutos_max : receta.tiempo_minutos;
+    if (m == null) return "sin-dato";
+    for (var i = 0; i < TRAMOS_TIEMPO.length - 1; i++) if (TRAMOS_TIEMPO[i].test(m)) return TRAMOS_TIEMPO[i].k;
+    return "sin-dato";
+  }
+  function tramosDisponibles() {
+    var presentes = {};
+    RECETAS.forEach(function (r) { presentes[tramoDe(r)] = true; });
+    return TRAMOS_TIEMPO.filter(function (t) { return presentes[t.k]; });
+  }
   var ORDEN_OPCIONES = [
     { valor: "tiempo-asc", texto: "Tiempo: menor a mayor", corto: "Tiempo ↑" },
     { valor: "tiempo-desc", texto: "Tiempo: mayor a menor", corto: "Tiempo ↓" },
@@ -165,6 +187,18 @@
         activa: function (v) { return (state.categoria || TODAS) === v; },
         elegir: function (v) { state.categoria = v === TODAS ? null : v; state.subfiltro.clear(); },
         resumen: state.categoria ? capitalize(state.categoria) : "Categoría",
+      };
+    }
+    if (id === "tiempo") {
+      var tramos = tramosDisponibles();
+      var setT = state.tiempos;
+      var textoDe = function (k) { return TRAMOS_TIEMPO.filter(function (t) { return t.k === k; })[0].texto; };
+      return {
+        titulo: "Tiempo", unica: false, set: setT, cuenta: setT.size,
+        resumen: setT.size === 0 ? "Tiempo" : setT.size === 1 ? textoDe(Array.from(setT)[0]) : "Tiempo · " + setT.size,
+        opciones: tramos.map(function (t) { return { valor: t.k, texto: t.texto }; }),
+        activa: function (v) { return setT.has(v); },
+        elegir: function (v) { if (setT.has(v)) setT.delete(v); else setT.add(v); },
       };
     }
     var esSub = id === "subcategoria";
@@ -330,6 +364,7 @@
       if (state.dificultades.size > 0) {
         if (!r.dificultad || !state.dificultades.has(r.dificultad)) return false;
       }
+      if (state.tiempos.size > 0 && !state.tiempos.has(tramoDe(r))) return false;
       if (state.subfiltro.size > 0) {
         var sf = SUBFILTROS[quitarEmojiInicial(state.categoria || "")];
         var valor = sf ? r[sf.campo] : null;
@@ -419,7 +454,7 @@
   }
 
   function haySeleccionActiva() {
-    return !!state.categoria || state.dificultades.size > 0 || state.subfiltro.size > 0;
+    return !!state.categoria || state.dificultades.size > 0 || state.tiempos.size > 0 || state.subfiltro.size > 0;
   }
 
   function renderGrid() {
@@ -440,7 +475,7 @@
   // "Limpiar filtros (N)" cuenta todo lo que difiere del valor por defecto
   // (categoría distinta de "Todas", subcategorías y dificultades elegidas).
   function renderFiltrosEstado() {
-    var n = (state.categoria ? 1 : 0) + state.dificultades.size + state.subfiltro.size;
+    var n = (state.categoria ? 1 : 0) + state.dificultades.size + state.tiempos.size + state.subfiltro.size;
     els.limpiarFiltros.hidden = n === 0;
     els.limpiarN.textContent = String(n);
   }
@@ -719,6 +754,7 @@
       e.preventDefault();
       state.categoria = null;
       state.dificultades.clear();
+      state.tiempos.clear();
       state.subfiltro.clear();
       cerrarMenu();
       renderTodo();

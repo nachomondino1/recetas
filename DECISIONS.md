@@ -411,3 +411,13 @@ El script agrupa las fotos por receta reusando el mismo criterio que `_agrupar_r
 **Qué se corrigió del playbook:** el usuario recordaba que "el orden va afuera de los filtros, con el símbolo" estaba en el playbook; solo estaba la mitad (el conteo y el orden en una fila). Se agregaron a §6 las reglas que faltaban: el orden no es un filtro (va en la fila de resultados con ícono), la barra lleva la palabra "Filtros", compacto sin card, la categoría como píldora cuando el sitio es una sola lista, el filtro dependiente con nombre estable "Subcategoría", y el menú como hermano de la fila que desliza (un menú hijo se recorta con `overflow-x: auto`).
 
 **Sin cambios de comportamiento de datos:** el filtrado es el mismo (`recetasFiltradas`); una receta sin `dificultad` queda fuera cuando se filtra por dificultad (hoy muchas dicen "Sin dato"), que es el comportamiento anterior.
+
+## 2026-11-15 — Filtro por tiempo ("cuánto te lleva")
+
+**Pedido del usuario:** agregar un filtro por el tiempo que lleva cada receta.
+
+**Qué se hizo:** una cuarta píldora, "Tiempo", con el mismo formato que las otras (menú de fichas, multi-selección, OR entre tramos, cuenta en "Limpiar filtros (N)"). Tramos discretos y no slider (regla del playbook de diseño): Hasta 30 min · 31 a 60 min · 1 a 2 h · Más de 2 h · **Sin dato**. Si la receta trae rango (`tiempo_minutos_max`) se clasifica por el máximo. El menú muestra solo los tramos con al menos una receta.
+
+**Limitación real, de datos y no de código:** hoy **solo 8 de las 43 recetas tienen tiempo cargado** (35 dicen "Sin dato"), así que filtrar por un tramo deja pocas recetas. Por eso existe la ficha "Sin dato": las recetas sin tiempo no se fuerzan a un tramo ni se esconden sin aviso. La mejora real es completar el campo "Tiempo:" en el Google Doc de cada receta; el filtro se vuelve útil solo a medida que eso pase.
+
+**Generalizable, agregado a `DESIGN_PLAYBOOK_unificado.md` §6:** filtro por dato numérico = tramos discretos con ficha "Sin dato" propia, y se clasifica por el máximo si hay rango.
