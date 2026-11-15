@@ -103,13 +103,42 @@ body {
 .estacion-sub, .estacion-nota { color: var(--muted); font-size: .85rem; margin: 0 0 12px; max-width: 70ch; }
 .estacion-nota a { color: var(--accent); }
 .estacion-ahora {
-  margin: 0 0 16px;
-  padding: 12px 16px;
-  background: var(--accent-soft);
+  margin: 0 0 28px;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
-  font-size: .92rem;
-  line-height: 1.5;
+  box-shadow: var(--shadow-xs);
 }
+.estacion-ahora-titulo { margin: 0 0 12px; font-size: 1rem; }
+.estacion-ahora-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.estacion-ahora-col h4 { margin: 0 0 8px; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.estacion-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.estacion-chips li {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--text);
+  font-size: .85rem;
+  font-weight: 500;
+}
+.estacion-chips li.vacio { background: none; color: var(--muted); padding-left: 0; }
+.estacion-bloque { margin: 0 0 28px; }
+.estacion-bloque-titulo { margin: 0 0 10px; font-size: 1.15rem; letter-spacing: -0.01em; }
+.estacion-tabla tr.en-pico .estacion-nombre { font-weight: 700; }
+.estacion-ahora-tag {
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-size: .65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  vertical-align: middle;
+}
+@media (max-width: 720px) { .estacion-ahora-cols { grid-template-columns: 1fr; } }
 .estacion-scroll {
   overflow-x: auto;
   margin-bottom: 16px;
@@ -126,15 +155,6 @@ body {
   border-bottom: 1px solid var(--border);
 }
 .estacion-tabla th.mes-actual { color: var(--accent); }
-.estacion-tabla .estacion-grupo th {
-  padding: 10px 12px;
-  text-align: left;
-  font-size: .75rem;
-  text-transform: uppercase;
-  letter-spacing: .06em;
-  color: var(--muted);
-  background: var(--bg-subtle);
-}
 .estacion-tabla .estacion-nombre {
   position: sticky;
   left: 0;

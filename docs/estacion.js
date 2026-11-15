@@ -15,7 +15,7 @@
 
   var GRUPOS = [
     {
-      titulo: "Frutas",
+      titulo: "Frutas", emoji: "🍓", clase: "frutas",
       items: [
         ["Cítricos", "naranja, mandarina, pomelo, limón", rango(4, 10)],
         ["Pomáceas", "manzana, pera", rango(2, 7)],
@@ -33,7 +33,7 @@
       ],
     },
     {
-      titulo: "Verduras",
+      titulo: "Verduras", emoji: "🥬", clase: "verduras",
       items: [
         ["Hortalizas de fruto", "tomate, morrón, berenjena, zapallito, pepino", [1, 2, 3, 11, 12]],
         ["Choclo", "", [1, 2, 3, 12]],
@@ -59,51 +59,54 @@
   function render(container) {
     container.textContent = "";
     var mesActual = new Date().getMonth() + 1;
+    var esPico = function (it) { return it[2].indexOf(mesActual) !== -1; };
 
     container.appendChild(el("h2", "estacion-titulo", "Frutas y verduras de estación"));
     container.appendChild(el("p", "estacion-sub",
       "Casilla pintada = temporada pico (mejor precio y calidad). Fuera de esos meses puede haber por cámara o importación, pero más caro y peor. Bordes aproximados (±1 mes)."));
 
-    // Resumen: qué está en pico este mes.
-    var ahora = [];
+    // Resumen: qué está en pico este mes, separado por tipo.
+    var ahora = el("section", "estacion-ahora");
+    ahora.appendChild(el("h3", "estacion-ahora-titulo", "En pico en " + MESES_LARGO[mesActual - 1]));
+    var cols = el("div", "estacion-ahora-cols");
     GRUPOS.forEach(function (g) {
-      g.items.forEach(function (it) {
-        if (it[2].indexOf(mesActual) !== -1) ahora.push(it[0]);
+      var col = el("div", "estacion-ahora-col " + g.clase);
+      col.appendChild(el("h4", null, g.emoji + " " + g.titulo));
+      var chips = el("ul", "estacion-chips");
+      var en = g.items.filter(esPico);
+      en.forEach(function (it) { chips.appendChild(el("li", null, it[0])); });
+      if (!en.length) chips.appendChild(el("li", "vacio", "Nada en pico este mes"));
+      col.appendChild(chips);
+      cols.appendChild(col);
+    });
+    ahora.appendChild(cols);
+    container.appendChild(ahora);
+
+    GRUPOS.forEach(function (g) {
+      var bloque = el("section", "estacion-bloque " + g.clase);
+      bloque.appendChild(el("h3", "estacion-bloque-titulo", g.emoji + " " + g.titulo));
+
+      var wrap = el("div", "estacion-scroll");
+      var tabla = el("table", "estacion-tabla");
+      var thead = el("thead");
+      var trh = el("tr");
+      trh.appendChild(el("th", "estacion-nombre-col", ""));
+      MESES.forEach(function (m, i) {
+        var th = el("th", i + 1 === mesActual ? "mes-actual" : "", m);
+        th.scope = "col";
+        trh.appendChild(th);
       });
-    });
-    var resumen = el("div", "estacion-ahora");
-    resumen.appendChild(el("strong", null, "En pico en " + MESES_LARGO[mesActual - 1] + ": "));
-    resumen.appendChild(document.createTextNode(ahora.join(" · ")));
-    container.appendChild(resumen);
+      thead.appendChild(trh);
+      tabla.appendChild(thead);
 
-    var wrap = el("div", "estacion-scroll");
-    var tabla = el("table", "estacion-tabla");
-    var thead = el("thead");
-    var trh = el("tr");
-    trh.appendChild(el("th", "estacion-nombre-col", ""));
-    MESES.forEach(function (m, i) {
-      var th = el("th", i + 1 === mesActual ? "mes-actual" : "", m);
-      th.scope = "col";
-      trh.appendChild(th);
-    });
-    thead.appendChild(trh);
-    tabla.appendChild(thead);
-
-    var tbody = el("tbody");
-    GRUPOS.forEach(function (g) {
-      var trg = el("tr", "estacion-grupo");
-      var tdg = el("th", null, g.titulo);
-      tdg.colSpan = 13;
-      tdg.scope = "colgroup";
-      trg.appendChild(tdg);
-      tbody.appendChild(trg);
-
+      var tbody = el("tbody");
       g.items.forEach(function (it) {
-        var tr = el("tr");
+        var tr = el("tr", esPico(it) ? "en-pico" : "");
         var th = el("th", "estacion-nombre");
         th.scope = "row";
         th.appendChild(document.createTextNode(it[0]));
-        if (it[1]) th.appendChild(el("span", "estacion-detalle", " " + it[1]));
+        if (esPico(it)) th.appendChild(el("span", "estacion-ahora-tag", "ahora"));
+        if (it[1]) th.appendChild(el("span", "estacion-detalle", it[1]));
         tr.appendChild(th);
         for (var m = 1; m <= 12; m++) {
           var pico = it[2].indexOf(m) !== -1;
@@ -116,10 +119,11 @@
         }
         tbody.appendChild(tr);
       });
+      tabla.appendChild(tbody);
+      wrap.appendChild(tabla);
+      bloque.appendChild(wrap);
+      container.appendChild(bloque);
     });
-    tabla.appendChild(tbody);
-    wrap.appendChild(tabla);
-    container.appendChild(wrap);
 
     container.appendChild(el("p", "estacion-nota",
       "Todo el año (no figuran): papa, cebolla, zanahoria, batata, ajo, lechuga (cambia la variedad), limón y manzana de cámara."));
