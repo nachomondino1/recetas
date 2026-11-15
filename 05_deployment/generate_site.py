@@ -17,7 +17,10 @@ from pathlib import Path
 import markdown as md
 import yaml
 
-from src import config, schema
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "common"))
+import config  # noqa: E402
+import schema  # noqa: E402
 
 FRONTMATTER_RE = re.compile(r"\A---\n(.*?)\n---\n?(.*)", re.DOTALL)
 
@@ -302,10 +305,11 @@ def run_export(recipes_dir: Path, images_dir: Path, site_dir: Path, utils_dir: P
     site_images_dir = site_dir / "images"
     copiar_imagenes(records, images_dir, site_images_dir)
 
-    site_dir.mkdir(parents=True, exist_ok=True)
+    data_dir = site_dir / "data"  # lo que el navegador pide va en site/data/ (playbook §1)
+    data_dir.mkdir(parents=True, exist_ok=True)
     json_str = json.dumps(data, ensure_ascii=False, indent=2, allow_nan=False)
-    (site_dir / "recetas.json").write_text(json_str + "\n", encoding="utf-8")
-    (site_dir / "data.js").write_text(f"window.RECETAS_DATA = {json_str};\n", encoding="utf-8")
+    (data_dir / "recetas.json").write_text(json_str + "\n", encoding="utf-8")
+    (data_dir / "data.js").write_text(f"window.RECETAS_DATA = {json_str};\n", encoding="utf-8")
 
     print(f"OK: {data['meta']['count']} receta(s) exportada(s).")
     if warnings:

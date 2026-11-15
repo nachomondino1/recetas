@@ -2,8 +2,8 @@ import json
 import shutil
 from pathlib import Path
 
-from src import schema
-from src.export_data import (
+import schema
+from generate_site import (
     cargar_utils,
     construir_json,
     load_recipes,
@@ -138,14 +138,15 @@ def test_error_deja_intacto_lo_publicado(tmp_path):
     recipes_dir.mkdir()
     images_dir.mkdir()
     site_dir.mkdir()
-    (site_dir / "recetas.json").write_text('{"previo": true}', encoding="utf-8")
+    (site_dir / "data").mkdir(parents=True, exist_ok=True)
+    (site_dir / "data" / "recetas.json").write_text('{"previo": true}', encoding="utf-8")
     shutil.copy(FIXTURES / "broken_sin_titulo.md", recipes_dir / "broken.md")
 
     exit_code = run_export(recipes_dir, images_dir, site_dir)
 
     assert exit_code != 0
-    assert (site_dir / "recetas.json").read_text(encoding="utf-8") == '{"previo": true}'
-    assert not (site_dir / "data.js").exists()
+    assert (site_dir / "data" / "recetas.json").read_text(encoding="utf-8") == '{"previo": true}'
+    assert not (site_dir / "data" / "data.js").exists()
 
 
 def test_run_export_copia_toda_la_carpeta_de_imagenes_no_solo_foto(tmp_path):
@@ -235,7 +236,7 @@ def test_run_export_con_utils_dir(tmp_path):
     exit_code = run_export(recipes_dir, images_dir, site_dir, UTILS_FIXTURES)
 
     assert exit_code == 0
-    data = json.loads((site_dir / "recetas.json").read_text(encoding="utf-8"))
+    data = json.loads((site_dir / "data" / "recetas.json").read_text(encoding="utf-8"))
     assert "Item de prueba" in data["recetas"][0]["body_html"]
 
 
@@ -249,9 +250,9 @@ def test_rebuild_deterministico(tmp_path):
     (images_dir / "cover.jpg").write_text("x", encoding="utf-8")
 
     run_export(recipes_dir, images_dir, site_dir)
-    first = json.loads((site_dir / "recetas.json").read_text(encoding="utf-8"))
+    first = json.loads((site_dir / "data" / "recetas.json").read_text(encoding="utf-8"))
     run_export(recipes_dir, images_dir, site_dir)
-    second = json.loads((site_dir / "recetas.json").read_text(encoding="utf-8"))
+    second = json.loads((site_dir / "data" / "recetas.json").read_text(encoding="utf-8"))
 
     del first["meta"]["generated_at"]
     del second["meta"]["generated_at"]

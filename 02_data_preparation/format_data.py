@@ -25,7 +25,7 @@ este módulo solo lo parsea. Ver DECISIONS.md.
 Principio del playbook de datos: no inventar contenido ambiguo. Una receta
 sin Ingredientes ni Paso a paso se reporta como incompleta y no se escribe.
 
-Escribe a un directorio de BORRADORES (`recipes_draft/` por default), nunca
+Escribe a un directorio de BORRADORES (`data/02_data_preparation/drafts/` por default), nunca
 pisa `recipes/` directamente: varias recetas tienen campos curados a mano
 (`foto`, `porciones`, fusiones de contenido duplicado) que este parser
 mecánico no puede reconstruir, y pisarlas en silencio sería peor que no
@@ -44,11 +44,14 @@ from pathlib import Path
 
 import yaml
 
-from src import schema
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "common"))
+import config  # noqa: E402
+import schema  # noqa: E402
+from gdoc import ORDERED_GLYPHS, TAB_RECETAS, es_ordenada as _es_ordenada, slugify, texto_parrafo as _texto_parrafo  # noqa: E402,F401
 
 FRONTMATTER_RE = re.compile(r"\A---\n(.*?)\n---\n?", re.DOTALL)
 
-TAB_RECETAS = "Recetas"
 
 MESES = {
     "ene": 1, "feb": 2, "mar": 3, "abr": 4, "may": 5, "jun": 6,
@@ -68,7 +71,6 @@ SECCION_RE = re.compile(r"^(ingredientes|materiales|paso a paso)\b", re.IGNORECA
 REFERENCIA_VARIANTE_RE = re.compile(r"^(mismos ingredientes que|igual que)\b", re.IGNORECASE)
 SECCION_MAX_LEN = 60
 CAMPO_VACIO_RE = re.compile(r"^\s*(tiempo|dificultad)\s*:\s*$", re.IGNORECASE)
-ORDERED_GLYPHS = {"DECIMAL", "ALPHA", "ROMAN", "UPPER_ALPHA", "UPPER_ROMAN"}
 
 
 def fecha_a_iso(texto: str) -> str | None:
@@ -104,12 +106,6 @@ def contenido_hash(receta: dict) -> str:
     return hashlib.sha256(canon.encode("utf-8")).hexdigest()[:12]
 
 
-def slugify(titulo: str) -> str:
-    sin_emoji = "".join(c for c in titulo if not unicodedata.category(c).startswith("So"))
-    sin_acentos = unicodedata.normalize("NFKD", sin_emoji).encode("ascii", "ignore").decode()
-    slug = re.sub(r"[^a-zA-Z0-9]+", "-", sin_acentos).strip("-").lower()
-    return slug or "receta"
-
 
 def normalizar_encabezado(texto: str) -> str:
     """Valor estable para categoria/subcategoria: el texto del heading tal
@@ -120,13 +116,6 @@ def normalizar_encabezado(texto: str) -> str:
     """
     return " ".join(texto.split()).lower()
 
-
-def _texto_parrafo(elemento: dict) -> str:
-    parrafo = elemento.get("paragraph")
-    if not parrafo:
-        return ""
-    partes = [e.get("textRun", {}).get("content", "") for e in parrafo.get("elements", [])]
-    return "".join(partes).rstrip("\n")
 
 
 def _texto_parrafo_md(elemento: dict) -> str:
@@ -170,15 +159,6 @@ def md_desde_runs(runs: list[tuple[str, bool]]) -> str:
         partes.append(f"{inicio}**{nucleo}**{fin}")
     return "".join(partes).rstrip("\n")
 
-
-def _es_ordenada(parrafo: dict, listas: dict) -> bool:
-    list_id = (parrafo.get("bullet") or {}).get("listId")
-    if not list_id:
-        return False
-    niveles = listas.get(list_id, {}).get("listProperties", {}).get("nestingLevels", [])
-    if not niveles:
-        return False
-    return niveles[0].get("glyphType") in ORDERED_GLYPHS
 
 
 def _parrafos_de_tab(tab: dict) -> list[dict]:
@@ -345,10 +325,33 @@ def parse_doc(doc_json: dict) -> tuple[list[dict], list[dict]]:
     return parse_parrafos(_parrafos_de_tab(tab))
 
 
+def leer_raw(origen: Path) -> list[dict]:
+    return [json.loads(l) for l in origen.read_text(encoding="utf-8").splitlines() if l.strip()]
+
+
+def parrafos_desde_raw(raw: list[dict]) -> list[dict]:
+    """Párrafos crudos (data/01_data_understanding/doc/recetas.jsonl) -> la forma
+    aplanada que consume `parse_parrafos`."""
+    salida = []
+    for p in raw:
+        runs = p.get("runs", [])
+        texto = "".join(r[0] for r in runs).strip()
+        texto_md = md_desde_runs([(r[0], bool(r[1])) for r in runs]).strip()
+        salida.append({
+            "style": p.get("style", "NORMAL_TEXT"),
+            "texto": texto,
+            "texto_md": texto_md,
+            "es_lista": "lista" in p,
+            "ordenada": p.get("lista") == "ordenada",
+            "nivel": p.get("nivel", 0),
+        })
+    return salida
+
+
 def parse_parrafos(parrafos: list[dict]) -> tuple[list[dict], list[dict]]:
     """Lista aplanada de párrafos -> (completas, incompletas). Es el paso común
     a las dos entradas: el JSON crudo de la Docs API (`parse_doc`) y la capa
-    cruda versionada `raw/recetas.jsonl` (`doc_raw.parrafos_desde_raw`)."""
+    cruda versionada `data/01_data_understanding/doc/recetas.jsonl` (`parrafos_desde_raw`)."""
     completas, incompletas = [], []
     for bloque in _agrupar_recetas(parrafos):
         if not bloque["categoria_texto"]:
@@ -442,11 +445,10 @@ def render_markdown(receta: dict) -> str:
     return "\n".join(front) + "\n" + "\n\n".join(cuerpo) + "\n"
 
 
-def run_sync(doc_json_path: Path, out_dir: Path, recipes_dir: Path = Path("recipes")) -> int:
+def run_sync(doc_json_path: Path, out_dir: Path, recipes_dir: Path = config.RECIPES_DIR) -> int:
     if doc_json_path.suffix == ".jsonl":
-        # Capa cruda versionada (raw/recetas.jsonl), ver src/doc_raw.py.
-        from src import doc_raw
-        completas, incompletas = parse_parrafos(doc_raw.parrafos_desde_raw(doc_raw.leer_raw(doc_json_path)))
+        # Capa cruda versionada (data/01_data_understanding/doc/recetas.jsonl), ver collect_doc.py.
+        completas, incompletas = parse_parrafos(parrafos_desde_raw(leer_raw(doc_json_path)))
     else:
         doc_json = json.loads(doc_json_path.read_text(encoding="utf-8"))
         completas, incompletas = parse_doc(doc_json)
@@ -476,9 +478,9 @@ def run_sync(doc_json_path: Path, out_dir: Path, recipes_dir: Path = Path("recip
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("doc_json", type=Path, help="JSON crudo devuelto por read_doc, o raw/recetas.jsonl")
-    parser.add_argument("--out", type=Path, default=Path("recipes_draft"))
-    parser.add_argument("--recipes", type=Path, default=Path("recipes"),
+    parser.add_argument("doc_json", type=Path, help="JSON crudo devuelto por read_doc, o data/01_data_understanding/doc/recetas.jsonl")
+    parser.add_argument("--out", type=Path, default=config.DRAFTS_DIR)
+    parser.add_argument("--recipes", type=Path, default=config.RECIPES_DIR,
                          help="Directorio con las recetas ya mergeadas, para detectar qué cambió")
     args = parser.parse_args()
     return run_sync(args.doc_json, args.out, args.recipes)

@@ -1,4 +1,4 @@
-from src.doc_sync import contenido_hash, detectar_cambios, fecha_a_iso, normalizar_encabezado, parse_doc, render_markdown, slugify
+from format_data import contenido_hash, detectar_cambios, fecha_a_iso, normalizar_encabezado, parse_doc, render_markdown, slugify
 
 
 def _parrafo(texto, style="NORMAL_TEXT", list_id=None, ordenada=False):

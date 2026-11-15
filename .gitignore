@@ -2,4 +2,7 @@
 __pycache__/
 *.pyc
 .pytest_cache/
-recipes_draft/
+.DS_Store
+.env
+# regenerable: borradores del sync (02_data_preparation) — nunca se editan a mano
+data/02_data_preparation/drafts/

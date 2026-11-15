@@ -320,3 +320,40 @@ El script agrupa las fotos por receta reusando el mismo criterio que `_agrupar_r
 **Todavía NO se cambió (etapa 2, pendiente de decisión):** que la preparación genere `recipes/` desde el raw sin merge a mano. Requiere (a) un archivo de metadatos curados por receta fuera del contenido (`foto`, `porciones`, `dificultad`, `tiempo`, título para mostrar, alias de slug), (b) que el parser conserve anidación y links (hoy `render_markdown` aplana), y (c) decidir qué pasa con la prosa pulida a mano de los `.md` actuales: pasarla al Doc o aceptar perderla. Hasta entonces `recipes/*.md` sigue siendo la fuente versionada que lee `export_data.py`.
 
 **Nuevo flujo de sync:** `read_doc` → `python -m src.doc_raw <json>` → `git diff raw/recetas.jsonl` (qué cambió en el Doc) → `python -m src.doc_sync raw/recetas.jsonl --out recipes_draft/` → mergear solo lo que el diff del raw muestra como nuevo.
+
+## 2026-11-15 — Reestructurar el repo según `REPO_STRUCTURE_PLAYBOOK.md` (§6, fases CRISP-DM)
+
+**Pedido del usuario:** reestructurar el proyecto siguiendo el playbook nuevo de `utils/`.
+
+**Qué se eligió y por qué §6 y no §1-§5:** el playbook reserva las fases CRISP-DM para proyectos con datos y reserva §1-§5 para sitios con JSON a mano o un solo paso de datos. Recetas ya tiene un pipeline de varios pasos que hablan entre sí (recolectar el Doc crudo → preparar → generar el sitio), y el propio pedido del usuario lo nombra como "data preparation". Por eso: `01_data_understanding` (recolección), `02_data_preparation`, `05_deployment`, más `common/` y `data/` aparte espejando las fases. `00` tiene README de objetivo; `03_modeling` y `04_evaluation` quedan con un README que dice "no aplica", como pide el playbook (una carpeta vacía con motivo vale más que un hueco).
+
+**Mapa de movimientos:**
+
+| Antes | Ahora |
+|---|---|
+| `src/doc_raw.py` | `01_.../collect_initial_data/doc/collect_doc.py` |
+| `src/extract_doc_images.py` | `01_.../collect_initial_data/doc/extract_doc_images.py` |
+| `src/fetch_covers.py` | `01_.../collect_initial_data/covers/fetch_covers.py` |
+| `src/doc_sync.py` | `02_data_preparation/format_data.py` |
+| `src/export_data.py` | `05_deployment/generate_site.py` |
+| `src/config.py`, `src/schema.py` | `common/config.py`, `common/schema.py` |
+| `raw/recetas.jsonl` | `data/01_data_understanding/doc/recetas.jsonl` |
+| `images/` | `data/01_data_understanding/images/` |
+| `recipes/` (y `recipes/utils/`) | `data/02_data_preparation/recipes/` |
+| `recipes_draft/` | `data/02_data_preparation/drafts/` (gitignored) |
+| `docs/{style.css,app.js,estacion.js}` | `docs/css/style.css`, `docs/js/{app,estacion}.js` |
+| `docs/{recetas.json,data.js}` | `docs/data/{recetas.json,data.js}` |
+
+**Desvíos deliberados del playbook:**
+- **El sitio sigue en `docs/`, no `site/`**, porque ya está publicado desde `/docs` con Pages "desde rama": moverlo lo dejaría caído hasta cambiar la configuración (playbook §4). Se migra a `site/` + Actions solo si se decide cambiar el hosting.
+- **`docs/images/` no se renombra a `img/`:** los cuerpos de las recetas referencian `images/<slug>/...` relativo a la página, y renombrar obligaría a reescribir ~20 recetas por un nombre de carpeta.
+- **No hay `data/05_deployment/` intermedio:** `generate_site.py` escribe directo a `docs/data/`; el paso de copia no agrega nada con un solo destino.
+- **No hay workflow de Actions:** el sitio se publica desde la rama, como hasta ahora.
+
+**Regla de dependencia (playbook §6) — dos imports invertidos que se corrigieron:** `extract_doc_images.py` (01) importaba `slugify` y `_texto_parrafo` de `doc_sync` (02), y `doc_raw.py` (01) importaba `_es_ordenada` de `doc_sync`. Se movieron a `common/gdoc.py`, y la lectura del raw (`leer_raw`, `parrafos_desde_raw`) pasó a `format_data.py`, que es quien lo consume. Ahora 01 no importa nada de 02. Excepción conocida: `fetch_covers.py` (01) *lee archivos* de `recipes/` (02) para saber qué recetas no tienen portada; es lectura de datos, no import de código, pero invierte el flujo de datos y queda anotado.
+
+**Tests:** las carpetas con número no son importables, así que `tests/conftest.py` arma el `sys.path` igual que los scripts, y `tests/__init__.py` se agregó (§3). Los 44 tests pasan; el export genera las mismas 43 recetas (solo cambia `generated_at`).
+
+**Las entradas de arriba conservan los paths viejos** (`src/...`, `recipes/...`) porque describen cómo era el repo en esa fecha; usar el mapa de esta entrada para traducirlos.
+
+**Generalizable (propuesto para `REPO_STRUCTURE_PLAYBOOK.md` §6):** cuando una fase recolecta y otra prepara, los helpers que ambas necesitan (parsear el formato de la fuente) van en `common/` desde el principio, no en la fase que los escribió primero: si no, la segunda fase termina importando de una posterior sin que nadie lo note.

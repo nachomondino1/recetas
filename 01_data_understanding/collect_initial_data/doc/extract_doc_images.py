@@ -25,7 +25,7 @@ Nota importante: `inlineObjects`/`positionedObjects` viven DENTRO de cada
 `documentTab` (una pestaña puede tener fotos ancladas distinto que otra),
 no en la raíz del `doc_json` como sugería la hipótesis original.
 
-Uso: .venv/bin/python -m src.extract_doc_images <path-al-doc_json>
+Uso: .venv/bin/python 01_data_understanding/collect_initial_data/doc/extract_doc_images.py <path-al-doc_json>
 """
 
 from __future__ import annotations
@@ -36,8 +36,10 @@ import sys
 import urllib.request
 from pathlib import Path
 
-from src import config
-from src.doc_sync import TAB_RECETAS, _texto_parrafo, slugify
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "common"))
+import config  # noqa: E402
+from gdoc import TAB_RECETAS, slugify, texto_parrafo as _texto_parrafo  # noqa: E402
 
 UA = "Mozilla/5.0 (compatible; recetas-image-extract/1.0)"
 

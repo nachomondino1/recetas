@@ -6,7 +6,7 @@ cuerpo) a YouTube o a una página con `og:image`, descarga esa imagen a
 (este script no edita los .md — el merge curado lo hace Claude, ver
 DATA_FLOW_PLAYBOOK Arquetipo C).
 
-Uso: .venv/bin/python -m src.fetch_covers
+Uso: .venv/bin/python 01_data_understanding/collect_initial_data/covers/fetch_covers.py
 """
 
 from __future__ import annotations
@@ -16,7 +16,9 @@ import sys
 import urllib.request
 from pathlib import Path
 
-from src import config
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "common"))
+import config  # noqa: E402
 
 UA = "Mozilla/5.0 (compatible; recetas-cover-fetcher/1.0)"
 YOUTUBE_RE = re.compile(r"(?:youtube\.com/watch\?v=|youtu\.be/)([A-Za-z0-9_-]{6,})")

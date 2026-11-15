@@ -1,6 +1,7 @@
-"""Capa cruda: Doc -> raw/recetas.jsonl -> mismo resultado que leer el Doc directo."""
+"""Capa cruda: Doc -> recetas.jsonl -> mismo resultado que leer el Doc directo."""
 
-from src import doc_raw, doc_sync
+import collect_doc as doc_raw
+import format_data as doc_sync
 
 
 def _p(texto, style="NORMAL_TEXT", bold=False, link=None, bullet=None):
@@ -50,7 +51,7 @@ def test_parsear_desde_raw_equivale_a_parsear_el_doc(tmp_path):
     doc = _doc()
     destino = tmp_path / "recetas.jsonl"
     doc_raw.escribir_raw(doc_raw.extraer_raw(doc), destino)
-    desde_raw = doc_sync.parse_parrafos(doc_raw.parrafos_desde_raw(doc_raw.leer_raw(destino)))
+    desde_raw = doc_sync.parse_parrafos(doc_sync.parrafos_desde_raw(doc_sync.leer_raw(destino)))
     assert desde_raw == doc_sync.parse_doc(doc)
 
 
