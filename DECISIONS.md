@@ -357,3 +357,22 @@ El script agrupa las fotos por receta reusando el mismo criterio que `_agrupar_r
 **Las entradas de arriba conservan los paths viejos** (`src/...`, `recipes/...`) porque describen cómo era el repo en esa fecha; usar el mapa de esta entrada para traducirlos.
 
 **Generalizable (propuesto para `REPO_STRUCTURE_PLAYBOOK.md` §6):** cuando una fase recolecta y otra prepara, los helpers que ambas necesitan (parsear el formato de la fuente) van en `common/` desde el principio, no en la fase que los escribió primero: si no, la segunda fase termina importando de una posterior sin que nadie lo note.
+
+## 2026-11-15 — Dos fuentes de datos (Doc + curado) integradas en la fase 02
+
+**Idea del usuario:** lo que se fue curando a mano en los `.md` (fotos, porciones, prosa pulida, fusiones) no es un derivado del Doc: es una **segunda fuente de datos** de `01_data_understanding`. Las dos fuentes crudas se integran en `02_data_preparation` en un solo conjunto, y de ahí se reformatea para la web.
+
+**Qué se hizo:**
+- `data/02_data_preparation/recipes/` pasó a **`data/01_data_understanding/curated/`** (fuente B, con `utils/`), junto a `images/`. Sigue siendo editable a mano; ya no se la trata como salida de la preparación.
+- Nuevo `02_data_preparation/integrate_data.py` (tarea CRISP "integrar") que une A y B por receta y escribe `data/02_data_preparation/integrated/` (derivado, gitignored). `generate_site.py` ahora lee de ahí.
+- `curated/doc_aliases.yml` resuelve los títulos que en el Doc son más cortos que el nombre curado (los 10 casos de siempre: `banana`→`budin-de-banana`, `el-clasico`→`jugo-clasico`, `frutilla-clasica-con-crema-pastelera`→`tarta-de-frutillas`...) y marca `sable-para-todas-las-tartas` como `utils:masa-sablee` (en el Doc es receta, acá es fragmento reusable). Es un archivo explícito en vez de un campo nuevo en el frontmatter: no toca el schema y se lee de un vistazo.
+
+**Reglas de integración (por receta):** solo en el Doc → **nueva, entra sola**; en ambas → **gana lo curado** y se compara `doc_hash` (si el Doc cambió, se reporta "revisar" pero no se pisa ni se pierde nada); solo curada → se conserva; receta del Doc incompleta → se reporta, no se publica por el Doc. Fijado en `tests/test_integrate_data.py` (6 tests).
+
+**Por qué gana lo curado y no el Doc:** es la misma lección de `Preservar la negrita del Doc` (2026-10-17): pisar la prosa pulida con el Doc crudo pierde tips, pasos numerados y fotos que el Doc nunca tuvo. Quien quiera que el Doc mande sobre una receta puede pasar su contenido al Doc y borrar el `.md` curado (queda entonces como "nueva del Doc"), o dejar que la curada siga ganando.
+
+**Baseline de `doc_hash`:** al integrar, 26 curadas figuraban "a revisar" por hashes viejos. Se revisaron una por una el 2026-11-15 (el resto era reformulación; lo realmente nuevo —la idea de granola en Apple crumble— ya estaba incorporado) y se refrescó su `doc_hash`, de modo que desde ahora "revisar" significa que el Doc cambió de verdad.
+
+**Efecto en el flujo de sync:** colecta (`make collect`) → `git diff` del raw → `make integrate` dice qué es nuevo (entra solo), qué curadas hay que revisar y qué está incompleto. El merge a mano de recetas nuevas desapareció; queda solo el repaso de las "a revisar".
+
+**Pendiente:** (1) el parser sigue aplanando anidación y links; las recetas nuevas que entren solas salen con el formato mecánico (listas con `1.` repetido), no con la prosa pulida; mejorar `format_data.render_markdown` es el paso natural. (2) `generate_site.py` todavía valida y resuelve includes; ese trabajo pertenece a 02.

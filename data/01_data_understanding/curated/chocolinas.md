@@ -4,7 +4,7 @@ categorias: ["🍨 postres"]
 tipo_postre: "🍫 chocolatoso"
 fecha_actualizacion: "2026-05-02"
 foto: "chocolinas/cover.jpg"
-doc_hash: "2c1b42fa0e03"
+doc_hash: "a0bcaf9551e7"
 ---
 ## Ingredientes
 - Crema de leche — 200 g

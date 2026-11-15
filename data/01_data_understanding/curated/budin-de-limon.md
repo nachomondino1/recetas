@@ -5,7 +5,7 @@ tipo_merienda: "🍰 budines"
 fuente: "https://www.youtube.com/watch?v=nuvxNKN65QI"
 fecha_actualizacion: "2026-04-20"
 foto: "budin-de-limon/cover.jpg"
-doc_hash: "5f2c33f84026"
+doc_hash: "48c3e69b048d"
 ---
 ## Ingredientes
 - Huevos — 2

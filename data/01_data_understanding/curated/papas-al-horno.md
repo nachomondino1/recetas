@@ -5,7 +5,7 @@ fuente: "Recetas.docx — Comidas Saladas"
 foto: "papas-al-horno/cover.jpg"
 tiempo_minutos: 75
 dificultad: "baja"
-doc_hash: "67dba58ec53e"
+doc_hash: "03bbdff12df3"
 ---
 ## Ingredientes
 - Papas

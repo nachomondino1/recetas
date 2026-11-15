@@ -5,7 +5,7 @@ tipo_postre: "🟤 ddl"
 fuente: "https://luciapaula.com/es/torta-de-nuez-con-dulce-de-leche-y-crema-chantilly/"
 fecha_actualizacion: "2026-05-01"
 foto: "torta-de-nuez/cover.jpg"
-doc_hash: "99884e3cc904"
+doc_hash: "b6dbc0b41bbe"
 ---
 ## Ingredientes
 - Huevos — 4

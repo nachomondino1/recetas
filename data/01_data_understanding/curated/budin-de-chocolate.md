@@ -5,7 +5,7 @@ tipo_merienda: "🍰 budines"
 fuente: "https://cookpad.com/uy/recetas/11255242"
 fecha_actualizacion: "2026-04-20"
 foto: "budin-de-chocolate/cover.jpg"
-doc_hash: "d2da56dedcf6"
+doc_hash: "03c63d9bf9b2"
 ---
 ## Ingredientes
 - Huevos — 2

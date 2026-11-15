@@ -21,9 +21,12 @@ DATA_DIR = ROOT / "data"
 RAW_DIR = DATA_DIR / "01_data_understanding" / "doc"
 RAW_DOC = RAW_DIR / "recetas.jsonl"  # el Google Doc tal cual (ver collect_doc.py)
 IMAGES_DIR = DATA_DIR / "01_data_understanding" / "images"  # portadas y fotos de paso
-RECIPES_DIR = DATA_DIR / "02_data_preparation" / "recipes"  # recetas curadas (.md)
-RECIPES_UTILS_DIR = RECIPES_DIR / "utils"
-DRAFTS_DIR = DATA_DIR / "02_data_preparation" / "drafts"  # borradores del sync (gitignored)
+# Fuente B: lo curado a mano (recetas .md con foto, porciones, prosa pulida...).
+CURATED_DIR = DATA_DIR / "01_data_understanding" / "curated"
+CURATED_UTILS_DIR = CURATED_DIR / "utils"  # fragmentos reusables (masa sablée, crema pastelera)
+ALIASES_FILE = CURATED_DIR / "doc_aliases.yml"  # slug en el Doc -> slug curado
+DRAFTS_DIR = DATA_DIR / "02_data_preparation" / "drafts"  # borradores del Doc (gitignored)
+INTEGRATED_DIR = DATA_DIR / "02_data_preparation" / "integrated"  # A + B integradas (gitignored)
 
 # Lo que se sirve
 SITE_DIR = ROOT / "docs"

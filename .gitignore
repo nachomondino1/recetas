@@ -6,3 +6,5 @@ __pycache__/
 .env
 # regenerable: borradores del sync (02_data_preparation) — nunca se editan a mano
 data/02_data_preparation/drafts/
+# dato integrado (Doc + curado): derivado y regenerable, nunca se edita a mano
+data/02_data_preparation/integrated/

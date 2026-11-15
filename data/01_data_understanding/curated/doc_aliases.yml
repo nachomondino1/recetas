@@ -1,0 +1,16 @@
+# Fuente B (curado a mano) <-> Fuente A (Google Doc): cuando el título de una receta en el
+# Doc es más corto que el nombre curado (el Doc la agrupa bajo un H2, ej. "Banana" dentro de
+# "Budines"), acá se dice a qué receta curada corresponde. Clave = slug del título en el Doc.
+# Valor = slug curado, o "utils:<fragmento>" si en el Doc es una receta pero acá es un
+# fragmento reusable (no se publica por sí sola).
+banana: budin-de-banana
+chocolate: budin-de-chocolate
+limon: budin-de-limon
+naranja: budin-de-naranja
+saladas: galletitas-saladas
+el-clasico: jugo-clasico
+el-detox-digestivo: jugo-detox-digestivo
+el-energetico: jugo-energetico
+el-inmunologico-antiox: jugo-inmunologico
+frutilla-clasica-con-crema-pastelera: tarta-de-frutillas
+sable-para-todas-las-tartas: "utils:masa-sablee"

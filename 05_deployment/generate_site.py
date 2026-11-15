@@ -320,7 +320,7 @@ def run_export(recipes_dir: Path, images_dir: Path, site_dir: Path, utils_dir: P
 
 
 def main() -> int:
-    return run_export(config.RECIPES_DIR, config.IMAGES_DIR, config.SITE_DIR, config.RECIPES_UTILS_DIR)
+    return run_export(config.INTEGRATED_DIR, config.IMAGES_DIR, config.SITE_DIR, config.CURATED_UTILS_DIR)
 
 
 if __name__ == "__main__":

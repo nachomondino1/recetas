@@ -4,6 +4,6 @@
 
 **Fuente de verdad:** un Google Doc editado a mano (también desde el celular) por 3 cuentas. Ese Doc no se reemplaza: el pipeline lo lee.
 
-**Éxito:** agregar o corregir una receta en el Doc y verla en el sitio con un sync, sin editar archivos del repo a mano (meta de la etapa 2, ver `DECISIONS.md`, "Capa cruda del Doc").
+**Éxito:** agregar o corregir una receta en el Doc y verla en el sitio con un sync, sin editar archivos del repo a mano (ver `DECISIONS.md`, "Dos fuentes").
 
 Contexto histórico y decisiones: `DECISIONS.md` en la raíz.

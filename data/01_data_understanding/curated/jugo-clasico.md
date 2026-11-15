@@ -5,7 +5,7 @@ tipo_bebida: "jugos naturales"
 fuente: "Gemini"
 fecha_actualizacion: "2026-08-30"
 foto: "jugo-clasico/cover.jpg"
-doc_hash: "854bac506c5c"
+doc_hash: "8fc214b517ed"
 ---
 ## Ingredientes
 - Naranjas (peladas y sin semillas grandes) — 3

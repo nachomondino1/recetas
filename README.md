@@ -8,9 +8,10 @@ Sitio estático de recetas familiares: cards con foto, tiempo y dificultad, filt
 make setup                    # crea el venv e instala dependencias (una sola vez)
 make serve                    # sirve el sitio en http://localhost:8778
 make test                     # corre los tests
-make update                   # 05: regenera docs/data/ (recetas.json y data.js) desde las recetas
+make integrate                # 02: integra el Doc (fuente A) y lo curado (fuente B) en un solo conjunto
+make update                   # integrate + 05: regenera docs/data/ (recetas.json y data.js)
 make collect DOC=<doc.json>   # 01: reduce el JSON de read_doc a data/01_data_understanding/doc/recetas.jsonl
-make sync                     # 02: genera borradores desde ese raw en data/02_data_preparation/drafts/
+make sync                     # 02: genera borradores del Doc en data/02_data_preparation/drafts/ (para inspeccionar)
 make clean                    # borra el venv y lo generado
 ```
 
@@ -23,14 +24,15 @@ recetas/
 ├── 00_business_understanding/   # objetivo del proyecto (README.md)
 ├── 01_data_understanding/       # recolectar el Google Doc crudo, fotos y portadas
 │   └── collect_initial_data/{doc,covers}/
-├── 02_data_preparation/         # format_data.py: raw -> borradores de receta (.md)
+├── 02_data_preparation/         # format_data.py (Doc -> borradores) · integrate_data.py (A + B -> un conjunto)
 ├── 03_modeling/                 # no aplica (README.md explica por qué)
 ├── 04_evaluation/               # no aplica
 ├── 05_deployment/               # generate_site.py: valida y genera docs/data/
 ├── common/                      # config.py (todos los paths), schema.py, gdoc.py
 ├── data/
-│   ├── 01_data_understanding/   # doc/recetas.jsonl (el Doc tal cual) · images/
-│   └── 02_data_preparation/     # recipes/*.md (curadas) · recipes/utils/ · drafts/ (gitignored)
+│   ├── 01_data_understanding/   # fuente A: doc/recetas.jsonl (el Doc tal cual)
+│   │                            # fuente B: curated/*.md (a mano) · curated/utils/ · images/
+│   └── 02_data_preparation/     # integrated/ y drafts/ (derivados, gitignored)
 ├── docs/                        # TODO lo que se sirve: index.html, css/, js/, data/, images/
 ├── tests/
 ├── Makefile · README.md · DECISIONS.md
@@ -42,18 +44,25 @@ Los scripts se corren por ruta (las carpetas con número no son paquetes importa
 
 Las recetas se editan en un Google Doc, en una sola pestaña ("Recetas") con jerarquía de headers: `H1` = categoría (ej. "Principales"), `H2` = subcategoría opcional (ej. "Almuerzo"/"Cena" — algunas categorías no la tienen, ej. "Acompañantes"), `H3` = receta, `H4` = sección (Materiales/Ingredientes/Paso a paso), `H5` = sub-parte cuando una receta tiene varias (ej. *Lemon pie*: masa sablée, curd de limón...). Ese Doc es la fuente de verdad — **no se edita `recipes/*.md` a mano para contenido nuevo.**
 
-**Para sincronizar después de editar el Doc**, pedirle a Claude Code (en una sesión con el conector de Google Docs) que resincronice. El flujo:
+**Dos fuentes de datos** (ver `DECISIONS.md`, "Dos fuentes"):
 
-1. Claude lee el Doc con el conector (`read_doc`) y guarda el JSON crudo.
-   Luego ``make collect DOC=<doc.json>` lo reduce a `data/01_data_understanding/doc/recetas.jsonl` (el Doc tal cual, un párrafo por línea, versionado): **`git diff data/01_data_understanding/doc/recetas.jsonl` muestra exactamente qué cambió en el Doc**, y eso es lo único que hay que mirar para mergear.
-2. `make sync` — parsea la pestaña "Recetas" y escribe un borrador `.md` por receta completa. Categoría y subcategoría son dinámicas (el valor es el texto del H1/H2 tal cual, ver `normalizar_encabezado` en `02_data_preparation/format_data.py`) — agregar o renombrar un H1/H2 en el Doc no requiere tocar código. Las recetas sin "Ingredientes"/"Paso a paso" se listan como incompletas y no se escriben (no inventa contenido).
-3. **El comando también imprime qué cambió de verdad**: compara el `doc_hash` de cada borrador contra el que ya está guardado en `data/02_data_preparation/recipes/<slug>.md` y separa las recetas en nuevas / cambiadas / sin cambios desde el último sync. Las "sin cambios" se pueden ignorar — no hace falta revisarlas a mano cada vez.
-4. Para las nuevas/cambiadas: comparar el borrador contra `data/02_data_preparation/recipes/` y aplicar los cambios a mano, **preservando los campos que el Doc no tiene** (`foto`, a veces `porciones`, fusiones de contenido duplicado ya resueltas) y **copiando el `doc_hash` del borrador al archivo final** (si no se copia, esa receta va a aparecer como "cambiada" otra vez en el próximo sync aunque no haya cambiado). El sync nunca pisa `data/02_data_preparation/recipes/` directamente por esto.
-5. `make update && make test`, revisar en el navegador (`make serve`) y commitear.
+- **A · el Google Doc**, que se edita a mano y se guarda tal cual en `data/01_data_understanding/doc/recetas.jsonl`.
+- **B · lo curado a mano** en `data/01_data_understanding/curated/*.md` (más `images/`): lo que el Doc no tiene (`foto`, `porciones`, `dificultad`, `tiempo`) y la prosa pulida. Es una fuente editable, no un derivado.
+
+`make integrate` las une por receta: una receta **nueva del Doc entra sola**; si existe en las dos gana la curada (se avisa si el Doc cambió desde la última curación); una receta solo curada se conserva. El resultado (`data/02_data_preparation/integrated/`) es derivado, no se edita.
+
+**Para sincronizar después de editar el Doc** (pedirle a Claude Code, en una sesión con el conector de Google Docs):
+
+1. Claude lee el Doc con `read_doc`, guarda el JSON y corre `make collect DOC=<doc.json>`. Después **`git diff data/01_data_understanding/doc/recetas.jsonl` muestra exactamente qué cambió en el Doc.**
+2. `make integrate` (o `make update`, que además regenera el sitio) imprime qué entró nuevo, qué curadas hay que revisar y qué recetas del Doc están incompletas (sin ingredientes o sin paso a paso: no se publican, no se inventa contenido).
+3. Para las "a revisar": mirar el diff del raw y, si hay contenido nuevo de verdad, pasarlo a su `.md` curado y **copiar el `doc_hash` del borrador** (`make sync` deja los borradores en `data/02_data_preparation/drafts/`) para que no vuelva a avisar.
+4. `make test`, revisar en el navegador (`make serve`) y commitear.
+
+Si el título de una receta en el Doc es más corto que el curado (el Doc la agrupa bajo un H2, ej. "Banana" dentro de "Budines"), se declara en `data/01_data_understanding/curated/doc_aliases.yml`.
 
 Ver `DECISIONS.md` (entrada "Google Doc como fuente, no Markdown a mano") para el porqué.
 
-## Formato de `data/02_data_preparation/recipes/<slug>.md`
+## Formato de `data/01_data_understanding/curated/<slug>.md`
 
 1. Frontmatter obligatorio: `titulo` y `categorias` (lista). El valor es el texto del `H1` del Doc tal cual (ej. `principales`, `postres`, `meriendas`, `bebidas`, `acompañantes`) — no hay enum cerrado en `common/schema.py`, cualquier valor no vacío es válido. Clasifican por **qué es el plato**, no por cuándo se come. Una receta puede tener varias (poco común) y aparece en cada pestaña del sitio que le corresponda.
 2. Frontmatter opcional: `dificultad` (`baja`/`media`/`alta`), `tiempo_minutos`, `tiempo_minutos_max` (para rangos), `porciones`, `foto`, `fecha_actualizacion`, `fuente`, `doc_hash` (interno — lo escribe `doc_sync.py`, no se edita a mano, ver sección anterior), y el campo de subcategoría de la categoría correspondiente (nombre fijo en `common/schema.py: CAMPO_SUBCATEGORIA`, valor libre — el texto del `H2` del Doc): `tipo_bebida` (ej. `tragos`, `jugos naturales`, solo si `categorias` incluye `bebidas`), `tipo_merienda` (ej. `🍰 budines`, `🍪 cookies`, `🍯 untables`, `otros`, solo si incluye `meriendas`), `tipo_postre` (ej. `frutal`, `🥚 huevo`, `🍫 chocolatoso`, `ddl`, solo si incluye `postres`), `momento` (`almuerzo`/`cena`, solo si incluye `principales`). El sync mecánico siempre lo completa cuando el Doc tiene `H2` para esa categoría — su ausencia en una receta ya sincronizada es un dato faltante (WARNING), no el caso normal. `acompañantes` no tiene `H2` en el Doc, así que no tiene campo de subcategoría.
@@ -96,6 +105,6 @@ Ojo con un artefacto del Doc: después del primer `HEADING_3` de cada receta sue
 
 ## Si el export corta con un ERROR
 
-Significa que algún archivo en `data/02_data_preparation/recipes/` tiene un dato roto (falta `titulo`, `categorias` vacía, un valor fuera del enum, etc.). El mensaje dice el archivo y el campo. No se escribe nada nuevo — lo publicado en `docs/` queda como estaba hasta corregir la fuente.
+Significa que algún archivo en `data/01_data_understanding/curated/` tiene un dato roto (falta `titulo`, `categorias` vacía, un valor fuera del enum, etc.). El mensaje dice el archivo y el campo. No se escribe nada nuevo — lo publicado en `docs/` queda como estaba hasta corregir la fuente.
 
 Ver `DECISIONS.md` para el porqué de las decisiones de arquitectura, y `common/schema.py` para el contrato completo de campos.

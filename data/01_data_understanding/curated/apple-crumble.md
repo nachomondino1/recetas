@@ -6,7 +6,7 @@ fuente: "https://www.youtube.com/watch?v=KwIRgwd52Ic&t=147s"
 fecha_actualizacion: "2026-09-13"
 foto: "apple-crumble/cover.jpg"
 tiempo_minutos: 60
-doc_hash: "763e8c6a0cb6"
+doc_hash: "6a7e10c432e4"
 ---
 ## Ingredientes
 

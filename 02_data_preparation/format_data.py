@@ -445,7 +445,7 @@ def render_markdown(receta: dict) -> str:
     return "\n".join(front) + "\n" + "\n\n".join(cuerpo) + "\n"
 
 
-def run_sync(doc_json_path: Path, out_dir: Path, recipes_dir: Path = config.RECIPES_DIR) -> int:
+def run_sync(doc_json_path: Path, out_dir: Path, recipes_dir: Path = config.CURATED_DIR) -> int:
     if doc_json_path.suffix == ".jsonl":
         # Capa cruda versionada (data/01_data_understanding/doc/recetas.jsonl), ver collect_doc.py.
         completas, incompletas = parse_parrafos(parrafos_desde_raw(leer_raw(doc_json_path)))
@@ -480,7 +480,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("doc_json", type=Path, help="JSON crudo devuelto por read_doc, o data/01_data_understanding/doc/recetas.jsonl")
     parser.add_argument("--out", type=Path, default=config.DRAFTS_DIR)
-    parser.add_argument("--recipes", type=Path, default=config.RECIPES_DIR,
+    parser.add_argument("--recipes", type=Path, default=config.CURATED_DIR,
                          help="Directorio con las recetas ya mergeadas, para detectar qué cambió")
     args = parser.parse_args()
     return run_sync(args.doc_json, args.out, args.recipes)

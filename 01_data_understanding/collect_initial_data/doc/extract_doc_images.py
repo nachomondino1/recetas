@@ -195,7 +195,7 @@ def descargar_imagenes(extraido: dict, recipes_dir: Path, images_dir: Path) -> d
 def run(doc_json_path: Path) -> int:
     doc_json = json.loads(doc_json_path.read_text(encoding="utf-8"))
     extraido = extraer_imagenes(doc_json)
-    reporte = descargar_imagenes(extraido, config.RECIPES_DIR, config.IMAGES_DIR)
+    reporte = descargar_imagenes(extraido, config.CURATED_DIR, config.IMAGES_DIR)
 
     total = sum(reporte["descargas_por_slug"].values())
     print(f"OK: {total} imagen(es) descargada(s) en {len(reporte['descargas_por_slug'])} receta(s).")
@@ -203,7 +203,7 @@ def run(doc_json_path: Path) -> int:
         print(f"  - {slug}: {n}")
 
     if reporte["mismatches"]:
-        print(f"\n{len(reporte['mismatches'])} slug(s) SIN receta existente en {config.RECIPES_DIR}/ "
+        print(f"\n{len(reporte['mismatches'])} slug(s) SIN receta existente en {config.CURATED_DIR}/ "
               "(se bajaron igual, revisar a mano — puede ser un nombre distinto o un subtítulo):")
         for titulo, slug, n in reporte["mismatches"]:
             print(f"  - {titulo!r} -> images/{slug}/ ({n} img)")

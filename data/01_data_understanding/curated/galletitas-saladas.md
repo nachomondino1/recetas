@@ -5,7 +5,7 @@ tipo_merienda: "🍪 cookies"
 fuente: "https://www.instagram.com/p/CNNUl1_g9yC"
 fecha_actualizacion: "2026-10-05"
 foto: "galletitas-saladas/cover.jpg"
-doc_hash: "ccaa879b2f98"
+doc_hash: "f5d9b80089dd"
 ---
 ## Ingredientes
 - Harina de lino — 1 taza

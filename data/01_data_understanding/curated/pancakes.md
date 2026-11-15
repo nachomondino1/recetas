@@ -4,7 +4,7 @@ categorias: ["🌆 meriendas"]
 tipo_merienda: "otros"
 foto: "pancakes/cover.jpg"
 fuente: "https://youtube.com/shorts/o6VMb0wrSyc?si=dvpqQEQSKLu4huwP"
-doc_hash: "3efd80e0f14d"
+doc_hash: "c6474f5cddfc"
 ---
 _(mamá los hizo de banana, siguiendo ese video — esta versión es de avena y manzana)_
 

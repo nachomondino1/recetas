@@ -99,7 +99,7 @@ def cover_for_recipe(rid: str, front: dict, body: str) -> bytes | None:
 def main() -> int:
     import yaml
 
-    recipes_dir = config.RECIPES_DIR
+    recipes_dir = config.CURATED_DIR
     images_dir = config.IMAGES_DIR
     results = []
     for path in sorted(recipes_dir.glob("*.md")):

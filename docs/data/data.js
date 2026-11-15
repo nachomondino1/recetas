@@ -1,7 +1,7 @@
 window.RECETAS_DATA = {
   "meta": {
     "schema_version": 2,
-    "generated_at": "2026-11-15T19:31:07+00:00",
+    "generated_at": "2026-11-15T19:36:50+00:00",
     "count": 43,
     "warnings": [
       {

@@ -5,7 +5,7 @@ tipo_postre: "🥚 huevo"
 fuente: "https://www.paulinacocina.net/flan-casero-clasico/13997"
 fecha_actualizacion: "2026-07-05"
 foto: "flan/cover.jpg"
-doc_hash: "96128ba1e316"
+doc_hash: "dd79c35e25f1"
 ---
 ## Ingredientes
 _(para flan grande)_

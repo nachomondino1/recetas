@@ -1,8 +1,9 @@
-.PHONY: help setup update serve test clean collect sync
+.PHONY: help setup update serve test clean collect sync integrate
 
 help:
 	@echo "setup   - crea el venv e instala dependencias"
-	@echo "update  - regenera docs/data/ (recetas.json y data.js) a partir de data/02_data_preparation/recipes/"
+	@echo "integrate - 02: integra el Doc (A) y lo curado (B) en data/02_data_preparation/integrated/"
+	@echo "update  - integrate + 05: regenera docs/data/ (recetas.json y data.js)"
 	@echo "serve   - sirve el sitio en http://localhost:8778"
 	@echo "test    - corre los tests"
 	@echo "collect - 01: reduce el JSON de read_doc a data/01_data_understanding/doc/recetas.jsonl (DOC=ruta.json)"
@@ -13,7 +14,10 @@ setup:
 	python3 -m venv .venv
 	.venv/bin/pip install -q -r requirements.txt
 
-update:
+integrate:
+	.venv/bin/python 02_data_preparation/integrate_data.py
+
+update: integrate
 	.venv/bin/python 05_deployment/generate_site.py
 
 serve:
@@ -29,4 +33,4 @@ sync:
 	.venv/bin/python 02_data_preparation/format_data.py data/01_data_understanding/doc/recetas.jsonl
 
 clean:
-	rm -rf .venv docs/data docs/images data/02_data_preparation/drafts
+	rm -rf .venv docs/data docs/images data/02_data_preparation/drafts data/02_data_preparation/integrated

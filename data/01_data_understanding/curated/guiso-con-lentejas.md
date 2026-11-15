@@ -8,7 +8,7 @@ porciones: 8
 tiempo_minutos: 120
 tiempo_minutos_max: 180
 dificultad: "baja"
-doc_hash: "547d8b590192"
+doc_hash: "0c3ba4eddfe6"
 ---
 ## Ingredientes
 _(para 8 porciones)_

@@ -5,7 +5,7 @@ tipo_merienda: "🍪 cookies"
 foto: "dulces-vainilla-con-membrillo/cover.jpg"
 fecha_actualizacion: "2026-10-14"
 fuente: "cuaderno (receta manuscrita)"
-doc_hash: "1bb4743d9cf7"
+doc_hash: "49bbeb252bff"
 ---
 ## Ingredientes
 - Avena — 2 tazas
