@@ -60,16 +60,15 @@
     grid: document.getElementById("grid"),
     resultadoCount: document.getElementById("resultado-count"),
     estadoVacio: document.getElementById("estado-vacio"),
-    categoriasNav: document.getElementById("categorias-nav"),
-    chipsDificultad: document.getElementById("chips-dificultad"),
-    grupoSubfiltro: document.getElementById("grupo-subfiltro"),
-    subfiltroLabel: document.getElementById("subfiltro-label"),
-    chipsSubfiltro: document.getElementById("chips-subfiltro"),
-    ordenSelect: document.getElementById("orden-select"),
+    pills: document.getElementById("filtros-pills"),
+    menu: document.getElementById("filtros-menu"),
+    bar: document.getElementById("filtros-bar"),
     limpiarFiltros: document.getElementById("limpiar-filtros"),
-    filtrosToggle: document.getElementById("filtros-toggle"),
-    filtrosPanel: document.getElementById("filtros-panel"),
-    filtrosBadge: document.getElementById("filtros-badge"),
+    limpiarN: document.getElementById("limpiar-n"),
+    ordenBtn: document.getElementById("orden-btn"),
+    ordenLabel: document.getElementById("orden-label"),
+    ordenMenu: document.getElementById("orden-menu"),
+    ordenWrap: document.getElementById("orden"),
     vistaGrid: document.getElementById("vista-grid"),
     vistaDetalle: document.getElementById("vista-detalle"),
     detalleContenido: document.getElementById("detalle-contenido"),
@@ -131,68 +130,169 @@
     return vals;
   }
 
-  function renderChips(container, valores, activeSet) {
-    container.innerHTML = "";
-    valores.forEach(function (valor) {
-      var btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "chip" + (activeSet.has(valor) ? " activo" : "");
-      btn.textContent = capitalize(valor);
-      btn.setAttribute("aria-pressed", activeSet.has(valor) ? "true" : "false");
-      btn.addEventListener("click", function () {
-        if (activeSet.has(valor)) activeSet.delete(valor);
-        else activeSet.add(valor);
-        var activo = activeSet.has(valor);
-        btn.classList.toggle("activo", activo);
-        btn.setAttribute("aria-pressed", activo ? "true" : "false");
-        renderTodo();
-      });
-      container.appendChild(btn);
+  // ---- Filtros: píldoras con menú (DESIGN_PLAYBOOK_unificado §6) ----
+  // Una píldora por filtro en una sola fila; cada una abre un menú chico con la
+  // misma forma (título + fichas). Categoría es de elección única; Subcategoría y
+  // Dificultad son múltiples (sin elegir ninguna = todas). La píldora se pinta de
+  // acento solo si difiere del valor por defecto. El orden NO es un filtro: vive
+  // en la fila de resultados, junto al conteo.
+  var dificultadesDisponibles = [];
+  var menuAbierto = null; // "categoria" | "subcategoria" | "dificultad" | "orden" | null
+  var PILLS = ["categoria", "subcategoria", "dificultad"];
+  var ORDEN_OPCIONES = [
+    { valor: "tiempo-asc", texto: "Tiempo: menor a mayor", corto: "Tiempo ↑" },
+    { valor: "tiempo-desc", texto: "Tiempo: mayor a menor", corto: "Tiempo ↓" },
+    { valor: "alfabetico", texto: "Alfabético", corto: "A–Z" },
+  ];
+  var CHEVRON = '<svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  function opcionesSubcategoria() {
+    var sf = SUBFILTROS[quitarEmojiInicial(state.categoria || "")];
+    if (!sf) return [];
+    return ordenarValores(valoresUnicos(function (r) {
+      return r.categorias.indexOf(state.categoria) !== -1 ? r[sf.campo] : null;
+    }));
+  }
+
+  // Describe cada filtro con la misma forma: así píldora y menú se arman igual.
+  function definicion(id) {
+    if (id === "categoria") {
+      var opciones = [{ valor: TODAS, texto: EMOJI_TODAS + " Todas" }].concat(
+        categoriasDisponibles.map(function (v) { return { valor: v, texto: capitalize(v) }; })
+      );
+      return {
+        titulo: "Categoría", unica: true, opciones: opciones, cuenta: state.categoria ? 1 : 0,
+        activa: function (v) { return (state.categoria || TODAS) === v; },
+        elegir: function (v) { state.categoria = v === TODAS ? null : v; state.subfiltro.clear(); },
+        resumen: state.categoria ? capitalize(state.categoria) : "Categoría",
+      };
+    }
+    var esSub = id === "subcategoria";
+    var set = esSub ? state.subfiltro : state.dificultades;
+    var valores = esSub ? opcionesSubcategoria() : dificultadesDisponibles;
+    var titulo = esSub ? "Subcategoría" : "Dificultad";
+    var resumen = set.size === 0 ? titulo : set.size === 1 ? capitalize(Array.from(set)[0]) : titulo + " · " + set.size;
+    return {
+      titulo: titulo, unica: false, set: set, cuenta: set.size, resumen: resumen,
+      opciones: valores.map(function (v) { return { valor: v, texto: capitalize(v) }; }),
+      activa: function (v) { return set.has(v); },
+      elegir: function (v) { if (set.has(v)) set.delete(v); else set.add(v); },
+    };
+  }
+
+  function cerrarMenu() {
+    menuAbierto = null;
+    els.menu.hidden = true;
+    els.ordenMenu.hidden = true;
+    els.ordenBtn.setAttribute("aria-expanded", "false");
+    els.pills.querySelectorAll(".pill").forEach(function (b) {
+      b.classList.remove("abierto");
+      b.setAttribute("aria-expanded", "false");
     });
   }
 
-  // Navbar de categorías: navegación primaria, selección única (a diferencia
-  // de los chips de abajo, que son filtros secundarios combinables). "Todas"
-  // es la pestaña por default. Una receta con varias categorias aparece en
-  // cada pestaña que le corresponda.
-  function renderNavCategorias(valores) {
-    els.categoriasNav.innerHTML = "";
+  function crearFicha(texto, activa, onClick) {
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "chip" + (activa ? " activo" : "");
+    btn.textContent = texto;
+    btn.setAttribute("aria-pressed", activa ? "true" : "false");
+    btn.addEventListener("click", onClick);
+    return btn;
+  }
 
-    function crearPestana(valor, texto) {
+  function renderMenuFiltro(id, btn) {
+    var d = definicion(id);
+    els.menu.innerHTML = "";
+    els.menu.setAttribute("aria-label", d.titulo);
+    var tit = document.createElement("span");
+    tit.className = "filtro-label";
+    tit.textContent = d.titulo;
+    els.menu.appendChild(tit);
+    var chips = document.createElement("div");
+    chips.className = "chips";
+    d.opciones.forEach(function (o) {
+      chips.appendChild(crearFicha(o.texto, d.activa(o.valor), function (e) {
+        d.elegir(o.valor);
+        if (d.unica) { cerrarMenu(); renderTodo(); return; }
+        // múltiple: el menú queda abierto, solo se actualizan las fichas y la píldora
+        var el = e.currentTarget, on = d.activa(o.valor);
+        el.classList.toggle("activo", on);
+        el.setAttribute("aria-pressed", on ? "true" : "false");
+        renderGrid(); renderFiltrosEstado(); renderPills();
+      }));
+    });
+    els.menu.appendChild(chips);
+    els.menu.hidden = false;
+    // Desktop: el menú nace bajo su píldora. Mobile (CSS): a todo el ancho.
+    if (window.matchMedia("(max-width: 720px)").matches) {
+      els.menu.style.left = "";
+    } else {
+      var max = els.bar.clientWidth - els.menu.offsetWidth;
+      els.menu.style.left = Math.max(0, Math.min(btn.offsetLeft, max)) + "px";
+    }
+  }
+
+  function abrirMenu(id) {
+    if (menuAbierto === id) { cerrarMenu(); return; }
+    cerrarMenu();
+    menuAbierto = id;
+    var btn = els.pills.querySelector('[data-pill="' + id + '"]');
+    if (!btn) return;
+    btn.classList.add("abierto");
+    btn.setAttribute("aria-expanded", "true");
+    renderMenuFiltro(id, btn);
+  }
+
+  function renderPills() {
+    var foco = document.activeElement && document.activeElement.dataset && document.activeElement.dataset.pill;
+    els.pills.innerHTML = "";
+    PILLS.forEach(function (id) {
+      var d = definicion(id);
+      if (d.opciones.length === 0) return; // ej. subcategoría sin categoría elegida
       var btn = document.createElement("button");
       btn.type = "button";
-      btn.className = "chip" + (state.categoria === valor ? " activo" : "");
-      btn.textContent = texto;
-      btn.setAttribute("role", "tab");
-      btn.setAttribute("aria-selected", state.categoria === valor ? "true" : "false");
-      btn.addEventListener("click", function () {
-        state.categoria = valor === TODAS ? null : valor;
-        onCambioCategoria();
-      });
-      els.categoriasNav.appendChild(btn);
-    }
-
-    crearPestana(TODAS, EMOJI_TODAS + " Todas");
-    valores.forEach(function (valor) { crearPestana(valor, capitalize(valor)); });
+      btn.className = "pill" + (d.cuenta > 0 ? " activo" : "") + (menuAbierto === id ? " abierto" : "");
+      btn.dataset.pill = id;
+      btn.setAttribute("aria-haspopup", "true");
+      btn.setAttribute("aria-expanded", menuAbierto === id ? "true" : "false");
+      btn.innerHTML = "<span></span>" + CHEVRON;
+      btn.firstChild.textContent = d.resumen;
+      btn.addEventListener("click", function (e) { e.stopPropagation(); abrirMenu(id); });
+      els.pills.appendChild(btn);
+      if (foco === id) btn.focus();
+    });
+    // si la píldora del menú abierto desapareció (cambió la categoría), cerrarlo
+    if (menuAbierto && menuAbierto !== "orden" && !els.pills.querySelector('[data-pill="' + menuAbierto + '"]')) cerrarMenu();
   }
 
-  function onCambioCategoria() {
-    state.subfiltro.clear();
-    renderNavCategorias(categoriasDisponibles);
-    renderGrupoSubfiltro();
-    renderTodo();
+  function renderOrden() {
+    var actual = ORDEN_OPCIONES.filter(function (o) { return o.valor === state.orden; })[0] || ORDEN_OPCIONES[0];
+    els.ordenLabel.textContent = actual.corto;
+    els.ordenBtn.setAttribute("aria-label", "Ordenar: " + actual.texto);
+    els.ordenMenu.innerHTML = "";
+    var tit = document.createElement("span");
+    tit.className = "filtro-label";
+    tit.textContent = "Ordenar por";
+    els.ordenMenu.appendChild(tit);
+    var chips = document.createElement("div");
+    chips.className = "chips";
+    ORDEN_OPCIONES.forEach(function (o) {
+      chips.appendChild(crearFicha(o.texto, o.valor === state.orden, function () {
+        state.orden = o.valor;
+        cerrarMenu();
+        renderTodo();
+      }));
+    });
+    els.ordenMenu.appendChild(chips);
   }
 
-  function renderGrupoSubfiltro() {
-    var sf = SUBFILTROS[quitarEmojiInicial(state.categoria || "")];
-    var disponibles = sf
-      ? ordenarValores(valoresUnicos(function (r) {
-          return r.categorias.indexOf(state.categoria) !== -1 ? r[sf.campo] : null;
-        }))
-      : [];
-    els.grupoSubfiltro.hidden = disponibles.length === 0;
-    els.subfiltroLabel.textContent = sf ? sf.label : "";
-    renderChips(els.chipsSubfiltro, disponibles, state.subfiltro);
+  function abrirOrden() {
+    if (menuAbierto === "orden") { cerrarMenu(); return; }
+    cerrarMenu();
+    menuAbierto = "orden";
+    els.ordenMenu.hidden = false;
+    els.ordenBtn.setAttribute("aria-expanded", "true");
   }
 
   // Valores de los sub-filtros presentes en una receta (una por categoría a
@@ -337,19 +437,19 @@
     els.estadoVacio.hidden = lista.length !== 0;
   }
 
-  // El badge y "Limpiar filtros" solo cuentan los filtros SECUNDARIOS
-  // (dificultad, sub-filtro de categoría): la categoría ahora es navegación
-  // primaria (navbar), no un filtro que se "limpia".
+  // "Limpiar filtros (N)" cuenta todo lo que difiere del valor por defecto
+  // (categoría distinta de "Todas", subcategorías y dificultades elegidas).
   function renderFiltrosEstado() {
-    var totalActivos = state.dificultades.size + state.subfiltro.size;
-    els.filtrosBadge.hidden = totalActivos === 0;
-    els.filtrosBadge.textContent = String(totalActivos);
-    els.limpiarFiltros.hidden = totalActivos === 0;
+    var n = (state.categoria ? 1 : 0) + state.dificultades.size + state.subfiltro.size;
+    els.limpiarFiltros.hidden = n === 0;
+    els.limpiarN.textContent = String(n);
   }
 
   function renderTodo() {
     renderGrid();
     renderFiltrosEstado();
+    renderPills();
+    renderOrden();
   }
 
   function slugify(texto) {
@@ -611,29 +711,29 @@
 
   function init() {
     categoriasDisponibles = ordenarValores(valoresUnicos(function (r) { return r.categorias; }));
-    var dificultadesDisponibles = ordenarValores(valoresUnicos(function (r) { return r.dificultad; }), DIFICULTAD_ORDEN);
+    dificultadesDisponibles = ordenarValores(valoresUnicos(function (r) { return r.dificultad; }), DIFICULTAD_ORDEN);
 
-    renderNavCategorias(categoriasDisponibles);
-    renderChips(els.chipsDificultad, dificultadesDisponibles, state.dificultades);
-    renderGrupoSubfiltro();
-
-    els.ordenSelect.addEventListener("change", function () {
-      state.orden = els.ordenSelect.value;
-      renderGrid();
-    });
+    els.ordenBtn.addEventListener("click", function (e) { e.stopPropagation(); abrirOrden(); });
 
     els.limpiarFiltros.addEventListener("click", function (e) {
       e.preventDefault();
+      state.categoria = null;
       state.dificultades.clear();
       state.subfiltro.clear();
-      renderChips(els.chipsDificultad, dificultadesDisponibles, state.dificultades);
-      renderGrupoSubfiltro();
+      cerrarMenu();
       renderTodo();
     });
 
-    els.filtrosToggle.addEventListener("click", function () {
-      var abierto = els.filtrosPanel.classList.toggle("abierto");
-      els.filtrosToggle.setAttribute("aria-expanded", abierto ? "true" : "false");
+    // Cerrar al tocar fuera o con Escape (devolviendo el foco a quien abrió el menú).
+    document.addEventListener("click", function (e) {
+      if (menuAbierto && !e.target.closest(".filtros-menu")) cerrarMenu();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape" || !menuAbierto) return;
+      var id = menuAbierto;
+      cerrarMenu();
+      var volver = id === "orden" ? els.ordenBtn : els.pills.querySelector('[data-pill="' + id + '"]');
+      if (volver) volver.focus();
     });
 
     renderTodo();

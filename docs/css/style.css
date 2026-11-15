@@ -188,57 +188,68 @@ body {
 
 main.container { padding-top: 24px; padding-bottom: 48px; }
 
-/* Navegación primaria por categoría: pills con scroll horizontal (>4
-   secciones), nunca wrap a 2 líneas. Ver DESIGN_PLAYBOOK_unificado §6. */
-.categorias-nav {
+/* Filtros: una fila compacta de píldoras con menú (DESIGN_PLAYBOOK_unificado §6).
+   El orden NO es un filtro: vive en .resultados-fila, junto al conteo. */
+.filtros { margin-bottom: 20px; }
+.filtros-bar {
+  position: relative; /* ancla del menú */
   display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  padding-bottom: 2px;
-  margin-bottom: 20px;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
 }
-.categorias-nav::-webkit-scrollbar { display: none; }
-.categorias-nav .chip { flex: 0 0 auto; white-space: nowrap; }
-
-/* Filtros */
-.filtros-card {
-  background: var(--surface);
-  border: 1px solid var(--border-soft);
-  box-shadow: var(--shadow-xs);
-  border-radius: var(--radius);
-  padding: 16px;
-  margin-bottom: 20px;
+.filtros-titulo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--muted-soft);
 }
-.filtros-toggle {
-  display: none;
+.filtros-pills { display: flex; gap: 8px; min-width: 0; }
+.pill {
+  display: inline-flex;
   align-items: center;
   gap: 8px;
-  width: 100%;
-  background: none;
-  border: none;
-  font: inherit;
-  font-weight: 600;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  border: 1px solid var(--border);
+  background: var(--surface);
   color: var(--text);
-  cursor: pointer;
-  padding: 4px 0;
-}
-.filtros-badge {
-  background: var(--accent);
-  color: var(--accent-contrast);
   border-radius: 999px;
-  font-size: 0.7rem;
-  font-weight: 700;
-  padding: 1px 7px;
+  padding: 6px 12px 6px 14px;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .12s ease, border-color .12s ease, color .12s ease;
 }
-.filtros-panel {
+.pill:hover { background: var(--accent-soft); }
+.pill.activo { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); font-weight: 600; }
+.pill.abierto { border-color: var(--accent); }
+.pill:focus-visible, .orden-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.pill svg { flex: 0 0 auto; opacity: .7; }
+.pill.abierto svg { transform: rotate(180deg); }
+
+.filtros-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  z-index: 20;
+  width: max-content;
+  max-width: min(420px, 100%);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  padding: 12px 14px 14px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: flex-end;
+  flex-direction: column;
+  gap: 10px;
 }
-.filtro-grupo { display: flex; flex-direction: column; gap: 8px; }
-.filtro-grupo[hidden] { display: none; }
+.filtros-menu[hidden] { display: none; }
 .filtro-label {
   text-transform: uppercase;
   font-size: 11px;
@@ -253,6 +264,7 @@ main.container { padding-top: 24px; padding-bottom: 48px; }
   color: var(--text);
   border-radius: 999px;
   padding: 6px 14px;
+  font: inherit;
   font-size: 0.8rem;
   font-weight: 500;
   cursor: pointer;
@@ -266,32 +278,37 @@ main.container { padding-top: 24px; padding-bottom: 48px; }
 }
 .chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-#orden-select {
-  appearance: none;
-  -webkit-appearance: none;
-  background: var(--surface) var(--chevron) no-repeat right 12px center;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 8px 32px 8px 12px;
-  font: inherit;
-  color: var(--text);
-  cursor: pointer;
-}
-#orden-select:focus-visible {
-  outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-soft);
-}
-
+/* Fila de resultados: conteo, "Limpiar filtros" y el orden (a la derecha). */
+.resultados-fila { display: flex; align-items: center; gap: 12px; }
+.resultado-count { color: var(--muted); font-size: 0.85rem; margin: 0; }
 .limpiar-filtros {
+  padding-left: 12px;
+  border-left: 1px solid var(--border);
   font-size: 0.8rem;
   color: var(--accent);
-  text-decoration: underline;
-  align-self: center;
+  text-decoration: none;
+  white-space: nowrap;
 }
-.limpiar-filtros:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-
-.resultado-count { color: var(--muted); font-size: 0.85rem; margin: 0 0 12px; }
+.limpiar-filtros:hover { text-decoration: underline; }
+.limpiar-filtros[hidden] { display: none; }
+.limpiar-filtros:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.orden { position: relative; margin-left: auto; }
+.orden-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+}
+.orden-btn:hover { background: var(--accent-soft); color: var(--text); }
+.orden-menu { right: 0; left: auto; }
 
 .grid {
   display: grid;
@@ -557,15 +574,15 @@ main.container { padding-top: 24px; padding-bottom: 48px; }
 
 @media (max-width: 720px) {
   .container { padding: 0 16px; }
-  .filtros-toggle { display: flex; }
-  .filtros-panel {
-    display: none;
-    flex-direction: column;
-    align-items: stretch;
-    margin-top: 12px;
-    gap: 16px;
-  }
-  .filtros-panel.abierto { display: flex; }
+  /* Mobile: la fila de píldoras desliza en horizontal (sin scrollbar) y el menú se
+     abre debajo, a todo el ancho. */
+  .filtros-bar { gap: 8px; }
+  .filtros-pills { overflow-x: auto; scrollbar-width: none; flex: 1 1 auto; padding: 2px 0; }
+  .filtros-pills::-webkit-scrollbar { display: none; }
+  .filtros-bar .filtros-menu { left: 0; right: 0; width: auto; max-width: none; }
+  .orden-label { display: none; }
+  .orden-btn { padding: 6px 8px; }
+  .orden-menu { right: 0; width: max-content; max-width: calc(100vw - 32px); }
   .grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
   .detalle-titulo { font-size: 1.4rem; }
 }

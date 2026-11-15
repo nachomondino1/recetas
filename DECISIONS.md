@@ -401,3 +401,13 @@ El script agrupa las fotos por receta reusando el mismo criterio que `_agrupar_r
 **Resultado:** 43 de 43 recetas con `foto`. Los WARNING de "sin foto de portada" del export desaparecen.
 
 **Lección:** el `fetch_covers.py` acepta la miniatura de `fuente` sin verificar que el video sea de *esa* receta; en Para bebés la `fuente` correspondía a otra variante (avena). La revisión visual del README es obligatoria justamente por esto.
+
+## 2026-11-15 — Filtros compactos: píldoras con menú, y el orden afuera
+
+**Pedido del usuario:** mejorar los filtros de la hoja de recetas: que diga "Filtros", que ocupen lo mínimo, dificultad como lista desplegable múltiple, "Tipo" renombrado a "Subcategoría", la categoría como filtro más ("Todas", Meriendas, Principales, Postres, Acompañantes, Bebidas) y el "Ordenar por" fuera de los filtros, con el símbolo de orden.
+
+**Qué se hizo** (patrón "Filtros como píldoras con menú" de `DESIGN_PLAYBOOK_unificado.md` §6): una fila con la palabra "Filtros" + tres píldoras (Categoría, Subcategoría, Dificultad). Categoría es de elección única y cierra el menú al elegir; Subcategoría y Dificultad son múltiples y el menú queda abierto. Subcategoría aparece solo cuando la categoría elegida tiene valores (antes eran las etiquetas "Momento"/"Tipo"/"Tipo de bebida" según la pestaña; ahora un solo nombre estable). La píldora resume lo elegido y se pinta de acento solo si difiere de "Todas"/vacío. Debajo, la fila de resultados: conteo, "✕ Limpiar filtros (N)" (solo con algo activo; no toca el orden) y a la derecha el botón de orden con ícono ⇅ y criterio abreviado ("Tiempo ↑", "A–Z"; solo ícono en mobile). Se eliminó la barra de pills de categoría y la card de filtros con su botón colapsable (ya no hace falta: la barra ocupa una fila). En mobile la fila de píldoras desliza en horizontal y el menú se abre a todo el ancho; verificado a 375 px sin scroll horizontal.
+
+**Qué se corrigió del playbook:** el usuario recordaba que "el orden va afuera de los filtros, con el símbolo" estaba en el playbook; solo estaba la mitad (el conteo y el orden en una fila). Se agregaron a §6 las reglas que faltaban: el orden no es un filtro (va en la fila de resultados con ícono), la barra lleva la palabra "Filtros", compacto sin card, la categoría como píldora cuando el sitio es una sola lista, el filtro dependiente con nombre estable "Subcategoría", y el menú como hermano de la fila que desliza (un menú hijo se recorta con `overflow-x: auto`).
+
+**Sin cambios de comportamiento de datos:** el filtrado es el mismo (`recetasFiltradas`); una receta sin `dificultad` queda fuera cuando se filtra por dificultad (hoy muchas dicen "Sin dato"), que es el comportamiento anterior.
