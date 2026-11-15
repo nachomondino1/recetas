@@ -141,20 +141,26 @@ def _texto_parrafo_md(elemento: dict) -> str:
     parrafo = elemento.get("paragraph")
     if not parrafo:
         return ""
-    runs: list[tuple[str, bool]] = []
+    runs = []
     for e in parrafo.get("elements", []):
         text_run = e.get("textRun", {})
-        contenido = text_run.get("content", "")
+        runs.append((text_run.get("content", ""), bool(text_run.get("textStyle", {}).get("bold"))))
+    return md_desde_runs(runs)
+
+
+def md_desde_runs(runs: list[tuple[str, bool]]) -> str:
+    """[(texto, negrita)] -> texto con `**negrita**` (ver `_texto_parrafo_md`)."""
+    fusionados: list[tuple[str, bool]] = []
+    for contenido, negrita in runs:
         if not contenido:
             continue
-        negrita = bool(text_run.get("textStyle", {}).get("bold"))
-        if runs and runs[-1][1] == negrita:
-            runs[-1] = (runs[-1][0] + contenido, negrita)
+        if fusionados and fusionados[-1][1] == negrita:
+            fusionados[-1] = (fusionados[-1][0] + contenido, negrita)
         else:
-            runs.append((contenido, negrita))
+            fusionados.append((contenido, negrita))
 
     partes = []
-    for contenido, negrita in runs:
+    for contenido, negrita in fusionados:
         if not negrita or not contenido.strip():
             partes.append(contenido)
             continue
@@ -336,7 +342,14 @@ def parse_doc(doc_json: dict) -> tuple[list[dict], list[dict]]:
                              "motivo": f"no se encontró la pestaña '{TAB_RECETAS}' en el Doc"})
         return completas, incompletas
 
-    parrafos = _parrafos_de_tab(tab)
+    return parse_parrafos(_parrafos_de_tab(tab))
+
+
+def parse_parrafos(parrafos: list[dict]) -> tuple[list[dict], list[dict]]:
+    """Lista aplanada de párrafos -> (completas, incompletas). Es el paso común
+    a las dos entradas: el JSON crudo de la Docs API (`parse_doc`) y la capa
+    cruda versionada `raw/recetas.jsonl` (`doc_raw.parrafos_desde_raw`)."""
+    completas, incompletas = [], []
     for bloque in _agrupar_recetas(parrafos):
         if not bloque["categoria_texto"]:
             incompletas.append({"tab": TAB_RECETAS, "titulo": bloque["titulo"],
@@ -430,8 +443,13 @@ def render_markdown(receta: dict) -> str:
 
 
 def run_sync(doc_json_path: Path, out_dir: Path, recipes_dir: Path = Path("recipes")) -> int:
-    doc_json = json.loads(doc_json_path.read_text(encoding="utf-8"))
-    completas, incompletas = parse_doc(doc_json)
+    if doc_json_path.suffix == ".jsonl":
+        # Capa cruda versionada (raw/recetas.jsonl), ver src/doc_raw.py.
+        from src import doc_raw
+        completas, incompletas = parse_parrafos(doc_raw.parrafos_desde_raw(doc_raw.leer_raw(doc_json_path)))
+    else:
+        doc_json = json.loads(doc_json_path.read_text(encoding="utf-8"))
+        completas, incompletas = parse_doc(doc_json)
 
     out_dir.mkdir(parents=True, exist_ok=True)
     for receta in completas:
@@ -458,7 +476,7 @@ def run_sync(doc_json_path: Path, out_dir: Path, recipes_dir: Path = Path("recip
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("doc_json", type=Path, help="JSON crudo devuelto por read_doc")
+    parser.add_argument("doc_json", type=Path, help="JSON crudo devuelto por read_doc, o raw/recetas.jsonl")
     parser.add_argument("--out", type=Path, default=Path("recipes_draft"))
     parser.add_argument("--recipes", type=Path, default=Path("recipes"),
                          help="Directorio con las recetas ya mergeadas, para detectar qué cambió")
