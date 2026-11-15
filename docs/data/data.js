@@ -1,7 +1,7 @@
 window.RECETAS_DATA = {
   "meta": {
     "schema_version": 2,
-    "generated_at": "2026-11-15T19:41:28+00:00",
+    "generated_at": "2026-11-15T19:46:12+00:00",
     "count": 43,
     "warnings": [
       {
@@ -20,11 +20,6 @@ window.RECETAS_DATA = {
         "message": "sin dato"
       },
       {
-        "recipe": "beso-de-dama",
-        "field": "foto",
-        "message": "sin foto de portada"
-      },
-      {
         "recipe": "budin-de-banana",
         "field": "dificultad",
         "message": "sin dato"
@@ -105,11 +100,6 @@ window.RECETAS_DATA = {
         "message": "sin dato"
       },
       {
-        "recipe": "de-limon-sin-manteca",
-        "field": "foto",
-        "message": "sin foto de portada"
-      },
-      {
         "recipe": "dulces-chocolate",
         "field": "dificultad",
         "message": "sin dato"
@@ -178,11 +168,6 @@ window.RECETAS_DATA = {
         "recipe": "frutilla-con-ddl-y-crema-chantilly",
         "field": "tiempo_minutos",
         "message": "sin dato"
-      },
-      {
-        "recipe": "frutilla-con-ddl-y-crema-chantilly",
-        "field": "foto",
-        "message": "sin foto de portada"
       },
       {
         "recipe": "galletitas-saladas",
@@ -310,11 +295,6 @@ window.RECETAS_DATA = {
         "message": "sin dato"
       },
       {
-        "recipe": "pan-integral-con-semillas",
-        "field": "foto",
-        "message": "sin foto de portada"
-      },
-      {
         "recipe": "pancakes",
         "field": "dificultad",
         "message": "sin dato"
@@ -333,11 +313,6 @@ window.RECETAS_DATA = {
         "recipe": "para-bebes",
         "field": "tiempo_minutos",
         "message": "sin dato"
-      },
-      {
-        "recipe": "para-bebes",
-        "field": "foto",
-        "message": "sin foto de portada"
       },
       {
         "recipe": "tarta-de-espinaca",
@@ -363,11 +338,6 @@ window.RECETAS_DATA = {
         "recipe": "tarta-de-limon",
         "field": "dificultad",
         "message": "sin dato"
-      },
-      {
-        "recipe": "tarta-de-limon",
-        "field": "foto",
-        "message": "sin foto de portada"
       },
       {
         "recipe": "torta-de-nuez",
@@ -454,7 +424,7 @@ window.RECETAS_DATA = {
       "tiempo_minutos": null,
       "tiempo_minutos_max": null,
       "porciones": null,
-      "foto": null,
+      "foto": "images/beso-de-dama/cover.jpg",
       "fecha_actualizacion": null,
       "fuente": "libro de Donato Santis",
       "doc_url": "https://docs.google.com/document/d/1jefLDcnQyAx2XfuJUSgXK30cpW-HQ9O1VDqHvsrDkdg/edit?tab=t.y91fs6ls1tlz#heading=h.gtwgu7uer9c6",
@@ -622,7 +592,7 @@ window.RECETAS_DATA = {
       "tiempo_minutos": null,
       "tiempo_minutos_max": null,
       "porciones": null,
-      "foto": null,
+      "foto": "images/de-limon-sin-manteca/cover.jpg",
       "fecha_actualizacion": null,
       "fuente": "https://www.youtube.com/watch?v=P6zj3e-6f78",
       "doc_url": "https://docs.google.com/document/d/1jefLDcnQyAx2XfuJUSgXK30cpW-HQ9O1VDqHvsrDkdg/edit?tab=t.y91fs6ls1tlz#heading=h.v8ol5w9abms5",
@@ -769,7 +739,7 @@ window.RECETAS_DATA = {
       "tiempo_minutos": null,
       "tiempo_minutos_max": null,
       "porciones": null,
-      "foto": null,
+      "foto": "images/frutilla-con-ddl-y-crema-chantilly/cover.jpg",
       "fecha_actualizacion": null,
       "fuente": null,
       "doc_url": "https://docs.google.com/document/d/1jefLDcnQyAx2XfuJUSgXK30cpW-HQ9O1VDqHvsrDkdg/edit?tab=t.y91fs6ls1tlz#heading=h.szdba4om519v",
@@ -1063,7 +1033,7 @@ window.RECETAS_DATA = {
       "tiempo_minutos": null,
       "tiempo_minutos_max": null,
       "porciones": null,
-      "foto": null,
+      "foto": "images/pan-integral-con-semillas/cover.jpg",
       "fecha_actualizacion": null,
       "fuente": "https://www.youtube.com/watch?v=a_zBZD8QQzA",
       "doc_url": "https://docs.google.com/document/d/1jefLDcnQyAx2XfuJUSgXK30cpW-HQ9O1VDqHvsrDkdg/edit?tab=t.y91fs6ls1tlz#heading=h.g79rfou9zjq7",
@@ -1126,7 +1096,7 @@ window.RECETAS_DATA = {
       "tiempo_minutos": null,
       "tiempo_minutos_max": null,
       "porciones": null,
-      "foto": null,
+      "foto": "images/para-bebes/cover.jpg",
       "fecha_actualizacion": null,
       "fuente": "https://www.youtube.com/watch?v=lySp9Dwr3vA",
       "doc_url": "https://docs.google.com/document/d/1jefLDcnQyAx2XfuJUSgXK30cpW-HQ9O1VDqHvsrDkdg/edit?tab=t.y91fs6ls1tlz#heading=h.jmyedfhvckp",
@@ -1231,7 +1201,7 @@ window.RECETAS_DATA = {
       "tiempo_minutos": 75,
       "tiempo_minutos_max": null,
       "porciones": null,
-      "foto": null,
+      "foto": "images/tarta-de-limon/cover.jpg",
       "fecha_actualizacion": null,
       "fuente": "libro Puro Dolce de Donato Santis",
       "doc_url": "https://docs.google.com/document/d/1jefLDcnQyAx2XfuJUSgXK30cpW-HQ9O1VDqHvsrDkdg/edit?tab=t.y91fs6ls1tlz#heading=h.mfg2s17xi5wm",

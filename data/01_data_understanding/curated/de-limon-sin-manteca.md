@@ -3,6 +3,7 @@ titulo: "Galletas de limón (sin manteca)"
 categorias: ["🌆 meriendas"]
 tipo_merienda: "🍪 cookies"
 fuente: "https://www.youtube.com/watch?v=P6zj3e-6f78"
+foto: "de-limon-sin-manteca/cover.jpg"
 doc_hash: "6369dbd98670"
 ---
 _(En el Doc esta receta trae también una variante de galletas de avena, manzana y banana, que va al final de cada sección.)_

@@ -3,6 +3,7 @@ titulo: "Galletas para bebés"
 categorias: ["🌆 meriendas"]
 tipo_merienda: "🍪 cookies"
 fuente: "https://www.youtube.com/watch?v=lySp9Dwr3vA"
+foto: "para-bebes/cover.jpg"
 doc_hash: "04a332da83ec"
 ---
 Videos de referencia:

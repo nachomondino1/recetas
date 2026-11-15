@@ -388,3 +388,16 @@ El script agrupa las fotos por receta reusando el mismo criterio que `_agrupar_r
 **Limitación:** el Doc tiene que estar compartido con quien abra el link; si no, Google le pide acceso. Si el título se borra y se recrea en el Doc, su `headingId` cambia y el link se actualiza solo en el próximo `make collect`.
 
 **Aparte, bug de contenido ya existente:** `flan.md` tenía la nota en cursiva pegada a la lista de ingredientes (sin línea en blanco) y Markdown los fundía en un párrafo, el mismo error ya visto en las galletas. Se corrigió y se buscó el patrón en las otras 42 recetas: solo Flan.
+
+## 2026-11-15 — Portadas para las 6 recetas que entraron sin foto
+
+**Pedido del usuario:** las recetas sin portada (porque el Doc no tiene) se completan buscando imágenes en internet y se guardan en la fuente B (`data/01_data_understanding/`), siguiendo el procedimiento del README.
+
+**Qué cubrió cada paso del orden de prioridad:**
+- **Fotos propias del Doc (paso 2), 4 recetas:** Beso de dama (`doc-03`), Frutilla con DDL (`doc-03`), Pan integral con semillas (`doc-01`), Tarta de limón (`doc-01`); en los 4 casos la foto del resultado final, reducida a 1280 px de ancho como las demás portadas. **Se bajaron a una carpeta temporal y solo se copió la portada elegida**: `extract_doc_images.py` baja las fotos de *todas* las recetas y pisa los `doc-NN.jpg` existentes, que ya están asignados a pasos en los cuerpos, así que no se corrió sobre el repo. Las demás fotos de esas 4 recetas (fotos de paso a paso) siguen sin incorporarse a los cuerpos.
+- **Miniatura del video de `fuente` (paso 3), 1 receta:** Galletas de limón sin manteca (`fetch_covers.py`). Tiene el logo del canal y un cartel "FÁCILES SIN MANTECA" superpuestos; se aceptó por ser el video de la receta, pero es candidata a reemplazar por una foto más limpia.
+- **Búsqueda en Bing Images (paso 4), 1 receta:** Galletas para bebés. La miniatura de su `fuente` (avena y manzana "sin azúcar, sin sal") **no representa la receta escrita** (naranja, harina, yema), y la del short de naranja del Doc muestra la cara de un bebé, así que se descartaron ambas. Se usó una foto limpia de galletas de animalitos con naranja (avena.io, vía Bing), 1280×720.
+
+**Resultado:** 43 de 43 recetas con `foto`. Los WARNING de "sin foto de portada" del export desaparecen.
+
+**Lección:** el `fetch_covers.py` acepta la miniatura de `fuente` sin verificar que el video sea de *esa* receta; en Para bebés la `fuente` correspondía a otra variante (avena). La revisión visual del README es obligatoria justamente por esto.

@@ -4,6 +4,7 @@ categorias: ["🍨 postres"]
 tipo_postre: "🍎 frutal"
 tiempo_minutos: 75
 fuente: "libro Puro Dolce de Donato Santis"
+foto: "tarta-de-limon/cover.jpg"
 doc_hash: "82a67cccab0d"
 ---
 Tiempos: preparación (masa 20 min, relleno 10 min) y cocción (15 min + 25 min), en total 75 minutos.

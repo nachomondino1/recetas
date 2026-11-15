@@ -3,6 +3,7 @@ titulo: "Beso de dama"
 categorias: ["🌆 meriendas"]
 tipo_merienda: "🍪 alfajores"
 fuente: "libro de Donato Santis"
+foto: "beso-de-dama/cover.jpg"
 doc_hash: "06cd62a8eb84"
 ---
 Ganache de referencia: <https://www.youtube.com/watch?v=2XDpvbk6LF8>

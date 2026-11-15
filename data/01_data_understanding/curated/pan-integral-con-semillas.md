@@ -3,6 +3,7 @@ titulo: "Pan integral con semillas"
 categorias: ["🌆 meriendas"]
 tipo_merienda: "panificados"
 fuente: "https://www.youtube.com/watch?v=a_zBZD8QQzA"
+foto: "pan-integral-con-semillas/cover.jpg"
 doc_hash: "104027c71042"
 ---
 ## Ingredientes

@@ -2,6 +2,7 @@
 titulo: "Tarta de frutilla con DDL y crema chantilly"
 categorias: ["🍨 postres"]
 tipo_postre: "🍎 frutal"
+foto: "frutilla-con-ddl-y-crema-chantilly/cover.jpg"
 doc_hash: "8623487a1bd7"
 ---
 Videos de referencia de la tarta: <https://www.youtube.com/watch?v=gV5pYGfVePA> y <https://www.youtube.com/watch?v=RHOrDiUiQ6I>. Crema chantilly: <https://www.youtube.com/watch?v=bGY4EH3NIsw>.
