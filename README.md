@@ -12,6 +12,8 @@ make integrate                # 02: integra el Doc (fuente A) y lo curado (fuent
 make update                   # integrate + 05: regenera docs/data/ (recetas.json y data.js)
 make collect DOC=<doc.json>   # 01: reduce el JSON de read_doc a data/01_data_understanding/doc/recetas.jsonl
 make sync                     # 02: genera borradores del Doc en data/02_data_preparation/drafts/ (para inspeccionar)
+make status                   # hace cuánto se trajo cada fuente por última vez (avisa si el Doc lleva >14 días)
+make log SOURCE="Curado" NOTE="qué se hizo"   # anota a mano una actualización (el Doc se anota solo)
 make clean                    # borra el venv y lo generado
 ```
 
@@ -22,7 +24,7 @@ Sigue `REPO_STRUCTURE_PLAYBOOK.md` §6 (una carpeta por fase CRISP-DM, el dato a
 ```
 recetas/
 ├── 00_business_understanding/   # objetivo del proyecto (README.md)
-├── 01_data_understanding/       # recolectar el Google Doc crudo, fotos y portadas
+├── 01_data_understanding/       # recolectar el Google Doc crudo, fotos y portadas · refresh_log.md (bitácora)
 │   └── collect_initial_data/{doc,covers}/
 ├── 02_data_preparation/         # format_data.py (Doc -> borradores) · integrate_data.py (A + B -> un conjunto)
 ├── 03_modeling/                 # no aplica (README.md explica por qué)
@@ -53,7 +55,7 @@ Las recetas se editan en un Google Doc, en una sola pestaña ("Recetas") con jer
 
 **Para sincronizar después de editar el Doc** (pedirle a Claude Code, en una sesión con el conector de Google Docs):
 
-1. Claude lee el Doc con `read_doc`, guarda el JSON y corre `make collect DOC=<doc.json>`. Después **`git diff data/01_data_understanding/doc/recetas.jsonl` muestra exactamente qué cambió en el Doc.**
+1. Claude lee el Doc con `read_doc`, guarda el JSON y corre `make collect DOC=<doc.json>`, que además **anota la fecha en `01_data_understanding/refresh_log.md`** (cuándo se trajo y si cambió); `make status` dice hace cuánto fue. Después **`git diff data/01_data_understanding/doc/recetas.jsonl` muestra exactamente qué cambió en el Doc.**
 2. `make integrate` (o `make update`, que además regenera el sitio) imprime qué entró nuevo, qué curadas hay que revisar y qué recetas del Doc están incompletas (sin ingredientes o sin paso a paso: no se publican, no se inventa contenido).
 3. Para las "a revisar": mirar el diff del raw y, si hay contenido nuevo de verdad, pasarlo a su `.md` curado y **copiar el `doc_hash` del borrador** (`make sync` deja los borradores en `data/02_data_preparation/drafts/`) para que no vuelva a avisar.
 4. `make test`, revisar en el navegador (`make serve`) y commitear.

@@ -435,3 +435,13 @@ El script agrupa las fotos por receta reusando el mismo criterio que `_agrupar_r
 - `data/02_data_preparation/drafts/` local (borradores viejos, gitignored; se regenera con `make sync`).
 
 **Qué se conservó a propósito:** `docs/data/recetas.json`. El sitio no lo carga (usa `data.js`, que es el mismo JSON envuelto para que ande también abriendo el archivo local), pero es la salida canónica del export, los tests la leen y sirve para depurar. Las entradas anteriores de este archivo conservan los nombres viejos porque describen el repo de esa fecha.
+
+## 2026-11-15 — Bitácora de actualizaciones (`refresh_log.md`) y por qué no hay cron
+
+**Pedido del usuario:** que quede registrado cuándo se trajeron los datos de cada fuente (hoy, el Google Doc), para saber hace cuánto no se actualiza; y consulta sobre si había una Action que lea el Doc con un cron.
+
+**Qué se hizo:** `01_data_understanding/refresh_log.md`, tabla de solo agregar (fecha, fuente, qué pasó), según lo que ya preveía `REPO_STRUCTURE_PLAYBOOK.md` §6. **`collect_doc.py` la escribe sola** en cada `make collect`, e incluye si el Doc cambió respecto del raw anterior (`+N / -M` párrafos) y cuántos títulos de receta tiene; para lo curado hay `make log SOURCE=... NOTE=...`. `make status` (`common/refresh_log.py`) dice hace cuánto fue la última vez de cada fuente y avisa si el Google Doc lleva más de 14 días. Se cargó el historial conocido (13, 14 y 17 de octubre, reconstruido desde este archivo y marcado así) y la actualización de hoy. Entre el 17 de octubre y hoy pasaron 29 días sin traer el Doc. Tests en `tests/test_refresh_log.py`.
+
+**Sobre la Action/cron: no existe y no se puede hacer igual.** No hay `.github/` en este repo (nunca hubo un workflow). El Doc se lee con el conector de Google Docs de una sesión de Claude, que es interactivo: un cron de GitHub no tiene esa credencial. Ya estaba documentado como decisión en `DATA_FLOW_PLAYBOOK_unificado.md` ("no hay cron posible sin credenciales"); probablemente el recuerdo es de otro proyecto que sí tiene cron. Para automatizarlo habría que crear una cuenta de servicio de Google con acceso de lectura al Doc y guardarla como secret del repo (un paso del usuario, con costo de mantener una credencial), o programar una rutina de Claude que lo haga periódicamente. No se hizo ninguna: es una decisión del usuario. Mientras tanto, el log y `make status` cubren "saber hace cuánto no se actualiza".
+
+**Generalizable, agregado a `DATA_FLOW_PLAYBOOK_unificado.md`:** sin cron, una bitácora que escribe el propio script de recolección (no una persona) más un `status` que avisa pasado un plazo.

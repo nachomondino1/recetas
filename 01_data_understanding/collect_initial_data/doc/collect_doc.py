@@ -30,6 +30,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "common"))
 import config  # noqa: E402
 import gdoc  # noqa: E402
+import refresh_log  # noqa: E402
 
 
 
@@ -92,6 +93,11 @@ def extraer_meta(doc_json: dict) -> dict:
             "tabId": tab.get("tabProperties", {}).get("tabId")}
 
 
+def leer_lineas(origen: Path) -> list[str]:
+    """Líneas del raw anterior (para saber si el Doc cambió desde la última vez)."""
+    return origen.read_text(encoding="utf-8").splitlines() if origen.exists() else []
+
+
 def escribir_raw(parrafos: list[dict], destino: Path, meta: dict | None = None) -> None:
     destino.parent.mkdir(parents=True, exist_ok=True)
     registros = ([{"_doc": meta}] if meta else []) + parrafos
@@ -106,9 +112,21 @@ def main() -> int:
     args = parser.parse_args()
     doc_json = json.loads(args.doc_json.read_text(encoding="utf-8"))
     parrafos = extraer_raw(doc_json)
+    anterior = set(leer_lineas(args.out))
     escribir_raw(parrafos, args.out, extraer_meta(doc_json))
+    nuevas = set(leer_lineas(args.out))
+    agregados, quitados = len(nuevas - anterior), len(anterior - nuevas)
+    recetas = sum(1 for p in parrafos if p["style"] == "HEADING_3" and "".join(r[0] for r in p["runs"]).strip())
+    cambio = "sin cambios respecto al anterior" if not (agregados or quitados) \
+        else f"cambió: +{agregados} / -{quitados} párrafos respecto al anterior"
+    refresh_log.registrar("Google Doc", f"{len(parrafos)} párrafos, {recetas} títulos de receta; {cambio}")
     print(f"OK: {len(parrafos)} párrafo(s) escritos en {args.out}")
-    print("Ver qué cambió en el Doc: git diff " + str(args.out.relative_to(config.ROOT)))
+    try:
+        destino = args.out.resolve().relative_to(config.ROOT)
+    except ValueError:  # --out fuera del repo
+        destino = args.out
+    print(f"Ver qué cambió en el Doc: git diff {destino}")
+    print(f"Anotado en {config.REFRESH_LOG.relative_to(config.ROOT) if config.ROOT in config.REFRESH_LOG.parents else config.REFRESH_LOG}")
     return 0
 
 

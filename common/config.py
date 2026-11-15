@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 RAW_DIR = DATA_DIR / "01_data_understanding" / "doc"
 RAW_DOC = RAW_DIR / "recetas.jsonl"  # el Google Doc tal cual (ver collect_doc.py)
+REFRESH_LOG = ROOT / "01_data_understanding" / "refresh_log.md"  # cuándo se trajo cada fuente (ver refresh_log.py)
 IMAGES_DIR = DATA_DIR / "01_data_understanding" / "images"  # portadas y fotos de paso
 # Fuente B: lo curado a mano (recetas .md con foto, porciones, prosa pulida...).
 CURATED_DIR = DATA_DIR / "01_data_understanding" / "curated"
