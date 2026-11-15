@@ -68,3 +68,35 @@ def test_solo_curada_se_conserva(tmp_path):
     _curada(cur, "tacos")
     rep = integrate_data.integrar([], [], cur, out, {})
     assert rep["solo_curadas"] == ["tacos"] and (out / "tacos.md").exists()
+
+
+META = {"documentId": "DOC", "tabId": "t.1"}
+
+
+def test_doc_url_se_inyecta_en_la_curada_y_en_la_nueva(tmp_path):
+    cur, out = tmp_path / "cur", tmp_path / "out"
+    cur.mkdir()
+    _curada(cur, "flan")
+    flan = {**_receta("flan"), "doc_heading_id": "h.abc"}
+    nueva = {**_receta("tarta"), "doc_heading_id": "h.xyz"}
+    integrate_data.integrar([flan, nueva], [], cur, out, {}, META)
+    assert 'doc_url: "https://docs.google.com/document/d/DOC/edit?tab=t.1#heading=h.abc"' in (out / "flan.md").read_text(encoding="utf-8")
+    assert "#heading=h.xyz" in (out / "tarta.md").read_text(encoding="utf-8")
+    assert "cuerpo curado" in (out / "flan.md").read_text(encoding="utf-8")
+
+
+def test_doc_url_tambien_para_curada_cuyo_doc_esta_incompleto(tmp_path):
+    cur, out = tmp_path / "cur", tmp_path / "out"
+    cur.mkdir()
+    _curada(cur, "asado")
+    inc = {"titulo": "Asado", "slug": "asado", "doc_heading_id": "h.as", "motivo": "sin paso a paso"}
+    integrate_data.integrar([], [inc], cur, out, {}, META)
+    assert "#heading=h.as" in (out / "asado.md").read_text(encoding="utf-8")
+
+
+def test_sin_meta_no_se_inventa_link(tmp_path):
+    cur, out = tmp_path / "cur", tmp_path / "out"
+    cur.mkdir()
+    _curada(cur, "flan")
+    integrate_data.integrar([{**_receta("flan"), "doc_heading_id": "h.abc"}], [], cur, out, {}, {})
+    assert "doc_url" not in (out / "flan.md").read_text(encoding="utf-8")

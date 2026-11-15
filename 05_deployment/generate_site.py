@@ -127,6 +127,7 @@ def normalizar(raws: list[dict], utils: dict[str, dict[str, str]] | None = None)
         foto = front.get("foto")
         fecha = front.get("fecha_actualizacion")
         fuente = front.get("fuente")
+        doc_url = front.get("doc_url")
         body, include_errors = resolver_includes(raw["body"], utils)
         record = {
             "id": raw["id"],
@@ -142,6 +143,7 @@ def normalizar(raws: list[dict], utils: dict[str, dict[str, str]] | None = None)
             "foto": str(foto).strip() if foto else None,
             "fecha_actualizacion": str(fecha).strip() if fecha else None,
             "fuente": str(fuente).strip() if fuente else None,
+            "doc_url": str(doc_url).strip() if doc_url else None,
             "_unknown_fields": sorted(set(front.keys()) - schema.KNOWN_FIELDS) if front else [],
         }
         for campo in sorted(schema.SUBFILTRO_CAMPOS):
@@ -254,6 +256,7 @@ def construir_json(records: list[dict], warnings: list[dict]) -> dict:
             "foto": f"images/{r['foto']}" if r["foto"] else None,
             "fecha_actualizacion": r["fecha_actualizacion"],
             "fuente": r["fuente"],
+            "doc_url": r["doc_url"],
             "body_html": render_body_html(r["body"]),
         }
         for campo in sorted(schema.SUBFILTRO_CAMPOS):

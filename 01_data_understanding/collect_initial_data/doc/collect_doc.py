@@ -75,6 +75,9 @@ def extraer_raw(doc_json: dict) -> list[dict]:
             "style": parrafo.get("paragraphStyle", {}).get("namedStyleType", "NORMAL_TEXT"),
             "runs": runs,
         }
+        heading_id = parrafo.get("paragraphStyle", {}).get("headingId")
+        if heading_id:
+            registro["headingId"] = heading_id  # para linkear directo al título en el Doc
         if bullet is not None:
             registro["lista"] = "ordenada" if gdoc.es_ordenada(parrafo, listas) else "viñeta"
             registro["nivel"] = bullet.get("nestingLevel", 0)
@@ -82,9 +85,17 @@ def extraer_raw(doc_json: dict) -> list[dict]:
     return salida
 
 
-def escribir_raw(parrafos: list[dict], destino: Path) -> None:
+def extraer_meta(doc_json: dict) -> dict:
+    """Ids que hacen falta para armar el link a una receta dentro del Doc."""
+    tab = _tab_recetas(doc_json) or {}
+    return {"documentId": doc_json.get("content", {}).get("documentId"),
+            "tabId": tab.get("tabProperties", {}).get("tabId")}
+
+
+def escribir_raw(parrafos: list[dict], destino: Path, meta: dict | None = None) -> None:
     destino.parent.mkdir(parents=True, exist_ok=True)
-    lineas = [json.dumps(p, ensure_ascii=False, separators=(",", ":")) for p in parrafos]
+    registros = ([{"_doc": meta}] if meta else []) + parrafos
+    lineas = [json.dumps(p, ensure_ascii=False, separators=(",", ":")) for p in registros]
     destino.write_text("\n".join(lineas) + "\n", encoding="utf-8")
 
 
@@ -95,7 +106,7 @@ def main() -> int:
     args = parser.parse_args()
     doc_json = json.loads(args.doc_json.read_text(encoding="utf-8"))
     parrafos = extraer_raw(doc_json)
-    escribir_raw(parrafos, args.out)
+    escribir_raw(parrafos, args.out, extraer_meta(doc_json))
     print(f"OK: {len(parrafos)} párrafo(s) escritos en {args.out}")
     print("Ver qué cambió en el Doc: git diff " + str(args.out.relative_to(config.ROOT)))
     return 0

@@ -58,6 +58,8 @@ Las recetas se editan en un Google Doc, en una sola pestaña ("Recetas") con jer
 3. Para las "a revisar": mirar el diff del raw y, si hay contenido nuevo de verdad, pasarlo a su `.md` curado y **copiar el `doc_hash` del borrador** (`make sync` deja los borradores en `data/02_data_preparation/drafts/`) para que no vuelva a avisar.
 4. `make test`, revisar en el navegador (`make serve`) y commitear.
 
+**Link al Doc:** cada receta tiene `doc_url`, un link directo a su título en el Google Doc (`...#heading=h.xxxx`), y el detalle muestra el botón "Abrir en Google Docs". Lo pone `integrate_data.py` desde el raw (que guarda el id de cada título); no se escribe a mano en los `.md` curados. Ojo: el Doc tiene que estar compartido con quien lo abra, si no Google le pide acceso.
+
 Si el título de una receta en el Doc es más corto que el curado (el Doc la agrupa bajo un H2, ej. "Banana" dentro de "Budines"), se declara en `data/01_data_understanding/curated/doc_aliases.yml`.
 
 Ver `DECISIONS.md` (entrada "Google Doc como fuente, no Markdown a mano") para el porqué.

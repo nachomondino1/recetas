@@ -392,6 +392,20 @@ main.container { padding-top: 24px; padding-bottom: 48px; }
 .detalle-header { margin-bottom: 20px; }
 .detalle-titulo { font-size: 1.75rem; font-weight: 800; letter-spacing: -0.02em; margin: 0 0 10px; }
 .detalle-meta { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 8px; }
+.link-doc {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 7px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: .85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.link-doc:hover { border-color: var(--accent); color: var(--accent); }
+.link-doc:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .detalle-fuente { color: var(--muted-soft); font-size: 0.75rem; margin-top: 8px; }
 
 .detalle-indice {

@@ -376,3 +376,15 @@ El script agrupa las fotos por receta reusando el mismo criterio que `_agrupar_r
 **Efecto en el flujo de sync:** colecta (`make collect`) → `git diff` del raw → `make integrate` dice qué es nuevo (entra solo), qué curadas hay que revisar y qué está incompleto. El merge a mano de recetas nuevas desapareció; queda solo el repaso de las "a revisar".
 
 **Pendiente:** (1) el parser sigue aplanando anidación y links; las recetas nuevas que entren solas salen con el formato mecánico (listas con `1.` repetido), no con la prosa pulida; mejorar `format_data.render_markdown` es el paso natural. (2) `generate_site.py` todavía valida y resuelve includes; ese trabajo pertenece a 02.
+
+## 2026-11-15 — Botón "Abrir en Google Docs" en el detalle de cada receta
+
+**Pedido del usuario:** les comentaron que casi nadie usa el paso a paso y los ingredientes de la web: cocinan desde el Google Doc, que se ve todo junto (fotos, pasos, aclaraciones). Se mantiene el contenido en la web y se suma un link directo a la receta en el Doc, "que cada uno use lo que quiera".
+
+**Cómo:** Google Docs linkea a un título con `...edit?tab=<tabId>#heading=<headingId>`, y la API trae el `headingId` de cada título. `collect_doc.py` ahora lo guarda en el raw (`headingId` por párrafo) junto con una primera línea `{"_doc": {documentId, tabId}}`. `format_data` lo propaga hasta la receta (`doc_heading_id`, que NO entra al `doc_hash`: no es contenido), y `integrate_data.py` arma `doc_url` y lo inyecta en el frontmatter de cada receta integrada, curada o nueva. Es dato de la fuente A, por eso no se escribe a mano en `curated/`. `doc_url` es campo opcional del schema y viaja en `recetas.json`.
+
+**Detalles:** las recetas que el Doc tiene incompletas (sin pasos) también reciben link, porque la curada que las sostiene igual existe en el Doc (para eso `parse_parrafos` ahora devuelve `slug` y `doc_heading_id` en las incompletas). Se agregó el alias `nutella` → `nutella-casera`. Resultado: 43 de 43 con link. Tests nuevos en `tests/test_integrate_data.py`.
+
+**Limitación:** el Doc tiene que estar compartido con quien abra el link; si no, Google le pide acceso. Si el título se borra y se recrea en el Doc, su `headingId` cambia y el link se actualiza solo en el próximo `make collect`.
+
+**Aparte, bug de contenido ya existente:** `flan.md` tenía la nota en cursiva pegada a la lista de ingredientes (sin línea en blanco) y Markdown los fundía en un párrafo, el mismo error ya visto en las galletas. Se corrigió y se buscó el patrón en las otras 42 recetas: solo Flan.

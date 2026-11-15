@@ -1,10 +1,11 @@
+{"_doc":{"documentId":"1jefLDcnQyAx2XfuJUSgXK30cpW-HQ9O1VDqHvsrDkdg","tabId":"t.y91fs6ls1tlz"}}
 {"style":"NORMAL_TEXT","runs":[["Recetas",true,null]]}
 {"style":"NORMAL_TEXT","runs":[["Índice",true,null]]}
 {"style":"NORMAL_TEXT","runs":[["",true,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_1","runs":[["🍗 Principales",false,null]]}
+{"style":"HEADING_1","runs":[["🍗 Principales",false,null]],"headingId":"h.ojcrw0keaui8"}
 {"style":"NORMAL_TEXT","runs":[["https://docs.google.com/document/d/1-OgrRLYZXtJs2Q032k5Bil1gDMCkFas8Yzm5rte-OX0/edit?tab=t.0#heading=h.80w3rzclkwvg",false,"https://docs.google.com/document/d/1-OgrRLYZXtJs2Q032k5Bil1gDMCkFas8Yzm5rte-OX0/edit?tab=t.0#heading=h.80w3rzclkwvg"],["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["A futuro:",false,null]]}
@@ -14,20 +15,20 @@
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_2","runs":[["🏙️ Almuerzo",false,null]]}
+{"style":"HEADING_2","runs":[["🏙️ Almuerzo",false,null]],"headingId":"h.6v8do6ht4lfk"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🍖 Asado",false,null]]}
+{"style":"HEADING_3","runs":[["🍖 Asado",false,null]],"headingId":"h.6dv1lypm5mhx"}
 {"style":"NORMAL_TEXT","runs":[["Fecha ultima actualización:",true,null],[" ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_4","runs":[["Materiales",false,null]]}
+{"style":"HEADING_4","runs":[["Materiales",false,null]],"headingId":"h.c24o5het255q"}
 {"style":"NORMAL_TEXT","runs":[["Parilla y pala.",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Cuchillo y tenedor de asador",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["2 Bandejas: para condimentar carne y para servir la carne ya lista",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_4","runs":[["Ingredientes",false,null]]}
+{"style":"HEADING_4","runs":[["Ingredientes",false,null]],"headingId":"h.sojxoc88i0s7"}
 {"style":"NORMAL_TEXT","runs":[["Carne.",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["El calculo normal es 0.5 kg por persona.",false,null]],"lista":"viñeta","nivel":1}
 {"style":"NORMAL_TEXT","runs":[["En lo personal, suelo hacer entre",false,null],[" 5 y 6 kg",true,null],[" por asado ",false,null],["para 3 personas",true,null],[" tal que sobra en la semana hasta el viernes.",false,null]],"lista":"viñeta","nivel":1}
@@ -36,11 +37,11 @@
 {"style":"NORMAL_TEXT","runs":[["Ramas, papel, carton, etc.",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_4","runs":[["Paso a paso",false,null]]}
-{"style":"HEADING_5","runs":[["🧊 P0) Descongelar la carne",false,null]]}
+{"style":"HEADING_4","runs":[["Paso a paso",false,null]],"headingId":"h.zhl63n8e45ob"}
+{"style":"HEADING_5","runs":[["🧊 P0) Descongelar la carne",false,null]],"headingId":"h.365j5iqubi43"}
 {"style":"NORMAL_TEXT","runs":[["El dia anterior, descongelar la carne. Sacarla unas 12 horas antes del freezer y ponerlas en una bandeja.",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_5","runs":[["🔥 P1) Arranco el fuego",false,null]]}
+{"style":"HEADING_5","runs":[["🔥 P1) Arranco el fuego",false,null]],"headingId":"h.kfcd52dzcnlg"}
 {"style":"NORMAL_TEXT","runs":[["Abajo cosas bien combustibles (e.g. papel, diario, carton, ramitas, etc), arriba menos (e.g. carbon, leña grande).",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Ponerle",false,null],[" dos troncos grandes de cada lado ",true,null],["para poder armar la base donde luego poner encima las ramas y demas como el techito.",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
@@ -80,7 +81,7 @@
 {"style":"NORMAL_TEXT","runs":[["100% leña:",true,null]],"lista":"ordenada","nivel":1}
 {"style":"NORMAL_TEXT","runs":[["Se calculan entre ",false,null],["2 kg y 3 kg de leña por cada 1 kg de carne",true,null],[", ya que gran parte del volumen de la madera se quema en forma de fuego y humo antes de transformarse en brasas útiles.",false,null]],"lista":"ordenada","nivel":2}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_5","runs":[["🧂 P2) Condimento la carne ",false,null]]}
+{"style":"HEADING_5","runs":[["🧂 P2) Condimento la carne ",false,null]],"headingId":"h.eia52ctjmhsj"}
 {"style":"NORMAL_TEXT","runs":[["Salo la carne con ",false,null],["pimienta y sal",true,null],[". Tener en cuenta que el chorizo y morcilla no necesita sal. ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Pimienta con frasquito tapa negra vuelta y vuelta como la sal.",false,null]]}
@@ -90,7 +91,7 @@
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_5","runs":[["🍳 P3) Pongo carne en la parrilla",false,null]]}
+{"style":"HEADING_5","runs":[["🍳 P3) Pongo carne en la parrilla",false,null]],"headingId":"h.70vgpo9y3tpf"}
 {"style":"NORMAL_TEXT","runs":[["Pongo la carne en la parilla. ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Posibles estrategias:",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["#1: ",true,null],["La ",false,null],["carne gruesa ",true,null],["donde esta mas caliente, donde estan las brasas gruesas y más cerca del fuego. Y lo mas fino con las brasas chicas y alejado del fuego. ",false,null]],"lista":"viñeta","nivel":1}
@@ -109,7 +110,7 @@
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_5","runs":[["P4) Poner brasas iniciales",false,null]]}
+{"style":"HEADING_5","runs":[["P4) Poner brasas iniciales",false,null]],"headingId":"h.b8gp90ew6i2z"}
 {"style":"NORMAL_TEXT","runs":[["El fuego esta listo masomenos a la media hora (30 min) o mas. Una vez que el fuego está bien rojo y prendido:",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Desarmo el fuego para obtener brasas.",true,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["⚠️ Mucho cuidado. ",false,null]]}
@@ -121,12 +122,12 @@
 {"style":"NORMAL_TEXT","runs":[["Agregar carbón o leña al fuego.",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_5","runs":[["↕️ P5) Ajustar altura de parrilla",false,null]]}
+{"style":"HEADING_5","runs":[["↕️ P5) Ajustar altura de parrilla",false,null]],"headingId":"h.sfoh0bt01cab"}
 {"style":"NORMAL_TEXT","runs":[["Una vez que ya pusiste las brasas iniciales, bajar la parilla para que queden 4 dedos entre esta y el suelo.",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_5","runs":[["P6) Refills periódicos de brasas según necesidad y de carbon al fuego",false,null]]}
+{"style":"HEADING_5","runs":[["P6) Refills periódicos de brasas según necesidad y de carbon al fuego",false,null]],"headingId":"h.bbb89tu4i67"}
 {"style":"NORMAL_TEXT","runs":[["La carne tiene que chillar (la grasa de la carne cae sobre la brasa y eso chilla). ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["⚠️ Cuidado, si chilla mucho, chequea la parte de abajo de la carne porque puede que el fuego este muy cerca o fuerte y te queme la carne formando una capa negra.",false,null]]}
@@ -135,7 +136,7 @@
 {"style":"NORMAL_TEXT","runs":[["Puedo dejar un poco de carbon al costado para después",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_5","runs":[["P7) Dar vuelta la carne",false,null]]}
+{"style":"HEADING_5","runs":[["P7) Dar vuelta la carne",false,null]],"headingId":"h.jyj59luuqec5"}
 {"style":"NORMAL_TEXT","runs":[["Morcilla",true,null],[" la pongo faltando 20/15 minutos para sacar la carne",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Doy vuelta la carne.",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
@@ -148,7 +149,7 @@
 {"style":"NORMAL_TEXT","runs":[["Si se quema abajo, levantar la parrilla o sacarle brasa. Pero seguir cocinándolo de ese lado. ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_5","runs":[["P8) Sacar del fuego la carne que ya esta lista",false,null]]}
+{"style":"HEADING_5","runs":[["P8) Sacar del fuego la carne que ya esta lista",false,null]],"headingId":"h.l1dcv93rt0bj"}
 {"style":"NORMAL_TEXT","runs":[["Podes dejarla en una parte de la parilla que no tenga brasa, o bien, poner arriba de un pedazo de carne que aun le falte. Lo ideal es que no quede tan lejos de la brasa porque se enfría.",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["¿Como saber si la carne esta lista?",true,null]]}
@@ -158,21 +159,21 @@
 {"style":"NORMAL_TEXT","runs":[["Pollo: ",true,null],["Al no poder cortarlo para ver si esta rojo o no (como si hacemos para la vaca), ",false,null],["cocinar de mas porque no puede quedar rojo.",true,null],["",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_5","runs":[["✂️ P9) Cortar y servir",false,null]]}
+{"style":"HEADING_5","runs":[["✂️ P9) Cortar y servir",false,null]],"headingId":"h.5u6x0xjj91u2"}
 {"style":"NORMAL_TEXT","runs":[["Cortar la carne y servir en bandeja. Disfrutar del asado.",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_5","runs":[["🪥 P10) Limpiar la parrilla con cartón o papel de diario.",false,null]]}
+{"style":"HEADING_5","runs":[["🪥 P10) Limpiar la parrilla con cartón o papel de diario.",false,null]],"headingId":"h.72vfwabl12bv"}
 {"style":"NORMAL_TEXT","runs":[["Guardar fósforo y demas.",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["Guiso con lentejas",false,null]]}
+{"style":"HEADING_3","runs":[["Guiso con lentejas",false,null]],"headingId":"h.iin3p1n2uq"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_4","runs":[["Ingredientes",false,null]]}
+{"style":"HEADING_4","runs":[["Ingredientes",false,null]],"headingId":"h.olemh1uqycqc"}
 {"style":"NORMAL_TEXT","runs":[["(para 8 porciones)",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Legumbres",true,null],[":",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Lentejones o lentejas – 600 a 800 gramos",false,null]],"lista":"viñeta","nivel":1}
@@ -196,7 +197,7 @@
 {"style":"NORMAL_TEXT","runs":[["Ajo",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Caldo knorr",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_4","runs":[["Materiales",false,null]]}
+{"style":"HEADING_4","runs":[["Materiales",false,null]],"headingId":"h.s5298ingqjp6"}
 {"style":"NORMAL_TEXT","runs":[["Ollas",true,null],[":",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Olla 1:",true,null],[" La olla principal donde va a quedar el guiso una vez hecho.",false,null]],"lista":"viñeta","nivel":1}
 {"style":"NORMAL_TEXT","runs":[["Olla 2:",true,null],[" Olla auxiliar para reahogar chorizo / panceta.",false,null]],"lista":"viñeta","nivel":1}
@@ -211,8 +212,8 @@
 {"style":"NORMAL_TEXT","runs":[["Tupper para agua",false,null]],"lista":"viñeta","nivel":1}
 {"style":"NORMAL_TEXT","runs":[["Colador",false,null]],"lista":"viñeta","nivel":1}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_4","runs":[["Paso a paso",false,null]]}
-{"style":"HEADING_5","runs":[["El dia anterior",false,null]]}
+{"style":"HEADING_4","runs":[["Paso a paso",false,null]],"headingId":"h.fwz0jw8fir0f"}
+{"style":"HEADING_5","runs":[["El dia anterior",false,null]],"headingId":"h.73kzkn1fuvmt"}
 {"style":"NORMAL_TEXT","runs":[["Poner",false,null],[" las lentejas",true,null],[" en agua (6 a 8 horas) (salvo que venga enlatada como en italia). ",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Agarras un tupper",false,null]],"lista":"ordenada","nivel":1}
 {"style":"NORMAL_TEXT","runs":[["Pones la lenteja dentro del tupper",false,null]],"lista":"ordenada","nivel":1}
@@ -224,7 +225,7 @@
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Duda: ",true,null],["¿Se puede cortar tambien las verduras? Si pero no es tan necesario. Son pocas y de hecho la papa se pone fea si la dejas cortada.",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_5","runs":[["El dia del guiso",false,null]]}
+{"style":"HEADING_5","runs":[["El dia del guiso",false,null]],"headingId":"h.3sxp2yr32z2x"}
 {"style":"NORMAL_TEXT","runs":[["Colar",true,null],[" la ",false,null],["lenteja",true,null],["",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Agarrar el tupper lleno de agua con la lenteja",false,null]],"lista":"ordenada","nivel":1}
 {"style":"NORMAL_TEXT","runs":[["Volcar",true,null],[" dicho tupper en el colador.",false,null]],"lista":"ordenada","nivel":1}
@@ -338,10 +339,10 @@
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["Pastel de papa",false,null]]}
+{"style":"HEADING_3","runs":[["Pastel de papa",false,null]],"headingId":"h.ooxqlgob3xhn"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_4","runs":[["Ingredientes",false,null]]}
+{"style":"HEADING_4","runs":[["Ingredientes",false,null]],"headingId":"h.aq7vzapv2ndw"}
 {"style":"NORMAL_TEXT","runs":[["Ingredientes Relleno:",true,null]]}
 {"style":"NORMAL_TEXT","runs":[["Calabacín 1",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Papás x",false,null]],"lista":"viñeta","nivel":0}
@@ -355,7 +356,7 @@
 {"style":"NORMAL_TEXT","runs":[["Harina",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Sal",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_4","runs":[["Paso a paso",false,null]]}
+{"style":"HEADING_4","runs":[["Paso a paso",false,null]],"headingId":"h.gd0cx29ifka"}
 {"style":"NORMAL_TEXT","runs":[["1. Cebolla, morrón y carne",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Reahogamos cebolla y morrón",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Tiramos carne picada",false,null]]}
@@ -372,12 +373,12 @@
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["4. Armar capas: calabaza, queso, carne, calabaza y queso",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🌮 Tacos",false,null]]}
+{"style":"HEADING_3","runs":[["🌮 Tacos",false,null]],"headingId":"h.i0lhvgkxqwzv"}
 {"style":"NORMAL_TEXT","runs":[["Fuente: ",true,null],["https://cocinerosargentinos.com/saludables/fajitas-integrales",false,"https://cocinerosargentinos.com/saludables/fajitas-integrales"],[" ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_4","runs":[["Ingredientes",false,null]]}
+{"style":"HEADING_4","runs":[["Ingredientes",false,null]],"headingId":"h.nq3a1r2osz35"}
 {"style":"NORMAL_TEXT","runs":[["Para 4 porciones",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Tortillas integrales con sésamo:",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Harina integral 250 g.",false,null]],"lista":"viñeta","nivel":0}
@@ -401,7 +402,7 @@
 {"style":"NORMAL_TEXT","runs":[["Vino blanco ½ taza.",false,null]],"lista":"viñeta","nivel":1}
 {"style":"NORMAL_TEXT","runs":[["Mozzarella C/N.",false,null]],"lista":"viñeta","nivel":1}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_4","runs":[["Paso a paso",false,null]]}
+{"style":"HEADING_4","runs":[["Paso a paso",false,null]],"headingId":"h.e1563ydz0lg7"}
 {"style":"NORMAL_TEXT","runs":[["Si haces la masa casera:",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Mezclar las harinas con la sal. Agregar la manteca derretida con el agua. Tomar la masa y amasar unos minutos hasta que esté lisa.",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Separar en bollitos grandes y dejar descansar.",false,null]],"lista":"ordenada","nivel":0}
@@ -415,13 +416,13 @@
 {"style":"NORMAL_TEXT","runs":[["agregar los tomates y calabaza cortados en tiras. Cocinar por unos minutos más.",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Agregar mozzarella rallada 🧀 a último momento y perejil picado y servir adentro de las tortillas integrales con sésamo, que las disfrutes! 🌮✨.",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🥘 Paella de mariscos",false,null]]}
+{"style":"HEADING_3","runs":[["🥘 Paella de mariscos",false,null]],"headingId":"h.88i8jq88aqwr"}
 {"style":"NORMAL_TEXT","runs":[["Fuente:",true,null],[" cuaderno (receta manuscrita)",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización:",true,null],[" 14 oct 2026",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Tiempo de preparación: 40 minutos",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Tiempo de cocción: 1 hora y media",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_4","runs":[["Ingredientes",false,null]]}
+{"style":"HEADING_4","runs":[["Ingredientes",false,null]],"headingId":"h.5r5dfwmv3a08"}
 {"style":"NORMAL_TEXT","runs":[["Para 5 porciones",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["2 cebollas grandes",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["2 morrones: 1 rojo, otro verde",false,null]],"lista":"viñeta","nivel":0}
@@ -436,10 +437,10 @@
 {"style":"NORMAL_TEXT","runs":[["1 cucharada colmada de curry",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Sal y pimienta a gusto",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_4","runs":[["Paso a paso",false,null]]}
-{"style":"HEADING_5","runs":[["Limpieza del calamar",false,null]]}
+{"style":"HEADING_4","runs":[["Paso a paso",false,null]],"headingId":"h.5c0prve511lb"}
+{"style":"HEADING_5","runs":[["Limpieza del calamar",false,null]],"headingId":"h.b30146x7gx1p"}
 {"style":"NORMAL_TEXT","runs":[["Limpiar los calamares cortando la cabeza y sacando todo lo del centro con mucha agua caliente, hasta que quede impecable/limpio. Luego cortarlo en tiras, junto con las 2 aletas y los tentáculos. Estos últimos también se lavan con agua caliente.",false,null]]}
-{"style":"HEADING_5","runs":[["Cocción",false,null]]}
+{"style":"HEADING_5","runs":[["Cocción",false,null]],"headingId":"h.ygati2yftqot"}
 {"style":"NORMAL_TEXT","runs":[["En la paellera puse aceite tapando el fondo y enchufé la paellera (4 p.).",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Luego agregué las cebollas cortadas chiquitas y el ajo.",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Empezar a rehogar junto con los pedazos del calamar (cortado en tiras). Este lleva aprox. 30 minutos porque tiene que ablandarse.",false,null]],"lista":"ordenada","nivel":0}
@@ -451,13 +452,13 @@
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_2","runs":[["🌃 Cena",false,null]]}
-{"style":"HEADING_3","runs":[["Empanadas",false,null]]}
+{"style":"HEADING_2","runs":[["🌃 Cena",false,null]],"headingId":"h.ez988ehyxods"}
+{"style":"HEADING_3","runs":[["Empanadas",false,null]],"headingId":"h.tmd1tqaf87hc"}
 {"style":"NORMAL_TEXT","runs":[["Fuente:",true,null],[" cuaderno (receta manuscrita)",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización:",true,null],[" 14 oct 2026",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_4","runs":[["Ingredientes",true,null],[":",false,null]]}
+{"style":"HEADING_4","runs":[["Ingredientes",true,null],[":",false,null]],"headingId":"h.u5aqn3jajzoa"}
 {"style":"NORMAL_TEXT","runs":[["1 kilo de carne picada o cortada a cuchillo",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["1 kilo y medio de cebollas",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["3 cucharadas colmadas de azúcar",false,null]],"lista":"viñeta","nivel":0}
@@ -465,8 +466,8 @@
 {"style":"NORMAL_TEXT","runs":[["Pimentón extra dulce a gusto",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Comino, 1 cucharita colmada",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_4","runs":[["Paso a paso",false,null]]}
-{"style":"HEADING_5","runs":[["Relleno",false,null]]}
+{"style":"HEADING_4","runs":[["Paso a paso",false,null]],"headingId":"h.gk04eik44uym"}
+{"style":"HEADING_5","runs":[["Relleno",false,null]],"headingId":"h.a03wxtx5fwuj"}
 {"style":"NORMAL_TEXT","runs":[["Pelar las cebollas y cortarlas chiquitas.",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Poner aceite a calentar en una cacerola y agregar las cebollas con el azúcar.",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Remover cada tanto. Cuando ya estén transparentes, agregar sal y la carne picada y revolver.",false,null]],"lista":"viñeta","nivel":0}
@@ -475,29 +476,29 @@
 {"style":"NORMAL_TEXT","runs":[["Ahí agregar el pimentón extra dulce y el comino.",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Si son saladas, no agregar el azúcar y poner 1 cucharita de ají molido.",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Cuando esté todo cocinado, apagar el fuego y esperar a que se enfríe para empezar a armarlas.",false,null]],"lista":"viñeta","nivel":0}
-{"style":"HEADING_5","runs":[["Armado",false,null]]}
+{"style":"HEADING_5","runs":[["Armado",false,null]],"headingId":"h.xs0f0nlsqctt"}
 {"style":"NORMAL_TEXT","runs":[["Preparar rodajas de huevo duro y aceitunas.",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Para cada empanada poner 1 pedacito de huevo duro, una aceituna y una cucharada del relleno, luego cerrar.",false,null]],"lista":"viñeta","nivel":0}
-{"style":"HEADING_5","runs":[["Horneado",false,null]]}
+{"style":"HEADING_5","runs":[["Horneado",false,null]],"headingId":"h.w8hozvjyribz"}
 {"style":"NORMAL_TEXT","runs":[["Poner Fritolin en una asadera y llevarlas a un horno precalentado a 180 grados durante aprox. 40 minutos (puede ser más también).",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Cuando estén listas, retirarlas del horno, dejarlas enfriar y pasar a una bandeja para servir (pueden estar tibias).",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["Tarta de espinaca",false,null]]}
+{"style":"HEADING_3","runs":[["Tarta de espinaca",false,null]],"headingId":"h.z3i0cqgydf"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_4","runs":[["Ingredientes",true,null],[":",false,null]]}
+{"style":"HEADING_4","runs":[["Ingredientes",true,null],[":",false,null]],"headingId":"h.y4zceqc5ffyq"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_4","runs":[["Paso a paso",false,null]]}
+{"style":"HEADING_4","runs":[["Paso a paso",false,null]],"headingId":"h.5r3ovah4qthp"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_1","runs":[["🍨 Postres",false,null]]}
-{"style":"HEADING_2","runs":[["",false,null]]}
-{"style":"HEADING_2","runs":[["Masas",false,null]]}
+{"style":"HEADING_1","runs":[["🍨 Postres",false,null]],"headingId":"h.6vmhs05ftjvp"}
+{"style":"HEADING_2","runs":[["",false,null]],"headingId":"h.g8j5ms9bh1st"}
+{"style":"HEADING_2","runs":[["Masas",false,null]],"headingId":"h.pakulv4mmihq"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["Sablé (para todas las tartas)",false,null]]}
+{"style":"HEADING_3","runs":[["Sablé (para todas las tartas)",false,null]],"headingId":"h.8i2nk2c10ns6"}
 {"style":"NORMAL_TEXT","runs":[["Fuente",true,null],[": ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Ingredientes (para una tartera de 30 cm aprox)",true,null]]}
@@ -545,7 +546,7 @@
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["Quebradiza sin manteca",false,null]]}
+{"style":"HEADING_3","runs":[["Quebradiza sin manteca",false,null]],"headingId":"h.4vrn27tjlbut"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Fuente",true,null],[":  ",false,null],["https://www.youtube.com/watch?v=vpWcaIbI90Y",false,"https://www.youtube.com/watch?v=vpWcaIbI90Y"],["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": ",false,null]]}
@@ -559,8 +560,8 @@
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_2","runs":[["🍎 Frutal",false,null]]}
-{"style":"HEADING_3","runs":[["🍏 Apple crumble",false,null]]}
+{"style":"HEADING_2","runs":[["🍎 Frutal",false,null]],"headingId":"h.5zvqwoorx9n0"}
+{"style":"HEADING_3","runs":[["🍏 Apple crumble",false,null]],"headingId":"h.9y8n52sifa2p"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Fuente",true,null],[":  https://www.youtube.com/watch?v=KwIRgwd52Ic&t=147s",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": ",false,null]]}
@@ -660,7 +661,7 @@
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🍋 Mousse de limón",false,null]]}
+{"style":"HEADING_3","runs":[["🍋 Mousse de limón",false,null]],"headingId":"h.7d0547ek0n0"}
 {"style":"NORMAL_TEXT","runs":[["Fuente",true,null],[": ",false,null],["https://www.recetasnestle.com.ar/recetas/mousse-de-limon",false,"https://www.recetasnestle.com.ar/recetas/mousse-de-limon"],["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización:",true,null],[" ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
@@ -725,7 +726,7 @@
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🍋 Lemon pie",false,null]]}
+{"style":"HEADING_3","runs":[["🍋 Lemon pie",false,null]],"headingId":"h.kruiwxu8regk"}
 {"style":"NORMAL_TEXT","runs":[["Fuentes:",true,null]]}
 {"style":"NORMAL_TEXT","runs":[["Lemon pie",true,null],[" completo: ",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Masa",true,null],[" ",false,null],["sable",true,null],["  ",false,null]],"lista":"ordenada","nivel":0}
@@ -753,11 +754,11 @@
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["En conjunto, suelen formar la clásica tarta de limón con merengue italiano: base de masa sablée, relleno de curd de limón y cobertura de merengue dorado.",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_5","runs":[["Masa sablée ",false,null]],"lista":"ordenada","nivel":0}
+{"style":"HEADING_5","runs":[["Masa sablée ",false,null]],"headingId":"h.hvuhz9d5buyz","lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Fuente",true,null],[": ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_6","runs":[["Ingredientes",false,null]]}
+{"style":"HEADING_6","runs":[["Ingredientes",false,null]],"headingId":"h.gth3lt82grch"}
 {"style":"NORMAL_TEXT","runs":[["200 gr ",false,null],["Harina",true,null],[" 0000 ",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["1 cdta/ ¼ tsp ",false,null],["sal",true,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["70 gr ",false,null],["manteca",true,null],["",false,null]],"lista":"viñeta","nivel":0}
@@ -765,7 +766,7 @@
 {"style":"NORMAL_TEXT","runs":[["1 cdta Esencia de ",false,null],["vainilla",true,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["1 unidad de ",false,null],["huevo",true,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_6","runs":[["Paso a paso",false,null]]}
+{"style":"HEADING_6","runs":[["Paso a paso",false,null]],"headingId":"h.fhqudsyui7e9"}
 {"style":"NORMAL_TEXT","runs":[["Agrega la ",false,null],["sal",true,null],[" a la ",false,null],["harina",true,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Tamiza en un bol la ",false,null],["harina",true,null],["",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Corta la ",false,null],["manteca",true,null],[" ",false,null],["fría",true,null],[" en ",false,null],["cubos",true,null],[" y agregame a la ",false,null],["harina",true,null]],"lista":"ordenada","nivel":0}
@@ -802,13 +803,13 @@
 {"style":"NORMAL_TEXT","runs":[["7- cocinar horno mínimo 180 aprox 20/25 mins, ir chequeando que no se infle. Se puede usar la técnica de horneado a blanco o pinchar la masa antes de meter en el horno ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_5","runs":[["2. Curd de limón (en microondas)",false,null]]}
+{"style":"HEADING_5","runs":[["2. Curd de limón (en microondas)",false,null]],"headingId":"h.36q10ixkuwi6"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Fuente",true,null],[": ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Cantidades e ingredientes: ",false,null],["https://www.youtube.com/watch?v=jTz7wBy5pI8",false,"https://www.youtube.com/watch?v=jTz7wBy5pI8"],["",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Forma de cocinarla (en microondas): ",false,null],["https://www.youtube.com/watch?v=8Mp8AsyJYj8",false,"https://www.youtube.com/watch?v=8Mp8AsyJYj8"],["",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_6","runs":[["Ingredientes",false,null]]}
+{"style":"HEADING_6","runs":[["Ingredientes",false,null]],"headingId":"h.hv818keit9oi"}
 {"style":"NORMAL_TEXT","runs":[["2 ",false,null],["huevos",true,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["100 g de ",false,null],["azúcar",true,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["15 g de ",false,null],["maicena",true,null]],"lista":"viñeta","nivel":0}
@@ -816,7 +817,7 @@
 {"style":"NORMAL_TEXT","runs":[["75 ml de ",false,null],["jugo de limón (120 g  en el original)",true,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["40 g de ",false,null],["manteca",true,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_6","runs":[["Paso a paso",false,null]]}
+{"style":"HEADING_6","runs":[["Paso a paso",false,null]],"headingId":"h.no1pcf4qxgby"}
 {"style":"NORMAL_TEXT","runs":[["Separa la ",false,null],["yema",true,null],[" de 2 huevos",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Mezcla rápidamente las ",false,null],["yemas",true,null],[" con el ",false,null],["azúcar",true,null],[". ",false,null],["No las dejes reposar juntas",true,null],[" sin integrar porque el azúcar puede \"cocinar\" las yemas y formar puntos amarillos difíciles de disolver",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Agregar la ",false,null],["maicena",true,null],[" y mezclar bien hasta disolver todos los grumos. ",false,null]],"lista":"ordenada","nivel":0}
@@ -827,16 +828,16 @@
 {"style":"NORMAL_TEXT","runs":[["Una vez caliente y espesa, retira del calor e ",false,null],["integra la manteca fría en cubos",true,null],[". Puedes batir a mano o procesar con ",false,null],["minipimer",true,null],[" para lograr una emulsión brillante y homogénea.",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Pasar a un recipiente, cubrir con ",false,null],["film",true,null],[" en contacto y",false,null],[" dejar enfriar en la heladera ",true,null],["durante un mínimo de",false,null],[" 2 horas con un film ",true,null],["",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_5","runs":[["3. Merengue italiano ",false,null]]}
+{"style":"HEADING_5","runs":[["3. Merengue italiano ",false,null]],"headingId":"h.d86i16gid5uq"}
 {"style":"NORMAL_TEXT","runs":[["IMPORTANTE",false,null],[" limpiar todo con alcohol, cualquier materia grasa que quede va a hacer que el merengue no quede como tiene que quedar. ",true,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_6","runs":[["Ingredientes",false,null]]}
+{"style":"HEADING_6","runs":[["Ingredientes",false,null]],"headingId":"h.5sa82kz0dxbb"}
 {"style":"NORMAL_TEXT","runs":[["3 Claras ",false,null],["(a temperatura ambiente)",true,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["unas gotas Ácido (jugo de limón) ",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["200 gr  Azúcar blanca",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["150 ml Agua",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_6","runs":[["Paso a paso",false,null]]}
+{"style":"HEADING_6","runs":[["Paso a paso",false,null]],"headingId":"h.qhu8d5dow5ch"}
 {"style":"NORMAL_TEXT","runs":[["1- Para hacer el almíbar: Colocar el azúcar en la cacerola. Se necesita el doble de azúcar que de claras. Cada clara pesa entre 30 y 35 gr. Por ende se necesitan entre 60 y 70 gr de azúcar por clara. ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["2- Cubrir el azúcar con el agua. Se puede hacer a ojo. Es importante que todo el azúcar quede cubierto con el agua y que no quede ningún granito de azúcar en las paredes de la cacerola. Verificar limpiando las paredes de la cacerola con un pincel mojado con agua. ",false,null]]}
@@ -852,7 +853,7 @@
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🍋Tarta de limón",false,null]]}
+{"style":"HEADING_3","runs":[["🍋Tarta de limón",false,null]],"headingId":"h.mfg2s17xi5wm"}
 {"style":"NORMAL_TEXT","runs":[["Fuentes: ",true,null],["libro Puro Dolce de Donato Santis",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
@@ -893,7 +894,7 @@
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🍓 Frutilla: Clásica con Crema Pastelera ",false,null]]}
+{"style":"HEADING_3","runs":[["🍓 Frutilla: Clásica con Crema Pastelera ",false,null]],"headingId":"h.3cgeppf6qrsh"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
@@ -975,7 +976,7 @@
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🍓 Frutilla: con DDL y Crema chantilly ",false,null]]}
+{"style":"HEADING_3","runs":[["🍓 Frutilla: con DDL y Crema chantilly ",false,null]],"headingId":"h.szdba4om519v"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
@@ -1017,9 +1018,9 @@
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_2","runs":[["🥚 Huevo",false,null]]}
+{"style":"HEADING_2","runs":[["🥚 Huevo",false,null]],"headingId":"h.4byjl2bnvx4q"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🍮 Flan",false,null]]}
+{"style":"HEADING_3","runs":[["🍮 Flan",false,null]],"headingId":"h.m0cex0k0hpr4"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Fuente",true,null],[": ",false,null],["https://www.paulinacocina.net/flan-casero-clasico/13997",false,"https://www.paulinacocina.net/flan-casero-clasico/13997"],[" ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": ",false,null]]}
@@ -1050,16 +1051,16 @@
 {"style":"NORMAL_TEXT","runs":[["Enfriar y desmoldar: Retirar del horno, dejar ",false,null],["enfriar a temperatura ambiente ",true,null],["y luego llevar a la",false,null],[" heladera por al menos 3–4 horas.",true,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Pasar un cuchillo por los bordes y ",false,null],["desmoldar",true,null],[" sobre un plato hondo para aprovechar el caramelo.",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🍞 Budín de pan",false,null]]}
+{"style":"HEADING_3","runs":[["🍞 Budín de pan",false,null]],"headingId":"h.u13unf71u9ku"}
 {"style":"NORMAL_TEXT","runs":[["Agregar receta",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_2","runs":[["🍫 Chocolatoso",false,null]]}
-{"style":"HEADING_3","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🍫 Chocolinas",false,null]]}
+{"style":"HEADING_2","runs":[["🍫 Chocolatoso",false,null]],"headingId":"h.ysk9kci7997m"}
+{"style":"HEADING_3","runs":[["",false,null]],"headingId":"h.i4hxtoclen5t"}
+{"style":"HEADING_3","runs":[["🍫 Chocolinas",false,null]],"headingId":"h.6oxhuvv40btc"}
 {"style":"NORMAL_TEXT","runs":[["Fuente: ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización: ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
@@ -1085,7 +1086,7 @@
 {"style":"NORMAL_TEXT","runs":[["",true,null]]}
 {"style":"NORMAL_TEXT","runs":[["",true,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🍫 Turrón de quaker",false,null]]}
+{"style":"HEADING_3","runs":[["🍫 Turrón de quaker",false,null]],"headingId":"h.ywak9h94epvn"}
 {"style":"NORMAL_TEXT","runs":[["Fuente: Marina Renna",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización: ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",true,null]]}
@@ -1110,11 +1111,11 @@
 {"style":"NORMAL_TEXT","runs":[["Llevar a la heladera",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🍫 Crema de chocolate",false,null]]}
+{"style":"HEADING_3","runs":[["🍫 Crema de chocolate",false,null]],"headingId":"h.zghwh5bt9o3m"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",true,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🍫 Torta Tofi",false,null]]}
+{"style":"HEADING_3","runs":[["🍫 Torta Tofi",false,null]],"headingId":"h.9vrqnh8hylk4"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Fuente: ",false,null],["https://www.youtube.com/watch?v=RP58m9CNQ3Q",false,"https://www.youtube.com/watch?v=RP58m9CNQ3Q"],["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización: ",false,null]]}
@@ -1163,7 +1164,7 @@
 {"style":"NORMAL_TEXT","runs":[["Arriba le ponemos el ",false,null],["chocolate",true,null],[".",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Con un pela papa, poner un poco de chocolate en el centro a modo de decoración",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🍫 Selva negra (cerezas)",false,null]]}
+{"style":"HEADING_3","runs":[["🍫 Selva negra (cerezas)",false,null]],"headingId":"h.nnzud29xzk6s"}
 {"style":"NORMAL_TEXT","runs":[["Fuente",true,null],[":  ",false,null],["https://www.youtube.com/watch?v=UwiJEm1tb1c",false,"https://www.youtube.com/watch?v=UwiJEm1tb1c"],["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
@@ -1175,8 +1176,8 @@
 {"style":"NORMAL_TEXT","runs":[["Paso a paso",true,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_2","runs":[["🟤 DDL",false,null]]}
-{"style":"HEADING_3","runs":[["🐿️ Torta de nuez",false,null]]}
+{"style":"HEADING_2","runs":[["🟤 DDL",false,null]],"headingId":"h.dy6tkege8pm3"}
+{"style":"HEADING_3","runs":[["🐿️ Torta de nuez",false,null]],"headingId":"h.m5367xdxztsr"}
 {"style":"NORMAL_TEXT","runs":[["Fuente: ",false,null],["https://luciapaula.com/es/torta-de-nuez-con-dulce-de-leche-y-crema-chantilly/",false,"https://luciapaula.com/es/torta-de-nuez-con-dulce-de-leche-y-crema-chantilly/"],["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización: ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
@@ -1237,11 +1238,11 @@
 {"style":"NORMAL_TEXT","runs":[["",true,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_1","runs":[["🌆 Meriendas",false,null]]}
+{"style":"HEADING_1","runs":[["🌆 Meriendas",false,null]],"headingId":"h.o1tmjmo7e8gq"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_2","runs":[["Panificados ",false,null]]}
+{"style":"HEADING_2","runs":[["Panificados ",false,null]],"headingId":"h.pqi6pztn4rt6"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🧀 Pan de queso",false,null]]}
+{"style":"HEADING_3","runs":[["🧀 Pan de queso",false,null]],"headingId":"h.5osij744di3u"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Fuente",true,null],[":  ",false,null],["https://www.youtube.com/watch?v=_TOxr4W8Q48",false,"https://www.youtube.com/watch?v=_TOxr4W8Q48"],["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": ",false,null]]}
@@ -1253,7 +1254,7 @@
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Paso a paso",true,null]]}
 {"style":"NORMAL_TEXT","runs":[["",true,null]]}
-{"style":"HEADING_3","runs":[["🍞 Pan Integral con semillas",false,null]]}
+{"style":"HEADING_3","runs":[["🍞 Pan Integral con semillas",false,null]],"headingId":"h.g79rfou9zjq7"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
@@ -1317,7 +1318,7 @@
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🍞 Pan de leche",false,null]]}
+{"style":"HEADING_3","runs":[["🍞 Pan de leche",false,null]],"headingId":"h.dx116m1cdcdi"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Fuente",true,null],[": ",false,null],["https://www.youtube.com/watch?v=gQEw-3ZDjIg",false,"https://www.youtube.com/watch?v=gQEw-3ZDjIg"],["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": ",false,null]]}
@@ -1329,7 +1330,7 @@
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Paso a paso",true,null]]}
 {"style":"NORMAL_TEXT","runs":[["",true,null]]}
-{"style":"HEADING_3","runs":[["🍞 Pan lactal",false,null]]}
+{"style":"HEADING_3","runs":[["🍞 Pan lactal",false,null]],"headingId":"h.lxomdcws4tq2"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Fuente",true,null],[":",false,null],["https://www.youtube.com/watch?v=bboWrrdy0_Y",false,"https://www.youtube.com/watch?v=bboWrrdy0_Y"],["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": ",false,null]]}
@@ -1339,9 +1340,9 @@
 {"style":"NORMAL_TEXT","runs":[["",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",true,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_2","runs":[["🍰 Budines",false,null]]}
+{"style":"HEADING_2","runs":[["🍰 Budines",false,null]],"headingId":"h.nskpbw5wajjt"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🍫 Chocolate",false,null]]}
+{"style":"HEADING_3","runs":[["🍫 Chocolate",false,null]],"headingId":"h.9lh1tsrs2ym5"}
 {"style":"NORMAL_TEXT","runs":[["Fuente: ",false,null],["https://cookpad.com/uy/recetas/11255242",false,"https://cookpad.com/uy/recetas/11255242"],["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización: ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
@@ -1368,7 +1369,7 @@
 {"style":"NORMAL_TEXT","runs":[["Horneamos a 180° ",true,null],["entre 30 y 40 min. Para verificar su cocción introducimos un palito.",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🍫 🍓 Chocolate y Frambuesa",false,null]]}
+{"style":"HEADING_3","runs":[["🍫 🍓 Chocolate y Frambuesa",false,null]],"headingId":"h.uxhm6c42idy"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Fuente: ",false,null],["https://www.instagram.com/reels/DMnyjowPo6M/",false,"https://www.instagram.com/reels/DMnyjowPo6M/"],["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización: ",false,null]]}
@@ -1379,9 +1380,9 @@
 {"style":"NORMAL_TEXT","runs":[["Paso a paso",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]],"lista":"ordenada","nivel":0}
-{"style":"HEADING_3","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🍊Naranja",false,null]]}
+{"style":"HEADING_3","runs":[["",false,null]],"headingId":"h.pkflxcl7vt5p"}
+{"style":"HEADING_3","runs":[["",false,null]],"headingId":"h.kfw1u45i5py0"}
+{"style":"HEADING_3","runs":[["🍊Naranja",false,null]],"headingId":"h.zcnmtd71ckli"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Fuente: ",false,null],["https://www.paulinacocina.net/budin-de-naranja/8585",false,"https://www.paulinacocina.net/budin-de-naranja/8585"],["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización: ",false,null]]}
@@ -1407,7 +1408,7 @@
 {"style":"NORMAL_TEXT","runs":[["Vertemos el contenido ",true,null],["en el molde",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Horneamos a 180° ",true,null],["entre 30 y 40 min. Para verificar su cocción introducimos un palito.",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🍋 Limón",false,null]]}
+{"style":"HEADING_3","runs":[["🍋 Limón",false,null]],"headingId":"h.xigyibptczi2"}
 {"style":"NORMAL_TEXT","runs":[["Fuente",true,null],[": ",false,null],["https://www.youtube.com/watch?v=nuvxNKN65QI",false,"https://www.youtube.com/watch?v=nuvxNKN65QI"],["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización:",true,null],[" ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
@@ -1460,7 +1461,7 @@
 {"style":"NORMAL_TEXT","runs":[["Mezclar el ",false,null],["azúcar impalpable ",true,null],["con el",false,null],[" jugo del limón",true,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Verter arriba del budín la preparación.",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🍌 Banana",false,null]]}
+{"style":"HEADING_3","runs":[["🍌 Banana",false,null]],"headingId":"h.aiy0sui1ez8l"}
 {"style":"NORMAL_TEXT","runs":[["Fuente: ",false,null],["https://www.youtube.com/watch?v=7sKXzEynyKE",false,"https://www.youtube.com/watch?v=7sKXzEynyKE"],["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización: ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",true,null]]}
@@ -1490,7 +1491,7 @@
 {"style":"NORMAL_TEXT","runs":[["Vertemos el contenido ",true,null],["en el molde",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Horneamos a 180° ",true,null],["entre 30 y 40 min. Para verificar su cocción introducimos un palito.",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",true,null]]}
-{"style":"HEADING_3","runs":[["🍏 Budín de manzana",false,null],["",true,null]]}
+{"style":"HEADING_3","runs":[["🍏 Budín de manzana",false,null],["",true,null]],"headingId":"h.b9tvn34eja3f"}
 {"style":"NORMAL_TEXT","runs":[["Fuente",true,null],[":  ????",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
@@ -1523,8 +1524,8 @@
 {"style":"NORMAL_TEXT","runs":[["Completar con el resto de la mezcla de budín de manzana",true,null],[". Pueden ponerse más láminas de manzana por arriba.",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Llevar a horno ",false,null],["180º",true,null],[" unos ",false,null],["40 minutos",true,null],[" o hasta que se vea dorado por arriba.",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Cuando se desmolda, se da vuelta para que las manzanas que pusimos en el fondo, queden arriba. ",false,null]],"lista":"viñeta","nivel":0}
-{"style":"HEADING_2","runs":[["🍪 Alfajores ",false,null]]}
-{"style":"HEADING_3","runs":[["de limón (havanna)",false,null]]}
+{"style":"HEADING_2","runs":[["🍪 Alfajores ",false,null]],"headingId":"h.8tw12fsk07zp"}
+{"style":"HEADING_3","runs":[["de limón (havanna)",false,null]],"headingId":"h.xsmm1ebnyo5t"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Fuente",true,null],[":  ",false,null],["https://www.youtube.com/watch?v=5i8PMxzQMpw",false,"https://www.youtube.com/watch?v=5i8PMxzQMpw"],["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": ",false,null]]}
@@ -1536,7 +1537,7 @@
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Paso a paso",true,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["Beso de dama",false,null]]}
+{"style":"HEADING_3","runs":[["Beso de dama",false,null]],"headingId":"h.gtwgu7uer9c6"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
@@ -1592,17 +1593,17 @@
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",true,null]]}
-{"style":"HEADING_2","runs":[["🍪 Cookies",false,null]]}
+{"style":"HEADING_2","runs":[["🍪 Cookies",false,null]],"headingId":"h.bxq5id76xsrk"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["Para bebés",false,null]]}
+{"style":"HEADING_3","runs":[["Para bebés",false,null]],"headingId":"h.jmyedfhvckp"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_4","runs":[["Banana y almendras",false,null]]}
+{"style":"HEADING_4","runs":[["Banana y almendras",false,null]],"headingId":"h.ib5aku4mrc3q"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["https://www.youtube.com/shorts/Tz8MJvwrSt4",false,"https://www.youtube.com/shorts/Tz8MJvwrSt4"],["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_4","runs":[["Naranja",false,null]]}
+{"style":"HEADING_4","runs":[["Naranja",false,null]],"headingId":"h.2jfufvezhex"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["https://www.youtube.com/shorts/P6w-Mr5y67M",false,"https://www.youtube.com/shorts/P6w-Mr5y67M"],["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
@@ -1623,11 +1624,11 @@
 {"style":"NORMAL_TEXT","runs":[["Cortar: Utilizar cortantes de diferentes formas (como animalitos o figuras divertidas) para cortar las galletas.",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Hornear: Colocar las galletas en una placa para horno y hornear hasta que estén listas.",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_4","runs":[["Naranja",false,null]]}
+{"style":"HEADING_4","runs":[["Naranja",false,null]],"headingId":"h.2nixu07l46ig"}
 {"style":"NORMAL_TEXT","runs":[["youtube.com/watch?v=lySp9Dwr3vA&feature=youtu.be",false,"http://youtube.com/watch?v=lySp9Dwr3vA&feature=youtu.be"],["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["De limón (SIN manteca)",false,null]]}
+{"style":"HEADING_3","runs":[["De limón (SIN manteca)",false,null]],"headingId":"h.v8ol5w9abms5"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Fuente",true,null],[":  ",false,null],["https://www.youtube.com/watch?v=P6zj3e-6f78",false,"https://www.youtube.com/watch?v=P6zj3e-6f78"],["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": ",false,null]]}
@@ -1662,7 +1663,7 @@
 {"style":"NORMAL_TEXT","runs":[["Glasé y decoración:",true,null],[" Mezclar el azúcar impalpable con el jugo de la otra mitad del limón hasta obtener una consistencia elástica. Decorar las galletas por encima (puedes chorrearlas ayudándote con un tenedor).",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_4","runs":[["Banana y manzana",false,null]]}
+{"style":"HEADING_4","runs":[["Banana y manzana",false,null]],"headingId":"h.nne97dglm1m6"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Fuente",true,null],[": ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": ",false,null]]}
@@ -1680,7 +1681,7 @@
 {"style":"NORMAL_TEXT","runs":[["Cocción:",true,null],[" Llevar a horno precalentado a ",false,null],["170 °C",true,null],[" durante ",false,null],["25 minutos.",true,null],["",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["de limón craqueladas",false,null]]}
+{"style":"HEADING_3","runs":[["de limón craqueladas",false,null]],"headingId":"h.t2y2sfdyijn0"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Fuente",true,null],[":  ",false,null],["https://www.youtube.com/watch?v=FmkoEUCcIGY",false,"https://www.youtube.com/watch?v=FmkoEUCcIGY"],["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": ",false,null]]}
@@ -1692,7 +1693,7 @@
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Paso a paso",true,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["Dulces: Vainilla con membrillo",false,null]]}
+{"style":"HEADING_3","runs":[["Dulces: Vainilla con membrillo",false,null]],"headingId":"h.s5v1l5azhdsi"}
 {"style":"NORMAL_TEXT","runs":[["Fuente",true,null],[":  cuaderno (receta manuscrita)",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": 14 oct 2026",false,null],["",true,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
@@ -1715,7 +1716,7 @@
 {"style":"NORMAL_TEXT","runs":[["Si querés ponerle membrillo o batata, lo hacés cuando las das vuelta: cuando las sacás, aplastás el dulce con una cuchara y te quedan pepas de membrillo. Si no, las dejás como galletitas de vainilla.",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Se pueden hacer con cualquier harina: de arroz, de coco, de avena, de salvado, etc.",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["Dulces: Limón",false,null]]}
+{"style":"HEADING_3","runs":[["Dulces: Limón",false,null]],"headingId":"h.s8lqri1rnv4p"}
 {"style":"NORMAL_TEXT","runs":[["Fuente",true,null],[":  cuaderno (receta manuscrita)",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": 14 oct 2026",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
@@ -1729,7 +1730,7 @@
 {"style":"NORMAL_TEXT","runs":[["Paso a paso",true,null]]}
 {"style":"NORMAL_TEXT","runs":[["Igual que Dulces: Vainilla con membrillo.",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["Dulces: Nuez y coco",false,null]]}
+{"style":"HEADING_3","runs":[["Dulces: Nuez y coco",false,null]],"headingId":"h.nm9ymd9pew79"}
 {"style":"NORMAL_TEXT","runs":[["Fuente",true,null],[":  cuaderno (receta manuscrita)",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": 14 oct 2026",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",true,null]]}
@@ -1744,7 +1745,7 @@
 {"style":"NORMAL_TEXT","runs":[["Paso a paso",true,null]]}
 {"style":"NORMAL_TEXT","runs":[["Igual que Dulces: Vainilla con membrillo. Cuando las armás, ponerles trocitos de nueces y un poco de dulce de leche.",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["Dulces: Chocolate",false,null]]}
+{"style":"HEADING_3","runs":[["Dulces: Chocolate",false,null]],"headingId":"h.w1tbe5vo71sb"}
 {"style":"NORMAL_TEXT","runs":[["Fuente",true,null],[":  cuaderno (receta manuscrita)",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": 14 oct 2026",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",true,null]]}
@@ -1764,7 +1765,7 @@
 {"style":"NORMAL_TEXT","runs":[["•⁠  ⁠La taza de harina y las cucharadas de cacao: agarra la taza y ponele cuánto cacao querés (yo le pongo casi media taza) y luego rellenas con la harina ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["•⁠  ⁠⁠cocino: 10 min de un lado y después las das vueltas y 10 min más",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["Saladas",false,null]]}
+{"style":"HEADING_3","runs":[["Saladas",false,null]],"headingId":"h.pqbx5ukbozrx"}
 {"style":"NORMAL_TEXT","runs":[["Fuente",true,null],[":  ",false,null],["https://www.instagram.com/p/CNNUl1_g9yC/?img_index=3&stkn=cnJ6MXg2ejRkcGRx",false,"https://www.instagram.com/p/CNNUl1_g9yC/?img_index=3&stkn=cnJ6MXg2ejRkcGRx"],["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",true,null]]}
@@ -1791,9 +1792,9 @@
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_2","runs":[["🍯 Untables",false,null]]}
+{"style":"HEADING_2","runs":[["🍯 Untables",false,null]],"headingId":"h.2cfy6mf0p9pt"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["Mayonesa de zanahoria",false,null]]}
+{"style":"HEADING_3","runs":[["Mayonesa de zanahoria",false,null]],"headingId":"h.mmgi8yo8up5l"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Fuente",true,null],[":  https://www.paulinacocina.net/mayonesa-de-zanahoria/37212",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": ",false,null]]}
@@ -1811,7 +1812,7 @@
 {"style":"NORMAL_TEXT","runs":[["Procesala",true,null],[" más y listo!",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["Nutella",false,null]]}
+{"style":"HEADING_3","runs":[["Nutella",false,null]],"headingId":"h.nmwx4mjwdbmx"}
 {"style":"NORMAL_TEXT","runs":[["https://www.youtube.com/watch?v=RszJkbrVqkM&feature=youtu.be",false,"https://www.youtube.com/watch?v=RszJkbrVqkM&feature=youtu.be"],[" ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["https://cocineraymadre.com/2021/09/12/nutella-casera-y-saludable-o-crema-de-cacao-y-avellanas/?utm_source=chatgpt.com",false,"https://cocineraymadre.com/2021/09/12/nutella-casera-y-saludable-o-crema-de-cacao-y-avellanas/?utm_source=chatgpt.com"],[" ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
@@ -1841,7 +1842,7 @@
 {"style":"NORMAL_TEXT","runs":[["•⁠  ⁠🌼 ½ cucharadita de esencia de vainilla.",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["Mermelada de manzana",false,null]]}
+{"style":"HEADING_3","runs":[["Mermelada de manzana",false,null]],"headingId":"h.9k29aikoa7p4"}
 {"style":"NORMAL_TEXT","runs":[["https://www.youtube.com/shorts/fXV-SjgVD4s",false,"https://www.youtube.com/shorts/fXV-SjgVD4s"],["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["https://youtu.be/eXyNtLVpFf0?si=ZpWzCNCREu0cSRoV",false,"https://youtu.be/eXyNtLVpFf0?si=ZpWzCNCREu0cSRoV"],[" →",false,null],[" la que siguió mama",true,null],["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
@@ -1858,15 +1859,15 @@
 {"style":"NORMAL_TEXT","runs":[["Comprobar punto y envasar:",true,null],[" La mermelada estará lista cuando la manzana luzca translúcida. Verificar la consistencia pasando un dedo por la cuchara sumergida en la mermelada; si el trazo no se une, está lista. Retirar del fuego, verter en el frasco esterilizado y dejar enfriar a temperatura ambiente antes de refrigerar.",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["Mermelada de naranja",false,null]]}
+{"style":"HEADING_3","runs":[["Mermelada de naranja",false,null]],"headingId":"h.2d9b04ckxqgd"}
 {"style":"NORMAL_TEXT","runs":[["https://www.youtube.com/shorts/26iPiBKpOcM",false,"https://www.youtube.com/shorts/26iPiBKpOcM"],["\t",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_2","runs":[["Otros  ",false,null]]}
+{"style":"HEADING_2","runs":[["Otros  ",false,null]],"headingId":"h.ffrn8l1zphcv"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🥞 Pancakes",false,null]]}
+{"style":"HEADING_3","runs":[["🥞 Pancakes",false,null]],"headingId":"h.8dp54iur48rv"}
 {"style":"NORMAL_TEXT","runs":[["https://youtube.com/shorts/o6VMb0wrSyc?si=dvpqQEQSKLu4huwP",false,"https://youtube.com/shorts/o6VMb0wrSyc?si=dvpqQEQSKLu4huwP"],[" → mamá los hizo de banana",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
@@ -1882,9 +1883,9 @@
 {"style":"NORMAL_TEXT","runs":[["Conservar o servir:",true,null],[" Dejar enfriar para congelar en cantidad (se pueden calentar luego 30 segundos en el microondas o sacar un rato antes) y acompañar con fruta por encima.",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_1","runs":[["🥛 Bebidas",false,null]]}
-{"style":"HEADING_2","runs":[["🍹 Tragos",false,null]]}
-{"style":"HEADING_3","runs":[["Daiquiri",false,null]]}
+{"style":"HEADING_1","runs":[["🥛 Bebidas",false,null]],"headingId":"h.h5ge6nwi370c"}
+{"style":"HEADING_2","runs":[["🍹 Tragos",false,null]],"headingId":"h.tknc8i20jikj"}
+{"style":"HEADING_3","runs":[["Daiquiri",false,null]],"headingId":"h.1fj72itpiv02"}
 {"style":"NORMAL_TEXT","runs":[["Ingredientes:",true,null]]}
 {"style":"NORMAL_TEXT","runs":[["6 vasos de daiquiri:",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Hielo a tope. Es lo que regula lo espeso que es.",false,null]],"lista":"viñeta","nivel":0}
@@ -1906,8 +1907,8 @@
 {"style":"NORMAL_TEXT","runs":[["Agregar unos chorritos de soda y mezclar suave.",false,null]],"lista":"ordenada","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_2","runs":[["Jugos naturales",false,null]]}
-{"style":"HEADING_3","runs":[["⚡ El Energético",false,null]]}
+{"style":"HEADING_2","runs":[["Jugos naturales",false,null]],"headingId":"h.1cj774m3dwer"}
+{"style":"HEADING_3","runs":[["⚡ El Energético",false,null]],"headingId":"h.x43uovpnzz6e"}
 {"style":"NORMAL_TEXT","runs":[["Fuente:",true,null],[" Gemini",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",true,null]]}
@@ -1922,7 +1923,7 @@
 {"style":"NORMAL_TEXT","runs":[["Introducir los ingredientes ",true,null],["alternándolos (por ejemplo, un trozo de zanahoria, luego manzana y un pedacito de jengibre) para que el filtro trabaje de manera uniforme.",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Recoger el jugo ",true,null],["puro en un recipiente y servir inmediatamente o preparar para conservar.",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🛡️ El Inmunológico / Antiox",false,null]]}
+{"style":"HEADING_3","runs":[["🛡️ El Inmunológico / Antiox",false,null]],"headingId":"h.x9crvvbwon3x"}
 {"style":"NORMAL_TEXT","runs":[["Fuente:",true,null],[" Gemini",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Ingredientes:",true,null]]}
@@ -1936,7 +1937,7 @@
 {"style":"NORMAL_TEXT","runs":[["Introducir",true,null],[" los gajos de naranja, los trozos de ananá y el limón de forma alternada.",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Extraer",true,null],[" el jugo por completo y servir.",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🌿 El Detox Digestivo",false,null]]}
+{"style":"HEADING_3","runs":[["🌿 El Detox Digestivo",false,null]],"headingId":"h.x0vw2idagerv"}
 {"style":"NORMAL_TEXT","runs":[["Fuente:",true,null],[" Gemini",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Ingredientes:",true,null]]}
@@ -1951,7 +1952,7 @@
 {"style":"NORMAL_TEXT","runs":[["Introducir",true,null],[" los ingredientes alternando los vegetales de alta hidratación (como el pepino y el apio) con la manzana y las hojas de menta.",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Obtener",true,null],[" el jugo y mezclar levemente antes de consumir.",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🥕 El Clásico",false,null]]}
+{"style":"HEADING_3","runs":[["🥕 El Clásico",false,null]],"headingId":"h.t4pdogds23ld"}
 {"style":"NORMAL_TEXT","runs":[["Fuente:",true,null],[" Gemini",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["Ingredientes:",true,null]]}
@@ -1965,10 +1966,10 @@
 {"style":"NORMAL_TEXT","runs":[["Recolectar",true,null],[" todo el líquido resultante y disfrutar.",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_1","runs":[["🥔 Acompañantes",false,null]]}
+{"style":"HEADING_1","runs":[["🥔 Acompañantes",false,null]],"headingId":"h.hoi1o0d3k15h"}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🥔 Papas al horno",false,null]]}
+{"style":"HEADING_3","runs":[["🥔 Papas al horno",false,null]],"headingId":"h.gk51f0pmlplt"}
 {"style":"NORMAL_TEXT","runs":[["Ingredientes",true,null]]}
 {"style":"NORMAL_TEXT","runs":[["papas",false,null]],"lista":"viñeta","nivel":0}
 {"style":"NORMAL_TEXT","runs":[["Aceite normal (nunca de oliva)",false,null]],"lista":"viñeta","nivel":0}
@@ -1992,7 +1993,7 @@
 {"style":"NORMAL_TEXT","runs":[["Y listo!",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",false,null]]}
-{"style":"HEADING_3","runs":[["🫑 Morrón y huevo asados",false,null]]}
+{"style":"HEADING_3","runs":[["🫑 Morrón y huevo asados",false,null]],"headingId":"h.iuok0ys82mcr"}
 {"style":"NORMAL_TEXT","runs":[["Última actualización",true,null],[": ",false,null]]}
 {"style":"NORMAL_TEXT","runs":[["",true,null]]}
 {"style":"NORMAL_TEXT","runs":[["Ingredientes",true,null],[":",false,null]]}

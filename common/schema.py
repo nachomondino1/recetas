@@ -52,5 +52,6 @@ OPTIONAL_FIELDS = {
     "fecha_actualizacion",
     "fuente",
     "doc_hash",
+    "doc_url",  # link directo a la receta en el Google Doc (lo pone integrate_data)
 } | SUBFILTRO_CAMPOS
 KNOWN_FIELDS = REQUIRED_FIELDS | OPTIONAL_FIELDS

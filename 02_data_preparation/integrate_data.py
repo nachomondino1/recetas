@@ -23,6 +23,7 @@ Para cambiar una receta: cambiar el Doc (fuente A) o su .md curado (fuente B).
 
 from __future__ import annotations
 
+import re
 import shutil
 import sys
 from pathlib import Path
@@ -41,12 +42,23 @@ def cargar_aliases(ruta: Path) -> dict[str, str]:
     return yaml.safe_load(ruta.read_text(encoding="utf-8")) or {}
 
 
+def _con_doc_url(texto: str, url: str | None) -> str:
+    """Inyecta/reemplaza `doc_url` en el frontmatter de una receta curada: el link
+    al Doc es dato de la fuente A, no se escribe a mano en lo curado."""
+    if not url:
+        return texto
+    if re.search(r"^doc_url:", texto, re.M):
+        return re.sub(r"^doc_url:.*$", f'doc_url: "{url}"', texto, count=1, flags=re.M)
+    return texto.replace("\n---\n", f'\ndoc_url: "{url}"\n---\n', 1)
+
+
 def integrar(
     completas: list[dict],
     incompletas: list[dict],
     curated_dir: Path,
     out_dir: Path,
     aliases: dict[str, str],
+    doc_meta: dict | None = None,
 ) -> dict[str, list]:
     """Escribe el conjunto integrado en `out_dir` y devuelve el reporte.
 
@@ -60,6 +72,16 @@ def integrar(
     if out_dir.exists():
         shutil.rmtree(out_dir)
     out_dir.mkdir(parents=True)
+
+    doc_meta = doc_meta or {}
+    urls: dict[str, str] = {}
+    for receta in list(completas) + list(incompletas):
+        # Incompletas también: la receta curada que las sostiene igual linkea a su título en el Doc.
+        url = format_data.url_receta(doc_meta, receta.get("doc_heading_id"))
+        if url:
+            destino = aliases.get(receta.get("slug") or format_data.slugify(receta.get("titulo") or ""),
+                                  receta.get("slug") or format_data.slugify(receta.get("titulo") or ""))
+            urls[destino] = url
 
     cubiertas: set[str] = set()
     for receta in completas:
@@ -76,11 +98,13 @@ def integrar(
             else:
                 reporte["curadas_iguales"].append(destino)
         else:
+            receta = {**receta, "doc_url": urls.get(destino)}
             (out_dir / f"{destino}.md").write_text(format_data.render_markdown(receta), encoding="utf-8")
             reporte["nuevas"].append(destino)
 
     for slug, ruta in curadas.items():
-        shutil.copyfile(ruta, out_dir / f"{slug}.md")
+        (out_dir / f"{slug}.md").write_text(_con_doc_url(ruta.read_text(encoding="utf-8"), urls.get(slug)),
+                                            encoding="utf-8")
         if slug not in cubiertas:
             reporte["solo_curadas"].append(slug)
 
@@ -113,7 +137,7 @@ def main() -> int:
     parrafos = format_data.parrafos_desde_raw(format_data.leer_raw(config.RAW_DOC))
     completas, incompletas = format_data.parse_parrafos(parrafos)
     reporte = integrar(completas, incompletas, config.CURATED_DIR, config.INTEGRATED_DIR,
-                       cargar_aliases(config.ALIASES_FILE))
+                       cargar_aliases(config.ALIASES_FILE), format_data.leer_doc_meta(config.RAW_DOC))
     imprimir(reporte)
     return 0
 

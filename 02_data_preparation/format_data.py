@@ -177,6 +177,7 @@ def _parrafos_de_tab(tab: dict) -> list[dict]:
             "texto_md": _texto_parrafo_md(elemento).strip(),
             "es_lista": parrafo.get("bullet") is not None,
             "ordenada": _es_ordenada(parrafo, listas),
+            "heading_id": parrafo.get("paragraphStyle", {}).get("headingId"),
         })
     return salida
 
@@ -207,6 +208,7 @@ def _agrupar_recetas(parrafos: list[dict]) -> list[dict]:
                 "titulo": p["texto"],
                 "categoria_texto": categoria_actual,
                 "subcategoria_texto": subcategoria_actual,
+                "heading_id": p.get("heading_id"),
                 "parrafos": [],
             }
             recetas.append(actual)
@@ -325,8 +327,25 @@ def parse_doc(doc_json: dict) -> tuple[list[dict], list[dict]]:
     return parse_parrafos(_parrafos_de_tab(tab))
 
 
-def leer_raw(origen: Path) -> list[dict]:
+def _registros_raw(origen: Path) -> list[dict]:
     return [json.loads(l) for l in origen.read_text(encoding="utf-8").splitlines() if l.strip()]
+
+
+def leer_raw(origen: Path) -> list[dict]:
+    """Párrafos del raw (sin la línea de metadatos `_doc`)."""
+    return [r for r in _registros_raw(origen) if "_doc" not in r]
+
+
+def leer_doc_meta(origen: Path) -> dict:
+    """{"documentId", "tabId"} del Doc, o {} si el raw no los trae."""
+    return next((r["_doc"] for r in _registros_raw(origen) if "_doc" in r), {})
+
+
+def url_receta(meta: dict, heading_id: str | None) -> str | None:
+    """Link directo al título de una receta dentro del Google Doc."""
+    if not (meta.get("documentId") and meta.get("tabId") and heading_id):
+        return None
+    return f"https://docs.google.com/document/d/{meta['documentId']}/edit?tab={meta['tabId']}#heading={heading_id}"
 
 
 def parrafos_desde_raw(raw: list[dict]) -> list[dict]:
@@ -344,6 +363,7 @@ def parrafos_desde_raw(raw: list[dict]) -> list[dict]:
             "es_lista": "lista" in p,
             "ordenada": p.get("lista") == "ordenada",
             "nivel": p.get("nivel", 0),
+            "heading_id": p.get("headingId"),
         })
     return salida
 
@@ -372,6 +392,7 @@ def parse_parrafos(parrafos: list[dict]) -> tuple[list[dict], list[dict]]:
         if subcategoria:
             receta[campo_subcategoria] = subcategoria
         receta["tab"] = TAB_RECETAS
+        receta["doc_heading_id"] = bloque.get("heading_id")  # no entra al doc_hash: no es contenido
         receta["doc_hash"] = contenido_hash(receta)
         if receta["completa"]:
             completas.append(receta)
@@ -379,6 +400,8 @@ def parse_parrafos(parrafos: list[dict]) -> tuple[list[dict], list[dict]]:
             incompletas.append({
                 "tab": TAB_RECETAS,
                 "titulo": receta["titulo"],
+                "slug": receta["slug"],
+                "doc_heading_id": receta["doc_heading_id"],
                 "motivo": "sin ingredientes/materiales" if not (receta["ingredientes"] or receta["materiales"])
                           else "sin paso a paso",
             })
@@ -429,6 +452,8 @@ def render_markdown(receta: dict) -> str:
         front.append(f'fuente: "{receta["fuente"]}"')
     if receta["fecha_actualizacion"]:
         front.append(f'fecha_actualizacion: "{receta["fecha_actualizacion"]}"')
+    if receta.get("doc_url"):
+        front.append(f'doc_url: "{receta["doc_url"]}"')
     front.append(f'doc_hash: "{receta["doc_hash"]}"')
     front.append("---")
 

@@ -532,6 +532,18 @@
     });
 
     header.appendChild(meta);
+
+    // Mucha gente cocina directo desde el Google Doc (fotos, aclaraciones y pasos
+    // todo junto): link al título de esta receta en el Doc, además del contenido de acá.
+    if (receta.doc_url) {
+      var linkDoc = document.createElement("a");
+      linkDoc.className = "link-doc";
+      linkDoc.href = receta.doc_url;
+      linkDoc.target = "_blank";
+      linkDoc.rel = "noopener";
+      linkDoc.textContent = "Abrir en Google Docs ↗";
+      header.appendChild(linkDoc);
+    }
     els.detalleContenido.appendChild(header);
 
     var cuerpo = document.createElement("div");
