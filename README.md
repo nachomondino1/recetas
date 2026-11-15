@@ -12,7 +12,7 @@ make integrate                # 02: integra el Doc (fuente A) y lo curado (fuent
 make update                   # integrate + 05: regenera docs/data/ (recetas.json y data.js)
 make collect DOC=<doc.json>   # 01: reduce el JSON de read_doc a data/01_data_understanding/doc/recetas.jsonl
 make sync                     # 02: genera borradores del Doc en data/02_data_preparation/drafts/ (para inspeccionar)
-make status                   # hace cuánto se trajo cada fuente por última vez (avisa si el Doc lleva >14 días)
+make status                   # (bitácora: 01_data_understanding/refresh_log.md) hace cuánto se trajo cada fuente por última vez (avisa si el Doc lleva >14 días)
 make log SOURCE="Curado" NOTE="qué se hizo"   # anota a mano una actualización (el Doc se anota solo)
 make clean                    # borra el venv y lo generado
 ```
@@ -61,6 +61,8 @@ Las recetas se editan en un Google Doc, en una sola pestaña ("Recetas") con jer
 4. `make test`, revisar en el navegador (`make serve`) y commitear.
 
 **Link al Doc:** cada receta tiene `doc_url`, un link directo a su título en el Google Doc (`...#heading=h.xxxx`), y el detalle muestra el botón "Abrir en Google Docs". Lo pone `integrate_data.py` desde el raw (que guarda el id de cada título); no se escribe a mano en los `.md` curados. Ojo: el Doc tiene que estar compartido con quien lo abra, si no Google le pide acceso.
+
+**Por ahora la actualización es manual** (le pedís a Claude "traé los datos del Google Doc"); cada vez queda una fila en [`01_data_understanding/refresh_log.md`](01_data_understanding/refresh_log.md) con la fecha, cuántas recetas hay y cuáles son nuevas. Automatizarla con un cronjob está evaluado y documentado, no implementado: [`01_data_understanding/automatizar_actualizacion.md`](01_data_understanding/automatizar_actualizacion.md).
 
 Si el título de una receta en el Doc es más corto que el curado (el Doc la agrupa bajo un H2, ej. "Banana" dentro de "Budines"), se declara en `data/01_data_understanding/curated/doc_aliases.yml`.
 

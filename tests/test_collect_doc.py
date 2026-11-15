@@ -60,3 +60,15 @@ def test_raw_es_deterministico(tmp_path):
     collect_doc.escribir_raw(collect_doc.extraer_raw(_doc()), a)
     collect_doc.escribir_raw(collect_doc.extraer_raw(_doc()), b)
     assert a.read_bytes() == b.read_bytes()
+
+
+def test_titulos_de_receta_detecta_las_nuevas_y_las_quitadas():
+    import json
+
+    def raw(titulos):
+        return [json.dumps({"style": "HEADING_3", "runs": [[t, False, None]]}) for t in titulos] + \
+               [json.dumps({"style": "NORMAL_TEXT", "runs": [["texto", False, None]]})]
+
+    antes, ahora = collect_doc.titulos_de_receta(raw(["Flan", "Tacos"])), collect_doc.titulos_de_receta(raw(["Flan", "Pan"]))
+    assert [t for t in ahora if t not in antes] == ["Pan"]
+    assert [t for t in antes if t not in ahora] == ["Tacos"]

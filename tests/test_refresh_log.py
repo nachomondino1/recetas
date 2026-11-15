@@ -40,3 +40,12 @@ def test_el_detalle_no_rompe_la_tabla(tmp_path):
     ruta = tmp_path / "log.md"
     refresh_log.registrar("Google Doc", "a | b\nc", fecha=D(2026, 11, 15), ruta=ruta)
     assert refresh_log.leer(ruta)[0][2] == "a / b c"
+
+
+def test_la_fila_lleva_la_cantidad_de_recetas(tmp_path):
+    ruta = tmp_path / "log.md"
+    refresh_log.registrar("Google Doc", "x", fecha=D(2026, 11, 15), ruta=ruta, recetas=55)
+    refresh_log.registrar("Curado", "y", fecha=D(2026, 11, 15), ruta=ruta)
+    texto = ruta.read_text(encoding="utf-8")
+    assert "| 2026-11-15 | Google Doc | 55 | x |" in texto and "| 2026-11-15 | Curado | — | y |" in texto
+    assert [f[2] for f in refresh_log.leer(ruta)] == ["x", "y"]

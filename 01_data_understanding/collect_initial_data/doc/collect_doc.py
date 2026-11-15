@@ -98,6 +98,21 @@ def leer_lineas(origen: Path) -> list[str]:
     return origen.read_text(encoding="utf-8").splitlines() if origen.exists() else []
 
 
+def titulos_de_receta(lineas: list[str]) -> list[str]:
+    """Títulos de receta (HEADING_3) de un raw ya guardado, en orden y sin repetir."""
+    titulos: list[str] = []
+    for linea in lineas:
+        try:
+            p = json.loads(linea)
+        except ValueError:
+            continue
+        if p.get("style") == "HEADING_3":
+            t = "".join(r[0] for r in p.get("runs", [])).strip()
+            if t and t not in titulos:
+                titulos.append(t)
+    return titulos
+
+
 def escribir_raw(parrafos: list[dict], destino: Path, meta: dict | None = None) -> None:
     destino.parent.mkdir(parents=True, exist_ok=True)
     registros = ([{"_doc": meta}] if meta else []) + parrafos
@@ -112,15 +127,24 @@ def main() -> int:
     args = parser.parse_args()
     doc_json = json.loads(args.doc_json.read_text(encoding="utf-8"))
     parrafos = extraer_raw(doc_json)
-    anterior = set(leer_lineas(args.out))
+    anterior = leer_lineas(args.out)
     escribir_raw(parrafos, args.out, extraer_meta(doc_json))
-    nuevas = set(leer_lineas(args.out))
-    agregados, quitados = len(nuevas - anterior), len(anterior - nuevas)
-    recetas = sum(1 for p in parrafos if p["style"] == "HEADING_3" and "".join(r[0] for r in p["runs"]).strip())
-    cambio = "sin cambios respecto al anterior" if not (agregados or quitados) \
-        else f"cambió: +{agregados} / -{quitados} párrafos respecto al anterior"
-    refresh_log.registrar("Google Doc", f"{len(parrafos)} párrafos, {recetas} títulos de receta; {cambio}")
-    print(f"OK: {len(parrafos)} párrafo(s) escritos en {args.out}")
+    nuevas = leer_lineas(args.out)
+    agregados, quitados = len(set(nuevas) - set(anterior)), len(set(anterior) - set(nuevas))
+    titulos_antes = titulos_de_receta(anterior)
+    titulos_ahora = titulos_de_receta(nuevas)
+    nuevos = [t for t in titulos_ahora if t not in titulos_antes]
+    borrados = [t for t in titulos_antes if t not in titulos_ahora]
+    partes = [f"{len(titulos_ahora)} recetas en el Doc"]
+    if not anterior:
+        partes.append("primera lectura")
+    else:
+        partes.append(f"nuevas ({len(nuevos)}): {', '.join(nuevos)}" if nuevos else "sin recetas nuevas")
+        if borrados:
+            partes.append(f"quitadas ({len(borrados)}): {', '.join(borrados)}")
+        partes.append("el texto no cambió" if not (agregados or quitados)
+                      else f"texto: +{agregados} / -{quitados} párrafos")
+    refresh_log.registrar("Google Doc", "; ".join(partes), recetas=len(titulos_ahora))
     try:
         destino = args.out.resolve().relative_to(config.ROOT)
     except ValueError:  # --out fuera del repo

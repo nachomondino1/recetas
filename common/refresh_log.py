@@ -27,15 +27,16 @@ Una fila por vez que se trajo o actualizó una fuente. Solo se agrega al final, 
 La fila del Google Doc la escribe `collect_doc.py` sola (`make collect`); las demás, `make log SOURCE=... NOTE=...`.
 `make status` dice hace cuánto fue la última vez de cada fuente.
 
-| Fecha | Fuente | Qué pasó |
-|---|---|---|
+| Fecha | Fuente | Recetas | Qué pasó |
+|---|---|---|---|
 """
 
-FILA_RE = re.compile(r"^\|\s*(\d{4}-\d{2}-\d{2})\s*\|\s*([^|]+?)\s*\|\s*(.*?)\s*\|\s*$")
+FILA_RE = re.compile(r"^\|\s*(\d{4}-\d{2}-\d{2})\s*\|\s*([^|]+?)\s*\|\s*([^|]*?)\s*\|\s*(.*?)\s*\|\s*$")
 DIAS_AVISO = 14  # pasado este plazo sin traer el Doc, `make status` avisa
 
 
-def registrar(fuente: str, detalle: str, fecha: datetime.date | None = None, ruta: Path | None = None) -> None:
+def registrar(fuente: str, detalle: str, fecha: datetime.date | None = None, ruta: Path | None = None,
+              recetas: int | None = None) -> None:
     ruta = ruta or config.REFRESH_LOG
     fecha = fecha or datetime.date.today()
     if not ruta.exists():
@@ -43,10 +44,11 @@ def registrar(fuente: str, detalle: str, fecha: datetime.date | None = None, rut
         ruta.write_text(ENCABEZADO, encoding="utf-8")
     detalle = " ".join(detalle.split()).replace("|", "/")
     with ruta.open("a", encoding="utf-8") as f:
-        f.write(f"| {fecha.isoformat()} | {fuente} | {detalle} |\n")
+        f.write(f"| {fecha.isoformat()} | {fuente} | {recetas if recetas is not None else '—'} | {detalle} |\n")
 
 
 def leer(ruta: Path | None = None) -> list[tuple[datetime.date, str, str]]:
+    """[(fecha, fuente, detalle)]; la columna "Recetas" no se necesita para el estado."""
     ruta = ruta or config.REFRESH_LOG
     if not ruta.exists():
         return []
@@ -54,7 +56,7 @@ def leer(ruta: Path | None = None) -> list[tuple[datetime.date, str, str]]:
     for linea in ruta.read_text(encoding="utf-8").splitlines():
         m = FILA_RE.match(linea)
         if m:
-            filas.append((datetime.date.fromisoformat(m.group(1)), m.group(2), m.group(3)))
+            filas.append((datetime.date.fromisoformat(m.group(1)), m.group(2), m.group(4)))
     return filas
 
 
@@ -66,12 +68,23 @@ def ultima_por_fuente(filas) -> dict[str, tuple[datetime.date, str]]:
     return ultimas
 
 
+def _recetas_publicadas() -> int | None:
+    try:
+        import json
+        return json.loads((config.SITE_DIR / "data" / "recetas.json").read_text(encoding="utf-8"))["meta"]["count"]
+    except (OSError, ValueError, KeyError):
+        return None
+
+
 def estado(hoy: datetime.date | None = None, ruta: Path | None = None) -> list[str]:
     hoy = hoy or datetime.date.today()
     ultimas = ultima_por_fuente(leer(ruta))
     if not ultimas:
         return ["Sin registros todavía. Traer el Doc con `make collect DOC=<json>`."]
     lineas = []
+    publicadas = _recetas_publicadas()
+    if publicadas is not None:
+        lineas.append(f"Recetas publicadas en el sitio: {publicadas}")
     for fuente, (fecha, detalle) in sorted(ultimas.items()):
         dias = (hoy - fecha).days
         cuando = "hoy" if dias == 0 else "ayer" if dias == 1 else f"hace {dias} días"
