@@ -50,7 +50,7 @@ def test_dificultad_invalida_es_error(tmp_path):
 
 def test_categoria_y_subcategoria_son_libres_no_hay_enum_que_validar(tmp_path):
     # Categoría/subcategoría son dinámicas (vienen del H1/H2 del Doc, ver
-    # doc_sync.normalizar_encabezado): cualquier valor no vacío es válido,
+    # format_data.normalizar_encabezado): cualquier valor no vacío es válido,
     # no hay lista cerrada que mantener acá.
     _, errors, _ = _load_one(tmp_path, "warnings_bebida_sin_tipo.md")
     assert errors == []

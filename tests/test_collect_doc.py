@@ -1,7 +1,7 @@
 """Capa cruda: Doc -> recetas.jsonl -> mismo resultado que leer el Doc directo."""
 
-import collect_doc as doc_raw
-import format_data as doc_sync
+import collect_doc
+import format_data
 
 
 def _p(texto, style="NORMAL_TEXT", bold=False, link=None, bullet=None):
@@ -40,7 +40,7 @@ def _doc():
 
 
 def test_raw_conserva_estructura_que_el_parser_pierde():
-    raw = doc_raw.extraer_raw(_doc())
+    raw = collect_doc.extraer_raw(_doc())
     assert raw[3] == {"style": "NORMAL_TEXT", "runs": [["200 g harina", True, None]],
                       "lista": "viñeta", "nivel": 1}
     assert raw[5]["lista"] == "ordenada"
@@ -50,13 +50,13 @@ def test_raw_conserva_estructura_que_el_parser_pierde():
 def test_parsear_desde_raw_equivale_a_parsear_el_doc(tmp_path):
     doc = _doc()
     destino = tmp_path / "recetas.jsonl"
-    doc_raw.escribir_raw(doc_raw.extraer_raw(doc), destino)
-    desde_raw = doc_sync.parse_parrafos(doc_sync.parrafos_desde_raw(doc_sync.leer_raw(destino)))
-    assert desde_raw == doc_sync.parse_doc(doc)
+    collect_doc.escribir_raw(collect_doc.extraer_raw(doc), destino)
+    desde_raw = format_data.parse_parrafos(format_data.parrafos_desde_raw(format_data.leer_raw(destino)))
+    assert desde_raw == format_data.parse_doc(doc)
 
 
 def test_raw_es_deterministico(tmp_path):
     a, b = tmp_path / "a.jsonl", tmp_path / "b.jsonl"
-    doc_raw.escribir_raw(doc_raw.extraer_raw(_doc()), a)
-    doc_raw.escribir_raw(doc_raw.extraer_raw(_doc()), b)
+    collect_doc.escribir_raw(collect_doc.extraer_raw(_doc()), a)
+    collect_doc.escribir_raw(collect_doc.extraer_raw(_doc()), b)
     assert a.read_bytes() == b.read_bytes()

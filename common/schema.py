@@ -1,6 +1,6 @@
 """Contrato de datos de una receta: único punto de verdad.
 
-Lo importan tanto export_data.py (para validar) como los tests (para
+Lo importan tanto generate_site.py (para validar) como los tests (para
 construir fixtures) — la lista de campos nunca se duplica.
 """
 
@@ -11,7 +11,7 @@ SCHEMA_VERSION = 2
 DIFICULTADES = {"baja", "media", "alta"}
 
 # Categoría y subcategoría son dinámicas: su VALOR es el texto del heading
-# H1/H2 del Google Doc (ver doc_sync.normalizar_encabezado), no un enum
+# H1/H2 del Google Doc (ver format_data.normalizar_encabezado), no un enum
 # cerrado — agregar/renombrar un H1 o H2 en el Doc no requiere tocar este
 # archivo. Lo único que sigue siendo código (estable, no viaja en el Doc) es
 # el NOMBRE del campo de subcategoría de cada categoría — para no volver a

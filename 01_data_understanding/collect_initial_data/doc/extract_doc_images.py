@@ -93,7 +93,7 @@ def _imagenes_de_parrafo(parrafo: dict, doc_tab: dict) -> list[str]:
 
 
 def _recorrer_tab(tab: dict) -> tuple[dict[str, list[str]], list[str]]:
-    """Misma lógica de agrupamiento que doc_sync._agrupar_recetas (HEADING_3
+    """Misma lógica de agrupamiento que format_data._agrupar_recetas (HEADING_3
     abre receta nueva, HEADING_1/2 no), pero sobre los párrafos crudos — acá
     hace falta `elements`/`positionedObjectIds`, que _parrafos_de_tab no
     conserva porque los aplana a texto plano.

@@ -8,7 +8,7 @@
   var TODAS = "__todas__";
 
   // Categoría y subcategoría son dinámicas: el valor es el texto del H1/H2
-  // del Google Doc (ver src/doc_sync.py: normalizar_encabezado), sin lista
+  // del Google Doc (ver 02_data_preparation/format_data.py: normalizar_encabezado), sin lista
   // cerrada que mantener acá — ni de categorías ni de valores de subfiltro.
   // Lo único fijo es el NOMBRE del campo de subfiltro por categoría, igual
   // que schema.CAMPO_SUBCATEGORIA en el export (mismo motivo: no mezclar
@@ -496,7 +496,7 @@
   }
 
   // Los links externos del cuerpo (ej. URLs a YouTube linkificadas por
-  // export_data.py) deben abrir en una pestaña nueva. Los links internos
+  // generate_site.py) deben abrir en una pestaña nueva. Los links internos
   // "ver foto" (#/receta/<slug>/foto-<id>) tienen que navegar en la misma
   // pestaña: son parte del router hash-based, no una salida del sitio.
   function abrirLinksEnNuevaPestana(cuerpo) {

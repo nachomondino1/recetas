@@ -421,3 +421,17 @@ El script agrupa las fotos por receta reusando el mismo criterio que `_agrupar_r
 **Limitación real, de datos y no de código:** hoy **solo 8 de las 43 recetas tienen tiempo cargado** (35 dicen "Sin dato"), así que filtrar por un tramo deja pocas recetas. Por eso existe la ficha "Sin dato": las recetas sin tiempo no se fuerzan a un tramo ni se esconden sin aviso. La mejora real es completar el campo "Tiempo:" en el Google Doc de cada receta; el filtro se vuelve útil solo a medida que eso pase.
 
 **Generalizable, agregado a `DESIGN_PLAYBOOK_unificado.md` §6:** filtro por dato numérico = tramos discretos con ficha "Sin dato" propia, y se clasifica por el máximo si hay rango.
+
+## 2026-11-15 — Limpieza de lo viejo tras la reestructuración
+
+**Pedido del usuario:** borrar lo que ya no se usa y quedarse solo con lo nuevo.
+
+**Cómo se decidió qué sobraba (se verificó, no se asumió):** imágenes sin referencia desde ninguna receta o portada (0 de 103; `docs/images/` sin sobrantes), funciones y clases de JS y CSS sin uso (0), funciones de Python usadas una sola vez fuera de su definición (0) y constantes de módulo sin uso. Todo el código vivo se usa.
+
+**Qué se borró o renombró:**
+- `common/config.py`: la función `add_to_path` (los scripts arman su `sys.path` directo) y 6 constantes sin uso (`COMMON_DIR`, `DATA_UNDERSTANDING_DIR`, `DATA_PREPARATION_DIR`, `DEPLOYMENT_DIR`, `SITE_DATA_DIR`, `SITE_IMAGES_DIR`).
+- Tests renombrados a los módulos nuevos: `test_doc_sync.py` → `test_format_data.py`, `test_export_data.py` → `test_generate_site.py`, `test_doc_raw.py` → `test_collect_doc.py`.
+- Comentarios y docstrings que seguían nombrando `doc_sync`, `export_data` o `src/...` (README, `schema.py`, `app.js`, `extract_doc_images.py`, tests).
+- `data/02_data_preparation/drafts/` local (borradores viejos, gitignored; se regenera con `make sync`).
+
+**Qué se conservó a propósito:** `docs/data/recetas.json`. El sitio no lo carga (usa `data.js`, que es el mismo JSON envuelto para que ande también abriendo el archivo local), pero es la salida canónica del export, los tests la leen y sirve para depurar. Las entradas anteriores de este archivo conservan los nombres viejos porque describen el repo de esa fecha.
