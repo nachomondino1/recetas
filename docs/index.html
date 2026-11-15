@@ -15,6 +15,10 @@
 <header class="site-header">
   <div class="container header-inner">
     <h1 class="logo"><a href="#/" class="logo-link"><span class="logo-emoji" aria-hidden="true">🍲</span> Recetas</a></h1>
+    <nav class="header-nav" aria-label="Secciones">
+      <a href="#/" id="nav-recetas">Recetas</a>
+      <a href="#/estacion" id="nav-estacion">De estación</a>
+    </nav>
   </div>
 </header>
 
@@ -52,6 +56,8 @@
     <p class="estado-vacio" id="estado-vacio" hidden>No hay recetas que coincidan con estos filtros.</p>
   </section>
 
+  <section id="vista-estacion" hidden></section>
+
   <section id="vista-detalle" hidden>
     <a href="#/" class="volver">← Volver</a>
     <article id="detalle-contenido"></article>
@@ -59,6 +65,7 @@
 </main>
 
 <script src="data.js"></script>
+<script src="estacion.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

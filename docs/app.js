@@ -562,6 +562,19 @@
   // cambia de receta, solo le pide a route() hacer scroll a esa imagen.
   function route() {
     var hash = location.hash || "#/";
+    var enEstacion = hash === "#/estacion";
+    var vistaEstacion = document.getElementById("vista-estacion");
+    vistaEstacion.hidden = !enEstacion;
+    document.getElementById("nav-estacion").classList.toggle("activo", enEstacion);
+    document.getElementById("nav-recetas").classList.toggle("activo", !enEstacion);
+    if (enEstacion) {
+      window.renderEstacion(vistaEstacion);
+      els.vistaGrid.hidden = true;
+      els.vistaDetalle.hidden = true;
+      document.title = "De estación · Recetas";
+      window.scrollTo(0, 0);
+      return;
+    }
     var match = hash.match(/^#\/receta\/([^/]+)(?:\/foto-(.+))?$/);
     if (match) {
       renderDetalle(decodeURIComponent(match[1]));
