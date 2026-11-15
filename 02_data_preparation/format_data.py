@@ -342,10 +342,17 @@ def leer_doc_meta(origen: Path) -> dict:
 
 
 def url_receta(meta: dict, heading_id: str | None) -> str | None:
-    """Link directo al título de una receta dentro del Google Doc."""
+    """Link directo al título de una receta dentro del Google Doc.
+
+    Usa la vista simplificada (`/mobilebasic`) y no el editor (`/edit#heading=`): en
+    un Doc largo el editor calcula mal el scroll al título y cae en otro lugar, y
+    distinto en cada carga (comprobado). En `/mobilebasic` cada título es un ancla
+    HTML real (`id="h.xxxx"`), así que el navegador llega exacto. Además no depende
+    de si el usuario tiene secciones plegadas, y carga más rápido en el celular.
+    """
     if not (meta.get("documentId") and meta.get("tabId") and heading_id):
         return None
-    return f"https://docs.google.com/document/d/{meta['documentId']}/edit?tab={meta['tabId']}#heading={heading_id}"
+    return f"https://docs.google.com/document/d/{meta['documentId']}/mobilebasic?tab={meta['tabId']}#{heading_id}"
 
 
 def parrafos_desde_raw(raw: list[dict]) -> list[dict]:

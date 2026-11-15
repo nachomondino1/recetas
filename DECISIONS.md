@@ -447,3 +447,13 @@ El script agrupa las fotos por receta reusando el mismo criterio que `_agrupar_r
 **Generalizable, agregado a `DATA_FLOW_PLAYBOOK_unificado.md`:** sin cron, una bitácora que escribe el propio script de recolección (no una persona) más un `status` que avisa pasado un plazo.
 
 **Ajuste posterior, mismo día:** el usuario decidió **no armar el cron todavía**: primera versión manual ("andá a buscar los datos del Google Doc, agregué recetas nuevas") más la bitácora. La bitácora pasó a tener columna "Recetas" y el detalle lista **cuáles son nuevas y cuáles se quitaron** del Doc (comparando los títulos del raw guardado contra el nuevo). `make status` suma cuántas recetas hay publicadas. El plan de automatización quedó escrito, con lo aprendido del job de `boardgame` (launcher compilado para dar Acceso total al disco solo a esa automatización, `RunAtLoad` + guarda de 25 días).
+
+## 2026-11-15 — Los links al Google Doc pasan a la vista simplificada (`/mobilebasic`)
+
+**Problema (reportado por el usuario):** el botón "Abrir en Google Docs" no llevaba al lugar exacto de la receta. El usuario sospechó que podía ser por las secciones plegadas del Doc.
+
+**Diagnóstico (probado, no supuesto):** los datos estaban bien (los 43 `headingId` apuntan al título de su receta). El problema era el **editor** de Google Docs: con `.../edit?tab=...#heading=h.xxx`, en un Doc así de largo (~2000 párrafos) calcula mal el scroll, y **cae en lugares distintos en cargas distintas**: el mismo link llevó una vez al medio de *Apple crumble* y otra a *Quebradiza sin manteca*. Se reprodujo sin sesión y con las secciones sin plegar, así que no es solo por el plegado (que puede agravarlo).
+
+**Qué se hizo:** `format_data.url_receta` genera `.../document/d/<id>/mobilebasic?tab=<tab>#<headingId>`. En esa vista simplificada cada título es un ancla HTML real (`<h3 id="h.xxxx">`) y el navegador llega exacto. Verificado: los **43 anclas existen** con el título correcto, y en *Apple crumble* y *Flan* el título quedó en la posición 0 de la ventana. Tampoco depende de secciones plegadas y carga más rápido en el celular.
+
+**Contra, a saber:** `/mobilebasic` es de **solo lectura** (para editar hay que abrir el Doc normal) y el título queda pegado arriba, apenas tapado por la barra fija de Google. Para el uso pedido (leer la receta con fotos y aclaraciones) es lo adecuado. En un celular con la app de Google Docs, el link abre en el navegador.
